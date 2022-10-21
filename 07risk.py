@@ -130,25 +130,31 @@ while troops1 >= 2 and troops2 >= 1:
     #display troop losses
     if max1 > max2 and submax1 > submax2:
         if numdice2 >= 2:
-            print("Player 2 loses 2 troops.")
+            print(territory2," loses 2 troops.")
             troops2 -= 2
         else:
-            print("Player 2 loses 1 troops.")
+            print(territory2," loses 1 troops.")
             troops2 -= 1
     elif max1 > max2 and submax2 >= submax1:
-        print("Player 1 loses 1 troops, and Player 2 loses 1 troops.")
-        troops1 -= 1
-        troops2 -= 1
+        if numdice2 >= 2:
+            print(territory1," loses 1 troops, and ",territory2," loses 1 troops.")
+            troops1 -= 1
+            troops2 -= 1
+        else:
+            print(territory2," loses 1 troops.")
+            troops2 -= 1
     elif max2 >= max1 and submax1 > submax2:
         if numdice2 >= 2:
-            print("Player 2 loses 2 troops.")
-            troops2 -= 2
+            print(territory1," loses 1 troops, and ",territory2," loses 1 troops.")
+            troops1 -= 1
+            troops2 -= 1
         else:
             print("Player 1 loses 1 troops.")
             troops1 -= 1
     elif max2 >= max1 and submax2 >= submax1:
-        print("Player 1 loses 2 troops.")
-        troops1 -= 2
+            print(territory1," loses 2 troops.")
+            troops1 -= 2
+
 
     #prepare turn counter and roll arrays for next turn
     turncount += 1
