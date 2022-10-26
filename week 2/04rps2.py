@@ -4,17 +4,19 @@ import random
 #array for play names
 plays = ["0", "Rock", "Paper", "Scissors"]
 
-
+#win counters
 compwin = 0
 userwin = 0
 
-print("Rock Paper Scissors Tournament: Best of Seven")
+#repeat match cycle until computer or user gets 4 wins
+print("\n")
+print("Rock Paper Scissors Tournament: Best of Seven \n")
 while compwin < 4 and userwin <4:
     #request user input
     print("Choose a number: 1. Rock, 2. Paper, or 3. Scissors?")
     #generate computer's play
     computer = random.randrange(1,3)
-
+    #check for invalid input
     valid = False
     while valid == False:
         try:
@@ -23,6 +25,7 @@ while compwin < 4 and userwin <4:
                 user = int(input())
                 if user > 0 and user < 4:
                     valid2 = True
+                    #actual rock paper scissors!!!
                     if computer == 1:
                         if user == 1:
                             win = 0
@@ -58,10 +61,9 @@ while compwin < 4 and userwin <4:
 
 
     #display match results
-
-    print("You chose ",user,plays[user])
-    print("Computer chose ",computer,plays[computer])
     print("\n")
+    print("You chose ",user,plays[user])
+    print("Computer chose ",computer,plays[computer], "\n")
     if win == 1:
         print("User wins!")
     elif win == 2:
@@ -69,12 +71,13 @@ while compwin < 4 and userwin <4:
     elif win == 0:
         print("Tie!")
     
+    #display win count
     print("User win count: ",userwin)
     print("Computer win count: ",compwin, "\n")
         
         
 #display overall results
-print("\n")
+print("\n \n \n")
 print("You got ",userwin," points.")
 print("Computer got ",compwin,"points.")
 print("\n")
