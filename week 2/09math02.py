@@ -36,4 +36,5 @@ while correct <= 10:
     answerget(rand)
     if answermatch(rand) == True:<------------------
         print("CORRECT!")
+        correct+=1
 """
