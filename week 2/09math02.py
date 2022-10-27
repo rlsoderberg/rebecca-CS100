@@ -16,14 +16,15 @@ def answerget(x):
     print(equations[x])
     valid = False
     while valid == False:
-            try:
-                ans.append(input("d = "))
-                valid = True
-            except ValueError:
-                print("Invalid input.")
-"""
+        try:
+            inp = input()
+            ans.insert(x, inp)
+            valid = True
+        except ValueError:
+            print("Invalid input.")
+
 def answermatch(x):
-    if ans[x] == correct_ans[x]:<----------------
+    if ans[x] == correct_ans[x]:#?????????????
         print("Correct!")
         return True
     else:
@@ -33,7 +34,6 @@ def answermatch(x):
 while correct <= 10:
     rand = random.randint(0, 9)
     answerget(rand)
-    if answermatch(rand) == True:<------------------
+    if answermatch(rand) == True:#?????????????
         print("CORRECT!")
         correct+=1
-"""
