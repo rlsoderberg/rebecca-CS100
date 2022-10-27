@@ -29,7 +29,6 @@ def answermatch(x):
     else:
         print("Incorrect! Try again!")
         return False
-print("ans:",ans)
 
 while correct <= 10:
     rand = random.randint(0, 9)
