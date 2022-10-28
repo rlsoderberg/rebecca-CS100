@@ -31,8 +31,9 @@ key = ["2", "4", "3", "6", "12", "5", "7", "8", "9", "11"]
 user = []
 correct_count = 0
 genmax = 9
+turncount = 0
 
-while correct_count <= 10:
+while correct_count < 10:
     randgen = random.randint(0, genmax)
     probnum = -1
     while probnum == -1:
@@ -50,7 +51,13 @@ while correct_count <= 10:
         correct_count += 1
         key.remove(key[keyloc])
         equations.remove(equations[probnum])
-    print("correct_count: ",correct_count)
-    print("equations: ",equations)
-    print("key: ",key)
+
+    print("Subject ",name,": You have solved ",correct_count," equations correctly.")
     genmax -= 1
+    turncount += 1
+
+percent = (10/turncount)*100
+tempgen = random.randint(100, 1000)
+conversion = (percent / 100) * tempgen
+print("Subject ",name,": You achieved ",percent,"% accuracy, at a temperature of ",tempgen," degrees.")
+print("You have achieved a temperature conversion score of ",conversion)
