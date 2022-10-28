@@ -1,3 +1,21 @@
+#input functions
+def inputio():
+    valid = False
+    while valid == False:
+        try:
+            n = int(input("Enter a number: "))
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return n
+
+def input2():
+    x = inputio()
+    while x == "":
+        print("I didn't hear you!")
+        x = inputio()
+    return x
+
 #factorial function
 def factorialize(x):
     facto = 1
@@ -6,7 +24,8 @@ def factorialize(x):
     return facto
 
 #request user input
-n = int(input("Enter a number: "))
+n = input2()
+
 
 #run function and print results
 facto = factorialize(n)

@@ -1,8 +1,27 @@
 import random
 
+#input functions
+def inputio():
+    valid = False
+    while valid == False:
+        try:
+            name = input("Leave explosives at the door. Identification please: ")
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return name
+
+def input2():
+    x = inputio()
+    while x == "":
+        print("I didn't hear you!")
+        x = inputio()
+    return x
+
 #introduce program
 print("Welcome to the math volcano.")
-name = input("Leave explosives at the door. Identification please: ")
+name = input2()
+
 
 #create arrays for correct answers and user answers
 problem_numbers = [0,1,2,3,4,5,6,7,8,9]
@@ -21,8 +40,14 @@ while correct_count <= 10:
     valid = False
     while valid == False:
         try:
-            inp = input("d = ")
-            user.insert(probnum, inp) # ?????????????????
+            valid = False
+            while valid == False:
+                try:
+                    inp = int(input("d = "))
+                    valid = True
+                except ValueError:
+                    print("Invalid Input.")
+            #user.insert(probnum, inp) # ?????????????????
             valid = True
             print("probnum: ",probnum) # + in print???
             print("user = ",user)
