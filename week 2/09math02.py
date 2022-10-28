@@ -18,6 +18,27 @@ def input2():
         x = inputio()
     return x
 
+#whole separate input functions for numbers????
+#need to make more interconnected, ex. if i put in a blank, then put in a letter, it causes an error
+#less specific (value error) on outside is good?
+#no wait, this doesn't work either, blank causes an error with the int
+def mathinputio():
+    valid = False
+    while valid == False:
+        try:
+            x = mathinput1()
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return x
+
+def mathinput1():
+    x = int(input())
+    while x == "":
+        print("I didn't hear you!")
+        x = inputio()
+    return x
+
 #introduce program
 print("Welcome to the math volcano.")
 print("Leave explosives at the door. Identification please: ")
@@ -41,11 +62,11 @@ while correct_count < 10:
     print("Equation ",probnum,":")
     print(equations[probnum])
     print("d = ")
-    inp = input2()
-    if inp in key:
+    inp = mathinput1()
+    while inp not in key:
         keyloc = key.index(inp)
-    else:
-        print("Incorrect!")
+        if inp not in key: 
+            print("Incorrect!")
     if probnum == keyloc:
         print("Correct!")
         correct_count += 1
