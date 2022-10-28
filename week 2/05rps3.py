@@ -18,8 +18,7 @@ def input2():
     
 def input3():
     user = input2()
-    #why did i have to write this out??? had while user < 0 or user > 3
-    while user != 1 and user != 2 and user != 3:
+    while user < 1 or user > 3:
         print("Invalid input! Choose a number: 1. Rock, 2. Paper, or 3. Scissors? ")
         user = int(input())
     return user
