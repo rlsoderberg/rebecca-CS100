@@ -4,6 +4,24 @@ import random
 #array for play names
 plays = ["0", "Rock", "Paper", "Scissors"]
 
+#input arrays
+def inputio():
+    valid = False
+    while valid == False:
+        try:
+            x = int(input())
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return x
+
+def input2():
+    x = inputio()
+    while x == "":
+        print("I didn't hear you!")
+        x = inputio()
+    return x
+
 #repeat match cycle until someone wins
 print("\n")
 print("Rock Paper Scissors Tournament: Best of Seven \n")
@@ -19,7 +37,7 @@ while win == 0:
         try:
             valid2 = False
             while valid2 == False:
-                user = int(input())
+                user = input2()
                 if user > 0 and user < 4:
                     valid2 = True
                     #actual rock paper scissors!!!
