@@ -34,4 +34,4 @@ d = ""
 for s in range (0, len(digits)):
     d = (d + digits[s])
 
-print("Digits from score: ",d)
+print("Digits within score: ",d)
