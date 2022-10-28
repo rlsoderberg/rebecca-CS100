@@ -5,11 +5,11 @@ def inputio():
     valid = False
     while valid == False:
         try:
-            name = input("Leave explosives at the door. Identification please: ")
+            x = input()
             valid = True
         except ValueError:
             print("Invalid Input!")
-    return name
+    return x
 
 def input2():
     x = inputio()
@@ -20,6 +20,7 @@ def input2():
 
 #introduce program
 print("Welcome to the math volcano.")
+print("Leave explosives at the door. Identification please: ")
 name = input2()
 
 
@@ -29,41 +30,27 @@ equations = ["5d + 3 = 13","14 - 3d = 2","9 - 2d = 3","8d + 2 = 50","2d + 16 = 4
 key = ["2", "4", "3", "6", "12", "5", "7", "8", "9", "11"]
 user = []
 correct_count = 0
+genmax = 9
 
 while correct_count <= 10:
-    randgen = random.randint(0, 9)
+    randgen = random.randint(0, genmax)
     probnum = -1
     while probnum == -1:
         probnum = problem_numbers[randgen]
     print("Equation ",probnum,":")
     print(equations[probnum])
-    valid = False
-    while valid == False:
-        try:
-            valid = False
-            while valid == False:
-                try:
-                    inp = int(input("d = "))
-                    valid = True
-                except ValueError:
-                    print("Invalid Input.")
-            user.insert(probnum, inp) # ?????????????????
-            valid = True
-            print("probnum: ",probnum) # + in print???
-            print("user = ",user)
-            print("key: ",key)
-            print("user[probnum]: ",user[probnum])
-            print("key[probnum]: ",key[probnum])
-        except ValueError:
-            print("Invalid input.")
-"""
-    if user[probnum] == key[probnum]:
-        correct_count+=1
-        print("Correct! ",name," gains level ",correct_count," access.")
-        problem_numbers[randgen] = -1
-        probnum = -1
+    print("d = ")
+    inp = input2()
+    if inp in key:
+        keyloc = key.index(inp)
     else:
-        print("Incorrect! ",name," denied level ",correct_count+1," access.")
-        
-    
-"""
+        print("Incorrect!")
+    if probnum == keyloc:
+        print("Correct!")
+        correct_count += 1
+        key.remove(key[keyloc])
+        equations.remove(equations[probnum])
+    print("correct_count: ",correct_count)
+    print("equations: ",equations)
+    print("key: ",key)
+    genmax -= 1
