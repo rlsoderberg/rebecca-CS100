@@ -47,7 +47,7 @@ while correct_count <= 10:
                     valid = True
                 except ValueError:
                     print("Invalid Input.")
-            #user.insert(probnum, inp) # ?????????????????
+            user.insert(probnum, inp) # ?????????????????
             valid = True
             print("probnum: ",probnum) # + in print???
             print("user = ",user)
