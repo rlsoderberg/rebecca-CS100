@@ -1,23 +1,21 @@
 #input functions
+#input functions
 def inputio():
     valid = False
     while valid == False:
         try:
-            link = input("Enter a link: ")
+            x =  input()
+            while x == "":
+                print("Out of range!")
+                x = input()
             valid = True
         except ValueError:
             print("Invalid Input!")
-    return link
-
-def input2():
-    x = inputio()
-    while x == "":
-        print("I didn't hear you!")
-        x = inputio()
     return x
 
 #check if valid
-link = input2()
+print("Enter a link: ")
+link = inputio()
 if link.startswith("http"):
     valid = True
 else:
