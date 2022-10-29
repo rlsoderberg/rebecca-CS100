@@ -7,24 +7,24 @@ def inputio():
     valid = False
     while valid == False:
         try:
-            x =  int(input("What number is the month? "))
+            x =  int(input())
+            while x < 0 or x > 11:
+                while x == "":
+                    print("Out of range!")
+                print("Out of range!")
+                x = int(input())
             valid = True
         except ValueError:
             print("Invalid Input!")
-    while x == "":
-        print("I didn't hear you!")
-        x = int(input("What number is the month? "))
-    while x < 0 or x > 11:
-        print("Out of range!")
-        x = int(input("What number is the month?"))
     return x
 
 #create list of months
-months = ["Month Zero", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 def getmonths(x):
-    return months[x]
+    return months[x-1]
     
 #request user input and display results
+print("What number is the month? ")
 usermonth = inputio()
 print("Month ",usermonth, " is ",getmonths(usermonth))

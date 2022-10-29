@@ -3,25 +3,16 @@ def inputio():
     valid = False
     while valid == False:
         try:
-            user = int(input())
+            x =  int(input())
+            while x < 1 or x > 3:
+                while x == "":
+                    print("Out of range!")
+                print("Out of range!")
+                x = int(input())
             valid = True
         except ValueError:
-            print("Invalid input! Choose a number: 1. Rock, 2. Paper, or 3. Scissors? ")
-    return user
-
-def input2():
-    user = inputio()
-    while user == "":
-        print("I didn't hear you!")
-        user = inputio()
-    return user
-    
-def input3():
-    user = input2()
-    while user < 1 or user > 3:
-        print("Invalid input! Choose a number: 1. Rock, 2. Paper, or 3. Scissors? ")
-        user = int(input())
-    return user
+            print("Invalid Input!")
+    return x
 
 #import random module for rock paper scissors
 import random
@@ -42,7 +33,7 @@ while compwin < 4 and userwin <4:
     #generate computer's play
     computer = random.randrange(1,3)
     #check for invalid input
-    user = input3()
+    user = inputio()
     #actual rock paper scissors!!!
     if computer == 1:
         if user == 1:

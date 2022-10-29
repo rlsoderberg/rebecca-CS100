@@ -1,34 +1,24 @@
 import random
 
-#input functions
-def inner????idk():
-    print("starting outer")
-    x = input()
-    if type(input) == int:
-        x = value(x)
-    elif type(input) == str:
-        x = space(x)
-    elif type(input) == float:
-        print("you cannot put float")
-        x = input()
-    return x
-nothing is working!!!!!!!!!! i made an outer but i needed it to be inner! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-def value():
-    print("starting value")
-    while x < 0 or x > 3:
-        x = input("not in range")
-    return x
 
-def space():
-    print("starting space")
-    while x == "":
-        x = input("space is bad")
+#input functions
+def inputio():
+    valid = False
+    while valid == False:
+        try:
+            x = input()
+            while x == "":
+                print("Out of range!")
+                x = int(input())
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
     return x
 
 #introduce program
 print("Welcome to the math volcano.")
 print("Leave explosives at the door. Identification please: ")
-name = outer()
+name = inputio()
 
 
 #create arrays for correct answers and user answers
@@ -48,12 +38,11 @@ while correct_count < 10:
     print("Equation ",probnum,":")
     print(equations[probnum])
     print("d = ")
-    inp = outer()
-    while inp not in key:
-        keyloc = key.index(inp)
-        if inp not in key: 
-            print("Incorrect!")
-    if probnum == keyloc:
+    inp = inputio()
+    keyloc = key.index(inp)
+    if probnum != keyloc: 
+        print("Incorrect!")
+    elif probnum == keyloc:
         print("Correct!")
         correct_count += 1
         key.remove(key[keyloc])

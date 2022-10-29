@@ -3,17 +3,13 @@ def inputio():
     valid = False
     while valid == False:
         try:
-            n = int(input("Enter a number: "))
+            x =  int(input())
+            while x == "":
+                print("Out of range!")
+                x = int(input())
             valid = True
         except ValueError:
             print("Invalid Input!")
-    return n
-
-def input2():
-    x = inputio()
-    while x == "":
-        print("I didn't hear you!")
-        x = inputio()
     return x
 
 #factorial function
@@ -24,7 +20,8 @@ def factorialize(x):
     return facto
 
 #request user input
-n = input2()
+print("Enter a number: ")
+n = inputio()
 
 
 #run function and print results

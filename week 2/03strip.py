@@ -14,22 +14,19 @@ def inputio():
     valid = False
     while valid == False:
         try:
-            x = input("Pronoun: ")
+            x =  input()
+            while x == "":
+                print("Out of range!")
+                x = input()
             valid = True
         except ValueError:
             print("Invalid Input!")
     return x
 
-def input2():
-    x = inputio()
-    while x == "":
-        print("I didn't hear you!")
-        x = inputio()
-    return x
-
 #replacement section
 for s in range (0,3):
-    x = input2()
+    print("Pronoun: ")
+    x = inputio()
     names.append(x)
     rand = random.choice(string.hexdigits)
     new = names[s].replace("e",rand)

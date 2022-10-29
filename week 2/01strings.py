@@ -8,29 +8,29 @@ def inputio():
     valid = False
     while valid == False:
         try:
-            door = input("1, 2, or 3?")
-            inte = int(door)
+            x =  int(input())
+            while x < 0 or x > 11:
+                while x == "":
+                    print("Out of range!")
+                print("Out of range!")
+                x = int(input())
             valid = True
         except ValueError:
             print("Invalid Input!")
-    return inte
-
-def input2():
-    x = inputio()
-    while x == "":
-        print("I didn't hear you!")
-        x = inputio()
     return x
 
 def input3():
-    inte = input2()
+    x = inputio()
+    inte = int(x)
     while inte < 1 or inte > 3:
         print("Not that many doors!")
-        inte = input2()
+        x = inputio()
+        inte = int(x)
     return inte
 
 #door related occurences
 def doorhappen(turncount):
+    print("1, 2, or 3?")
     inte = input3()
     
     print("As you step closer to door ",inte,", you can read the sign on it: ",type[inte])
