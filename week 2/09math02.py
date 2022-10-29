@@ -1,48 +1,34 @@
 import random
 
 #input functions
-def inputio():
-    valid = False
-    while valid == False:
-        try:
-            x = input()
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
+def inner????idk():
+    print("starting outer")
+    x = input()
+    if type(input) == int:
+        x = value(x)
+    elif type(input) == str:
+        x = space(x)
+    elif type(input) == float:
+        print("you cannot put float")
+        x = input()
+    return x
+nothing is working!!!!!!!!!! i made an outer but i needed it to be inner! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+def value():
+    print("starting value")
+    while x < 0 or x > 3:
+        x = input("not in range")
     return x
 
-def input2():
-    x = inputio()
+def space():
+    print("starting space")
     while x == "":
-        print("I didn't hear you!")
-        x = inputio()
-    return x
-
-#whole separate input functions for numbers????
-#need to make more interconnected, ex. if i put in a blank, then put in a letter, it causes an error
-#less specific (value error) on outside is good?
-#no wait, this doesn't work either, blank causes an error with the int
-def mathinputio():
-    valid = False
-    while valid == False:
-        try:
-            x = mathinput1()
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
-    return x
-
-def mathinput1():
-    x = int(input())
-    while x == "":
-        print("I didn't hear you!")
-        x = inputio()
+        x = input("space is bad")
     return x
 
 #introduce program
 print("Welcome to the math volcano.")
 print("Leave explosives at the door. Identification please: ")
-name = input2()
+name = outer()
 
 
 #create arrays for correct answers and user answers
@@ -62,7 +48,7 @@ while correct_count < 10:
     print("Equation ",probnum,":")
     print(equations[probnum])
     print("d = ")
-    inp = mathinput1()
+    inp = outer()
     while inp not in key:
         keyloc = key.index(inp)
         if inp not in key: 
