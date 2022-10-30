@@ -35,7 +35,7 @@ print("What's my name?")
 username = inputio()
 print("Let me see if I'm on the team...")
 
-#i totally stole this from somewhere!!!! i do like creating suspense
+#i totally stole this from somewhere!!!! good for suspense
 ellipse = ["..."]
 
 from time import sleep

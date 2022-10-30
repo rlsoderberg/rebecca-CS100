@@ -15,7 +15,7 @@ reverseteam = []
 unreverseteam = []
 
 print("List players on team, from longest time played on team, to shortest.")
-print("Enter 'done' (just the word done, no quotation marks) when you're finished.")
+print("Enter 'done' when you're finished.")
 
 player = ""
 while player != "done":
