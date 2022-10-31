@@ -1,3 +1,4 @@
+import itertools as it
 #input function
 def inputio():
     valid = False
@@ -13,14 +14,27 @@ def inputio():
     return x
 
 list = []
+itemprop = ["Name of item", "Price of item", "Quantity of item"]
+proplist = []
 
 item = ""
 while item != "none":
     print("Enter a grocery item, or none to exit: ")
     item = inputio()
     if item != "none":
-        list.append(item)
-        print("You put ",item,"in your cart.")
+        proplist.append([])
+        for c in range(3):
+            print(c, ": ")
+            for j in range(3):
+                j = inputio() 
+                proplist[c].append(j)
+print(proplist)
+
+
+
+
+        
+    
 
 print("You make your way to the checkout line...")
 #i'm using this again
