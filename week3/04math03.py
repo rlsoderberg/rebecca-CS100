@@ -7,9 +7,6 @@ def inputio():
     while valid == False:
         try:
             x = input()
-            while x == "":
-                print("Out of range!")
-                x = int(input())
             valid = True
         except ValueError:
             print("Invalid Input!")
@@ -34,28 +31,28 @@ while correct_count < 10:
     probnum = -1
     while probnum == -1:
         probnum = problem_numbers[randgen]
-    print("Equation ",probnum,":")
-    print(equations[probnum])
-    print("d = ")
-    inp = inputio()
 
-    print("Equation ",probnum,":")
-    print(equations[probnum][0])
+    print("\n")
+    print(name, "Equation ",probnum,":")
+    current = list(equations[probnum])
+    print(current[0])
     print("d = ")
-    equations[probnum][2] = inputio()
-    if equations[probnum][1] == equations[probnum][2]:
+    current[2] = inputio()
+    if current[1] == current[2]:
         print("Correct!")
         correct_count += 1
-        equations.remove(probnum)
+        equations.remove(equations[probnum])
     else:
         print("Incorrect!")
 
-    print("Subject ",name," has solved ",correct_count," equations correctly.")
+    print("Subject ",name," has solved ",correct_count," equations correctly.\n")
+    print("Perform any action to commence.")
+    inputioma = inputio()
     genmax -= 1
     turncount += 1
 
 percent = (10/turncount)*100
 tempgen = random.randint(100, 1000)
 conversion = (percent / 100) * tempgen
-print("Subject ",name,": You achieved ",percent,"% accuracy, at a temperature of ",tempgen," degrees.")
+print("Subject ",name," has achieved ",percent,"% accuracy, at a temperature of ",tempgen," degrees.")
 print("You have achieved a temperature conversion score of ",conversion)
