@@ -1,6 +1,5 @@
 import random
 
-
 #input functions
 def inputio():
     valid = False
@@ -26,11 +25,10 @@ correct_count = 0
 genmax = 9
 turncount = 0
 
+#loop to pick random question and check answer, until all questions are answered correctly
 while correct_count < 10:
     randgen = random.randint(0, genmax)
-    probnum = -1
-    while probnum == -1:
-        probnum = problem_numbers[randgen]
+    probnum = problem_numbers[randgen]
 
     print("\n")
     print(name, "Equation ",probnum,":")
@@ -42,17 +40,18 @@ while correct_count < 10:
         print("Correct!")
         correct_count += 1
         equations.remove(equations[probnum])
+        genmax -= 1
     else:
         print("Incorrect!")
 
     print("Subject ",name," has solved ",correct_count," equations correctly.\n")
-    print("Perform any action to commence.")
+    print("Perform any action to continue.")
     inputioma = inputio()
-    genmax -= 1
     turncount += 1
 
+#display results
 percent = (10/turncount)*100
 tempgen = random.randint(100, 1000)
 conversion = (percent / 100) * tempgen
 print("Subject ",name," has achieved ",percent,"% accuracy, at a temperature of ",tempgen," degrees.")
-print("You have achieved a temperature conversion score of ",conversion)
+print("Subject ",name, "has achieved a temperature conversion score of ",round(conversion, 2),".")
