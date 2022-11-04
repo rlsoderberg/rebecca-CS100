@@ -1,67 +1,63 @@
-import itertools as it
-#input function
+#input functions
 def inputio():
     valid = False
     while valid == False:
         try:
             x =  input()
-            while x == "":
-                print("Out of range!")
-                x = input()
             valid = True
         except ValueError:
             print("Invalid Input!")
     return x
 
-list = []
-itemprop = ["Name of item", "Price of item", "Quantity of item"]
-proplist = []
+def intputio():
+    valid = False
+    while valid == False:
+        try:
+            x =  float(input())
+            while x < 0:
+                while x == "":
+                    print("Out of range!")
+                print("Out of range!")
+                x = int(input())
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return x
+
+itemlist = []
+propnames = ["Name of item: ", "Price of item (numbers only): ", "Quantity of item: "]
+itemprop = []
 
 item = ""
 while item != "none":
-    print("Enter a grocery item, or none to exit: ")
+    print("Press enter for new grocery item, or type none to exit: ")
     item = inputio()
     if item != "none":
-        proplist.append([])
-        for c in range(3):
-            print(c, ": ")
-            for j in range(3):
-                j = inputio() 
-                proplist[c].append(j)
-print(proplist)
-
-
-
-
-        
-    
+        for c in range (3):
+            print(propnames[c])
+            if c == 1:
+                itemprop.append(intputio())
+            else:
+                itemprop.append(inputio())
+        tupleprop = tuple(itemprop)
+        itemlist.append(tupleprop)
+        itemprop.clear()
 
 print("You make your way to the checkout line...")
-#i'm using this again
-ellipse = ["..."]
+input("Press enter to check out.")
 
-from time import sleep
-import sys
+print("Items checked out: ")
 
-for s in range(0,3):          
-    for c in ellipse:          
-        print(c, end='')    
-        sleep(0.5)          
-    print('')   
+total = 0
+for c in itemlist:
+    print(c[0])
+    print("Price: ",c[1])
+    print("Quantity: ",c[2])
 
-print("Oh no! You have a shopping cart accident!")
-sleep(0.5)
-print("Now all your grocery items are mixed up...")
-import random
-#for some reason shuffle wasn't working, so i made a new list
-randolist = random.sample(list, len(list))
-print("Press enter to check out.")
-enter = input()
-
-for c in randolist:
-    print("You check out ",c,".")
-    sleep(0.5)
-
-print("Hopefully that's everything!")
+    try:
+        total = (total + c[1])
+    except ValueError:
+        pass
+print("Total Cost: ",total)
 
 
