@@ -7,7 +7,7 @@ expressions = ["0"," the number of beats in the song Blue Monday by New Order.\n
                 " the number of beats in the song A Roller Skating Jam Named Saturdays by De La Soul.\nThe song is about 4:00, and with 114 BPM.\n",
                 " the number of beats in the song Sunday Morning by Lou Reed.\nThe song is about 2:50, and its BPM is 108.\n"
 ]
-#student class & functions
+
 class Student:
     name = ''
     ID = -1
@@ -22,19 +22,59 @@ class Student:
     def ask_question(self, weekday):
         print("How did it get to be ",weekday, " already?\n")
 
+
+stud01 = Student()
+stud01.name = 'Mary'
+stud01.ID = 10101
+stud01.grade = 3.5
+
+
+studentlist = []
+studentlist.append(stud01)
+
+
+stud02 = Student()
+stud02.name = 'Rocky'
+stud02.ID = 63932
+stud02.grade = 2.6
+studentlist.append(stud02)
+
+stud03 = Student()
+stud03.name = 'Bullwinkle'
+stud03.ID = 93018
+stud03.grade = 4.2
+studentlist.append(stud03)
+
+stud04 = Student()
+stud04.name = 'Maxwella'
+stud04.ID = 97426
+stud04.grade = 3.3
+studentlist.append(stud04)
+
+stud05 = Student()
+stud05.name = 'Jimbob'
+stud05.ID = 63271
+stud05.grade = 1.2
+studentlist.append(stud05)
+
 #generate weekday and calculate corresponding values before putting them into the function
 import random
 from datetime import datetime
 dt = datetime.now()
 wk = dt.isoweekday()
 weekday = weeknum[wk-1]
+weekdayminusone = weeknum[wk-2]
 xp = expressions[wk-1]
-#print results
-stud01 = Student()
-stud01.name = 'Mary'
-stud01.ID = 10101
-stud01.birthdate = '1/1/1999'
-print("\n")
-stud01.math(weekday, xp)
-stud01.encyclopedia('Computer Science', weekday)
-stud01.ask_question(weekday)
+
+print("Names starting with M: ")
+for c in studentlist:
+    print("Name: ",c.name," ID: ",c.ID," Grade: ",c.grade,"\n")
+    import random
+    randgen = random.randint(0, 2)
+    #is there some better way to do this?????
+    if randgen == 0:
+        c.math(weekday, xp)
+    elif randgen == 1:
+        c.encyclopedia("Computer Science", weekday)
+    elif randgen == 2:
+        c.ask_question(weekday)
