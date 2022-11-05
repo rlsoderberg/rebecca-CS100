@@ -57,7 +57,7 @@ stud05.ID = 63271
 stud05.grade = 1.2
 studentlist.append(stud05)
 
-#generate weekday and calculate corresponding values before putting them into the function
+#generate weekday and calculate corresponding values before putting into the function
 import random
 from datetime import datetime
 dt = datetime.now()
