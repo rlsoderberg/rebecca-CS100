@@ -15,7 +15,6 @@ class Student:
 
     def __init__(self, name='', ID=-1, birthdate='1/1/2000'):
         self.name = name
-        self.ID = ID
         self.birthdate = birthdate  
     
     def math(self, weekday, xp):
@@ -33,4 +32,25 @@ stud02 = Student('Susan', 11223, '6/1/2001')
 print(vars(stud01))
 print(vars(stud02))
 
-#??????????????
+dict = {}
+
+names = open("names.txt").read().split("\n")
+birthdates = open("birthdates.txt").read().split("\n")
+
+"""
+for x in range (200):
+    dict[x] = Student()
+    print("\nStudent ",x)
+    dict[x].name = input("\nEnter student name: ")
+    dict[x].birthdate = input("Enter student birthdate: ")
+    print("\nStudent Id: ",x,"\nName: ",dict[x].name,"\nBirthdate: ",dict[x].birthdate)
+"""
+import random 
+
+for x in range (200):
+    random.shuffle(names)
+    random.shuffle(birthdates)
+    dict[x] = Student()
+    dict[x].name = names[x]
+    dict[x].birthdate = birthdates[x]
+    print("\nStudent Id: ",x,"\nName: ",dict[x].name,"\nBirthdate: ",dict[x].birthdate)
