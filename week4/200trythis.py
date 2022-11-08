@@ -34,8 +34,8 @@ print(vars(stud02))
 
 dict = {}
 
-names = open("names.txt").read().split("\n")
-birthdates = open("birthdates.txt").read().split("\n")
+names = open("names.txt", "r").read().split("\n")
+birthdates = open("birthdates.txt", "r").read().split("\n")
 
 """
 for x in range (200):
