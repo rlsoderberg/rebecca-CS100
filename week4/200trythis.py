@@ -41,8 +41,8 @@ birthdates = open("birthdates.txt", "r").read().split("\n")
 for x in range (200):
     dict[x] = Student()
     print("\nStudent ",x)
-    dict[x].name = input("\nEnter student name: ")
-    dict[x].birthdate = input("Enter student birthdate: ")
+    dict[x].name = inputio("\nEnter student name: ")
+    dict[x].birthdate = inputio("Enter student birthdate: ")
     print("\nStudent Id: ",x,"\nName: ",dict[x].name,"\nBirthdate: ",dict[x].birthdate)
 """
 import random 
