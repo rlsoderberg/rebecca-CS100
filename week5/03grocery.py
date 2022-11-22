@@ -43,7 +43,6 @@ while item != "none":
         itemlist.append(tupleprop)
         itemprop.clear()
 
-#i should totally put some propnames in here!!!
 note = open("groceries.txt", 'w')
 for c in itemlist:
     note.write(' '.join(str(s) for s in c) + '\n')
