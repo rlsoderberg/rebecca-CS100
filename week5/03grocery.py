@@ -27,7 +27,7 @@ def intputio():
 itemlist = []
 propnames = ["Name of item: ", "Price of item (numbers only): ", "Quantity of item: "]
 itemprop = []
-
+#get tuple with string OR float!!! probably a mess?
 item = ""
 while item != "none":
     print("Press enter for new grocery item, or type none to exit: ")

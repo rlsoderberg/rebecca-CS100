@@ -1,6 +1,35 @@
-print('Welcome to CHOOSE YOUR MADLIB\nwill it be:\nA)classic mad lib B)koshism C)rocky horror')
+#input functions
+def inputio():
+    valid = False
+    while valid == False:
+        try:
+            x =  input()
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return x
+print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
-f = open('madlibtest.txt', 'r')
+#getting madlib selection
+legit = False
+while legit == False:
+    print('A)classic mad lib B)koshism C)rocky horror')
+    x = inputio()
+    if x == "a" or x == "A":
+        filename = "madlibtest.txt"
+        legit = True
+    elif x == "b" or x == "B":
+        filename = "koshism.txt"
+        legit = True
+    elif x == "c" or x == "C":
+        filename = "rockyhorror.txt"
+        legit = True
+    else:
+        print("Invalid Input!") 
+
+
+#input / line transfer
+f = open(filename, 'r')
 story = ''
 for line in f:
 
@@ -15,6 +44,7 @@ print(story)
 
 f.close()
 
+#store in madlibstory
 f = open('madlibstory.txt', 'w')
 f.write(story)
 f.close()
