@@ -88,8 +88,16 @@ while item != "none":
     if item != "none":
         itemlist.append(item)
 
-print(itemlist)
 note = open("groceries.txt", 'w')
+lineno = 1
 for c in itemlist:
-    note.write('\n'.join(c))
+    note.write(c+"\n")
+    lineno = lineno + 1
+note.close()
+
+note = open("groceries.txt", 'r')
+lineno = 1
+for line in note:
+    print(str(lineno) + ". " + line.strip())
+    lineno = lineno + 1
 note.close()
