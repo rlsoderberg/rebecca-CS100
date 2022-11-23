@@ -1,26 +1,19 @@
 import random
 
-#binary search function. i got it to go a little faster i guess???
+#binary search function
 def binarysearch(haystack, needle):
     start = 0
     end = len(haystack)
 
-    position = -1
-    while position == -1:
-    #still not working... need to, like, set up a good thing that points to return -1
+    while start <= end:
         i = start + (end-start)//2
-        print(abs(i-end))
-        #although it keeps printing the same abs values!!! what is the deal with that???
-        if(abs(i-end) > 1):
-            if haystack[i] < needle:
-                start = i+(end - i)//2
-            elif haystack[i] > needle:
-                end = i-(i - start)//2
-        else:
-            return i
-            position = i
+        if haystack[i] < needle:
+            start = i + 1
+        elif haystack[i] > needle:
+            end = i - 1
+        else: return i
+    
     return -1
-
 
 def main():
     numbers = []
@@ -31,7 +24,6 @@ def main():
     # sort the numbers so we can use binary search
     numbers.sort()
     target = random.randrange(0,2000)
-    #well, now it keeps always finding target!!! 
     location = binarysearch(numbers, target)
     if location == -1:
         print("couldn't find " + str(target))
