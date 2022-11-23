@@ -1,6 +1,6 @@
 import random
 
-#print introduction
+##print introduction
 print("\n")
 print("  Welcome to \n• ROBOT RISK •")
 print("\n")

@@ -1,3 +1,4 @@
+#student class
 class Student:
     name = ''
     ID = -1
@@ -18,7 +19,6 @@ print("3. ",vars(stud01),"\n")
 
 studentlist = []
 studentlist.append(stud01)
-
 
 stud02 = Student()
 stud02.name = 'Rocky'

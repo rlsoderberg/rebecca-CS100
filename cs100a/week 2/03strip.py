@@ -9,7 +9,7 @@ print("Please enter your current pronouns. ")
 s = 0
 names = []
 
-#input functions
+##input functions
 def inputio():
     valid = False
     while valid == False:

@@ -1,4 +1,4 @@
-#input functions
+##input functions
 def inputio():
     valid = False
     while valid == False:
