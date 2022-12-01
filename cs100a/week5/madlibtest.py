@@ -1,8 +1,9 @@
 #input functions
 import sys
 sys.path.append("../rebecca-CS100A")
-from rebecca-CS100A.i import hello()
-hello()
+#name not working????
+from rebecca-CS100A.i import sp()
+
 
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
@@ -10,7 +11,7 @@ print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 legit = False
 while legit == False:
     print('A)classic mad lib B)koshism C)rocky horror')
-    x = inputio()
+    x = sp(str)
     if x == "a" or x == "A":
         filename = "madlibtest.txt"
         legit = True
