@@ -13,7 +13,7 @@ legit = False
 while legit == False:
     print('A)classic mad lib B)koshism C)rocky horror')
     type = "str"
-    sp(type)
+    x = sp(type)
     if x == "a" or x == "A":
         filename = "madlibtest.txt"
         legit = True

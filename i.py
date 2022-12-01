@@ -46,12 +46,14 @@ def input(type):
 
 def rng(type):
     #what about custom ranges
+    x = input()
     while x < 0:
         print ("Out of range!")
         x = input(type)
     return x
 
 def sp(type):
+    x = input()
     while x == "":
         print ("Out of range!")
         x = input(type)
