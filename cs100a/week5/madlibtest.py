@@ -1,13 +1,16 @@
 def textselect(x):
     if x == "a" or x == "A":
-        x.filename = "madlibtest.txt"
-        x.truth = True
+        filename = "madlibtest.txt"
+        truth = True
+        return filename, truth
     elif x == "b" or x == "B":
-        x.filename = "koshism.txt"
-        x.truth = True
+        filename = "koshism.txt"
+        truth = True
+        return filename, truth
     elif x == "c" or x == "C":
-        x.filename = "rockyhorror.txt"
-        x.truth = True
+        filename = "rockyhorror.txt"
+        truth = True
+        return filename, truth
     else:
         return False
         print("Invalid Input!") 
@@ -30,11 +33,13 @@ while legit == False:
     type = "str"
     x = main(type)
     textselect(x)
-    while x.truth == False:
-        x.truth = textselect(x)
+    while truth == False:
+        textselect(x)
+        filename, truth = textselect(x)
+
 
 #input / line transfer
-f = open(x.filename, 'r')
+f = open(filename, 'r')
 story = ''
 for line in f:
 
