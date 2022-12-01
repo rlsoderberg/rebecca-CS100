@@ -30,11 +30,7 @@ def input(type):
                 print("Invalid Input!")
         return x
 
-
-#still does not allow going back and forth between range limitations
-#wat is sandwich????
-
-def sp(type):
+def blankiness():
     x = input()
     while x == "":
         print ("Out of range!")
@@ -46,20 +42,14 @@ def hello():
 
 
 def main(type, blankiness):
-    if blankiness == True:
-        if type == "str":
-            x = sp(str())
-        elif type == "float":
-            x = sp(float())
-        elif type == "int":
-            x = sp(int())
-    elif blankiness == False:
-        if type == "str":
-            x = str()
-        elif type == "float":
-            x = float()
-        elif type == "int":
-            x = int()
+    #I WANT TO DO SOMETHING WITH BLANKINESS BUT I'M NOT SURE HOW WITHOUT A BUNCH OF COPY PASTING OR SOMETHING
+    #wondering, is blankiness something I should put on the outside?
+    if type == "str":
+        x = input(str())
+    elif type == "float":
+        x = input(float())
+    elif type == "int":
+        x = input(int())
     return x
 
     

@@ -12,6 +12,7 @@ print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 legit = False
 while legit == False:
     #REMINDER handle ranges externally
+    #maybe... also handle blankiness externally?????
     print('A)classic mad lib B)koshism C)rocky horror')
     type = "str"
     blankiness = True
