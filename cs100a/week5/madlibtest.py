@@ -1,6 +1,6 @@
 #input functions
 import sys
-sys.path.append("C:\Users\rlsod\rebeccaCS100")
+sys.path.append("C:..\..\rebeccaCS100")
 #name not working????
 from i import *
 i.hello()
