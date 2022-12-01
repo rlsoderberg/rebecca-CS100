@@ -1,6 +1,6 @@
 import random
 
-def selectionsort(list):
+def selectsort(list):
     for i in range(0, len(list)):
         min = i
         #look for an item smaller than list[min]
@@ -19,7 +19,7 @@ def main():
         numbers.append(random.randrange(0,2000))
 
     print(numbers[0:10])
-    selectionsort(numbers)
+    selectsort(numbers)
     print(numbers[0:10])
     print(__name__)
 

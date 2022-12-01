@@ -3,7 +3,7 @@ import urllib.request
 
 
 
-def selectionsort(list):
+def selectsort(list):
     for i in range(0, len(list)):
         min = i
         #look for a word shorter than list[min]
@@ -22,7 +22,7 @@ def main():
     array = words.split()
 
     print(array[0:10])
-    selectionsort(array)
+    selectsort(array)
     print(array[0:10])
 
 if __name__ == '__main__':

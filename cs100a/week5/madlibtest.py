@@ -1,13 +1,9 @@
 #input functions
-def inputio():
-    valid = False
-    while valid == False:
-        try:
-            x =  input()
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
-    return x
+import sys
+sys.path.append("../rebecca-CS100A")
+from rebecca-CS100A.i import hello()
+hello()
+
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
 #getting madlib selection
