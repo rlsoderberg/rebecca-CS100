@@ -1,9 +1,9 @@
 #input functions
 import sys
-sys.path.append("C:..\..\rebeccaCS100")
+sys.path.append("C:..\..")
 #name not working????
 from i import *
-i.hello()
+hello()
 
 
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
@@ -12,7 +12,8 @@ print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 legit = False
 while legit == False:
     print('A)classic mad lib B)koshism C)rocky horror')
-    x = sp(str)
+    type = "str"
+    sp(type)
     if x == "a" or x == "A":
         filename = "madlibtest.txt"
         legit = True
