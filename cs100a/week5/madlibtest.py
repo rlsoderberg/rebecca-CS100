@@ -11,9 +11,11 @@ print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 #getting madlib selection
 legit = False
 while legit == False:
+    #REMINDER handle ranges externally
     print('A)classic mad lib B)koshism C)rocky horror')
     type = "str"
-    x = sp(type)
+    blankiness = True
+    x = main(type, blankiness)
     if x == "a" or x == "A":
         filename = "madlibtest.txt"
         legit = True
