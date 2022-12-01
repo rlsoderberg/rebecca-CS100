@@ -1,3 +1,18 @@
+def textselect(x):
+    if x == "a" or x == "A":
+        x.filename = "madlibtest.txt"
+        x.truth = True
+    elif x == "b" or x == "B":
+        x.filename = "koshism.txt"
+        x.truth = True
+    elif x == "c" or x == "C":
+        x.filename = "rockyhorror.txt"
+        x.truth = True
+    else:
+        return False
+        print("Invalid Input!") 
+        print("A, B, or C?")
+
 #input functions
 import sys
 sys.path.append("C:..\..")
@@ -14,24 +29,12 @@ while legit == False:
     print('A)classic mad lib B)koshism C)rocky horror')
     type = "str"
     x = main(type)
-    while legit == False:
-        if x == "a" or x == "A":
-            legit = True
-            filename = "madlibtest.txt"
-        elif x == "b" or x == "B":
-            legit = True
-            filename = "koshism.txt"
-        elif x == "c" or x == "C":
-            legit = True
-            filename = "rockyhorror.txt"
-        else:
-            print("Invalid Input!") 
-            print("A, B, or C?")
-            x = main(type)
-
+    textselect(x)
+    while x.truth == False:
+        x.truth = textselect(x)
 
 #input / line transfer
-f = open(filename, 'r')
+f = open(x.filename, 'r')
 story = ''
 for line in f:
 
