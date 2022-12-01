@@ -1,7 +1,6 @@
 #input functions
 import sys
 sys.path.append("C:..\..")
-#name not working????
 from i import *
 hello()
 
@@ -12,22 +11,23 @@ print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 legit = False
 while legit == False:
     #REMINDER handle ranges externally
-    #maybe... also handle blankiness externally?????
     print('A)classic mad lib B)koshism C)rocky horror')
     type = "str"
-    blankiness = True
-    x = main(type, blankiness)
-    if x == "a" or x == "A":
-        filename = "madlibtest.txt"
-        legit = True
-    elif x == "b" or x == "B":
-        filename = "koshism.txt"
-        legit = True
-    elif x == "c" or x == "C":
-        filename = "rockyhorror.txt"
-        legit = True
-    else:
-        print("Invalid Input!") 
+    x = main(type)
+    while legit == False:
+        if x == "a" or x == "A":
+            legit = True
+            filename = "madlibtest.txt"
+        elif x == "b" or x == "B":
+            legit = True
+            filename = "koshism.txt"
+        elif x == "c" or x == "C":
+            legit = True
+            filename = "rockyhorror.txt"
+        else:
+            print("Invalid Input!") 
+            print("A, B, or C?")
+            x = main(type)
 
 
 #input / line transfer
