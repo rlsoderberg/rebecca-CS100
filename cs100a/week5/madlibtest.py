@@ -1,8 +1,9 @@
 #input functions
 import sys
-sys.path.append("../rebecca-CS100A")
+sys.path.append("C:\Users\rlsod\rebeccaCS100")
 #name not working????
-from rebecca-CS100A.i import sp()
+from i import *
+i.hello()
 
 
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
