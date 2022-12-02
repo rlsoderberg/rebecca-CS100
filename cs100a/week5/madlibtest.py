@@ -1,4 +1,10 @@
-def textselect():
+#input functions
+import sys
+sys.path.append("C:..\..")
+from i import *
+hello()
+
+def textselect(type):
     x = main(type)
     legit = False
     while legit == False:
@@ -19,20 +25,13 @@ def textselect():
             print("A, B, or C?")
             x = main(type)
 
-#input functions
-import sys
-sys.path.append("C:..\..")
-from i import *
-hello()
-
-
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
 #getting madlib selection
 #REMINDER handle ranges externally
 print('A)classic mad lib B)koshism C)rocky horror')
 type = "str"
-filename = textselect()
+filename = textselect(type)
 
 
 
