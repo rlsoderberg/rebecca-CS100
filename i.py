@@ -32,23 +32,26 @@ def str():
 def hello():
     print("hello")
 
-def typeselector(type):
+def typeselect(type):
     if type == "str":
-        x = input(str)
+        x = str()
+        return x
     elif type == "float":
-        x = input(float)
+        x = float()
+        return x
     elif type == "int":
-        x = input(int)
+        x = int()
+        return x
 
 def blankiness(x, type):
     while x == "":
         print ("Out of range!")
-        x = typeselector(type)
-    return x
+        x = typeselect(type)
 
-def main(type):
-    x = typeselector(type)
-    blankiness(x, type)
+def main(type, blanky):
+    x = typeselect(type)
+    if blanky == 1:
+        blankiness(x, type)
     return x
 
 

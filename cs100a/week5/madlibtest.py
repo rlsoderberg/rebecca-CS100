@@ -1,29 +1,8 @@
 #input functions
 import sys
 sys.path.append("C:..\..")
-from i import main, hello
+from i import *
 hello()
-
-def textselect(type):
-    x = main(type)
-    legit = False
-    while legit == False:
-        if x == "a" or x == "A":
-            filename = "madlibtest.txt"
-            return filename
-            legit = True
-        elif x == "b" or x == "B":
-            filename = "koshism.txt"
-            return filename
-            legit = True
-        elif x == "c" or x == "C":
-            filename = "rockyhorror.txt"
-            return filename
-            legit = True
-        else:
-            print("Invalid Input!") 
-            print("A, B, or C?")
-            x = main(type)
 
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
@@ -32,9 +11,23 @@ print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 print('A)classic mad lib B)koshism C)rocky horror')
 
 type = "str"
-#OK, so this is the problem. now what?
-filename = textselect(type)
-
+blanky = 1
+x = main(type, blanky)
+legit = False
+while legit == False:
+    if x == "a" or x == "A":
+        filename = "madlibtest.txt"
+        legit = True
+    elif x == "b" or x == "B":
+        filename = "koshism.txt"
+        legit = True
+    elif x == "c" or x == "C":
+        filename = "rockyhorror.txt"
+        legit = True
+    else:
+        print("Invalid Input!") 
+        print("A, B, or C?")
+        x = main(type, blanky)
 
 #input / line transfer
 f = open(filename, 'r')

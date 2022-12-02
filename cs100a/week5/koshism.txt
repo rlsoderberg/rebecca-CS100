@@ -3,5 +3,5 @@ the
 *plural noun 
 must 
 *present-tense plural verb 
-*adjective
+*adverb
 .
