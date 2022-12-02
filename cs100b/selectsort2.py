@@ -18,10 +18,9 @@ def selectsort(list):
 def main():
     # let's make a list of random words
     #i'm still not sure why it's putting "b'" before everything, or why it goes all letters-only after sorting
-    x = urllib.request.urlopen("https://www.mit.edu/~ecprice/wordlist.10000")
+    x = open('words.txt', 'r')
     words = (x.read())
     array = words.split()
-    random.shuffle(array)
 
     print(array[0:10])
     selectsort(array)
