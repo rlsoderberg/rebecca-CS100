@@ -3,7 +3,7 @@ import sys
 sys.path.append("C:..\..")
 from i import main, hello
 hello()
-"""
+
 def textselect(type):
     x = main(type)
     legit = False
@@ -24,16 +24,16 @@ def textselect(type):
             print("Invalid Input!") 
             print("A, B, or C?")
             x = main(type)
-"""
+
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
 #getting madlib selection
 #REMINDER handle ranges externally
 print('A)classic mad lib B)koshism C)rocky horror')
-"""
-type = "str"
-filename = textselect(type)
 
+type = "str"
+#OK, so this is the problem. now what?
+filename = textselect(type)
 
 
 #input / line transfer
@@ -56,4 +56,3 @@ f.close()
 f = open('madlibstory.txt', 'w')
 f.write(story)
 f.close()
-"""
