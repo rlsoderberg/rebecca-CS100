@@ -1,7 +1,7 @@
 #input functions
 import sys
 sys.path.append("C:..\..")
-from i import *
+from i import main, hello
 hello()
 """
 def textselect(type):
