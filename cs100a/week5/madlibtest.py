@@ -1,20 +1,23 @@
-def textselect(x):
-    if x == "a" or x == "A":
-        filename = "madlibtest.txt"
-        truth = True
-        return filename, truth
-    elif x == "b" or x == "B":
-        filename = "koshism.txt"
-        truth = True
-        return filename, truth
-    elif x == "c" or x == "C":
-        filename = "rockyhorror.txt"
-        truth = True
-        return filename, truth
-    else:
-        return False
-        print("Invalid Input!") 
-        print("A, B, or C?")
+def textselect():
+    x = main(type)
+    legit = False
+    while legit == False:
+        if x == "a" or x == "A":
+            filename = "madlibtest.txt"
+            return filename
+            legit = True
+        elif x == "b" or x == "B":
+            filename = "koshism.txt"
+            return filename
+            legit = True
+        elif x == "c" or x == "C":
+            filename = "rockyhorror.txt"
+            return filename
+            legit = True
+        else:
+            print("Invalid Input!") 
+            print("A, B, or C?")
+            x = main(type)
 
 #input functions
 import sys
@@ -26,16 +29,11 @@ hello()
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
 #getting madlib selection
-legit = False
-while legit == False:
-    #REMINDER handle ranges externally
-    print('A)classic mad lib B)koshism C)rocky horror')
-    type = "str"
-    x = main(type)
-    textselect(x)
-    while truth == False:
-        textselect(x)
-        filename, truth = textselect(x)
+#REMINDER handle ranges externally
+print('A)classic mad lib B)koshism C)rocky horror')
+type = "str"
+filename = textselect()
+
 
 
 #input / line transfer
