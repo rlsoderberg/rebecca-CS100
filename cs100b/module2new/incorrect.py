@@ -66,7 +66,6 @@ class TextBox:
 def drawstuff(answer):
     text_box = TextBox()
 
-    screen.onclick(text_box.change_active_state, 1)
     # adding key bindings
     # add more characters to the string to bind them as well
     for new_letter in 'abcdefghijklmnopqrstuvwxyz':
@@ -84,5 +83,3 @@ def drawstuff(answer):
         screen.update()
         time.sleep(0.01)
 
-answer = "yeah we like waffles"
-drawstuff(answer)
