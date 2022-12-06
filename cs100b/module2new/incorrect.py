@@ -63,5 +63,3 @@ def drawstuff(answer):
         if test == 5 or time.time() > timeout:
             break
         test = test - 1
-    
-
