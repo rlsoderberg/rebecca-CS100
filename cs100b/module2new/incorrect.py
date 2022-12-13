@@ -1,9 +1,3 @@
-#oooops, see, i come back after weeks and i'm like, ohhh not only have i been slacking, i also need to do examples and typing
-#therefore i need to make up for it by doing all the things i don't know how to do
-#so here i am trying to do all the things, and make an incorrect sound like in QI
-#doesn't work, breaks after second 'incorrect answer'
-#oh well!!! i will leave it i guess
-
 import winsound
 import turtle
 import time
@@ -59,16 +53,16 @@ class TextBox:
 #here is where the action happens
 def drawstuff(answer):
     text_box = TextBox()
-    #to make it a little less awkward, i cut it off at 4 seconds
-    timeout = time.time() + 4
-    while True:
+    timeout = time.time() + 5.55
+    while time.time() < timeout:
         text_box.update()
         text_box.draw(answer)
         screen.update()
-        #what the heck is time sleep doing? it seems to be important
         time.sleep(0.01)
-        #i found some code to stop the loop and close the turtle window, and it kind of works
-        test = 0
-        if test == 5 or time.time() > timeout:
-            break
-        test = test - 1
+    if time.time() >= timeout:
+        turtle.bye()
+        winsound.PlaySound(None, winsound.SND_PURGE)
+#OK!!! i think i'm closing this wrong
+#like, the turtle keeps running, or something, which makes it go full terminator the second time around
+#i tried using turtle.done(), and turtle.screen.exitonclick(), and those both messed it up
+#i guess i need to learn turtle first!!! it's just like ug, all i want is that quite interesting klaxonical goodness
