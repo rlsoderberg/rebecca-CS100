@@ -8,6 +8,14 @@ from fillin import FillInTheBlank
 from truefalse import TrueFalse
 
 
+#input functions
+import sys
+sys.path.append("C:..\..")
+from i import maine
+#here's the stuff for i input
+type = "str"
+blanky = 1
+
 def main():
     t = Teacher('smith')
     s = Student('jones')
@@ -22,97 +30,15 @@ def main():
 
     for i in range(0, len(exam)):
         exam[i].showQuestion(i+1)
-        resp = input('> ')
+        print('> ', end="")
+        resp = maine(type, blanky)
         if exam[i].checkAnswer(resp) == True:
             print('well done')
         else:
             print('incorrect, sorry')
 
 
+
+
 if __name__ == '__main__':
    main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#multiple choice student: favorite animal (beetle, octopus, capybara, barracuda)
-
-
-
-
-#yesno: will you color a picture of this animal?
-
-
-
-
-#fillin: what writing implement will you use to color the animal
-
-
-
-
-#story: how was your implement / animal composition received at the coloring competition?
-
-
-
-
-
-
-
-
-
-
-#multiple choice teacher: favorite beverage (eggnog, whiskey, coca cola, ginger ale)
-
-
-
-
-#yesno: are you going to water your blants with beverage?
-
-
-
-
-#fillin: what kind of plant will you water with beverage?
-
-
-
-
-#story: how did your plant like being watered with beverage?
-
-
-
-
-
-
-
-
-
-
-#multiple choice driver: favorite food (banana, ravioli, broccoli, enchilada)
-
-
-
-
-#yesno: do you want a map to find food?
-
-
-
-
-#fillin: what type of roadwork lies between you and chimichangas?
-
-
-
-
-#story: how did your map help you navigate roadwork, to chimichangas?
-

@@ -48,7 +48,7 @@ def blankiness(x, type):
         print ("Out of range!")
         x = typeselect(type)
 
-def main(type, blanky):
+def maine(type, blanky):
     x = typeselect(type)
     if blanky == 1:
         blankiness(x, type)
