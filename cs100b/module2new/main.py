@@ -20,21 +20,6 @@ answers = []
 c = 0
 
 
-def sfiller():
-    print('You color in the', answers[c-2], ' using a _______________ writing implement')
-    sfill = FillInTheBlank('', 'sharpie', 5)
-    return sfill
-
-def tfiller():
-    print('Instead, you water your _______________ with the', answers[c-2], '. ')
-    tfill = FillInTheBlank('', 'desk', 5)
-    return tfill
-
-def dfiller():
-    print('There is _______________ roadwork between you and your favorite', answers[c-2], 'restaurant.')
-    dfill = FillInTheBlank('', 'asphalt melting', 5)
-    return dfill
-
 def persona():
     t = Teacher('smith')
     s = Student('jones')
@@ -45,17 +30,17 @@ def persona():
 
 def selecto():
     print("are you a student, a teacher, or a driver?")
-    t = maine(type, blanky)
-    while t != 'student' and t != 'teacher' and t!= 'driver':
+    type = maine(type, blanky)
+    while type != 'student' and type != 'teacher' and type!= 'driver':
         print("invalid input.")
         print("are you a student, a teacher, or a driver?")
-        t = maine(type, blanky)
-    if t == 'student':
-        b = 0
-    elif t == 'teacher':
-        b = 1
-    elif t == 'driver':
-        b = 2
+        type = maine(type, blanky)
+        if type == 'student':
+            b = 0
+        elif type == 'teacher':
+            b = 1
+        elif type == 'driver':
+            b = 2
 
     return b
         
@@ -75,29 +60,19 @@ def checkio(exam, b):
 
 def main():
     b = selecto()
-#i know this is bad, but i need to initialize these first somehow, right???
-    smc = 0
-    tmc = 0
-    dmc = 0
-    stf = 0
-    ttf = 0
-    dtf = 0
-    sfill = 0
-    tfill = 0
-    dfill = 0
-
-    exam = [[smc, stf, sfill],[tmc, ttf, tfill],[dmc, dtf, dfill]]
 
     #ideally i want to put these in, like, a list or something, so i can execute them up in checkio
-    smc = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
-    tmc = Multichoice("what is your favorite beverage?", '3', ['eggnog', 'whiskey', 'coca cola', 'ginger ale'])
-    dmc = Multichoice('what is your favorite food', '4', ['banana', 'ravioli','broccoli','enchilada'])
-    stf = TrueFalse('you will color a picture of this animal', '1')
-    ttf = TrueFalse('you will water your plants with this beverage', '2')
-    dtf = TrueFalse('you want a map to find this food', '1')
-    sfill = sfiller()
-    tfill = tfiller()
-    dfill = dfiller()
+    m0 = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
+    m1 = Multichoice("what is your favorite beverage?", '3', ['eggnog', 'whiskey', 'coca cola', 'ginger ale'])
+    m2 = Multichoice('what is your favorite food', '4', ['banana', 'ravioli','broccoli','enchilada'])
+    t0 = TrueFalse('you will color a picture of '+m0, '1')
+    t1 = TrueFalse('you will water your plants with '+m1, '2')
+    t2 = TrueFalse('you want a map to find '+m2, '1')
+    f0 = FillInTheBlank('You color in the'+m0+' using a _______________ writing implement','sharpie',536202)
+    f1 = FillInTheBlank('Instead, you water your _______________ with the'+m1+'. ','desk',404728)
+    f2 = FillInTheBlank('There is _______________ roadwork between you and your favorite'+m0+'restaurant.','asphalt melting',5479032)
+
+    exam = [(m0, t0, f0),(m1,t1,f1),(m2,t2,f2)]
 
     #and then down here i can just be be like, checkio
     
