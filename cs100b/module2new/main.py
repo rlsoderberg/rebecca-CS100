@@ -30,17 +30,21 @@ def persona():
 
 
 def selecto():
-    print("are you a student, a teacher, or a driver?")
-    type = maine(type, blanky)
-    while type != 'student' and type != 'teacher' and type!= 'driver':
-        print("invalid input.")
-        print("are you 1. a student, 2. a teacher, or 3. a driver?")
-        typenum = maine(type, blanky)
-        while typenum != 0:
-            print("that is wrong")
-            type = maine(type, blanky)
+    print("are you 1. a student, 2. a teacher, or 3. a driver?")
+    typo = maine(type, blanky)
+    if typo == '1':
+        print("valid input.")
+        return typo
+    while typo != '1':
+        if typo == '1':
+            print("valid input.")
+            return typo
+        else:
+            print("invalid input.")
+            print("are you 1. a student, 2. a teacher, or 3. a driver?")
+            typo = maine(type, blanky)
 
-    return typenum
+    return typo
         
 
 def checkio(answ):
@@ -50,25 +54,25 @@ def checkio(answ):
         print('incorrect, sorry')
 
 def student(num):
+    propnum = num + 1
     if num == 0:
-        QuizQuestion.showQuestion(num + 1)
+        QuizQuestion.showQuestion(propnum)
         mc = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
         checkio(mc)
     elif num == 1:
-        QuizQuestion.showQuestion(num + 1)
+        QuizQuestion.showQuestion(propnum)
         tf = TrueFalse('you will color a picture of '+mc, '1')
         checkio(tf)
     elif num == 2:
-        QuizQuestion.showQuestion(num + 1)
+        QuizQuestion.showQuestion(propnum)
         fib = FillInTheBlank('You color in the'+mc+' using a _______________ writing implement','sharpie',10)
         checkio(fib)
 
 def main():
     nums = [0,1,2]
-    type = selecto()
-    if type == 0:
-        for b in nums:
-            student(b)
+    selectoni = selecto()
+    for b in nums:
+        student(b)
 
     
 
