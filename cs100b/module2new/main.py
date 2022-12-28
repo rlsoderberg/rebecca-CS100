@@ -7,6 +7,8 @@ from multichoice import Multichoice
 from fillin import FillInTheBlank
 from truefalse import TrueFalse
 
+from checkanswer import CheckAnswer
+
 
 #input functions
 import sys
@@ -45,36 +47,58 @@ def selecto():
     return b
         
 
-def checkio(exam, b):
-    for i in range(0, len(exam[b])):
-        #execute exam[b][i]
-        exam[b][i].showQuestion(i+1)
-        print('> ', end="")
-        resp = maine(type, blanky)
-        answers.append(exam[b][i])
-        if exam[b][i].checkAnswer(resp) == True:
-            print('well done')
-        else:
-            print('incorrect, sorry')
-        c += 1
+def checkio(answ):
+    if CheckAnswer(answ) == True:
+        print('well done')
+    else:
+        print('incorrect, sorry')
+
+def student(num):
+    if num == 0:
+        mc = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
+        checkio(mc)
+    elif num == 1:
+        tf = TrueFalse('you will color a picture of '+mc, '1')
+        checkio(tf)
+    elif num == 2:
+        fib = FillInTheBlank('You color in the'+mc+' using a _______________ writing implement','sharpie',10)
+        checkio(fib)
+
+def teacher(num):
+    if num == 0:
+        mc = Multichoice("what is your favorite beverage?", '3', ['eggnog', 'whiskey', 'coca cola', 'ginger ale'])
+        checkio(mc)
+    elif num == 1:
+        tf = TrueFalse('you will water your plants with '+mc, '2')
+        checkio(tf)
+    elif num == 2:
+        fib = FillInTheBlank('you decide to water your _______________ with the'+mc+'. ','desk',10)
+        checkio(fib)
+
+def driver(num):
+    if num == 0:
+        mc = Multichoice('what is your favorite food', '4', ['banana', 'ravioli','broccoli','enchilada'])
+        checkio(mc)
+    elif num == 1:
+        tf = TrueFalse('you want a map to find '+mc, '1')
+        checkio(tf)
+    elif num == 2:
+        fib = FillInTheBlank('There is _______________ roadwork between you and the nearest'+mc+'restaurant.','asphalt melting',10)
+        checkio(fib)
 
 def main():
-    b = selecto()
+    nums = [0,1,2]
+    type = selecto()
+    if type == 0:
+        for b in nums:
+            student()
+    if type == 1:
+        for b in nums:
+            teacher()
+    if type == 2:
+        for b in nums:
+            driver()
 
-    #ideally i want to put these in, like, a list or something, so i can execute them up in checkio
-    m0 = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
-    m1 = Multichoice("what is your favorite beverage?", '3', ['eggnog', 'whiskey', 'coca cola', 'ginger ale'])
-    m2 = Multichoice('what is your favorite food', '4', ['banana', 'ravioli','broccoli','enchilada'])
-    t0 = TrueFalse('you will color a picture of '+m0, '1')
-    t1 = TrueFalse('you will water your plants with '+m1, '2')
-    t2 = TrueFalse('you want a map to find '+m2, '1')
-    f0 = FillInTheBlank('You color in the'+m0+' using a _______________ writing implement','sharpie',536202)
-    f1 = FillInTheBlank('Instead, you water your _______________ with the'+m1+'. ','desk',404728)
-    f2 = FillInTheBlank('There is _______________ roadwork between you and your favorite'+m0+'restaurant.','asphalt melting',5479032)
-
-    exam = [(m0, t0, f0),(m1,t1,f1),(m2,t2,f2)]
-
-    #and then down here i can just be be like, checkio
     
 
 
