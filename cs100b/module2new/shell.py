@@ -6,7 +6,7 @@ from i import *
 type = "str"
 blanky = 1
 
-answer = main(type, blanky)
+answer = maine(type, blanky)
 while (answer != "capybara"):
     if answer in list:        
         import incorrect
@@ -14,10 +14,10 @@ while (answer != "capybara"):
         #still can't handle 2 incorrects
         print("that is incorrect")
         print("what is your favorite animal?")
-        answer = main(type, blanky)
+        answer = maine(type, blanky)
     if answer not in list:
         print("that is incorrect")
         print("what is your favorite animal?")
-        answer = main(type, blanky)
+        answer = maine(type, blanky)
 if answer == "capybara":
     print("that is correct")

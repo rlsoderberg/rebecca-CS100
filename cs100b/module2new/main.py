@@ -7,7 +7,7 @@ from multichoice import Multichoice
 from fillin import FillInTheBlank
 from truefalse import TrueFalse
 
-from checkanswer import CheckAnswer
+from quizquestion import checkAnswer
 
 
 #input functions
@@ -48,13 +48,14 @@ def selecto():
         
 
 def checkio(answ):
-    if CheckAnswer(answ) == True:
+    if checkAnswer(answ) == True:
         print('well done')
     else:
         print('incorrect, sorry')
 
 def student(num):
     if num == 0:
+        showQuestion(num + 1) #??????????????
         mc = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
         checkio(mc)
     elif num == 1:
@@ -65,17 +66,22 @@ def student(num):
         checkio(fib)
 
 def teacher(num):
-    if num == 0:
-        mc = Multichoice("what is your favorite beverage?", '3', ['eggnog', 'whiskey', 'coca cola', 'ginger ale'])
-        checkio(mc)
-    elif num == 1:
-        tf = TrueFalse('you will water your plants with '+mc, '2')
-        checkio(tf)
-    elif num == 2:
-        fib = FillInTheBlank('you decide to water your _______________ with the'+mc+'. ','desk',10)
-        checkio(fib)
+    print("teacher does not exist")
+    """
+        if num == 0:
+            mc = Multichoice("what is your favorite beverage?", '3', ['eggnog', 'whiskey', 'coca cola', 'ginger ale'])
+            checkio(mc)
+        elif num == 1:
+            tf = TrueFalse('you will water your plants with '+mc, '2')
+            checkio(tf)
+        elif num == 2:
+            fib = FillInTheBlank('you decide to water your _______________ with the'+mc+'. ','desk',10)
+            checkio(fib)
+        """
 
 def driver(num):
+    print("driver does not exist")
+    """
     if num == 0:
         mc = Multichoice('what is your favorite food', '4', ['banana', 'ravioli','broccoli','enchilada'])
         checkio(mc)
@@ -85,6 +91,7 @@ def driver(num):
     elif num == 2:
         fib = FillInTheBlank('There is _______________ roadwork between you and the nearest'+mc+'restaurant.','asphalt melting',10)
         checkio(fib)
+    """
 
 def main():
     nums = [0,1,2]
@@ -92,10 +99,10 @@ def main():
     if type == 0:
         for b in nums:
             student()
-    if type == 1:
+    elif type == 1:
         for b in nums:
             teacher()
-    if type == 2:
+    elif type == 2:
         for b in nums:
             driver()
 
