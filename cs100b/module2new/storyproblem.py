@@ -7,3 +7,4 @@ class StoryProblem(QuizQuestion):
         self._totalPoints = totalPoints
         self._parameters = parameters
         self._walkthrough = walkthrough
+

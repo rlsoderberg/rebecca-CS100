@@ -19,7 +19,7 @@ def main():
     fill = FillInTheBlank('Time is _______________ .', 'mushroom', 5)
 
     exam = [sp, mc, tf, fill]
-    
+    print('whereblank = ',fill._whereBlank)
     for i in range(0, len(exam)):
         exam[i].showQuestion(i+1)
         resp = input('> ')
@@ -30,3 +30,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
