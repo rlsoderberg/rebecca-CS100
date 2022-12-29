@@ -52,6 +52,7 @@ def main():
     t.eat()
     
     smc = Multichoice("what is your favorite animal?", '3', ['beetle', 'octopus', 'capybara', 'barracuda'])
+    smc.choices[response] #whatever this is!!!!!!!!!!
     stf = TrueFalse('you will color a picture of '+smc, '1')
     sfib = FillInTheBlank('You color in the'+smc+' using a _______________ writing implement','sharpie',10)
 
