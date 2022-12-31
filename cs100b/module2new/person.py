@@ -1,3 +1,5 @@
+#2.1
+
 class Person:
 
     def __init__(self, name='', ID=-1, birthdate='1/1/2000'):
@@ -10,6 +12,9 @@ class Person:
 
     def sleep(self):
         print('snore')
+
+    def introduction(self):
+        print('hello my name is'+self.name)
 
 
 

@@ -1,4 +1,5 @@
 #1.1
+#1.4
 
 from person import Person
 
@@ -8,5 +9,12 @@ class Teacher(Person):
 
     def books(self, booknum):
         print(self.name+' stacks '+booknum+' books in reverse alphabetical order.')
+
+    def lecture(self, subject):
+        print(self.name+'is giving a lecture on'+subject)
+
+    def introduction(self):
+        print('good morning, my name is professor'+self.name)
+
 
 
