@@ -4,7 +4,7 @@ sys.path.append('../..')
 from i import maine
 
 type = "str"
-blanky = 1
-x = maine(type, blanky)
+antiblanky = 1
+x = maine(type, antiblanky)
 print(x)
 
