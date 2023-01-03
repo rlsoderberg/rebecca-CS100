@@ -1,7 +1,7 @@
 import sys
-sys.path.append('../../')
+sys.path.append('../..')
 
-from i import *
+from i import maine
 
 type = "str"
 blanky = 1

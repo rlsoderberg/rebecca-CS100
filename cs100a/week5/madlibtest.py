@@ -1,8 +1,7 @@
 #input functions
 import sys
-sys.path.append("C:..\..")
-from i import *
-hello()
+sys.path.append("C:../..")
+from i import maine
 
 print('Welcome to CHOOSE YOUR MADLIB\nwill it be:')
 
@@ -12,7 +11,7 @@ print('A)classic mad lib B)koshism C)rocky horror')
 
 type = "str"
 blanky = 1
-x = main(type, blanky)
+x = maine(type, blanky)
 legit = False
 while legit == False:
     if x == "a" or x == "A":

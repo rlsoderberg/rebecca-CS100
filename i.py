@@ -2,7 +2,7 @@ def int():
     valid = False
     while valid == False:
         try:
-            x = int(input())
+            x = int(input('give me an int: '))
             valid = True
         except ValueError:
             print("Invalid Input!")
@@ -13,7 +13,7 @@ def float():
     valid = False
     while valid == False:
         try:
-            x = float(input())
+            x = float(input('give me a float: '))
             valid = True
         except ValueError:
             print("Invalid Input!")
@@ -23,7 +23,7 @@ def str():
     valid = False
     while valid == False:
         try:
-            x = input()
+            x = input('give me a string: ')
             valid = True
         except ValueError:
             print("Invalid Input!")
@@ -47,12 +47,14 @@ def blankiness(x, type):
     while x == "":
         print ("Out of range!")
         x = typeselect(type)
+    return x
 
 def maine(type, blanky):
     x = typeselect(type)
+    ret = ''
     if blanky == 1:
-        blankiness(x, type)
-    return x
+        ret = blankiness(x, type)
+    return ret
 
 
     
