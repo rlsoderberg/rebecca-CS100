@@ -5,8 +5,6 @@ class LifeSaver:
     def __init__(self, flavor):
         self.flavor=flavor
 
-tube = collections.deque()
-
 import collections
 import random
 
