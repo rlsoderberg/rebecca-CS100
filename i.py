@@ -1,3 +1,4 @@
+#look at all this copy pasting!!! can i do, like, varying criteria or something somehow???
 def blankfriendlyint():
     valid = False
     while valid == False:
@@ -57,6 +58,7 @@ def antiblankystr():
     while valid == False:
         try:
             x = input('give me a string: ')
+#what??? i found this and it works, but how is 'empty string' even used???
             if not x:
                 raise ValueError('empty string')
             valid = True
