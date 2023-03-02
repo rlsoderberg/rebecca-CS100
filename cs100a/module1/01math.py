@@ -3,9 +3,6 @@ sys.path.append('../..')
 
 from i import maine
 
-type = "int"
-antiblanky = 1
-
 import random
 
 def int_gen():
@@ -14,31 +11,87 @@ def int_gen():
 def float_gen():
     return random.uniform(0, 9.9)
 
-prob_num = 0
-op_num = 0
+def problem(prob_num, prob_vars,prob_eqs,op_names,rand_int,rand_float, var_type):
+    print("Problem "+prob_num+": "+op_names[prob_num])
+
+    if var_type == "int":
+        x = int_vars[0]
+        y = int_vars[1]
+        z = int_vars[2]
+    elif var_type == "float":
+        x = float_vars[0]
+        y = float_vars[1]
+        z = float_vars[2]
+    #you see how, right here, i'm actually trying to plug stuff into the equation??? how do i do that???
+    solution = prob_eqs[prob_num]
+    print(prob_strings[prob_num] + "= "+ solution)
+    print("press 1 to guess a variable, and press 2 to continue to the next operation")
+    type = "int"
+    antiblanky = 1
+    action = maine(type, antiblanky)
+    if action == 1:
+        print("would you like to guess x, y, or z?")
+        type = "string"
+        antiblanky = 1
+        #how do i do it so they choose a letter, and it marks which letter they picked (and the number it correlates with)????
+        <secret-number>guess_letter = maine(type, antiblanky)
+        print(guess_letter+"= ")
+        type = "float"
+        antiblanky = 1
+        guess_input = maine(type, antiblanky)
+        if guess_input == <secret-number>rand_int
+
+
+
+    prob_num +=1
+
+def int_prob(int_vars):
+    print("Problem "+prob_num+": "+op_names[prob_num])
+    x = int_vars[0]
+    y = int_vars[1]
+    z = int_vars[2]
+    solution = prob_eqs[prob_num]
+    print(prob_strings[prob_num] + "= "+ solution)
+    print("press 1 to guess a variable, and press 2 to continue to the next operation")
+    type = "int"
+    antiblanky = 1
+    var_select = maine(type, antiblanky)
+    guess_check(var_select, int_vars)
+
+def int_array():
+    for n in range(0, 3):
+        rand_int = int_gen()
+        int_vars.append(rand_int)
+        n+=1
+
+def float_array():
+    for n in range(0, 3):
+        longfloat = float_gen()
+        rand_float = round(longfloat, 1)
+        float_vars.append(rand_float)
+        n+=1
+
+def type_select(var_type, int_vars, float_vars):
+    if var_type == "int"
+        int_prob(int_vars)
+    elif var_type == "float"
+        float_prob(float_vars)
+
+var_type = "int"
+prob_num = 1
 int_vars = []
 float_vars = []
+#also why does %x always turn blue?
+prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
+prob_eqs = [x + y + x,z - y - x,x * y * z,(x+y)/z,(y-z)%x,x**z+y**z]
+op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 rand_int = 0
 rand_float = 0
 
-for n in range(0, 3):
-    rand_int = int_gen()
-    int_vars.append(rand_int)
-    n+=1
 
-for n in range(0, 3):
-    longfloat = float_gen()
-    rand_float = round(longfloat, 1)
-    float_vars.append(rand_float)
-    n+=1
 
-for n in range(0, 3):
-    print(int_vars[n])
-    n+=1
 
-for n in range(0, 3):
-    print(float_vars[n])
-    n+=1
+
 
 
 
