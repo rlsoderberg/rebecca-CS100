@@ -16,22 +16,21 @@ def float_gen():
 
 prob_num = 0
 op_num = 0
-#i swear, there was a way around initializing the array like this, like using 'new' or something in the for loop
-int_vars = [0,0,0]
-float_vars = [0,0,0]
+int_vars = []
+float_vars = []
 rand_int = 0
 rand_float = 0
 
 for n in range(0, 3):
     rand_int = int_gen()
-    int_vars[n] = rand_int
+    int_vars.append = rand_int
     n+=1
 
 for n in range(0, 3):
     longfloat = float_gen()
     rand_float = round(longfloat, 2)
     #why did it do this weird thing where for n = 0 it made a float with 2 decimal places, but for higher ns it made longer floats???
-    float_vars[n] = rand_float
+    float_vars.append = rand_float
     n+=1
 
 for n in range(0, 3):
