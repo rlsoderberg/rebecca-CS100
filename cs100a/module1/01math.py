@@ -63,8 +63,7 @@ def int_prob(int_vars, prob_num):
             if (correctness == 1):
                 correct_count += 1
         elif choose_path == 2:
-            #exit
-    #why doesn't it like my prob_num?
+            quit()
     prob_num += 1
         
 #3. i have these, like, peripheral functions generating random ints. as well as the int_gens up there, which are feeding them.
@@ -76,10 +75,10 @@ def int_array(int_vars):
     return int_vars
 
 #2. here i am, picking a type, and sending to int_prob. i am sending up my empty int array, int_vars
-def type_select(var_type, int_vars, float_vars):
-    int_vars = int_array()
+def type_select(var_type, int_vars, float_vars, prob_num):
+    int_vars = int_array(int_vars)
     if var_type == "int":
-        int_prob(int_vars)
+        int_prob(int_vars, prob_num)
 
 
 var_type = "int"
@@ -87,9 +86,10 @@ prob_num = 1
 int_vars = []
 float_vars = []
 prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
-prob_eqs = [x + y + x,z - y - x,x * y * z,(x+y)/z,(y-z)%x,x**z+y**z]
+#hmmmmmmmmm, how am i going to write these expressions????
+#prob_eqs = [x + y + x,z - y - x,x * y * z,(x+y)/z,(y-z)%x,x**z+y**z]
 op_names = ["0", "Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 rand_int = 0
 rand_float = 0
 #1. i am starting this off by picking a type (although i only have int going right now)
-type_select(var_type, int_vars, float_vars)
+type_select(var_type, int_vars, float_vars, prob_num)
