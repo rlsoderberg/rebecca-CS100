@@ -11,7 +11,37 @@ def int_gen():
 def float_gen():
     return random.uniform(0, 9.9)
 
-def guess_check(var_select, int_vars):
+def correctness(guess):
+    if int_vars[<secret number>] == guess:
+        correctness = 1
+    elif int_vars[<secret number>] != guess:
+        correctness = 2
+    
+
+
+def guess_variable():
+    print("which variable do you wish to guess? x, y, or z?")
+    #make a filter for letters other than x, y, or z
+    type = "string"
+    antiblanky = 1
+    var_letter = maine(type, antiblanky)
+    #see, i should totally be able to skip this part where i'm checking these variables separately, but i don't know how!!!!
+    if var_letter == "x":
+    #there was totally a point in writing this program where i started referring to <secret numbers>
+    #but now i can't find it!!!
+    #<secret number> is what i want
+    #the value in int_vars that is connected with a certain var_letter
+        print("x = ")
+        type = "string"
+        antiblanky = 1
+        guess = maine(type, antiblanky)
+        #<secret number> becomes useful down here in correctness
+        correct = correctness(guess)
+        return correctness
+
+
+
+    
     
 
 
@@ -25,8 +55,13 @@ def int_prob(int_vars):
     print("press 1 to guess a variable, and press 2 to continue to the next operation")
     type = "int"
     antiblanky = 1
-    var_select = maine(type, antiblanky)
-    guess_check(var_select, int_vars)
+    choose_path = maine(type, antiblanky)
+    #while loop isn't what i want!!! i want to allow for incorrect guesses!!!
+    while choose_path == 1:
+        correct = guess_variable()
+        if correct == 1:
+            choose_path = 2
+        
 
 def int_array():
     for n in range(0, 3):
@@ -54,7 +89,7 @@ float_vars = []
 #also why does %x always turn blue?
 prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
 prob_eqs = [x + y + x,z - y - x,x * y * z,(x+y)/z,(y-z)%x,x**z+y**z]
-op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
+op_names = ["0", "Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 rand_int = 0
 rand_float = 0
 
