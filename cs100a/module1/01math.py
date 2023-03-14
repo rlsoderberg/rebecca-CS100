@@ -6,12 +6,14 @@ from i import maine
 import random
 
 
-def correctness_display(correct_count, correctness):
+def correctness_display(correct_count, correctness, prob_count):
     if (correctness == 1):
         correct_count += 1
         print("correct!")
+        print("correct answers: "+correct_count+" out of "+prob_count)
     elif (correctness != 1):
         print("incorrect!")
+        print("correct answers: "+correct_count+" out of "+prob_count)
 
 def check_answer(xyz, letter_pair, solution):
     xyz_num = letter_pair[0]
@@ -72,6 +74,7 @@ def intgen_xyz(prob_num):
 
 
 prob_num = 1
+prob_count = 1
 xyz = []
 prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
 #hmmmmmmmmm, how am i going to write these equations????
@@ -93,4 +96,5 @@ for x in int_question_count:
         correctness = check_answer(xyz, letter_pair, solution)
         correctness_display(correct_count, correctness)
     prob_num += 1
+    prob_count += 1
 #pretend there is another one down here for float_questions
