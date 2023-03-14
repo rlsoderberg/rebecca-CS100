@@ -49,25 +49,23 @@ def prob_display(xyz, prob_num, solution):
     print(prob_strings[prob_num] + "= "+ solution)
     choose_path = 1
     correct_count = 0
-    while choose_path == 1:
-        print("press 1 to guess a variable, and press 2 to continue to the next operation")
-        type = "int"
-        antiblanky = 1
-        choose_path = maine(type, antiblanky)
-        if choose_path == 1:
-            correctness = guess_variable(prob_num)
-            return correctness
-        #does this work, for handling 2???
+    print("press 1 to guess a variable, and press 2 to continue to the next operation")
+    type = "int"
+    antiblanky = 1
+    path_var = maine(type, antiblanky)
+    return path_var
 
-def correct_answers(prob_eqs, prob_num):
-    rand_int = random.randint(0,10)
-    solution = prob_eqs[prob_num]<rand_int>
+def correct_answers(prob_eqs, prob_num, xyz):
+    for x in xyz:
+        d = xyz[x]
+        #don't know how to do this
+        solution = prob_eqs[prob_num]<d>
     return solution
 
 #does this work, passing back arrays like this???
 def intgen_xyz(prob_num):
     for n in range(0, 3):
-        rand_int = int_gen()
+        rand_int = random.randint(0,10)
         xyz.append(rand_int)
         n+=1
     return xyz
@@ -84,13 +82,15 @@ correct_answers(prob_eqs)
 int_question_count = 3
 float_question_count = 3
 for x in int_question_count:
+    path_var = 1
     type = "int"
     correct_count = 0
     xyz = intgen_xyz(prob_num)
-    solution = correct_answers(prob_eqs, prob_num)
-    prob_display(xyz, prob_num, solution)
-    letter_pair = letter_guess()
-    correctness = check_answer(xyz, letter_pair, solution)
-    correctness_display(correct_count, correctness)
+    solution = correct_answers(prob_eqs, prob_num, xyz)
+    path_var = prob_display(xyz, prob_num, solution)
+    while path_var == 1:
+        letter_pair = letter_guess()
+        correctness = check_answer(xyz, letter_pair, solution)
+        correctness_display(correct_count, correctness)
     prob_num += 1
 #pretend there is another one down here for float_questions
