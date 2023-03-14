@@ -41,8 +41,8 @@ def letter_guess():
     return letter_pair
 
 
-def prob_display(xyz, prob_num, solution):
-    print("Problem "+prob_num+": "+op_names[prob_num])
+def prob_display(xyz, prob_strings, solution, op_names):
+    print("Problem "+prob_strings+": "+op_names[prob_num])
     x = xyz[0]
     y = xyz[1]
     z = xyz[2]
@@ -87,7 +87,7 @@ for x in int_question_count:
     correct_count = 0
     xyz = intgen_xyz(prob_num)
     solution = correct_answers(prob_eqs, prob_num, xyz)
-    path_var = prob_display(xyz, prob_num, solution)
+    path_var = prob_display(xyz, prob_strings, solution, op_names)
     while path_var == 1:
         letter_pair = letter_guess()
         correctness = check_answer(xyz, letter_pair, solution)
