@@ -4,7 +4,8 @@ sys.path.append('../..')
 from i import maine
 
 import random
-
+import sympy
+from sympy import symbols, Eq, solve
 
 def correctness_display(correct_count, correctness, prob_count):
     if (correctness == 1):
@@ -15,18 +16,20 @@ def correctness_display(correct_count, correctness, prob_count):
         print("incorrect!")
         print("correct answers: "+correct_count+" out of "+prob_count)
 
-def check_answer(xyz, letter_pair, solution):
-    xyz_num = letter_pair[0]
-    if xyz[xyz_num] == solution:
+def check_answer(abc, letter_pair, solution):
+    abc_num = letter_pair[0]
+    if abc[abc_num] == solution:
         correctness = 1
     return correctness
 
 
 def letter_guess():
     print("which variable do you wish to guess? x, y, or z?")
-    #make a filter for letters other than x, y, or z
     type = "string"
     antiblanky = 1
+    var_to_guess = maine(type, antiblanky)
+    while var_to_guess != 'x' and var_to_guess != 'y' and var_to_guess != 'z':
+        var_to_guess = maine(type, antiblanky)
     letter_pair = (0,0)
     var_letter = maine(type, antiblanky)
     if var_letter == "x":
@@ -43,11 +46,11 @@ def letter_guess():
     return letter_pair
 
 
-def prob_display(xyz, prob_strings, solution, op_names):
+def prob_display(abc, prob_strings, solution, op_names):
     print("Problem "+prob_strings+": "+op_names[prob_num])
-    x = xyz[0]
-    y = xyz[1]
-    z = xyz[2]
+    a = abc[0]
+    b = abc[1]
+    c = abc[2]
     print(prob_strings[prob_num] + "= "+ solution)
     choose_path = 1
     correct_count = 0
@@ -57,44 +60,51 @@ def prob_display(xyz, prob_strings, solution, op_names):
     path_var = maine(type, antiblanky)
     return path_var
 
-def correct_answers(prob_eqs, prob_num, xyz):
-    for x in xyz:
-        d = xyz[x]
-        #don't know how to do this
-        solution = prob_eqs[prob_num]<d>
+def correct_answers(prob_eqs, prob_num, abc):
+    for b in abc:
+        #i don't think i'm transferring these symbols right, and i don't know if sympy is the best way to do this
+        x, y, z = symbols('x y z')
+        d = abc[b]
+        solution = solve(d)
     return solution
 
-#does this work, passing back arrays like this???
-def intgen_xyz(prob_num):
+def floatgen_abc(abc):
+    for n in range(0, 3):
+        rand_float = random.uniform(0,9.9)
+        abc.append(rand_float)
+        n+=1
+    return abc
+
+def intgen_abc(abc):
     for n in range(0, 3):
         rand_int = random.randint(0,10)
-        xyz.append(rand_int)
+        abc.append(rand_int)
         n+=1
-    return xyz
+    return abc
 
 
 prob_num = 1
 prob_count = 1
-xyz = []
+abc = []
 prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
-#hmmmmmmmmm, how am i going to write these equations????
-prob_eqs = [x + y + x,z - y - x,x * y * z,(x+y)/z,(y-z)%x,x**z+y**z]
+x, y, z = symbols('x y z')
+prob_eqs = [(x + y + x),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
 op_names = ["0", "Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
-correct_answers(prob_eqs)
-#this does not seem like an efficient way to do this!!!
-int_question_count = 3
-float_question_count = 3
-for x in int_question_count:
-    path_var = 1
-    type = "int"
+total_questions = 6
+
+while total_questions > 0:
     correct_count = 0
-    xyz = intgen_xyz(prob_num)
-    solution = correct_answers(prob_eqs, prob_num, xyz)
-    path_var = prob_display(xyz, prob_strings, solution, op_names)
+    abc.clear()
+    if total_questions >= 3:
+        abc = intgen_abc(abc)
+    elif total_questions < 3:
+        abc = floatgen_abc(abc)
+    solution = correct_answers(prob_eqs, prob_num, abc)
+    path_var = prob_display(abc, prob_strings, solution, op_names)
     while path_var == 1:
         letter_pair = letter_guess()
-        correctness = check_answer(xyz, letter_pair, solution)
+        correctness = check_answer(abc, letter_pair, solution)
         correctness_display(correct_count, correctness)
     prob_num += 1
     prob_count += 1
-#pretend there is another one down here for float_questions
+    total_questions -= 1
