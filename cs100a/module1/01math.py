@@ -25,7 +25,7 @@ def check_answer(abc, letter_pair, solution):
 
 def letter_guess(intfloat):
     print("which variable do you wish to guess? x, y, or z?")
-    type = "string"
+    type = "str"
     antiblanky = 1
     var_select = maine(type, antiblanky)
     while var_select != 'x' and var_select != 'y' and var_select != 'z':
@@ -56,20 +56,17 @@ def letter_guess(intfloat):
     return letter_pair
 
 
-def prob_display(prob_strings, solution, op_names, prob_num, intfloat):
-    print("Problem "+prob_strings+": "+op_names[prob_num])
-    print(prob_strings[prob_num] + "= "+ solution)
+def prob_display(prob_strings, solution, op_names, prob_num):
+    print("Problem "+str(prob_num + 1)+": "+op_names[prob_num])
+    print(str(prob_strings[prob_num]) + " = "+ str(solution[prob_num]))
     choose_path = 1
     correct_count = 0
 
-    print("press 1 to guess:")
-    if intfloat == 0:
-        print("an INT variable")     
-    if intfloat == 1:
-        print("a FLOAT variable") 
+    print("press 1 to guess")
     print("press 2 to continue to the next equation")
     antiblanky = 1
-    path_var = maine(type, antiblanky)
+    type = "int"
+    path_var = 0
     while path_var < 1 or path_var > 2:
         path_var = maine(type, antiblanky)
     return path_var
@@ -82,6 +79,7 @@ def correct_answers(prob_eqs, abc, solution):
         #list index out of range . is sympy the right way to do this?????
         x, y, z = symbols('x y z')
         solution.append(solve(prob_eqs))
+    
     return solution
 
 def floatgen_abc(abc):
@@ -99,15 +97,14 @@ def intgen_abc(abc):
     return abc
 
 
-prob_num = 1
+prob_num = 0
 abc = []
 prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
 x, y, z = symbols('x y z')
 prob_eqs = [(x + y + x),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
-op_names = ["0", "Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
+op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 total_questions = 6
 #this seems somewhat inefficient!!!
-intfloat = 0
 
 while total_questions > 0:
     correct_count = 0
@@ -120,7 +117,7 @@ while total_questions > 0:
         abc = floatgen_abc(abc)
     solution = []
     solution = correct_answers(prob_eqs, abc, solution)
-    path_var = prob_display(prob_strings, solution, op_names, prob_num)
+    path_var = prob_display(prob_strings, solution, op_names, prob_num) 
     while path_var == 1:
         letter_pair = letter_guess(intfloat)
         correctness = check_answer(abc, letter_pair, solution)
