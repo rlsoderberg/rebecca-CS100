@@ -4,8 +4,7 @@ sys.path.append('../..')
 from i import input_function
 
 import random
-import sympy
-from sympy import symbols, Eq, solve, sympify
+from sympy import symbols, Eq, solve
 
 def correctness_display(correct_count, correctness, prob_count):
     if (correctness == 1):
@@ -71,7 +70,7 @@ def prob_display(prob_strings, solution, op_names, prob_num):
         path_var = input_function(type, antiblanky)
     return path_var
 
-def correct_answers(prob_strings, abc, solution, prob_num):
+def correct_answers(prob_eqs, abc, solution, prob_num):
     expr = prob_eqs[prob_num]
     a = abc[0]
     b = abc[1]
@@ -79,10 +78,9 @@ def correct_answers(prob_strings, abc, solution, prob_num):
     print(a)
     print(b)
     print(c)
-    for b in abc:
-        x, y, z = symbols('x y z')
-        expr.subs({x:a, y:b, z:c})
-        solution.append(expr)
+    x, y, z = symbols('x y z')
+    expr.subs({x:a, y:b, z:c})
+    solution.append(expr)
     
     return solution
 
@@ -120,7 +118,7 @@ while total_questions > 0:
         intfloat = 1
         abc = floatgen_abc(abc)
     solution = []
-    solution = correct_answers(prob_strings, abc, solution, prob_num)
+    solution = correct_answers(prob_eqs, abc, solution, prob_num)
     path_var = prob_display(prob_strings, solution, op_names, prob_num) 
     while path_var == 1:
         letter_pair = letter_guess(intfloat)
