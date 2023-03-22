@@ -5,7 +5,7 @@ from i import input_function
 
 import random
 import sympy
-from sympy import symbols, Eq, solve
+from sympy import symbols, Eq, solve, sympify
 
 def correctness_display(correct_count, correctness, prob_count):
     if (correctness == 1):
@@ -71,13 +71,18 @@ def prob_display(prob_strings, solution, op_names, prob_num):
         path_var = input_function(type, antiblanky)
     return path_var
 
-def correct_answers(prob_eqs, abc, solution, prob_num):
-    x = abc[0]
-    y = abc[1]
-    z = abc[2]
+def correct_answers(prob_strings, abc, solution, prob_num):
+    expr = prob_eqs[prob_num]
+    a = abc[0]
+    b = abc[1]
+    c = abc[2]
+    print(a)
+    print(b)
+    print(c)
     for b in abc:
         x, y, z = symbols('x y z')
-        solution.append(solve(prob_eqs[prob_num]))
+        expr.subs({x:a, y:b, z:c})
+        solution.append(expr)
     
     return solution
 
@@ -98,7 +103,8 @@ def intgen_abc(abc):
 
 prob_num = 0
 abc = []
-prob_strings = ["x + y + x","z - y - x","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
+#is there a better way to do this than sympy?????
+prob_strings = ["x + y + x = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
 x, y, z = symbols('x y z')
 prob_eqs = [(x + y + x),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
 op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
@@ -114,7 +120,7 @@ while total_questions > 0:
         intfloat = 1
         abc = floatgen_abc(abc)
     solution = []
-    solution = correct_answers(prob_eqs, abc, solution, prob_num)
+    solution = correct_answers(prob_strings, abc, solution, prob_num)
     path_var = prob_display(prob_strings, solution, op_names, prob_num) 
     while path_var == 1:
         letter_pair = letter_guess(intfloat)
