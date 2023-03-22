@@ -22,7 +22,7 @@ def check_answer(abc, letter_pair, solution):
     return correctness
 
 
-def letter_guess(intfloat):
+def letter_guess():
     print("which variable do you wish to guess? x, y, or z?")
     type = "str"
     antiblanky = 1
@@ -32,24 +32,15 @@ def letter_guess(intfloat):
     letter_pair = (0,'f')
     var_letter = input_function(type, antiblanky)
     if var_letter == "x":
-        if intfloat == 0:
-            print("INT x = ")     
-        if intfloat == 1:
-            print("FLOAT x = ") 
+        print("int x =")
         letter_pair[0] = 0
         letter_pair[1] = input_function(type, antiblanky)
     elif var_letter == "y":
-        if intfloat == 0:
-            print("INT y = ")     
-        if intfloat == 1:
-            print("FLOAT y = ") 
+        print("int y =")
         letter_pair[0] = 1
         letter_pair[1] = input_function(type, antiblanky)
     elif var_letter == "z":
-        if intfloat == 0:
-            print("INT z = ")     
-        if intfloat == 1:
-            print("FLOAT z = ") 
+        print("int z =") 
         letter_pair[0] = 2
         letter_pair[1] = input_function(type, antiblanky)
     return letter_pair
@@ -111,18 +102,15 @@ total_questions = 6
 while total_questions > 0:
     correct_count = 0
     abc.clear()
-    if total_questions >= 3:
-        intfloat = 0
-        abc = intgen_abc(abc)
-    elif total_questions < 3:
-        intfloat = 1
-        abc = floatgen_abc(abc)
+    #need to distinguish between int abc and floatgen abc, will do later
+    abc = intgen_abc(abc)
     solution = []
     solution = correct_answers(prob_eqs, abc, solution, prob_num)
     path_var = prob_display(prob_strings, solution, op_names, prob_num) 
     while path_var == 1:
-        letter_pair = letter_guess(intfloat)
+        letter_pair = letter_guess()
         correctness = check_answer(abc, letter_pair, solution)
         correctness_display(correct_count, correctness)
     total_questions -= 1
     prob_num += 1
+    #actually, prob_num needs to be op_num, which counts to 6 and then prob_num changes, but i'll leave this for now 
