@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../..')
 
-from i import maine
+from i import input_function
 
 import random
 import sympy
@@ -27,32 +27,32 @@ def letter_guess(intfloat):
     print("which variable do you wish to guess? x, y, or z?")
     type = "str"
     antiblanky = 1
-    var_select = maine(type, antiblanky)
+    var_select = input_function(type, antiblanky)
     while var_select != 'x' and var_select != 'y' and var_select != 'z':
-        var_select = maine(type, antiblanky)
+        var_select = input_function(type, antiblanky)
     letter_pair = (0,'f')
-    var_letter = maine(type, antiblanky)
+    var_letter = input_function(type, antiblanky)
     if var_letter == "x":
         if intfloat == 0:
             print("INT x = ")     
         if intfloat == 1:
             print("FLOAT x = ") 
         letter_pair[0] = 0
-        letter_pair[1] = maine(type, antiblanky)
+        letter_pair[1] = input_function(type, antiblanky)
     elif var_letter == "y":
         if intfloat == 0:
             print("INT y = ")     
         if intfloat == 1:
             print("FLOAT y = ") 
         letter_pair[0] = 1
-        letter_pair[1] = maine(type, antiblanky)
+        letter_pair[1] = input_function(type, antiblanky)
     elif var_letter == "z":
         if intfloat == 0:
             print("INT z = ")     
         if intfloat == 1:
             print("FLOAT z = ") 
         letter_pair[0] = 2
-        letter_pair[1] = maine(type, antiblanky)
+        letter_pair[1] = input_function(type, antiblanky)
     return letter_pair
 
 
@@ -68,17 +68,16 @@ def prob_display(prob_strings, solution, op_names, prob_num):
     type = "int"
     path_var = 0
     while path_var < 1 or path_var > 2:
-        path_var = maine(type, antiblanky)
+        path_var = input_function(type, antiblanky)
     return path_var
 
-def correct_answers(prob_eqs, abc, solution):
+def correct_answers(prob_eqs, abc, solution, prob_num):
     x = abc[0]
     y = abc[1]
     z = abc[2]
     for b in abc:
-        #list index out of range . is sympy the right way to do this?????
         x, y, z = symbols('x y z')
-        solution.append(solve(prob_eqs))
+        solution.append(solve(prob_eqs[prob_num]))
     
     return solution
 
@@ -104,7 +103,6 @@ x, y, z = symbols('x y z')
 prob_eqs = [(x + y + x),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
 op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 total_questions = 6
-#this seems somewhat inefficient!!!
 
 while total_questions > 0:
     correct_count = 0
@@ -116,7 +114,7 @@ while total_questions > 0:
         intfloat = 1
         abc = floatgen_abc(abc)
     solution = []
-    solution = correct_answers(prob_eqs, abc, solution)
+    solution = correct_answers(prob_eqs, abc, solution, prob_num)
     path_var = prob_display(prob_strings, solution, op_names, prob_num) 
     while path_var == 1:
         letter_pair = letter_guess(intfloat)

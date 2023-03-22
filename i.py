@@ -69,7 +69,7 @@ def antiblankystr():
 def hello():
     print("hello")
 
-def blankfriendlytypeselect(type):
+def blanky_typeselect(type):
     if type == "str":
         x = blankfriendlystr()
         return x
@@ -80,7 +80,7 @@ def blankfriendlytypeselect(type):
         x = blankfriendlyint()
         return x
 
-def antiblankytypeselect(type):
+def antiblanky_typeselect(type):
     if type == "str":
         x = antiblankystr()
         return x
@@ -91,12 +91,12 @@ def antiblankytypeselect(type):
         x = antiblankyint()
         return x
 
-def maine(type, antiblanky):
+def input_function(type, antiblanky):
     ret = ""
     if antiblanky == 1:
-        ret = antiblankytypeselect(type)
+        ret = antiblanky_typeselect(type)
     else:
-        ret = blankfriendlytypeselect(type)
+        ret = blanky_typeselect(type)
     return ret
 
 
