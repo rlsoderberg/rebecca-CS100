@@ -63,6 +63,7 @@ def prob_display(prob_strings, solution, op_names, prob_num):
 
 def correct_answers(prob_eqs, abc, solutions, prob_num):
     expr = prob_eqs[prob_num]
+    print(expr)
     a = abc[0]
     b = abc[1]
     c = abc[2]
@@ -70,7 +71,7 @@ def correct_answers(prob_eqs, abc, solutions, prob_num):
     print(b)
     print(c)
     x, y, z = symbols('x y z')
-    solution = expr.subs(x, a).subs(y, a).subs(z,a)
+    solution = expr.subs(x, a).subs(y, b).subs(z,c)
 
 
     solutions.append(solution)
