@@ -96,9 +96,9 @@ def intgen_abc(abc):
 prob_num = 0
 abc = []
 #is there a better way to do this than sympy?????
-prob_strings = ["2*x + yz = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
+prob_strings = ["2*x + y*z = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
 x, y, z = symbols('x y z')
-prob_eqs = [(x + y + x),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
+prob_eqs = [(2*x + y*z),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
 op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 total_questions = 6
 
