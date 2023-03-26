@@ -6,43 +6,40 @@ from i import input_function
 import random
 from sympy import symbols, Eq, solve
 
-def correctness_display(correct_count, correctness, prob_count):
-    if (correctness == 1):
+def correctness_display(abc, letter_pair, solutions, correct_count, prob_num):
+    a = abc[0]
+    b = abc[1]
+    c = abc[2]
+    var_select = letter_pair[0]
+    if (abc[var_select] == letter_pair[1]):
         correct_count += 1
         print("correct!")
-        print("correct answers: "+correct_count+" out of "+prob_count)
-    elif (correctness != 1):
+        print("correct answers: "+str(correct_count)+" out of "+str(prob_num+ 1))
+    elif (abc[var_select] != letter_pair[1]):
         print("incorrect!")
-        print("correct answers: "+correct_count+" out of "+prob_count)
-
-def check_answer(abc, letter_pair, solutions):
-    abc_num = letter_pair[0]
-    if abc[abc_num] == solutions:
-        correctness = 1
-    return correctness
+        print("correct answers: "+str(correct_count)+" out of "+str(prob_num + 1))
 
 
 def letter_guess():
     print("which variable do you wish to guess? x, y, or z?")
     type = "str"
     antiblanky = 1
-    var_select = input_function(type, antiblanky)
+    var_select = "a"
     while var_select != 'x' and var_select != 'y' and var_select != 'z':
         var_select = input_function(type, antiblanky)
     letter_pair = (0,'f')
-    var_letter = input_function(type, antiblanky)
-    if var_letter == "x":
+    if var_select == "x":
+        type = "int"
         print("int x =")
-        letter_pair[0] = 0
-        letter_pair[1] = input_function(type, antiblanky)
-    elif var_letter == "y":
+        letter_pair = (0, input_function(type, antiblanky))
+    elif var_select == "y":
+        type = "int"
         print("int y =")
-        letter_pair[0] = 1
-        letter_pair[1] = input_function(type, antiblanky)
-    elif var_letter == "z":
+        letter_pair = (1, input_function(type, antiblanky))
+    elif var_select == "z":
+        type = "int"
         print("int z =") 
-        letter_pair[0] = 2
-        letter_pair[1] = input_function(type, antiblanky)
+        letter_pair = (2, input_function(type, antiblanky))
     return letter_pair
 
 
@@ -112,10 +109,13 @@ while total_questions > 0:
     path_var = prob_display(prob_strings, solutions, op_names, prob_num) 
     while path_var == 1:
         letter_pair = letter_guess()
-        correctness = check_answer(abc, letter_pair, solutions)
-        correctness_display(correct_count, correctness)
+        correctness_display(abc, letter_pair, solutions, correct_count, prob_num)
+        print("press 1 to guess another variable, or 2 for next question.")
+        antiblanky = 1
+        type = "int"
+        path_var = 0
+        while path_var < 1 or path_var > 2:
+            path_var = input_function(type, antiblanky)
     total_questions -= 1
     prob_num += 1
     #actually, prob_num needs to be op_num, which counts to 6 and then prob_num changes, but i'll leave this for now 
-
-    #my code is i saw my program doing weird stuff
