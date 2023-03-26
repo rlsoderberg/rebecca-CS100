@@ -117,3 +117,5 @@ while total_questions > 0:
     total_questions -= 1
     prob_num += 1
     #actually, prob_num needs to be op_num, which counts to 6 and then prob_num changes, but i'll leave this for now 
+
+    #my code is i saw my program doing weird stuff
