@@ -15,9 +15,9 @@ def correctness_display(correct_count, correctness, prob_count):
         print("incorrect!")
         print("correct answers: "+correct_count+" out of "+prob_count)
 
-def check_answer(abc, letter_pair, solution):
+def check_answer(abc, letter_pair, solutions):
     abc_num = letter_pair[0]
-    if abc[abc_num] == solution:
+    if abc[abc_num] == solutions:
         correctness = 1
     return correctness
 
@@ -48,7 +48,7 @@ def letter_guess():
 
 def prob_display(prob_strings, solution, op_names, prob_num):
     print("Problem "+str(prob_num + 1)+": "+op_names[prob_num])
-    print(str(prob_strings[prob_num]) + " = "+ str(solution[prob_num]))
+    print(str(prob_strings[prob_num]) + " = "+ str(solution))    
     choose_path = 1
     correct_count = 0
 
@@ -61,7 +61,7 @@ def prob_display(prob_strings, solution, op_names, prob_num):
         path_var = input_function(type, antiblanky)
     return path_var
 
-def correct_answers(prob_eqs, abc, solution, prob_num):
+def correct_answers(prob_eqs, abc, solutions, prob_num):
     expr = prob_eqs[prob_num]
     a = abc[0]
     b = abc[1]
@@ -70,10 +70,12 @@ def correct_answers(prob_eqs, abc, solution, prob_num):
     print(b)
     print(c)
     x, y, z = symbols('x y z')
-    expr.subs({x:a, y:b, z:c})
-    solution.append(expr)
+    solution = expr.subs(x, a).subs(y, a).subs(z,a)
+
+
+    solutions.append(solution)
     
-    return solution
+    return solutions
 
 def floatgen_abc(abc):
     for n in range(0, 3):
@@ -93,7 +95,7 @@ def intgen_abc(abc):
 prob_num = 0
 abc = []
 #is there a better way to do this than sympy?????
-prob_strings = ["x + y + x = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
+prob_strings = ["2*x + yz = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
 x, y, z = symbols('x y z')
 prob_eqs = [(x + y + x),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
 op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
@@ -104,12 +106,12 @@ while total_questions > 0:
     abc.clear()
     #need to distinguish between int abc and floatgen abc, will do later
     abc = intgen_abc(abc)
-    solution = []
-    solution = correct_answers(prob_eqs, abc, solution, prob_num)
-    path_var = prob_display(prob_strings, solution, op_names, prob_num) 
+    solutions = []
+    solutions = correct_answers(prob_eqs, abc, solutions, prob_num)
+    path_var = prob_display(prob_strings, solutions, op_names, prob_num) 
     while path_var == 1:
         letter_pair = letter_guess()
-        correctness = check_answer(abc, letter_pair, solution)
+        correctness = check_answer(abc, letter_pair, solutions)
         correctness_display(correct_count, correctness)
     total_questions -= 1
     prob_num += 1
