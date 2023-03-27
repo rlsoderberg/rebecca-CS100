@@ -6,8 +6,10 @@ from i import input_function
 print("select prob_num 1, 2, or 3")
 type_name = "int"
 x = 0
-while x != 1 and x != 2 and x != 3:
+#ok, i made these all strings and that appeased it a LITTLE bit. has python done updates with types lately?
+while x != "1" and x != "2" and x != "3":
     x = input_function(type_name)
+    print(x)
 
 int1 = 3
 int2 = 5
