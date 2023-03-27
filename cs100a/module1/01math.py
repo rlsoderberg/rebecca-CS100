@@ -20,23 +20,22 @@ def correctness_display(abc, letter_pair, correct_count, op_num):
 def letter_guess():
     print("which variable do you wish to guess? x, y, or z?")
     type_name = "string"
-    prev_empty = 1
     var_select = "a"
     while var_select != 'x' and var_select != 'y' and var_select != 'z':
-        var_select = input_function(prev_empty, type_name)
+        var_select = input_function(type_name)
     letter_pair = (0,'f')
     if var_select == "x":
         type = "int"
         print("int x =")
-        letter_pair = (0, input_function(prev_empty, type_name))
+        letter_pair = (0, input_function(type_name))
     elif var_select == "y":
         type = "int"
         print("int y =")
-        letter_pair = (1, input_function(prev_empty, type_name))
+        letter_pair = (1, input_function(type_name))
     elif var_select == "z":
         type = "int"
         print("int z =") 
-        letter_pair = (2, input_function(prev_empty, type_name))
+        letter_pair = (2, input_function(type_name))
     return letter_pair
 
 
@@ -46,11 +45,10 @@ def prob_display(prob_strings, solution, op_names, op_num):
 
     print("press 1 to guess a variable")
     print("press 2 to return to the main menu")
-    prev_empty = 1
     type_name = "int"
     path_var = 0
     while path_var < 1 or path_var > 2:
-        path_var = int(input_function(prev_empty, type_name))
+        path_var = int(input_function(type_name))
     return path_var
 
 def correct_answers(prob_eqs, abc, solutions, op_num):
@@ -91,11 +89,10 @@ def problem(op_num, abc, prob_strings, prob_eqs, op_names):
         letter_pair = letter_guess()
         correctness_display(abc, letter_pair, correct_count, op_num)
         print("press 1 to guess another variable for this operation, or 2 to return to main menu.")
-        prev_empty = 1
         type_name = "int"
         path_var = 0
         while path_var < 1 or path_var > 2:
-            path_var = input_function(prev_empty, type_name)
+            path_var = input_function(type_name)
     op_num += 1
     return correct_count
 
@@ -104,10 +101,9 @@ def operation_select(correct_count):
     print("type a symbol to pick an operation:")
     print("1. + addition   2. - subtraction   3. * multiplication   4. / division   5. % modulo   6. ^ exponent")
     type_name = "string"
-    prev_empty = "1"
     op_input = "0"
     while op_input != "+" and op_input != "-" and op_input != "*" and op_input != "/" and op_input != "%" and op_input != "^":
-        op_input = input_function(prev_empty, type_name)
+        op_input = input_function(type_name)
     #look at all this copy and pasting!!!!!! aaaaaaaaaaa
     #also what even are integers and floats?
     if op_input == "+":

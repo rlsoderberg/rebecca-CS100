@@ -1,11 +1,10 @@
-def input_function(prev_empty, type_name):
+def input_function(type_name):
     valid = False
     while valid == False:
         try:
             x = input("give me a "+str(type_name)+": ")
-            if prev_empty == 1:
-                if not x:
-                    raise ValueError('empty string')
+            if not x:
+                raise ValueError('empty string')
             valid = True
         except ValueError:
             print("Invalid Input!")
