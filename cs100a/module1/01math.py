@@ -44,28 +44,13 @@ def letter_guess():
 
 
 def prob_display(prob_strings, solution, op_names, op_num):
-    print("Problem "+str(op_num + 1)+": "+op_names[op_num])
+    print("Operation "+str(op_num + 1)+": "+op_names[op_num])
     print(str(prob_strings[op_num]) + " = "+ str(solution))    
     choose_path = 1
     correct_count = 0
 
     print("press 1 to guess a variable")
-    print("press 2 to continue to the next equation")
-    antiblanky = 1
-    type = "int"
-    path_var = 0
-    while path_var < 1 or path_var > 2:
-        path_var = input_function(type, antiblanky)
-    return path_var
-#i just copy and pasted this thing! that's not nice???
-def prob_display_review(prob_strings, solution, op_names, op_num):
-    print("Problem "+str(op_num + 1)+": "+op_names[op_num])
-    print(str(prob_strings[op_num]) + " = "+ str(solution))    
-    choose_path = 1
-    correct_count = 0
-
-    print("press 1 to guess a variable")
-    print("press 2 to return to PROBLEM REVIEW")
+    print("press 2 to return to the main menu")
     antiblanky = 1
     type = "int"
     path_var = 0
@@ -103,7 +88,6 @@ def intgen_abc(abc):
 def problem(op_num, abc, prob_strings, prob_eqs, op_names):
     correct_count = 0
     abc.clear()
-    #need to distinguish between int abc and floatgen abc, will do later
     abc = intgen_abc(abc)
     solutions = []
     solutions = correct_answers(prob_eqs, abc, solutions, op_num)
@@ -111,7 +95,7 @@ def problem(op_num, abc, prob_strings, prob_eqs, op_names):
     while path_var == 1:
         letter_pair = letter_guess()
         correctness_display(abc, letter_pair, solutions, correct_count, op_num)
-        print("press 1 to guess another variable, or 2 to return for next equation.")
+        print("press 1 to guess another variable for this operation, or 2 to return to main menu.")
         antiblanky = 1
         type = "int"
         path_var = 0
@@ -120,37 +104,40 @@ def problem(op_num, abc, prob_strings, prob_eqs, op_names):
     op_num += 1
     return correct_count
 
+def operation_select(correct_count):
+    print("welcome to GUESS THE VARIABLE")
+    print("type a symbol to pick an operation:")
+    print("1. + addition   2. - subtraction   3. * multiplication   4. / division   5. % modulo   6. ^ exponent")
+    type = "string"
+    antiblanky = "1"
+    op_input = "0"
+    while op_input != "+" and op_input != "-" and op_input != "*" and op_input != "/" and op_input != "%" and op_input != "^":
+        op_input = input_function(type, antiblanky)
+    #look at all this copy and pasting!!!!!! aaaaaaaaaaa
+    #also what even are integers and floats?
+    if op_input == "+":
+        correct_count = problem(0, abc, prob_strings, prob_eqs, op_names)
+    elif op_input == "-":
+        correct_count = problem(1, abc, prob_strings, prob_eqs, op_names)
+    elif op_input == "*":
+        correct_count = problem(2, abc, prob_strings, prob_eqs, op_names)
+    elif op_input == "/":
+        correct_count = problem(3, abc, prob_strings, prob_eqs, op_names)
+    elif op_input == "%":
+        correct_count = problem(4, abc, prob_strings, prob_eqs, op_names)
+    elif op_input == "^":
+        correct_count = problem(5, abc, prob_strings, prob_eqs, op_names)
+    return correct_count
+
 op_num = 0
 abc = []
-#i know this is a lame workaround, but look!!! i'm just trying to get it to work, ok???
-prob_strings = ["2*x + y*z = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z", "0", "0", "0", "0", "0", "0", "0"]
+prob_strings = ["x + 2*y + 3*z = ","z - y - x = ","x*y*z","(x+y)/z","(y-z)%x","x**z+y**z"]
 x, y, z = symbols('x y z')
-prob_eqs = [(2*x + y*z),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z), 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z]
+prob_eqs = [(x + 2*y + 3*z),(2*z - y - 3*x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
 op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 
-print("variables are integers between 0 and 10")
-while op_num <= 6:
-    correct_count = problem(op_num, abc, prob_strings, prob_eqs, op_names)
-    op_num += 1
-if op_num == 6:
-    print("PROBLEM REVIEW")
-    print("type the symbol for an operation, to review a problem.")
-    #i also just copy and pasted this!!! what a mess
-    abc.clear()
-    abc = intgen_abc(abc)
-    solutions = []
-    solutions = correct_answers(prob_eqs, abc, solutions, op_num)
-    path_var = prob_display_review(prob_strings, solutions, op_names, op_num) 
-    while path_var == 1:
-        letter_pair = letter_guess()
-        correctness_display(abc, letter_pair, solutions, correct_count, op_num)
-        print("press 1 to guess another variable, or 2 to return to PROBLEM REVIEW.")
-        antiblanky = 1
-        type = "int"
-        path_var = 0
-        while path_var < 1 or path_var > 2:
-            path_var = input_function(type, antiblanky)
+correct_count = 0
+while correct_count < 3:
+    correct_count = operation_select(correct_count)
 if correct_count == 3:
     print("congratulations! you guessed all three variables!")
-elif correct_count < 3:
-    print("you only guessed"+str(correct_count)+"variables. better luck next time!")
