@@ -122,9 +122,10 @@ def problem(op_num, abc, prob_strings, prob_eqs, op_names):
 
 op_num = 0
 abc = []
-prob_strings = ["2*x + y*z = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z"]
+#i know this is a lame workaround, but look!!! i'm just trying to get it to work, ok???
+prob_strings = ["2*x + y*z = ","z - y - x = ","x * y * z","(x+y)/z","(y-z)%x","x**z+y**z", "0", "0", "0", "0", "0", "0", "0"]
 x, y, z = symbols('x y z')
-prob_eqs = [(2*x + y*z),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z)]
+prob_eqs = [(2*x + y*z),(z - y - x),(x * y * z),((x+y)/z),((y-z)%x),(x**z+y**z), 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z, 2*x + y*z]
 op_names = ["Addition", "Subtraction","Multiplication","Division","Modulo","Exponent"]
 
 print("variables are integers between 0 and 10")
