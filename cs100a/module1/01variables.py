@@ -4,11 +4,10 @@ sys.path.append('../..')
 from i import input_function
 
 print("select prob_num 1, 2, or 3")
-type_name = "int"
 x = 0
-#ok, i made these all strings and that appeased it a LITTLE bit. has python done updates with types lately?
-while x != "1" and x != "2" and x != "3":
-    x = input_function(type_name)
+#um, is stuff that i deletedfrom i what made it an int? greeeat, i will have to retrieve those
+while x != 1 and x != 2 and x != 3:
+    x = input_function(int)
     print(x)
 
 int1 = 3
@@ -52,7 +51,7 @@ elif x == 2:
 
     print(x,"% tip on bill of $",format(bill, '.2f'),"is $",format(tip, '.2f')," and total is $",format(total,'.2f'))
 
-    #wait.... why isn't my problem chooser working??? that is annoying, i am quitting for lunch
+    #now it's stuck in a loop, UGH YES
 
 
     

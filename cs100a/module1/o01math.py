@@ -19,7 +19,7 @@ def correctness_display(abc, letter_pair, correct_count, op_num):
 
 def letter_guess():
     print("which variable do you wish to guess? x, y, or z?")
-    type_name = "string"
+    type_name = "str"
     var_select = "a"
     while var_select != 'x' and var_select != 'y' and var_select != 'z':
         var_select = input_function(type_name)
@@ -101,7 +101,7 @@ def operation_select(correct_count):
     print("variables guessed:"+str(correct_count))
     print("type a symbol to pick an operation:")
     print("1. + addition   2. - subtraction   3. * multiplication   4. / division   5. % modulo   6. ^ exponent")
-    type_name = "string"
+    type_name = "str"
     op_input = "0"
     while op_input != "+" and op_input != "-" and op_input != "*" and op_input != "/" and op_input != "%" and op_input != "^":
         op_input = input_function(type_name)
