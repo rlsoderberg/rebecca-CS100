@@ -70,7 +70,7 @@ def hello():
     print("hello")
 
 def blanky_typeselect(type):
-    if type == "str":
+    if type == "string":
         x = blankfriendlystr()
         return x
     elif type == "float":
@@ -81,7 +81,7 @@ def blanky_typeselect(type):
         return x
 
 def antiblanky_typeselect(type):
-    if type == "str":
+    if type == "string":
         x = antiblankystr()
         return x
     elif type == "float":
