@@ -98,6 +98,7 @@ def problem(op_num, abc, prob_strings, prob_eqs, op_names):
 
 def operation_select(correct_count):
     print("welcome to GUESS THE VARIABLE")
+    print("variables guessed:"+str(correct_count))
     print("type a symbol to pick an operation:")
     print("1. + addition   2. - subtraction   3. * multiplication   4. / division   5. % modulo   6. ^ exponent")
     type_name = "string"
