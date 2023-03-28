@@ -16,24 +16,15 @@ float1 = 1.2
 float2 = 4.7
 float3 = 6.5
 
-ans1 = round((int1 + 8),2)
-ans2 = round((float2 - int2),2)
-ans3 = round((int3 * float3),2)
-ans4 = round((float1 / 4),2)
-ans5 = round((int3 % int2),2)
-
 if prob_num == 1:
     print("\n equations containing int1, int2, int3, float1, float2, and float3:")
-    print("int1 + 8 = "+str(ans1))
-    print("float2 - int2 = " + str(ans2))
-    print("int3 * float3 = "+ str(ans3))
-    print("float1 / 4 = "+ str(ans4))
-    print("int3 % int2 = "+str(ans5))
+    print("int1 + 8 = "+str(round((int1 + 8),2)))
+    print("float2 - int2 = " + str(round((float2 - int2),2)))
+    print("int3 * float3 = "+ str(round((int3 * float3),2)))
+    print("float1 / 4 = "+ str(round((float1 / 4),2)))
+    print("int3 % int2 = "+str(round((int3 % int2),2)))
 
-#at first it returned float2 - int2 = -0.2999999999999998 and i have nooo idea why
-#but omg it doesn't like me turning rounds into strs and idk!!!!!!!!
-
-#ok fine, for now i'm copy pasting. probably could have worked somehow?
+#turns out i was doing the parentheses wrong haha oops
 
 elif prob_num == 2:
     bill = 47.56
