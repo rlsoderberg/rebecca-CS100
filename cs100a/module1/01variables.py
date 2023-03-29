@@ -33,6 +33,7 @@ elif prob_num == 2:
     print("please enter 10, 15, 20, or 25")
     type_name = "int"
     x = 0
+    #blind tip percentage
     while x != 10 and x != 15 and x != 20 and x != 25:
         x = int(input_function(type_name))
 

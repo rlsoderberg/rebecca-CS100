@@ -1,6 +1,11 @@
 import random
 
-##print introduction
+import sys
+sys.path.append('../..')
+
+from i import input_function
+
+#print introduction
 print("\n  Welcome to \n• ROBOT RISK •\n")
 print("Two territories are battling in a game of Risk.\n")
 input("Press any key to continue.\n")
@@ -9,7 +14,7 @@ input("Press any key to continue.\n")
 territory1=input("Enter the name of the attacking territory: ")
 territory2=input("Enter the name of the defending territory: ")
 
-#request number of troops
+#request number of troops on territory, limiting for more than 2
 valid = False
 while valid == False:
     try:
@@ -17,7 +22,7 @@ while valid == False:
         while valid2 == False:
             print("\n")
             print("How many troops are on ",territory1,"?")
-            troops1 = int(input())
+            troops1 = int(input_function("int"))
             if troops1 >= 2:
                 valid2 = True
             else:
@@ -57,6 +62,7 @@ input()
 #turn loop until one player runs out of troops
 while troops1 >= 2 and troops2 >= 1:
 
+    #DON'T FORGET TO CLEAR ROLLS AT THE BEGINNING OF EACH ROUND!!!!!
     roll1.clear()
     roll2.clear()
 
