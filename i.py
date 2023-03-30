@@ -1,7 +1,7 @@
 #this thing isn't even working!!! aaaaaaaaa
 
 def str_input_function():
-    x = input("please enter a string variable: ")
+    x = input("please enter a non-empty string variable: ")
     if not x:
         raise ValueError('empty string')
     return x

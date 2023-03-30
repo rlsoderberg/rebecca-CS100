@@ -55,7 +55,7 @@ print(name+" solved "+str(correct)+" out of 10 equations correctly!\n "+name+"'s
 if lava_level >= 1000:
     print(name+" floats away on an exhilarating deluge of lava")
 elif lava_level >= 1000:
-    print(name+" gets lost in the cavern but eventually finds a way out")
+    print(name+" gets lost in the cavern. luckily, they brought explosives")
 elif lava_level >= 0:
     print(name+" manages to escape, unsmitten by the volcano gods")
 else:
