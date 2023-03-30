@@ -27,7 +27,7 @@ rando = 0
 prob_seq = []
 
 for x in range (0, 10):
-    rando = random.randint(0,10)
+    rando = random.randint(0,9)
     #apply brute force
     for b in range (0, 100):
         if rando in prob_seq:
