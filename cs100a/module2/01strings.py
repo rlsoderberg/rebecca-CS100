@@ -1,67 +1,43 @@
-type = ["0", "Uppercase", "Lowercase", "Title Case"]
-
-print("You enter an aviary with three doors. Which will it be?")
-turncount = 0
-
-#input functions
-def inputio():
+def input_function():
     valid = False
     while valid == False:
         try:
-            x =  int(input())
-            while x < 0 or x > 11:
-                while x == "":
-                    print("Out of range!")
-                print("Out of range!")
-                x = int(input())
+            x = input("please enter an int variable: ")
+            if not x:
+                raise ValueError('empty string')
             valid = True
         except ValueError:
             print("Invalid Input!")
-    return x
+    return x 
 
-def input3():
-    x = inputio()
-    inte = int(x)
-    while inte < 1 or inte > 3:
-        print("Not that many doors!")
-        x = inputio()
-        inte = int(x)
-    return inte
+quit = 0
 
-#door related occurences
-def doorhappen(turncount):
-    print("1, 2, or 3?")
-    inte = input3()
+while quit == 0:
+    print("STRING PROBLEMS\npress 1 for problem 1, 2 for problem 2, or 3 for problem 3")
+    problem = "0"
+    while problem != "1" and problem != "2" and problem != "3":
+        problem = input()
+
+    if problem == "1":
+        user_string = input("please enter a string: ")
+        print("would you like to see your string in 1. uppercase   2. lowercase   3. title case ?")
+        case = input_function()
+        if case == "1":
+            print(str(user_string.upper()))
+        elif case == "2":
+            print(user_string.lower())
+        elif case == "3":
+            print(user_string.title())
+
+    elif problem == "2":
+        link = input("enter a website link: ")
+        if link.startswith("http"):
+            print("thank you for the valid link")
+        elif not link.startswith("http"):
+            print("that's not a nice link!")
+            
+    elif problem == "3":
+        name = input("please enter your name: ")
+        print("hello, "+name.strip()+". thank you for stripping for me")
+
     
-    print("As you step closer to door ",inte,", you can read the sign on it: ",type[inte])
-    print("You open the door, and a bird swoops down in front of you.")
-
-    #introduce program, request user input
-    print("Hello! I'm the",type[inte],"parrot!")
-    #i skipped some checks with this one, but i just figured, like, it works ok i guess
-    user_status = input("How are you doing today? ")
-    #split user input at spaces
-    array = user_status.split(" ")
-    #convert words to uppercase
-    if inte == 1:
-        print(array[0].upper(), "\n", array[0].upper(), "\n")
-        for s in array:
-            print(s.upper())
-    elif inte == 2:
-        print(array[0].lower(), "\n", array[0].lower(), "\n")
-        for s in array:
-            print(s.lower())
-    elif inte == 3:
-        print(array[0].title(), "\n", array[0].title(), "\n")
-        for s in array:
-            print(s.title())
-
-    print("You step back out of the door.")
-    turncount += 1
-    return turncount
-
-#slight glitch in loop for some reason
-turncount = doorhappen(turncount)
-while turncount < 4:
-    print("Which door will it be?")
-    doorhappen(turncount)
