@@ -10,9 +10,9 @@ def input_function():
             print("Invalid Input!")
     return x 
 
-quit = 0
+quit = "0"
 
-while quit == 0:
+while quit == "0":
     print("STRING PROBLEMS\npress 1 for problem 1, 2 for problem 2, or 3 for problem 3")
     problem = "0"
     while problem != "1" and problem != "2" and problem != "3":
@@ -40,4 +40,7 @@ while quit == 0:
         name = input("please enter your name: ")
         print("hello, "+name.strip()+". thank you for stripping for me")
 
+    print("press q to quit and m to return to problem menu")
+    while quit != "q" and quit != "m":
+        quit = input()
     
