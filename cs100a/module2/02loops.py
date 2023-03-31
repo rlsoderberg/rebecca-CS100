@@ -3,7 +3,7 @@ import random
 player_wins = 0
 comp_wins = 0
 gameover = 0
-
+#this is the correct order of rock paper scissors
 rps_strings = ["rock","scissors", "paper"]
 player_rps = 0
 comp_rps = 0
@@ -34,7 +34,7 @@ while gameover == 0:
         gameover = 1
     if comp_wins == 7:
         gameover = 1
-
+#dictionary helps you check max between two variables!!
 dict = {player_wins:"player",comp_wins:"computer"}
 winner = dict.get(max(dict))
 print("SCORE TOTALS\nplayer: "+str(player_wins)+"\ncomputer: "+str(comp_wins)+"\n"+winner+" wins!")
