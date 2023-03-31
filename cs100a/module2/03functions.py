@@ -6,9 +6,9 @@ def input_function(purpose):
     while valid == False:
         try:
             if purpose == "calc":
-                x = input("enter an integer to calculate: ")
+                x = int(input("enter an integer to calculate: "))
             elif purpose == "month":
-                x = input("enter an integer from 1 to 12 to find the corresponding month: ")
+                x = int(input("enter an integer from 1 to 12 to find the corresponding month: "))
             if not x:
                 raise ValueError('empty string')
             valid = True
@@ -26,13 +26,17 @@ def digit_total(string):
             total += int(s)
     return total
 
-problem = ""
-print("which problem would you like to view? 1. factorial calculations, 2.sum of digits in string, or 3. getmonth?")
-while problem != "1" and problem != "2" and problem !="3":
-    problem = input()
+
 
 quit = ""
 while quit != "q":
+
+    problem = ""
+    quit = ""
+    print("which problem would you like to view? 1. factorial calculations, 2.sum of digits in string, or 3. getmonth?")
+    while problem != "1" and problem != "2" and problem !="3":
+        problem = input()
+
     if problem == "1":
         print("would you like to view: \n1. sum of all digits from 1 to n (nth triangular number) \n2. product of all digits from 1 to n (factorial)")
         subproblem = ""

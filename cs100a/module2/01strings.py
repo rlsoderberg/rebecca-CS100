@@ -3,7 +3,7 @@ def input_function():
     valid = False
     while valid == False:
         try:
-            x = input("please enter an int variable: ")
+            x = int(input("please enter an int variable: "))
             if not x:
                 raise ValueError('empty string')
             valid = True
