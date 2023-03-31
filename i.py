@@ -1,10 +1,16 @@
 #this thing isn't even working!!! aaaaaaaaa
 
 def str_input_function():
-    x = input("please enter a non-empty string variable: ")
-    if not x:
-        raise ValueError('empty string')
-    return x
+    valid = False
+    while valid == False:
+        try:
+            x = input("please enter a nonempty string : ")
+            if not x:
+                raise ValueError('empty string')
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return x  
 
 def str_empty_input_function():
     x = input("please press any key: ")
@@ -14,7 +20,7 @@ def int_input_function():
     valid = False
     while valid == False:
         try:
-            x = input("please enter an int variable: ")
+            x = int(input("please enter an int variable: "))
             if not x:
                 raise ValueError('empty string')
             valid = True
@@ -26,7 +32,7 @@ def float_input_function():
     valid = False
     while valid == False:
         try:
-            x = input("please enter a float variable: ")
+            x = float(input("please enter a float variable: "))
             if not x:
                 raise ValueError('empty string')
             valid = True
