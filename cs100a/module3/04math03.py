@@ -8,7 +8,7 @@ import random
 #function to print data from equation tuple, as well as lava level, which we can't seem to get rid of
 def print_equation(lava_level, equation, n):
     print("\ncurrent lava level: "+str(lava_level)+" feet")
-    print("equation "+str(ordern))
+    print("equation "+str(n))
     print(str(equation))
 
 #equations and correct answers
@@ -23,25 +23,25 @@ name = input()
 
 correct = 0
 lava_level = 0
+n = 0
 
 #using random.sample to handle tuples
 for e in rand_equation_tuple:
     (equation, answer, user_ans) = e
-    ordern = 0
-    print_equation(lava_level, equation, ordern)
+    print_equation(lava_level, equation, n)
     print("x = ")
     user_ans = input_function("int")
     while user_ans != answer:
         print("incorrect! try again: ")
-        lava_level -= (100*(int(ordern)+10))
-        print_equation(lava_level, equation, ordern)
+        lava_level -= (100*(int(n)+10))
+        print_equation(lava_level, equation, n)
         print("x = ")
         user_ans = input_function("int")
     if user_ans == answer:
-        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(int(ordern)+10))+" feet")
+        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(int(n)+10))+" feet")
         correct += 1
-        lava_level += (100*(int(ordern)+10))
-        ordern += 1
+        lava_level += (100*(int(n)+10))
+        n += 1
 
 print(name+" solved "+str(correct)+" out of 10 equations correctly!\n"+name+"'s lava level is "+str(lava_level)+" feet\n")
 if lava_level >= 10000:
@@ -50,6 +50,8 @@ elif lava_level >= 5000:
     (name+" gets lost in the cavern. luckily, they brought explosives")
 elif lava_level >= 0:
     print(name+" manages to escape, unsmitten by the volcano gods")
-else:
+elif lava_level >= -10000:
     print(name+" is pulled down toward the center of the earth in a vortex of lava")
+elif lava_level < -10000:
+    print(name+" has found the pathway to r'lyeh. \n"+name+" will summon the power of fire upon the stone of cthulhu's grave. \nthe streets of r'lyeh will overflow with molten rock.")
 
