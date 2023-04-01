@@ -2,7 +2,7 @@ def int_input_function():
     valid = False
     while valid == False:
         try:
-            x = int(input("please enter an int variable: "))
+            x = int(input())
             if not x:
                 raise ValueError('empty string')
             valid = True
@@ -14,7 +14,7 @@ def float_input_function():
     valid = False
     while valid == False:
         try:
-            x = float(input("please enter a float variable: "))
+            x = float(input())
             if not x:
                 raise ValueError('empty string')
             valid = True
