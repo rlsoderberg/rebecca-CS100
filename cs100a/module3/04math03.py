@@ -45,31 +45,33 @@ for x in range (0, 10):
 correct = 0
 lava_level = 0
 
-#get user answers to equations
-for x in range (0,9):
-    #i am copy pasting instead of making up an extra variable?
-    for e in equation_tuple:
-        (equation, answer, user_ans) = e
-        print_equation(lava_level, equation, x)
+n = 0
+#i think most of the problem here is i don't REALLY understand how to use tuples
+for e in equation_tuple:
+    (equation, answer, user_ans) = e
+    print_equation(lava_level, equation, x)
+    print("x = ")
+    user_ans = input_function("int")
+    while user_ans != answer:
+        print("incorrect! try again: ")
+        lava_level -= (100*(prob_seq[n]+10))
+        print("\ncurrent lava level: "+str(lava_level)+" feet")
+        print("equation "+str(x+1))
+        print(str(equation))
         print("x = ")
         user_ans = input_function("int")
-        while user_ans != answer:
-            print("incorrect! try again: ")
-            print("\ncurrent lava level: "+str(lava_level)+" feet")
-            print("equation "+str(x+1))
-            print(str(equation))
-            print("x = ")
-            user_ans = input_function("int")
-        if user_ans == answer:
-            print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(prob_seq[x]+10))+" feet")
-            correct += 1
-            lava_level += (100*(prob_seq[x]+10))
+    if user_ans == answer:
+        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(prob_seq[n]+10))+" feet")
+        correct += 1
+        lava_level += (100*(prob_seq[n]+10))
+        x += 1
+        n += 1
 
 print(name+" solved "+str(correct)+" out of 10 equations correctly!\n"+name+"'s lava level is "+str(lava_level)+" feet\n")
 if lava_level >= 10000:
     print(name+" floats away on an exhilarating deluge of lava")
 elif lava_level >= 5000:
-    print(name+" gets lost in the cavern. luckily, they brought explosives")
+    (name+" gets lost in the cavern. luckily, they brought explosives")
 elif lava_level >= 0:
     print(name+" manages to escape, unsmitten by the volcano gods")
 else:
