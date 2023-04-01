@@ -12,7 +12,7 @@ def print_equation(lava_level, equation, n):
     print(str(equation))
 
 #equations and correct answers
-equation_tuple = [("1", "5x + 3 = 13", 2, 0), ("2", "14 - 3x = 2", 4, 0), ("3", "9 - 2x = 3", 3, 0), ("4", "8x + 2 = 50", 6, 0), ("5", "2x + 16 = 40", 12, 0), ("6, ""12 - 2x = 2", 5, 0), ("7", "7 = 49 - 6x", 7, 0), ("8, ""30 + 7x = 86", 8, 0), ("9", "4x + 20 = 56", 9, 0), ("10, ""3x - 3 = 39", 14, 0)]
+equation_tuple = [("5x + 3 = 13", 2, 0), ("14 - 3x = 2", 4, 0), ("9 - 2x = 3", 3, 0), ("8x + 2 = 50", 6, 0), ("2x + 16 = 40", 12, 0), ("12 - 2x = 2", 5, 0), ("7 = 49 - 6x", 7, 0), ("30 + 7x = 86", 8, 0), ("4x + 20 = 56", 9, 0), ("3x - 3 = 39", 14, 0)]
 rand_equation_tuple = random.sample(equation_tuple, len(equation_tuple))
 
 #request identification
@@ -24,28 +24,23 @@ name = input()
 correct = 0
 lava_level = 0
 
-#ummm, this sounds funny, but i was avoiding using random.sample to generate rand_probnum
-#but it looks like that is the easiest way, when you're dealing with tuples
-#i was just like, why is pete asking us to generate a non repeating randomized list
-#if he doesn't secretly have a good way of doing it???
-#still holding out for secret way of creating non repeating randomized lists
-#i guess sample MIGHT be a good way for now
+#using random.sample to handle tuples
 for e in rand_equation_tuple:
-    (n, equation, answer, user_ans) = e
+    (equation, answer, user_ans) = e
     ordern = 0
     print_equation(lava_level, equation, ordern)
     print("x = ")
     user_ans = input_function("int")
     while user_ans != answer:
         print("incorrect! try again: ")
-        lava_level -= (100*(int(n)+10))
+        lava_level -= (100*(int(ordern)+10))
         print_equation(lava_level, equation, ordern)
         print("x = ")
         user_ans = input_function("int")
     if user_ans == answer:
-        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(int(n)+10))+" feet")
+        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(int(ordern)+10))+" feet")
         correct += 1
-        lava_level += (100*(int(n)+10))
+        lava_level += (100*(int(ordern)+10))
         ordern += 1
 
 print(name+" solved "+str(correct)+" out of 10 equations correctly!\n"+name+"'s lava level is "+str(lava_level)+" feet\n")
