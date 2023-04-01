@@ -17,60 +17,47 @@ def int_input_function():
 
 import random
 
-def print_equation(lava_level, equation, x):
+def print_equation(lava_level, equation, n):
     print("\ncurrent lava level: "+str(lava_level)+" feet")
-    print("equation "+str(x+1))
+    print("equation "+str(ordern))
     print(str(equation))
 
 #equations and correct answers
-equation_tuple = [("5x + 3 = 13", 2, ""), ("14 - 3x = 2", 4, ""), ("9 - 2x = 3", 3, ""), ("8x + 2 = 50", 6, ""), ("2x + 16 = 40", 12, ""), ("12 - 2x = 2", 5, ""), ("7 = 49 - 6x", 7, ""), ("30 + 7x = 86", 8, ""), ("4x + 20 = 56", 9, ""), ("3x - 3 = 39", 14, "")]
+equation_tuple = [("1", "5x + 3 = 13", 2, 0), ("2", "14 - 3x = 2", 4, 0), ("3", "9 - 2x = 3", 3, 0), ("4", "8x + 2 = 50", 6, 0), ("5", "2x + 16 = 40", 12, 0), ("6, ""12 - 2x = 2", 5, 0), ("7", "7 = 49 - 6x", 7, 0), ("8, ""30 + 7x = 86", 8, 0), ("9", "4x + 20 = 56", 9, 0), ("10, ""3x - 3 = 39", 14, 0)]
+rand_equation_tuple = random.sample(equation_tuple, len(equation_tuple))
 
 #request identification
 print("Welcome to the math volcano.")
 print("Leave explosives at the door. Identification please: ")
 name = input()
 
-#generate random, non-repeating list of integers from 0 to 10
-rando = 0
-prob_seq = []
-
-for x in range (0, 10):
-    rando = random.randint(0,10)
-    #apply brute force
-    for b in range (0, 100):
-        if rando in prob_seq:
-            rando = random.randint(0,10)
-    prob_seq.append(rando)
 
 correct = 0
 lava_level = 0
 
-#oh yeah, also next, i should put prob_seq into the equation tuple
-#i literally don't know what i am doing and i will have to think about this at work
-#i guess i should start with rand_probnum on the outside 
-#and then... well, i have to generate the tuple first, and then access a tuple of a certain prob_num
-#(however you do that)
-n = 0
-for e in equation_tuple:
-    (equation, answer, user_ans, rand_probnum) = e
-    rand_probnum = prob_seq[]
-    print_equation(lava_level, equation, x)
+#ummm, this sounds funny, but i was avoiding using random.sample to generate rand_probnum
+#but it looks like that is the easiest way, when you're dealing with tuples
+#i was just like, why is pete asking us to generate a non repeating randomized list
+#if he doesn't secretly have a good way of doing it???
+#still holding out for secret way of creating non repeating randomized lists
+#i guess sample MIGHT be a good way for now
+for e in rand_equation_tuple:
+    (n, equation, answer, user_ans) = e
+    ordern = 0
+    print_equation(lava_level, equation, ordern)
     print("x = ")
     user_ans = input_function("int")
     while user_ans != answer:
         print("incorrect! try again: ")
-        lava_level -= (100*(prob_seq[n]+10))
-        print("\ncurrent lava level: "+str(lava_level)+" feet")
-        print("equation "+str(x+1))
-        print(str(equation))
+        lava_level -= (100*(int(n)+10))
+        print_equation(lava_level, equation, ordern)
         print("x = ")
         user_ans = input_function("int")
     if user_ans == answer:
-        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(prob_seq[n]+10))+" feet")
+        print("correct! "+name+" has found the correct value of x = "+str(answer)+". lava level increases by "+str(100*(int(n)+10))+" feet")
         correct += 1
-        lava_level += (100*(prob_seq[n]+10))
-        x += 1
-        n += 1
+        lava_level += (100*(int(n)+10))
+        ordern += 1
 
 print(name+" solved "+str(correct)+" out of 10 equations correctly!\n"+name+"'s lava level is "+str(lava_level)+" feet\n")
 if lava_level >= 10000:
