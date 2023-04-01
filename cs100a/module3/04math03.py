@@ -45,10 +45,15 @@ for x in range (0, 10):
 correct = 0
 lava_level = 0
 
+#oh yeah, also next, i should put prob_seq into the equation tuple
+#i literally don't know what i am doing and i will have to think about this at work
+#i guess i should start with rand_probnum on the outside 
+#and then... well, i have to generate the tuple first, and then access a tuple of a certain prob_num
+#(however you do that)
 n = 0
-#i think most of the problem here is i don't REALLY understand how to use tuples
 for e in equation_tuple:
-    (equation, answer, user_ans) = e
+    (equation, answer, user_ans, rand_probnum) = e
+    rand_probnum = prob_seq[]
     print_equation(lava_level, equation, x)
     print("x = ")
     user_ans = input_function("int")
