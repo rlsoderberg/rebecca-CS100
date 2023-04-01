@@ -1,22 +1,11 @@
 import sys
 sys.path.append('../..')
 
-from i import input_function
-
-def int_input_function():
-    valid = False
-    while valid == False:
-        try:
-            x = int(input("x = "))
-            if not x:
-                raise ValueError('empty string')
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
-    return x  
+from i import input_function 
 
 import random
 
+#function to print data from equation tuple, as well as lava level, which we can't seem to get rid of
 def print_equation(lava_level, equation, n):
     print("\ncurrent lava level: "+str(lava_level)+" feet")
     print("equation "+str(ordern))
