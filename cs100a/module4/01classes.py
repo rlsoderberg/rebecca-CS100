@@ -6,23 +6,45 @@ from i import input_function
 
 import datetime
 
+
+class Student:
+    name = ''
+    ID = -1
+    favsport = ""
+    birthdate = '1/1/2000'
+
 class Teacher:
     name = ""
-    office = ""
+    office = 0
     hobby = ""
-    birthdate = 1/1/2000
+    birthdate = '1/1/2000'
 
-print("which problem would you like to view? 1. teacher, 2. course, 3. roster, or 4. M ?")
+class Course:
+    name = ""
+    classroom = 0
+    teacher = ""
+    students = []
+    
+stud = Student
+stud.name = "billy bob"
+stud.ID = 22342
+stud.favsport = "golf"
+stud.birthdate = '4/10/1991'
+print("we wanted to throw a  "+stud.favsport+" party for "+stud.name+" on his birthday, "+stud.birthdate+", but we got intercepted by azealia banks, who was singing her hit song "+str(stud.ID))
+teach = Teacher
+teach.name = "mr giles"
+teach.office = 202
+teach.hobby = "cross-referencing"
+teach.birthdate = '4/4/1944'
+print("On "+str(teach.birthdate)+", we brought a birthday cake to the office of "+str(teach.name)+", room "+str(teach.office)+", but he was busy "+str(teach.hobby)+".")
+algebra = Course
+algebra.name = "Algebra"
+algebra.classroom = 204
+algebra.teacher = "mr. mcneil"
+algebra.students = ["colleen fumpo", "paul leghat", "rachel stendec", "michael overgold", "ali redbuckle"]
+print(algebra.name+" Roster\nTeacher: "+algebra.teacher+"\nStudents Beginning With M:")
+for s in algebra.students:
+    if s.startswith('m'):
+        print(s)
 
-problem = ""
 
-while problem != "1" and problem != "2" and problem != "3" and problem != "4":
-    problem = input()
-
-if problem == "1":
-    teach = Teacher
-    teach.name = "mr giles"
-    teach.office = "lib 202"
-    teach.hobby = "cross-referencing"
-    teach.birthdate = 4/4/1944
-    print("On "+str(teach.birthdate)+", we brought a birthday cake to the office of "+str(teach.name)+", "+str(teach.office)+", but he was busy "+str(teach.hobby)+".")
