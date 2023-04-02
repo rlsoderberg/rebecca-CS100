@@ -6,7 +6,7 @@ from i import input_function
 
 import datetime
 
-
+#classes
 class Student:
     name = ''
     ID = -1
@@ -24,7 +24,7 @@ class Course:
     classroom = 0
     teacher = ""
     students = []
-    
+#set class properties, and print
 stud = Student
 stud.name = "billy bob"
 stud.ID = 19789291
@@ -43,6 +43,7 @@ algebra.classroom = 204
 algebra.teacher = "mr. mcneil"
 algebra.students = ["colleen fumpo", "paul leghat", "rachel stendec", "michael overgold", "ali redbuckle"]
 print(algebra.name+" Roster\nTeacher: "+algebra.teacher+"\nStudents Beginning With M:")
+#special loop of m
 for s in algebra.students:
     if s.startswith('m'):
         print(s)

@@ -1,3 +1,5 @@
+#class behaviors
+
 class Student:
     name = ""
     ID = -1
@@ -18,7 +20,6 @@ stud.ID = 42
 stud.birthdate = "7/7/1942"
 
 stud.do_homework("history")
-
 
 class Teacher:
     name = ""
