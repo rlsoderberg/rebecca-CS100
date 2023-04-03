@@ -7,7 +7,7 @@ madlib = ""
 for line in f:
     if line.startswith("*"):
         #output as command, strip
-        newline = text = input('Give me a(n) ' + line[1:].strip() + ': ')
+        newline = input('Give me a(n) ' + line[1:].strip() + ': ')
         #put newline onto madlib
         madlib += (" " + newline)
     elif not line.startswith("*"):
