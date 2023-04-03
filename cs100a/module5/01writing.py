@@ -64,6 +64,8 @@ for lineitem in receipt:
     f.write(str(qty) + " " + item + ": $" + str(format(cost, '.2f')) + " = " + str(format(cost*qty, '.2f'))+"\n")
 print("==================================")
 print("TOTAL: $" + str(total))
+#and don't forget to close the file!!
+f.close()
 
 
 
