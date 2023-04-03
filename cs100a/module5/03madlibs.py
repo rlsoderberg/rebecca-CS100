@@ -11,7 +11,9 @@ for line in f:
         text = input('Give me a(n) ' + line[1:].strip() + ': ')
     else:
         #put lint onto madlib
-        madlib += (" " + line)
+        text = line
+    #put text onto madlib
+    madlib = madlib + " " + text.strip()
 #why is my madlib so awkward looking?
 print("here is your madlib: "+madlib)
 f.close()
