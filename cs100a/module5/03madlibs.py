@@ -4,15 +4,16 @@ story = ''
 
 lineno = 1
 madlib = ""
+text = ""
 for line in f:
     if line.startswith("*"):
         #output as command, strip
-        newline = input('Give me a(n) ' + line[1:].strip() + ': ')
-        #put newline onto madlib
-        madlib += (" " + newline)
-    elif not line.startswith("*"):
+        text = input('Give me a(n) ' + line[1:].strip() + ': ')
+    else:
         #put lint onto madlib
-        madlib += (" " + line)
+        text = line
+
+    madlib = madlib + " " + text.strip()
 #why is my madlib so awkward looking?
 print("here is your madlib: "+madlib)
 f.close()
