@@ -62,8 +62,8 @@ for lineitem in receipt:
     total = total + (cost*qty)
     #write price data to grocery list text file, and don't forget to newline
     f.write(str(qty) + " " + item + ": $" + str(format(cost, '.2f')) + " = " + str(format(cost*qty, '.2f'))+"\n")
-print("==================================")
-print("TOTAL: $" + str(total))
+f.write("==================================\n")
+f.write("TOTAL: $" + str(total))
 #and don't forget to close the file!!
 f.close()
 
