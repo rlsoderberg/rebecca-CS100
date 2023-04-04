@@ -1,17 +1,12 @@
 import random
 
-#what do you mean 'try it with letters', when there are 26 letters, but 2000 numbers?
-#i think last time i used words, and i was tempted to do that again
-#idk, im not getting much done today, i will come back tomorrow
-
-def randomstrings():
-    letters = "abcdefghijklmnopqrstuvwxyz"
+def randomstrings(letters):
     #list of randomstrings
     strings = []
 
-    for i in range(1,1000):
+    for i in range(0,10000):
         #length of randomstring
-        length = random.randrange(5, 15)
+        length = random.randint(1,4)
         randomstring = ""
         for c in range (0, length):
             #pick random letters from letters
@@ -31,13 +26,29 @@ def sequentialsearch(haystack, needle):
 
 #look for location of random number which has a like 50% chance of being in the random range
 def main():
-    strings = randomstrings()
+    bigwordcount = 0
+    bigwords = []
+    for x in range (0, 50):
+        letters = "abcdefghijklmnopqrstuvwxyz"
+        strings = randomstrings(letters)
+        target = ""
+        length = random.randint(1,4)
+        for a in range (0, length):
+            rand = random.randrange(0, len(letters))
+            target = target + letters[rand]
+        print("looking for "+str(target))
+        for i in range (0, 10000):
+            location = sequentialsearch(strings, target)
+        if location == -1:
+            print("couldn't find " + str(target))
+        else:
+            print("found " + str(target) + " at location " + str(location))
+            if len(target) >= 3:
+                print("congratulations! you found a big word!")
+                bigwordcount += 1
+                bigwords.append(target)
+    print("i searched 50 times and i found "+str(bigwordcount)+" big words: "+str(bigwords))
+
     
-    target = random.randrange(0, 2000)
-    location = sequentialsearch(strings, target)
-    if location == -1:
-        print("couldn't find " + str(target))
-    else:
-        print("found " + str(target) + " at location " + str(location))
 
 main()
