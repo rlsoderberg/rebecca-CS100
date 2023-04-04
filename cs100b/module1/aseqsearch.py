@@ -1,12 +1,10 @@
 import random
 
-def randomstrings(letters):
+def randomstrings(letters, length):
     #list of randomstrings
     strings = []
 
-    for i in range(0,10000):
-        #length of randomstring
-        length = random.randint(1,4)
+    for i in range(0,2000):
         randomstring = ""
         for c in range (0, length):
             #pick random letters from letters
@@ -30,9 +28,9 @@ def main():
     bigwords = []
     for x in range (0, 50):
         letters = "abcdefghijklmnopqrstuvwxyz"
-        strings = randomstrings(letters)
+        length = random.randint(1,3)
+        strings = randomstrings(letters, length)
         target = ""
-        length = random.randint(1,4)
         for a in range (0, length):
             rand = random.randrange(0, len(letters))
             target = target + letters[rand]
@@ -47,7 +45,7 @@ def main():
                 print("congratulations! you found a big word!")
                 bigwordcount += 1
                 bigwords.append(target)
-    print("i searched 50 times and i found "+str(bigwordcount)+" big words: "+str(bigwords))
+    print("i searched 50 times and i matched "+str(bigwordcount)+" big words: "+str(bigwords))
 
     
 
