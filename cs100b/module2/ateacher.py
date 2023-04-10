@@ -3,9 +3,9 @@ class Person:
         self.name = name
         self.age = age
         self.birthdate = birthdate
-    def eat(food):
+    def eat(self, food):
         print("this "+food+" is tasty")
-    def sleep():
+    def sleep(self):
         print(self.name + "is asleep")
 
 class Course:
@@ -23,13 +23,13 @@ class Food:
         self.name = name
 
 class Teacher (Person):
-    def teach(course):
-        print(self.name + " is teaching " + course.name)
-    def grade(course):
-        print(self.name + "is grading " + course.projects[-1])
+    def teach(self, course):
+        print(self.name + " is teaching " + course.title)
+    def grade(self, course):
+        print(self.name + "is grading " + course.projects[-1].name)
 
 class Student(Person):
-    def study(course):
+    def study(self, course):
         print((self.name) + "is studying")
 
 def main():
@@ -45,7 +45,7 @@ def main():
 
     math101 = Course("Introduction to Geometry")
     math101.student = [zeppo, tammy, eliza]
-    math101.project = [polyrap, fractalcooking]
+    math101.projects = [polyrap, fractalcooking]
 
     mango = Food("Mango")
 
