@@ -90,7 +90,7 @@ while exit == 0:
             print("both players have "+plays[user - 1]+"! Tie!")
 
     #check if user wants to exit; if user does not want to exit, continue while loop with exit = 0
-    path_var = input("Press m to return to problem menu, or q to quit: ")
+    path_var = input("Press any key (besides q) to return to problem menu, or q to quit: ")
     if path_var == "q":
         exit = 1
 
