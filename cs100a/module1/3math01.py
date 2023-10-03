@@ -85,6 +85,8 @@ name = str(input("IDENTIFICATION PLEASE: "))
 
 rando = 0
 prob_seq = []
+correct = 0
+
 
 #isn't it weird that range doesn't include the last number, but randint does? is that what is happening
 for x in range (0, 10):
@@ -94,7 +96,6 @@ for x in range (0, 10):
         rando = random.randint(0,9)
     prob_seq.append(rando)
 
-correct = 0
 lava_level = 0
 
 #ALL CAPS EVERYTHING. is that some clipping i hear oOoOoOoH
