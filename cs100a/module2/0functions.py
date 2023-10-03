@@ -15,10 +15,14 @@ print("Would you like to:\n1) Calculate the month corresponding to an integer?\n
 #well... i'm just going to make a custom input function?
 #it's not working!!! whyyy 
 #now... is there some way to this with a valid loop? hmmmm
-problem_choice=0
-while problem_choice not in (1, 3):
+valid = False
+while valid == False:
     try:
         problem_choice = int(input("Please enter 1, 2, or 3: "))
+        if problem_choice not in (1, 3):
+            raise ValueError("out of range")
+        else:
+            valid = True
     except ValueError:
         print("Invalid Input!")
 
