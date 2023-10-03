@@ -5,24 +5,50 @@
 #fine, i'll fix that really fast
 #well, if i was rewriting this today, i'd also put more in functions
 
-def troop_input(territory):
-        valid = False
-        while valid == False:
-            try:
-                valid2 = False
-                while valid2 == False:
-                    print("\n")
-                    print("How many troops are on ",territory,"?")
-                    troops = int(input_function("int"))
-                    if troops >= 2:
+def troop_input(territory_name):
+    valid = False
+    while valid == False:
+        try:
+            valid2 = False
+            while valid2 == False:
+                print("\n")
+                print("How many troops are on ",territory_name,"?")
+                troops = int(input_function("int"))
+                if troops >= 2:
+                    valid2 = True
+                else:
+                    print("Invalid input. Please enter an integer 2 or higher.")
+            valid = True        
+        except ValueError:
+            print("Invalid input. Please enter an integer 2 or higher.")
+    return troops
+
+#well... the dice rolls are so particular i don't know if it's worth defining this function?
+#oh well, i'll go ahead and use variables
+def num_dice_input(territory_name, troops, player_roll):
+    valid = False
+    while valid == False:
+        try:
+            valid2 = False
+            while valid2 == False:
+                print(str(territory_name),": You have ",troops,"troops.")
+                numdice = int(input("Number of dice " + str(territory_name) + " will roll to attack: "))
+                if numdice == player_roll[0] or numdice == player_roll[1]:
+                    if numdice <= troops:
                         valid2 = True
                     else:
-                        print("Invalid input. Please enter an integer 2 or higher.")
-                valid = True        
-            except ValueError:
-                print("Invalid input. Please enter an integer 2 or higher.")
+                        print("You don't have that many troops! Please enter an integer less than " + str(troops))
+                else:
+                    print("Please enter an integer from " + str(player_roll[0]) + " to "  + str(player_roll[1]) + ".")
+            valid = True        
+        except ValueError:
+            print("Please enter an integer from " + str(player_roll[0]) + " to "  + str(player_roll[1]) + ".")
+    return numdice
 
 import random
+
+player_1_roll = [2,3]
+player_2_roll = [1,2]
 
 #oh look, here it is, reaching over...
 import sys
@@ -43,10 +69,6 @@ territory2=input("Enter the name of the defending territory: ")
 
 troops1 = troop_input(territory1)
 troops2 = troop_input(territory2)
-
-#THIS ISN'T WORKING!!!!
-print("troops1 = " + str(troops1))
-print("troops2 = " + str(troops2))
 
 
 #initiate roll counter, turn counter, and dice counter
@@ -70,26 +92,12 @@ while troops1 >= 2 and troops2 >= 1:
     roll2.clear()
 
     #print information for player 1
-    print(territory1,": You have ",troops1,"troops.")
+    print("\n")
+    print(territory1, ": You have ",troops1," available troops.")
+    print("How many dice (" + player_1_roll[0] " - " + player_1_roll[1]) will ",territory1," roll to attack " + territory2 + "?")
+    
     print("How many dice (2-3) will ",territory1," roll to attack?")
-
-    #request number of dice for player 1 to roll in ths turn
-    valid = False
-    while valid == False:
-        try:
-            valid2 = False
-            while valid2 == False:
-                numdice1 = int(input("Number of dice: "))
-                if numdice1 == 2 or numdice1 == 3:
-                    if numdice1 <= troops1:
-                        valid2 = True
-                    else:
-                        print("You don't have that many troops!")
-                else:
-                    print("You can't attack with that number of dice!")
-            valid = True        
-        except ValueError:
-            print("Please enter an integer from 2 to 3.")
+    numdice1 = num_dice_input(territory1, troops1, player_1_roll)
 
     #generate random rolls for player 1 according to number of dice
     if numdice1 == 3:
