@@ -31,8 +31,7 @@ def num_dice_input(territory_name, troops, player_roll):
         try:
             valid2 = False
             while valid2 == False:
-                print(str(territory_name),": You have ",troops,"troops.")
-                numdice = int(input("Number of dice " + str(territory_name) + " will roll to attack: "))
+                numdice = int(input())
                 if numdice == player_roll[0] or numdice == player_roll[1]:
                     if numdice <= troops:
                         valid2 = True
@@ -94,9 +93,8 @@ while troops1 >= 2 and troops2 >= 1:
     #print information for player 1
     print("\n")
     print(territory1, ": You have ",troops1," available troops.")
-    print("How many dice (" + player_1_roll[0] " - " + player_1_roll[1]) will ",territory1," roll to attack " + territory2 + "?")
-    
-    print("How many dice (2-3) will ",territory1," roll to attack?")
+
+    print("How many dice (" + str(player_1_roll[0]) + " - " + str(player_1_roll[1]) + ") will " + str(territory1) + " roll to attack " + str(territory2) + "?")   
     numdice1 = num_dice_input(territory1, troops1, player_1_roll)
 
     #generate random rolls for player 1 according to number of dice
@@ -114,26 +112,9 @@ while troops1 >= 2 and troops2 >= 1:
     print("\n")
     print(territory2, ": You have ",troops2," available troops.")
     print(territory1," is attacking with ",numdice1," dice.")
-    print("How many dice (1-2) will ",territory2," roll to defend?")
 
-    #request number of dice for player 2 to roll in this turn
-    valid = False
-    while valid == False:
-        try:
-            valid2 = False
-            while valid2 == False:
-                
-                numdice2 = int(input("Number of dice: "))
-                if numdice2 == 1 or numdice2 == 2:
-                    if numdice2 <= troops2:
-                        valid2 = True
-                    else:
-                        print("You don't have that many troops!")
-                else:
-                    print("You can't defend with that number of dice!")
-            valid = True        
-        except ValueError:
-            print("Please enter an integer from 1 to 2.")
+    print("How many dice (" + str(player_2_roll[0]) + " - " + str(player_2_roll[1]) + ") will " + str(territory2) + " roll to defend " + str(territory2) + "?")   
+    numdice1 = num_dice_input(territory2, troops2, player_2_roll)
 
     #generate random rolls for player 2 according to number of dice           
     if numdice2 == 2:
@@ -143,9 +124,13 @@ while troops1 >= 2 and troops2 >= 1:
         for s in range (0,1):
             roll2.append(random.randint(1,6))    
 
+
+
+
     #sort rolls in ascending order
     roll1.sort()
     roll2.sort()
+
     #find highest and second-highest rolls
     max1 = roll1[-1]
     max2 = roll2[-1]
