@@ -15,8 +15,8 @@ def digit_total(string):
 
 exit = "0"
 while exit != "x":
-    
-    print("Would you like to:\n1) Calculate the month corresponding to an integer?\n2) Calculate the sum of the integer's digits\n3) Calculate the integer's factorial\nWhich will it be?")
+
+    print("\nWould you like to:\n1) Calculate the month corresponding to an integer?\n2) Calculate the sum of the integer's digits\n3) Calculate the integer's factorial\n\nWhich will it be?\n")
 
     #well... i'm just going to make a custom input function?
     valid = False
@@ -45,20 +45,22 @@ while exit != "x":
             except ValueError:
                 print("Invalid Input!")
         month_name = calendar.month_name[month_number]
-        print("month "+str(month_number)+" is "+month_name)
+        print("Month "+str(month_number)+" is "+month_name)
 
     elif (problem_choice == 2):
 
-        string = input("please enter integer string to find its digit total: ")
+        string = input("Please enter any integer string to find its digit total: ")
         digit_total = digit_total(string)
-        print("digit total for '"+string+"' is "+str(digit_total))
+        print("Digit total for '"+string+"' is "+str(digit_total))
 
     elif (problem_choice == 3):
 
-        n = int(input("please enter integer to calculate factorial: "))
+        n = int(input("Please enter any integer to calculate factorial: "))
         factorial = 1
         for b in range (1, n+1):
             factorial = b * factorial
-        print("factorial of "+str(n)+" is "+str(factorial))
+        print("Factorial of "+str(n)+" is "+str(factorial) + "\n")
 
-exit = input("press (almost) any key to return to main menu, or press x to exit")
+    print("Press (almost) any key to return to main menu, or press x to exit")
+    exit = input()
+
