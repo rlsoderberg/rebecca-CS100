@@ -12,6 +12,7 @@ rps_strings = [0, "rock","paper", "scissors"]
 player_rps = 0
 comp_rps = 0
 
+print("Rcck Paper Scissors Tournament")
 print("How many rounds do you want to play? Please enter any integer: ")
 rounds = int_input_function()
 
@@ -20,15 +21,24 @@ while rounds > 0:
     comp_rps = 0
     winner = ""
     
-    while player_rps != 1 and player_rps != 2 and player_rps != 3:
-        player_rps = input("\n1. Rock, 2. Paper, or 3. Scissors?")
+    print("\n1. Rock, 2. Paper, or 3. Scissors?")
+    valid = False
+    while valid == False:
+        try:
+            player_rps = int(input("Please enter 1, 2, or 3: "))
+            if player_rps not in range (0, 4):
+                raise ValueError("out of range")
+            else:
+                valid = True
+        except ValueError:
+            print("Invalid Input!")
 
     #now... can i convert this to f strings?
 
     #oh, fiddlesticks! rps is so particular!
-    comp_rps = random.randint(0,3)
+    comp_rps = random.randint(1,3)
 
-    print(f"you played {rps_strings[player_rps]} and computer played {rps_strings[comp_rps]}.")
+    print(f"you played {player_rps}.{rps_strings[player_rps]} and computer played {comp_rps}.{rps_strings[comp_rps]}.")
 
     if comp_rps == 1:
         if player_rps == 2:
@@ -62,4 +72,4 @@ while rounds > 0:
 #dictionary helps you check max between two variables!!
 dict = {player_wins:"player",comp_wins:"computer"}
 winner = dict.get(max(dict))
-print("SCORE TOTALS\nplayer: "+str(player_wins)+"\ncomputer: "+str(comp_wins)+"\n"+winner+" wins!")
+print("\nSCORE TOTALS\nplayer: "+str(player_wins)+"\ncomputer: "+str(comp_wins)+"\n"+winner+" wins the tournament!")

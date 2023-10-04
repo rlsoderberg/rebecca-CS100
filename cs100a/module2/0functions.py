@@ -20,8 +20,17 @@ while exit != "x":
 
     #wait, this is an easy way to do it
     problem_choice = 0
-    while (problem_choice != 1 and problem_choice != 2 and problem_choice != 3):
-        input("Please enter 1, 2, or 3: ")
+
+    valid = False
+    while valid == False:
+        try:
+            problem_choice = int(input("Please enter 1, 2, or 3: "))
+            if problem_choice not in range (0, 4):
+                raise ValueError("out of range")
+            else:
+                valid = True
+        except ValueError:
+            print("Invalid Input!")
 
 
     if (problem_choice == 1):
