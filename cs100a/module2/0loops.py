@@ -30,9 +30,9 @@ while rounds > 0:
                 valid = True
         except ValueError:
             print("Invalid Input!")
+    #randint is "right inside" (RIGHT inside meaning that it goes right up to the edge? it's inclusive? trying to think of a mnemonic device)
+    #i had some test lines here i forgot to delete, so i'm basically just messing around until source control lets me commit. what is wrong with this thing???
     comp_rps = random.randint(0,3)
-    print("player_rps = "+str(player_rps))
-    print("comp_rps = "+str(comp_rps))
     if player_rps == comp_rps:
         print("you played "+str(rps_strings[player_rps])+" and computer played "+str(rps_strings[comp_rps])+". it's a tie!")
     elif player_rps > comp_rps:
@@ -55,4 +55,4 @@ winner = dict.get(max(dict))
 print("SCORE TOTALS\nplayer: "+str(player_wins)+"\ncomputer: "+str(comp_wins)+"\n"+winner+" wins!")
 
 
-
+#how much do i have to delete???
