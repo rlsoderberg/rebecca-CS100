@@ -1,10 +1,19 @@
-#well, it all looks fine
-#not nearly as messy as math was
-#can i skip this one??? i ran the old program and checked on its functionality
-#troop counts can be confusing
-#fine, i'll fix that really fast
-#well, if i was rewriting this today, i'd also put more in functions
+#troop input
 
+#these input functions, which i'm trying to optimize
+
+def troop_input(territory_name):
+    troops = 0
+    while troops < 2:
+        try:
+            troops = int(input())
+            if not troops:
+                raise ValueError('empty string')
+            valid = True
+        except ValueError:
+            print("Invalid Input!")
+    return troops  
+"""
 def troop_input(territory_name):
     valid = False
     while valid == False:
@@ -22,27 +31,20 @@ def troop_input(territory_name):
         except ValueError:
             print("Invalid input. Please enter an integer 2 or higher.")
     return troops
+"""
 
-#well... the dice rolls are so particular i don't know if it's worth defining this function?
-#oh well, i'll go ahead and use variables
 def num_dice_input(territory_name, troops, player_roll):
-    valid = False
-    while valid == False:
+    numdice = troops + 1
+    while numdice > troops:
         try:
-            valid2 = False
-            while valid2 == False:
-                numdice = int(input())
-                if numdice == player_roll[0] or numdice == player_roll[1]:
-                    if numdice <= troops:
-                        valid2 = True
-                    else:
-                        print("You don't have that many troops! Please enter an integer less than " + str(troops))
-                else:
-                    print("Please enter an integer from " + str(player_roll[0]) + " to "  + str(player_roll[1]) + ".")
-            valid = True        
+            print(f"You have {troops} troops on {territory_name}. You can roll between {player_roll[0]} and {player_roll[1]} dice on this turn.")
+            numdice = int(input("How many dice will you roll?"))
+            if not numdice:
+                raise ValueError('empty string')
+            valid = True
         except ValueError:
-            print("Please enter an integer from " + str(player_roll[0]) + " to "  + str(player_roll[1]) + ".")
-    return numdice
+            print("Invalid Input!")
+    return troops  
 
 import random
 
@@ -66,7 +68,9 @@ territory2=input("Enter the name of the defending territory: ")
 
 #request number of troops on territory, limiting for more than 2
 
+print(f"How many troops are on {territory1}?")
 troops1 = troop_input(territory1)
+print(f"How many troops are on {territory2}?")
 troops2 = troop_input(territory2)
 
 
@@ -94,7 +98,7 @@ while troops1 >= 2 and troops2 >= 1:
     print("\n")
     print(territory1, ": You have ",troops1," available troops.")
 
-    print("How many dice (" + str(player_1_roll[0]) + " - " + str(player_1_roll[1]) + ") will " + str(territory1) + " roll to attack " + str(territory2) + "?")   
+    print(f"How many dice ({player_1_roll[0]} - {player_1_roll[1]}) will you roll to attack {territory2}?")   
     numdice1 = num_dice_input(territory1, troops1, player_1_roll)
 
     #generate random rolls for player 1 according to number of dice
@@ -111,10 +115,12 @@ while troops1 >= 2 and troops2 >= 1:
     #print information for player 2
     print("\n")
     print(territory2, ": You have ",troops2," available troops.")
-    print(territory1," is attacking with ",numdice1," dice.")
+    print(f"{territory1} is attacking {territory2} with {numdice1} dice.")
+
+    #i keep getting a number for numdice1 that equals the total number of troops on the territory???
 
     print("How many dice (" + str(player_2_roll[0]) + " - " + str(player_2_roll[1]) + ") will " + str(territory2) + " roll to defend " + str(territory2) + "?")   
-    numdice1 = num_dice_input(territory2, troops2, player_2_roll)
+    numdice2 = num_dice_input(territory2, troops2, player_2_roll)
 
     #generate random rolls for player 2 according to number of dice           
     if numdice2 == 2:
