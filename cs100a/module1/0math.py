@@ -1,5 +1,10 @@
 import random
 
+#yeah, i tried this, and idk if i was expecting no errors, omg what chaos is this
+thing = input("input something")
+thing = int(thing)
+
+
 #i won't TOTALLY restart, but i'll go over everything to make sure i remember it
 #and this had better be the last time, since i'm labeling it 0...
 

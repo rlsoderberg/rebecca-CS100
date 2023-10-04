@@ -18,17 +18,11 @@ while exit != "x":
 
     print("\nWould you like to:\n1) Calculate the month corresponding to an integer?\n2) Calculate the sum of the integer's digits\n3) Calculate the integer's factorial\n\nWhich will it be?\n")
 
-    #well... i'm just going to make a custom input function?
-    valid = False
-    while valid == False:
-        try:
-            problem_choice = int(input("Please enter 1, 2, or 3: "))
-            if problem_choice not in range (0, 4):
-                raise ValueError("out of range")
-            else:
-                valid = True
-        except ValueError:
-            print("Invalid Input!")
+    #wait, this is an easy way to do it
+    problem_choice = 0
+    while (problem_choice != 1 and problem_choice != 2 and problem_choice != 3):
+        input("Please enter 1, 2, or 3: ")
+
 
     if (problem_choice == 1):
 

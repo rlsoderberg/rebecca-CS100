@@ -7,7 +7,6 @@ from i import int_input_function
 
 player_wins = 0
 comp_wins = 0
-gameover = 0
 
 rps_strings = [0, "rock","paper", "scissors"]
 player_rps = 0
@@ -19,34 +18,44 @@ rounds = int_input_function()
 while rounds > 0:
     player_rps = 0
     comp_rps = 0
-    print("\n1. Rock, 2. Paper, or 3. Scissors?")
-    valid = False
-    while valid == False:
-        try:
-            player_rps = int(input("Please enter 1, 2, or 3: "))
-            if player_rps not in range (0, 4):
-                raise ValueError("out of range")
-            else:
-                valid = True
-        except ValueError:
-            print("Invalid Input!")
-    #randint is "right inside" (RIGHT inside meaning that it goes right up to the edge? it's inclusive? trying to think of a mnemonic device)
-    #i had some test lines here i forgot to delete, so i'm basically just messing around until source control lets me commit. what is wrong with this thing???
-    #oh, i forgot to save, that's what
+    winner = ""
+    
+    while player_rps != 1 and player_rps != 2 and player_rps != 3:
+        player_rps = input("\n1. Rock, 2. Paper, or 3. Scissors?")
+
+    #now... can i convert this to f strings?
+
+    #oh, fiddlesticks! rps is so particular!
     comp_rps = random.randint(0,3)
-    if player_rps == comp_rps:
-        print("you played "+str(rps_strings[player_rps])+" and computer played "+str(rps_strings[comp_rps])+". it's a tie!")
-    elif player_rps > comp_rps:
-        print("you played "+str(rps_strings[player_rps])+" and computer played "+str(rps_strings[comp_rps])+"! "+str(rps_strings[player_rps])+" beats "+str(rps_strings[comp_rps])+"! you win")
+
+    print(f"you played {rps_strings[player_rps]} and computer played {rps_strings[comp_rps]}.")
+
+    if comp_rps == 1:
+        if player_rps == 2:
+            winner = "p"
+        elif player_rps == 3:
+            winner = "c"
+    elif comp_rps == 2:
+        if player_rps == 1:
+            winner = "c"
+        elif player_rps == 3:
+            winner = "p"
+    elif comp_rps == 3:
+        if player_rps == 1:
+            winner = "p"
+        elif player_rps == 2:
+            winner = "c"
+
+    if winner == "":
+        print("it's a tie!")
+    elif winner == "p":
+        print(f"{rps_strings[player_rps]} beats {rps_strings[comp_rps]}! you win")
         player_wins += 1
-    elif player_rps < comp_rps:
-        print("you played "+str(rps_strings[player_rps])+" and computer played "+str(rps_strings[comp_rps])+"! "+str(rps_strings[comp_rps])+" beats "+str(rps_strings[player_rps])+"! computer wins")
+    elif winner == "c":
+        print(f"{rps_strings[comp_rps]} beats {rps_strings[player_rps]}! computer wins")
         comp_wins += 1
-    print("player wins: "+str(player_wins)+"   computer wins: "+str(comp_wins))
-    if player_wins == 7:
-        gameover = 1
-    if comp_wins == 7:
-        gameover = 1
+    print(f"player wins: {player_wins}   computer wins: {comp_wins}")
+
     if player_rps != comp_rps:
         rounds -= 1
     
