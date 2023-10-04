@@ -1,16 +1,16 @@
-#it's really not liking what i'm doing with numbers here. i'm trying to make it simpler and simpler...
-
-def display_loop(action, equations, x):
-    for x in equations:
-        action(equations, x)
+def display_loop(action, array, x):
+    for x in array:
+        action(array, x)
         x=int(x)
         x+=1
+    x = 0
 
-#do i need to worry about unused arguments here?
 def print_x(equations, x):
-    print(f"x\n")
+    x = int(x)
+    print(f"{x}\n")
 
 def display_equation(equations, x):
+    x = int(x)
     print(f"x = {int}")
     print(f"equation {x}:")
     print(equations[x])
@@ -18,14 +18,17 @@ def display_equation(equations, x):
     print(eval(equations[x]))
 
 rand_floats = [6.546, 77.017, 9.066]
-equations = ["x^5", "2 % x", "x/2"]
-
 ints = [int(rand_floats[0]), int(rand_floats[1]), int(rand_floats[2])]
+equations = ["x^5", "7 % x", "x/2"]
 
-x=0
+x = 0
+print("floats: ")
+display_loop(print_x, rand_floats, x)
+
+
 print("modified ints: ")
-display_loop(print_x, equations, x)
-x=0
+display_loop(print_x, ints, x)
+
 print("equations: ")
 display_loop(display_equation, equations, x)
 
