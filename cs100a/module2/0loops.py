@@ -30,7 +30,9 @@ while rounds > 0:
                 valid = True
         except ValueError:
             print("Invalid Input!")
-    comp_rps = random.randint(0,4)
+    comp_rps = random.randint(0,3)
+    print("player_rps = "+str(player_rps))
+    print("comp_rps = "+str(comp_rps))
     if player_rps == comp_rps:
         print("you played "+str(rps_strings[player_rps])+" and computer played "+str(rps_strings[comp_rps])+". it's a tie!")
     elif player_rps > comp_rps:
