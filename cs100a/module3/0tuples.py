@@ -26,6 +26,7 @@ while item_name != "none":
 
 print("here's your grocery list:")
 print(grocery_list)
+full_grocery_list = grocery_list
 
 
 #remove items from list if they are bought... until none remain
@@ -35,6 +36,12 @@ while len(grocery_list) > 0:
     if item_name in item in grocery_list:
         grocery_list.remove(item)
     print(grocery_list)
+
+#print receipt (NOT KNOWING IF THIS WORKS, UNTIL I FIX THE EMPTY LIST...)
+for x in grocery_list:
+    print(x)
+    print("\n")
+    x+=1
 
 
 
