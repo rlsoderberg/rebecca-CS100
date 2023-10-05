@@ -1,36 +1,18 @@
 #input functions
-def int_input_function():
-    valid = False
-    while valid == False:
-        try:
-            x = int(input())
-            if not x:
-                raise ValueError('empty string')
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
-    return x  
+import sys
+sys.path.append("..\..")
 
-def float_input_function():
-    valid = False
-    while valid == False:
-        try:
-            x = float(input())
-            if not x:
-                raise ValueError('empty string')
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
-    return x  
+from i import int_input_function, float_input_function
 
 
 #making list
 grocery_list = []
 #initializing item
-item=[]
-item_name=""
 #add items to list (except none)
+item_name = ""
+#PROBLEM WITH AUTOMATICALLY ADDING BLANK ITEM, AND DELETING ALL ITEMS
 while item_name != "none":
+    item=[]
     item_name = input("enter a grocery item, or none to exit: ")
     if item_name!= "none":
         item.append(item_name)
@@ -41,7 +23,6 @@ while item_name != "none":
         quantity = int_input_function()
         item.append(quantity)
     grocery_list.append(item)
-#still adding item twice???????????? and like, it's doing multiples of a list for the whole shopping list?
 
 print("here's your grocery list:")
 print(grocery_list)
@@ -51,7 +32,6 @@ print(grocery_list)
 print("now go to the grocery store")
 while len(grocery_list) > 0:
     item_name = input("what did you put in your cart?")
-    #really don't know how to do this!!!!!!!!!!!!!!
     if item_name in item in grocery_list:
         grocery_list.remove(item)
     print(grocery_list)

@@ -16,7 +16,7 @@ def digit_total(string):
 exit = "0"
 while exit != "x":
 
-    print("\nWould you like to:\n1) Calculate the month corresponding to an integer?\n2) Calculate the sum of the integer's digits\n3) Calculate the integer's factorial\n\nWhich will it be?\n")
+    print("\n\n\n\n\nWould you like to:\n1) Calculate the month corresponding to an integer?\n2) Calculate the sum of the integer's digits\n3) Calculate the integer's factorial\n\nWhich will it be?\n")
 
     #wait, this is an easy way to do it
     problem_choice = 0

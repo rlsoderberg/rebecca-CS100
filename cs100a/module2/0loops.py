@@ -12,7 +12,7 @@ rps_strings = [0, "rock","paper", "scissors"]
 player_rps = 0
 comp_rps = 0
 
-print("Rcck Paper Scissors Tournament")
+print("\nRock Paper Scissors Tournament")
 print("How many rounds do you want to play? Please enter any integer: ")
 rounds = int_input_function()
 

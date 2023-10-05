@@ -1,5 +1,10 @@
 import random
 
+import sys
+sys.path.append("..\..")
+                
+from i import input_function
+
 #input function
 #valid integers only
 
@@ -7,7 +12,7 @@ def int_input_function():
     valid = False
     while valid == False:
         try:
-            x = int(input())
+            x = int(input(f"x = "))
             if not x:
                 raise ValueError('empty string')
             valid = True
@@ -28,38 +33,29 @@ def ready_input_function():
     return ready  
 
 def math_problem(prob_seq, equation_strings):
+    correct = 0
     rando = random.randint(0,9)
     while rando in prob_seq:
         rando = random.randint(0,9)
     prob_seq.append(rando)
     print(f"\n{x + 1} :  {equation_strings[rando]}")
     user_ans = 0
-    print("Input answer: ")
+    print("Your answer:")
     user_ans = int_input_function()
     if int(user_ans) == answers[rando]:
         print("correct")
         correct += 1
     elif int(user_ans) != answers[rando]:
-        print("incorrect\n")
+        print("\n\nincorrect\n")
+        input("Press any key to see the correct answer.\n")
+        print("\n\n\n\nCorrect Answer:")
         print(f"{equation_strings[rando]}")
         print(f"x = {answers[rando]}\n")
+    return correct
 
-
-name = ""
-ready = ""
-name = input("what is your name? ")
-print(f"welcome, {name}, to the Tutorializer.\n")
-print("Are you ready to be Tutorialized? Y/N")
-ready = ready_input_function()
-if ready == "Y":
-    print("Let's go!")
-elif ready == "N":
-    print("Too bad! You cannot escape the Tutorializer!")
-
-
-#we are importing random so that we can randomize the problem sequence
-#oh right, i just looked, and this is the one where i got way overly elaborate with the math volcano
-#i'm going to try to get through pretty fast, so that i can conserve my precious bodily fluids
+#random number, and array of random numbers, to randomize equation order
+rando = 0
+prob_seq = []
 
 #array of equation strings
 equation_strings = ["5x + 3 = 13", "14 - 3x = 2", "9 - 2x = 3", "8x + 2 = 50", "2x + 16 = 40", 
@@ -67,14 +63,23 @@ equation_strings = ["5x + 3 = 13", "14 - 3x = 2", "9 - 2x = 3", "8x + 2 = 50", "
 #array of answer ints
 answers = [2, 4, 3, 6, 12, 5, 7, 8, 9, 14]
 
-#random number
-rando = 0
-#array of random numbers
-prob_seq = []
-correct = 0
+name = ""
+ready = ""
+print("what is your name? ")
+name = input_function()
+print(f"welcome, {name}, to the Tutorializer.\n")
+print("Are you ready to be Tutorialized? Y/N")
+ready = ready_input_function()
+if ready == "Y":
+    print("Let's go!\n\n\n")
+elif ready == "N":
+    print("Too bad! You cannot escape the Tutorializer!")
 
 for x in range (0, 10):
-    math_problem(prob_seq, equation_strings)
+    correct = math_problem(prob_seq, equation_strings)
+
+print(f"\n\nCongratulations! You have answered {correct} math problems correctly!")
+print(f"Your Tutorialization Level is {correct*10}%.\n")
     
       
 

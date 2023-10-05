@@ -1,61 +1,25 @@
-#troop input
+#importing input function
+import sys
+sys.path.append("..\..")
 
-#these input functions, which i'm trying to optimize
+from i import int_input_function, input_function
 
-def troop_input(territory_name):
-    troops = 0
-    while troops < 2:
-        try:
-            troops = int(input())
-            if not troops:
-                raise ValueError('empty string')
-            valid = True
-        except ValueError:
-            print("Invalid Input!")
-    return troops  
-"""
-def troop_input(territory_name):
-    valid = False
-    while valid == False:
-        try:
-            valid2 = False
-            while valid2 == False:
-                print("\n")
-                print("How many troops are on ",territory_name,"?")
-                troops = int(input_function("int"))
-                if troops >= 2:
-                    valid2 = True
-                else:
-                    print("Invalid input. Please enter an integer 2 or higher.")
-            valid = True        
-        except ValueError:
-            print("Invalid input. Please enter an integer 2 or higher.")
-    return troops
-"""
+import random
 
-def num_dice_input(territory_name, troops, player_roll):
-    numdice = troops + 1
-    while numdice > troops:
+def num_dice_input(troops):
+    numdice = 0
+    while numdice != 3 and numdice != 2:
         try:
-            print(f"You have {troops} troops on {territory_name}. You can roll between {player_roll[0]} and {player_roll[1]} dice on this turn.")
-            numdice = int(input("How many dice will you roll?"))
+            numdice = int(input("How many dice will you roll? "))
             if not numdice:
                 raise ValueError('empty string')
             valid = True
         except ValueError:
             print("Invalid Input!")
-    return troops  
-
-import random
+    return numdice  
 
 player_1_roll = [2,3]
 player_2_roll = [1,2]
-
-#oh look, here it is, reaching over...
-import sys
-sys.path.append('../..')
-
-from i import input_function
 
 #print introduction
 print("\n  Welcome to \n• ROBOT RISK •\n")
@@ -63,15 +27,17 @@ print("Two territories are battling in a game of Risk.\n")
 input("Press any key to continue.\n")
 
 #request territory names
-territory1=input("Enter the name of the attacking territory: ")
-territory2=input("Enter the name of the defending territory: ")
+print("Enter the name of the attacking territory: ")
+territory1=input_function()
+print("Enter the name of the defending territory: ")
+territory2=input_function()
 
 #request number of troops on territory, limiting for more than 2
 
 print(f"How many troops are on {territory1}?")
-troops1 = troop_input(territory1)
+troops1 = int_input_function()
 print(f"How many troops are on {territory2}?")
-troops2 = troop_input(territory2)
+troops2 = int_input_function()
 
 
 #initiate roll counter, turn counter, and dice counter
@@ -96,10 +62,9 @@ while troops1 >= 2 and troops2 >= 1:
 
     #print information for player 1
     print("\n")
-    print(territory1, ": You have ",troops1," available troops.")
-
-    print(f"How many dice ({player_1_roll[0]} - {player_1_roll[1]}) will you roll to attack {territory2}?")   
-    numdice1 = num_dice_input(territory1, troops1, player_1_roll)
+    print(f"There are {troops1} troops on {territory1} and {troops2} troops on {territory2}.")
+    print(f"You can roll between {player_1_roll[0]} and {player_1_roll[1]} dice to attack {territory2}.")
+    numdice1 = num_dice_input(troops1)
 
     #generate random rolls for player 1 according to number of dice
     if numdice1 == 3:
@@ -114,13 +79,13 @@ while troops1 >= 2 and troops2 >= 1:
 
     #print information for player 2
     print("\n")
-    print(territory2, ": You have ",troops2," available troops.")
-    print(f"{territory1} is attacking {territory2} with {numdice1} dice.")
+    print(f"{territory1} ({troops1} troops) is attacking {territory2} ({troops2} troops). It is attacking with {numdice1} dice.")
+    print(f"You can roll between {player_2_roll[0]} and {player_2_roll[1]} dice to defend {territory2} against {territory1}.")
+
 
     #i keep getting a number for numdice1 that equals the total number of troops on the territory???
 
-    print("How many dice (" + str(player_2_roll[0]) + " - " + str(player_2_roll[1]) + ") will " + str(territory2) + " roll to defend " + str(territory2) + "?")   
-    numdice2 = num_dice_input(territory2, troops2, player_2_roll)
+    numdice2 = num_dice_input(troops2)
 
     #generate random rolls for player 2 according to number of dice           
     if numdice2 == 2:
@@ -193,7 +158,7 @@ while troops1 >= 2 and troops2 >= 1:
 
 
 #print results for end of game
-print("Attack over! \n")
+print("\n\n\nAttack over! \n")
 print(territory1," has ",troops1," troops and ",territory2," has ",troops2,"troops.\n")
 if troops1>troops2:
     print(territory1," takes occupation of ",territory2," with ",troops1," troops.")
