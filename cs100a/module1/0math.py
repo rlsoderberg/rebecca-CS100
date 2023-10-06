@@ -32,7 +32,7 @@ def ready_input_function():
             print("Invalid Input!")
     return ready  
 
-def math_problem(prob_seq, equation_strings, rand_list):
+def math_problem(prob_seq, equation_strings):
     correct = 0
     rando = random.randint(0,9)
 
@@ -81,8 +81,9 @@ if ready == "Y":
 elif ready == "N":
     print("Too bad! You cannot escape the Tutorializer!")
 
+#yeah, this is totally wack. it's not even working right now. can i just put this off until we do classes???
 for x in range (0, 10):
-    result = math_problem(prob_seq, equation_strings, rand_list)
+    result = math_problem(prob_seq, equation_strings)
     rando = result[0]
     rand_list.append(rando)
     outside_correct = result[1]
