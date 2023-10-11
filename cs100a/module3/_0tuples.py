@@ -1,6 +1,6 @@
 #input functions
 import sys
-sys.path.append("..\..")
+sys.path.append("..")
 
 from i import int_input_function, float_input_function
 

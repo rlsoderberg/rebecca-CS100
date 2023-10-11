@@ -1,7 +1,7 @@
 import random
 
 import sys
-sys.path.append("..\..")
+sys.path.append("../..")
                 
 from i import input_function
 
@@ -94,8 +94,6 @@ for x in range (0, 10):
 
 print(f"\n\nCongratulations! You have answered {correct} math problems correctly!")
 print(f"Your Tutorialization Level is {correct*10}%.\n")
-
-input("Press any key to see a list of equations.\n")
 
 #THIS DEFINITELY DOESN'T SEEM LIKE THE CORRECT WAY TO ARRANGE THE DATA
 for x in rand_list:
