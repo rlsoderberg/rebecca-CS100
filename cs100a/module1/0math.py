@@ -32,8 +32,8 @@ def ready_input_function():
             print("Invalid Input!")
     return ready  
 
-def math_problem(prob_seq, equation_strings):
-    correct = 0
+
+def math_problem(prob_seq, equation_strings, correct):
     rando = random.randint(0,9)
 
     while rando in prob_seq:
@@ -44,15 +44,7 @@ def math_problem(prob_seq, equation_strings):
     print("Your Answer:")
     user_ans = int_input_function()
     correct_ans = answers[rando]
-    if int(user_ans) == correct_ans:
-        print("correct")
-        correct = 1
-    elif int(user_ans) != correct_ans:
-        print("\n\nincorrect\n")
-        input("Press any key to see the correct answer.\n")
-        print("\n\n\n\nCorrect Answer:")
-        print(f"{equation_strings[rando]}")
-        print(f"x = {answers[rando]}\n")
+    #don't i have to put the 'if correct stuff' in the main body of the program??? is that true???
     return [rando, correct, user_ans, correct_ans]
 
 #random number, and array of random numbers, to randomize equation order
@@ -81,18 +73,23 @@ if ready == "Y":
 elif ready == "N":
     print("Too bad! You cannot escape the Tutorializer!")
 
-#yeah, this is totally wack. it's not even working right now. can i just put this off until we do classes???
-for x in range (0, 10):
-    result = math_problem(prob_seq, equation_strings)
-    rando = result[0]
-    rand_list.append(rando)
-    outside_correct = result[1]
-    correct_list.append[outside_correct]
-    user_ans = result[2]
-    user_ans_list.append(user_ans)
-    outside_correct_ans = result[3]
-    correct_ans_list.append(outside_correct_ans)
+#well, here, let me at least get this working...
 
+correct = 0
+
+
+for x in range (0, 10):
+    (rando, correct, user_ans, correct_ans) = math_problem(prob_seq, equation_strings, correct)
+    rand_list.append(rando)
+    if int(user_ans) == correct_ans:
+        print("correct")
+        correct += 1
+    elif int(user_ans) != correct_ans:
+        print("\n\nincorrect\n")
+        input("Press any key to see the correct answer.\n")
+        print("\n\n\n\nCorrect Answer:")
+        print(f"{equation_strings[rando]}")
+        print(f"x = {answers[rando]}\n")
     
 
 print(f"\n\nCongratulations! You have answered {correct} math problems correctly!")
