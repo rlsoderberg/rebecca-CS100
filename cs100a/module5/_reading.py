@@ -1,7 +1,7 @@
 import sys
-sys.path.append('module3')
+sys.path.append('../module3')
 
-from _0tuples import create_list
+from _tuples import create_list
 
 #grocery list confirmation is reinvogorated by file import combo
 grocery_list = create_list()

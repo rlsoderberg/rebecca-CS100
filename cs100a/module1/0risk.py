@@ -1,6 +1,6 @@
 #importing input function
 import sys
-sys.path.append("..\..")
+sys.path.append("../..")
 
 from i import int_input_function, input_function
 
