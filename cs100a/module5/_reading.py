@@ -5,11 +5,17 @@ from _tuples import create_list
 
 #grocery list confirmation is reinvogorated by file import combo
 grocery_list = create_list()
+
+#this is kind of pointless, to write it to a file and THEN read it from a file, but you know what???
+f = open (grocery_list.txt, 'w')
+for string in grocery_list:
+    f.write(string)
+
 #initialize lineno
 lineno = 0
 yes = ""
 #loop through lines in text opened through file variable
-for line in grocery_list:
+for line in f:
     #strip lineno
     if lineno < 4:
         print(str(lineno)+": "+line.strip())
@@ -24,7 +30,7 @@ for line in grocery_list:
     #advance lineno
     lineno = lineno + 1
 
-grocery_list.close()
+f.close()
 
 
 
