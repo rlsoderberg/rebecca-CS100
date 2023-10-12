@@ -33,6 +33,7 @@ grocery_list = create_list()
 #oh wait, w automatically does that? srsly what am i doing?
 #ohhhh, it wanted the filename in quotes. oooomg
 
+subtotal = 0
 f = open ("grocery.txt", 'w')
 f.write("GROCERY LIST\n")
 for item in grocery_list:
@@ -40,13 +41,22 @@ for item in grocery_list:
     item_name = item[0]
     price = ("%.2f" % item[1]) 
     quantity = item[2]
-    f.write(f"{quantity}x {item_name} at ${price} each\n")
+    itemsubtotal = quantity*item[1]
+    itemtotal = "%.2f" % itemsubtotal
+    f.write(f"{quantity}x {item_name} at ${price} each: ${itemtotal}\n")
+    subtotal += itemsubtotal
 
+total = "%.2f" % subtotal
+f.write(f"Your total is ${total}")
 print("YOUR GROCERY LIST HAS BEEN WRITTEN")
 
 #look, i literally don't know what i was doing with that old grocery check program. like, what was that???
 #at least i did some writing in this one, right???
 #i suppose a rename is in order
+
+#yeah, it got way too complicated again with the subtotals!!!
+#really, i need to go through and make a list of stuff to remember, since i forget everything
+#i'll work on it!!!!!!!!!!!!!
 
 f.close()
 

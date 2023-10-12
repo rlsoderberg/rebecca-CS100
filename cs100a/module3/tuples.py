@@ -26,7 +26,7 @@ def create_list():
     for item in grocery_list:
         (n, p, q) = item
         price = ("%.2f" % p)
-        print(f"{q}x {n} at ${price} each")
+        print(f"{q}x {n} at ${price} each: {quantity*p}")
     #ohhhh, you have to copy lists!!!
     full_grocery_list = grocery_list.copy()
     return grocery_list

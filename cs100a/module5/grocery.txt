@@ -1,3 +1,4 @@
 GROCERY LIST
-9x hair at $9.00 each
-9x eggs at $9.00 each
+9x hair at $9.00 each: 81.00
+9x eggs at $9.00 each: 81.00
+Your total is 162.00
