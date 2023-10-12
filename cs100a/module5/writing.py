@@ -20,7 +20,8 @@ def create_list():
             price = float_input_function()
             print(f"How many {item_name} are you buying? ")
             quantity = int_input_function()
-            item = [item_name, price, quantity]
+            total = price*quantity
+            item = (item_name, price, quantity, total)
             grocery_list.append(item)
 
     return grocery_list
@@ -33,19 +34,17 @@ grocery_list = create_list()
 #oh wait, w automatically does that? srsly what am i doing?
 #ohhhh, it wanted the filename in quotes. oooomg
 
-total = 0
+grandtotal = 0.0
 f = open ("grocery.txt", 'w')
 f.write("GROCERY LIST\n")
-for item in grocery_list:
-    #look, i know this is awkward!!!
-    item_name = item[0]
-    price = ("%.2f" % item[1]) 
-    quantity = item[2]
-    itemtotal = quantity*item[1]
-    f.write(f"{quantity}x {item_name} at ${price} each: ${itemtotal}\n")
-    total += itemtotal
+for tuple in grocery_list:
+    (n, p, q, t) = tuple
+    price = ("%.2f" % p) 
+    total = ("%.2f" % t)
+    f.write(f"{q}x {n} at ${price} each: ${total}\n")
+    grandtotal += float(total)
 
-f.write(f"Your total is ${total}")
+f.write(f"Your grand total is ${grandtotal}")
 print("YOUR GROCERY LIST HAS BEEN WRITTEN")
 
 #really, i need to go through and make a list of stuff to remember, since i forget everything
