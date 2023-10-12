@@ -7,7 +7,7 @@
 
 def sequentialsearch(haystack, searchterm): #forgot arguments
     position = 0
-    for i in haystack: #i think this is supposed to be (0, len(haystack)), not sure why yet
+    for i in (0, len(haystack)): #still not sure why i have to do it this way
         if(i == searchterm): #forgot parentheses
             return i
 
