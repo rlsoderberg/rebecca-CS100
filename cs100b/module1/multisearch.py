@@ -37,7 +37,8 @@ def sequentialsearch(haystack, needle):
 
 #BINARY SEARCH
 #start in the middle, see if it's higher or lower (data needs to be sorted)
-
+"""
+WHY WASN'T THIS WORKING???????
 def binarysearch(haystack, needle):
 
     haystack.sort() #can i just put the sort up here for this one?
@@ -61,10 +62,29 @@ def binarysearch(haystack, needle):
     return -1
 
 #wait, it did sort numbers, and i don't really get how? how much stuff do you have to return in python?
+"""
+def binarysearch(haystack, needle):
+
+    haystack.sort()
+
+    start = 0
+    end = len(haystack)
+
+    while start <= end:
+        i = start + (end-start)//2
+        if haystack[i] < needle:
+            start = i+1
+        elif haystack[i] > needle:
+            end = i-1
+        else:
+            return i
+
+    #if we're out of the loop, we didn't find it
+    return -1
 
 #SELECTION SORT
 #you start with the start of your list as your min, and then you switch if you find something smaller
-
+"""
 def selectionsort(haystack, needle):
     for i in range(0, len(haystack)):
         min = i
@@ -82,11 +102,24 @@ def selectionsort(haystack, needle):
     #with selection sort, you go number by number, so you use tmp to hold if you switch it, and then...
     #and then, like, you have the min, but you still keep going???
     #right, so yeah, we're not returning anything. is that just how, like, it works?
+"""
+#this one isn't working either???
 
+def selectionsort(haystack):
+    for i in range(0, len(haystack)):
+        min = i
+        #look for an item smaller than list[min]
+        for j in range(i, len(haystack)):
+            if haystack[j] < haystack[min]:
+                min = j     #just remember where this was
+        #we've found it. Swap it into this location
+        tmp = haystack[i]
+        haystack[i]=haystack[min]
+        haystack[min] = tmp
 
 #BUBBLE SORT
 #you just loop through the list multiple times, and switch if the one on the right is bigger?
-
+"""
 def bubblesort(haystack, needle):
     swap = True #i am honestly not entirely sure what this is for?
     while swap: #ohhh this is what it is for, so you loop until you don't need to swap anywhere
@@ -99,54 +132,65 @@ def bubblesort(haystack, needle):
                 haystack[i+1] = tmp #i was able to execute the switch from memory, at least, hahaha
 
     return -1
+"""
+def bubblesort(haystack): #it seems to like it better when i use var haystack instead of list in the sorts????
+    swap = True
+    while swap:
+        swap = False
+        for i in range(0, len(haystack)-1):
+            if haystack[i] > haystack[i+1]:
+                swap = True
+                tmp = haystack[i]
+                haystack[i] = haystack[i+1]
+                haystack[i+1] = tmp
 
 #INSERTION SORT
 #move things around to make room
 
-def insertionsort(haystack, needle):
+def insertionsort(haystack):
     for i in range(1, len(haystack)):
         number = haystack[i] #so number is your tmp, basically???
         pos = i 
         while pos > 0 and haystack[pos - 1] > number: #rearrange all the way back, as long as you can
             haystack [pos] = haystack [pos - 1]
             pos = pos - 1 
+        haystack[pos] = number
 
-    return -1
+def main(variable):
+    while variable == '':
+        numbers = list = [3,5,6,7,2,4,9]
+        print(f"number list: {numbers}")
 
+        target = int(input("enter a number between 1 and 10: "))
 
-def main():
-    numbers = [3,5,6,7,2,4,9]
-    print(f"number list: {numbers}")
+        type = "X"
+        type = input("do you want to do:\nA) a sequential search\nB) a binary search\nC) a selection sort \nD) a bubble sort \nE) an insertion sort ?")
 
-    type = "X"
-
-    target = int(input("enter a number between 1 and 10: "))
-    type = input("do you want to do:\nA) a sequential search\nB) a binary search\nC) a selection sort \nD) a bubble sort \nE) an insertion sort ?")
-
-    while type != "A" and type != "B" and type != "C" and type != "D" and type != "E":
-        type = input("invalid input. do you want to do:\nA) a sequential search\nB) a binary search\nC) a selection sort \nD) a bubble sort \bE) an insertion sort ?")
-    if type == "A":
-        location = sequentialsearch(numbers, target)
-    elif type == "B":
-        location = binarysearch(numbers, target)
-    elif type == "C":
-        location = selectionsort(numbers, target) #uh... this one isn't working?
-    elif type == "D":
-        location = bubblesort(numbers, target) #this is working, in reverse?
-    elif type == "E":
-        location = insertionsort(numbers, target) #why are my numbers suddenly different?
-    
-    print(f"new number list: {numbers}")
-    if location == -1:
-        print(f"\ncouldn't find {str(target)} in number list")
-    else:
-        print("found " + str(target) + " at location " + str(location))
-
-    menu = input ("press any key to return to start over")
-
+        while type != "A" and type != "B" and type != "C" and type != "D" and type != "E":
+            type = input("invalid input. do you want to do:\nA) a sequential search\nB) a binary search\nC) a selection sort \nD) a bubble sort \bE) an insertion sort ?")
+        if type == "A":
+            location = sequentialsearch(numbers, target)
+        elif type == "B":
+            location = binarysearch(numbers, target)
+        elif type == "C":
+            location = selectionsort(list)
+        elif type == "D":
+            location = bubblesort(list)
+        elif type == "E":
+            location = insertionsort(list) #why doesn't it like when i insertionsort(numbers)??????
+        if type == "A" or type == "B":
+            print(f"new number list: {numbers}")
+            if location == -1:
+                print(f"\ncouldn't find {str(target)} in number list")
+            else:
+                print("found " + str(target) + " at location " + str(location))
+        elif type == "C" or type == "D" or type == "E":
+            print(f"new number list: {list}")
 
 
-variable = 0 #literally what am i doing right now
-while variable == 0:
-    main()
+        variable = input ("press enter to start over or x to exit ")
+
+
+variable = ''
+main(variable)
     
