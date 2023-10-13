@@ -1,3 +1,6 @@
+"""
+LOOK, THIS WHOLE THING ISN'T WORKING
+
 #here, i'm putting all these searches in one program, right? today's weird thing?
 
 #SEQUENTIAL SEARCH
@@ -6,9 +9,8 @@
 #here, i'm trying to do this without looking, let's see how it goes
 
 def sequentialsearch(haystack, searchterm): #forgot arguments
-    position = 0
-    for i in (0, len(haystack)): #still not sure why i have to do it this way
-        if(i == searchterm): #forgot parentheses
+    for i in range(0, len(haystack)): #still not sure why i have to do it this way
+        if(haystack[i] == searchterm): #forgot parentheses OH, haystack[i] was key!!!!!!!!!!!!!!!!!!!!!
             return i
 
     return -1  
@@ -24,3 +26,28 @@ if position == -1:
 else:
     print(f"i found {searchterm} at position {position}.")
 
+"""
+
+import random
+
+def sequentialsearch(haystack, needle):
+    for i in range(0, len(haystack)):
+        if (haystack[i] == needle):
+            return i
+
+    return -1
+
+def main():
+    numbers = [3,5,6,7,2,4,9]
+
+    target = int(input("enter a number between 1 and 10: "))
+    location = sequentialsearch(numbers, target)
+    if location == -1:
+        print("couldn't find " + str(target))
+    else:
+        print("found " + str(target) + " at location " + str(location))
+
+
+main()
+
+#aha!!! i had to convert it to int!!! that is the key!!! bwahahahahaaaa
