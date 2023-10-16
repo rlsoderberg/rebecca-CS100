@@ -34,6 +34,7 @@ class Quiz_Question:
         self.user_ans = input_function()
 
     def check_answer(self):
+        this_correct = 0
         if int(self.user_ans) == self.answer:
             print("correct")
             this_correct = 1
@@ -68,7 +69,8 @@ def auto_generate_problems():
     problem_list.append(Quiz_Question("3x - 3 = 39", "14", "1", ""))
     return problem_list
 
-def rando_generate(rando_seq):
+def rand_seq_generate():
+    rando_seq = []
     rando = random.randint(0,9)
 
     while rando in rando_seq:
@@ -102,8 +104,7 @@ def welcome():
         print("Too bad! You cannot escape the Tutorializer!")
 
 #sequence of random, nonrepeating integers 0 - 9 for random problem order
-rando_seq = []
-rando_generate(rando_seq)
+rando_seq = rand_seq_generate()
 
 #auto generate problem list
 problem_list = auto_generate_problems()
@@ -115,7 +116,7 @@ welcome()
 correct = 0
 
 
-for x in range (0, 10):
+for x in range (0, 9):
     #i'm trying to:
     #1. choose item x in my list of randomized, nonrepeating integers
     this_rando = rando_seq[x]
