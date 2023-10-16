@@ -29,16 +29,16 @@ class Quiz_Question:
 
     def get_user_ans(self):
         self.user_ans = 0
-        print(f'Problem: {self.question}')
+        print(f'\nProblem: {self.question}')
         print("Your Answer:")
-        self.user_ans = input_function()
+        self.user_ans = int_input_function()
 
     def check_answer(self):
         this_correct = 0
-        if int(self.user_ans) == self.answer:
+        if int(self.user_ans) == int(self.answer):
             print("correct")
             this_correct = 1
-        elif int(self.user_ans) != self.answer:
+        elif int(self.user_ans) != int(self.answer):
             print("\n\nincorrect\n")
             input("Press any key to see the correct answer.\n")
             print("\n\n\n\nCorrect Answer:")
@@ -51,7 +51,7 @@ import random
 import sys
 sys.path.append("../..")
                 
-from i import input_function
+from i import input_function, int_input_function
 
 #auto generating some problems
 def auto_generate_problems():
@@ -72,10 +72,11 @@ def auto_generate_problems():
 def rand_seq_generate():
     rando_seq = []
     rando = random.randint(0,9)
-
-    while rando in rando_seq:
-        rando = random.randint(0,9)
-    rando_seq.append(rando)
+    for x in range(0,9):
+        while rando in rando_seq:
+            rando = random.randint(0,9)
+        rando_seq.append(rando)
+    return rando_seq
 
 #this seems not entirely necessary, but, you know, it works
 def ready_input_function():
@@ -117,12 +118,14 @@ correct = 0
 
 
 for x in range (0, 9):
+
+
     #i'm trying to:
     #1. choose item x in my list of randomized, nonrepeating integers
     this_rando = rando_seq[x]
     #2. choose the problem that corresponds to the value of this_rando in my ordered problem list
     this_question = problem_list[this_rando]
-    #3. execute the get_user_ans behavior for the given problem object? i don't think i'm doing this right?
+    #3. execute the get_user_ans behavior for the given problem object? it actually does seem to be working
     this_question.get_user_ans()
 
     #also trying to check_user_ans
