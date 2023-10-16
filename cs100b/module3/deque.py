@@ -20,9 +20,15 @@ for x in range (1, 14):
     mento = Mento(flavor)
     tube.append(mento)
     
-print(tube)
 #eating the mentos
 while len(tube) > 0:
-    #undirected pop is right!!!
-    r = tube.pop()
-    print(f"eating {r}")
+    side = random.randrange(0, 2)
+    if side == 0:
+        #undirected pop is right!!!
+        p = tube.pop()
+        print(f"eating {p.flavor} from the right side")
+    elif side == 1:
+        p = tube.popleft()
+        print(f"eating {p.flavor} from the left side")
+
+print("YUM!")
