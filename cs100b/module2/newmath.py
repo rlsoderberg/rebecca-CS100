@@ -17,7 +17,7 @@ class Quiz_Question:
 
     def get_question(self):
         print("Input a math problem:")
-        self.question_text = input_function()
+        self.question = input_function()
 
     def get_answer(self):
         print(f"Input the answer to {self.question}:")
@@ -116,13 +116,13 @@ correct = 0
 
 
 for x in range (0, 10):
-    #i'm trying to
+    #i'm trying to:
     #1. choose item x in my list of randomized, nonrepeating integers
     this_rando = rando_seq[x]
     #2. choose the problem that corresponds to the value of this_rando in my ordered problem list
     this_question = problem_list[this_rando]
     #3. execute the get_user_ans behavior for the given problem object? i don't think i'm doing this right?
-    this_question.get_answer()
+    this_question.get_user_ans()
 
     #also trying to check_user_ans
     this_correct = this_question.check_answer()
