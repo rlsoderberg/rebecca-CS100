@@ -11,3 +11,7 @@
 print('Hello world.')
 #i am already regretting this. i mean, why do i have to consume my time like this??? i need to get a job, ok???
 #nOoOoOoO! i already renamed everything! whyyyy
+
+#i'm going to take notes here on what things i wanted to ask about
+#1. range??? are there any better alternatives???
+#oh never mind, i don't have a lot of questions right now
