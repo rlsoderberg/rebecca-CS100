@@ -1,6 +1,30 @@
 import random
 
+#define problem function
+def problem():
+    rand1 = random.randrange(1, 10)
+    rand2 = random.randrange(1, 10)
+    operator = operators[random.randrange(0, 5)]
+    #for now, i'm just going to subtract for all problems
+    #that way, you can at least get negative numbers, right? that's kind of exciting?
+    #calculate actual answer with random variables
+    answer = rand1 - rand2
+    print(f'{rand1} - {rand2} = ')
+    #now, what is the best way to convert an operator string to an actual operator???
+    #this is the question...
+    #anyway, get user answer from input
+    user_ans = int_input_function()
+    #see whether user answer = actual answer
+    if user_ans == answer:
+        print('correct')
+        #increment correct if correct
+        correct = 1
+    else:
+        print('incorrect')
+    return correct
+
 #copy pastey let's go!!!!!
+#hey i'm editing this tomorrow, now shame shame shame, practice u writing the input function
 def int_input_function():
     valid = False
     while valid == False:
@@ -30,33 +54,17 @@ name = input('what is your name?')
 #create list of random operators
 operators = ['+', '-', '*', '/', '%']
 #keep count of correct answers
-correct = 1
+#why did i have correct = 1??? i don't get it
+total_correct = 0
 #generating equations
 #this range still managed to surprise me
 #need to ask what the best range is
 for x in range(1, 10):
-    rand1 = random.randrange(1, 10)
-    rand2 = random.randrange(1, 10)
-    operator = operators[random.randrange(0, 5)]
-    #for now, i'm just going to subtract for all problems
-    #that way, you can at least get negative numbers, right? that's kind of exciting?
-    #calculate actual answer with variables
-    answer = rand1 - rand2
-    print(f'{rand1} - {rand2} = ')
-    #now, what is the best way to convert an operator string to an actual operator???
-    #this is the question...
-    #anyway, get user answer from input
-    user_ans = int_input_function()
-    #see whether user answer = actual answer
-    if user_ans == answer:
-        print('correct')
-        #increment correct if correct
-        correct += 1
-    else:
-        print('incorrect')
+    correct = problem()
+    total_correct += correct
 
 #display results
-print(f'you solved {correct} problems correctly')
+print(f'you solved {total_correct} problems correctly')
 
 
 

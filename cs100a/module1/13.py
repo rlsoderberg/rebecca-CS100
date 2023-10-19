@@ -31,6 +31,7 @@ def int_input_function():
 #list of play names
 rps = [0, 'rock', 'scissors', 'paper']
 #i know there will have to be a big turn loop here!
+
 exit = False
 while exit == False:
     #computer play determined by random
@@ -62,6 +63,9 @@ while exit == False:
         print('tie!')
     else:
         print('you lose!')
+
         
     input('press any key to continue, or x to exit')
 
+#i debated just editing this for module 2 04 & 05, but then i just made a copy
+#i tried to undo to exactly the right place, but i don't quite trust myself
