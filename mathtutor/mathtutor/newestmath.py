@@ -29,14 +29,34 @@ name = input('what is your name?')
 
 #create list of random operators
 operators = ['+', '-', '*', '/', '%']
-
+#keep count of correct answers
+correct = 1
 #generating equations
-for x in range(1, 11):
+#this range still managed to surprise me
+#need to ask what the best range is
+for x in range(1, 10):
     rand1 = random.randrange(1, 10)
     rand2 = random.randrange(1, 10)
     operator = operators[random.randrange(0, 5)]
-    print(f'{rand1} {operator} {rand2} = ')
+    #for now, i'm just going to subtract for all problems
+    #that way, you can at least get negative numbers, right? that's kind of exciting?
+    #calculate actual answer with variables
+    answer = rand1 - rand2
+    print(f'{rand1} - {rand2} = ')
     #now, what is the best way to convert an operator string to an actual operator???
     #this is the question...
+    #anyway, get user answer from input
+    user_ans = int_input_function()
+    #see whether user answer = actual answer
+    if user_ans == answer:
+        print('correct')
+        #increment correct if correct
+        correct += 1
+    else:
+        print('incorrect')
+
+#display results
+print(f'you solved {correct} problems correctly')
+
 
 
