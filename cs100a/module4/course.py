@@ -2,6 +2,10 @@
 class Course():
     #is it more efficient to give initial values down below? this way kind of makes sense to me? maybe?
     def __init__(self, ID = 0, class_name='', room=0, time = '', teacher = ''):
+
+        """
+        I'm doing this weird, like, initialization thing down here! Default parameters are in the parentheses!
+        """
         self.class_name = class_name
         self.ID = ID
         self.room = room
@@ -9,12 +13,29 @@ class Course():
         self.teacher = teacher
 
     def location(self):
+
+        """
+        Gives location of class, including class name, room, and time
+        totally self-sufficient, as long as these variables have been defined!!
+        """
         print(f'{self.class_name} is taught in room {self.room} at {self.time}.')
 
     def teacher(self):
+        """
+        kind of a variation of location, including class name, time, and teacher
+        this time we're talking about a particular session, with a particular teacher
+        since there might be multiple teachers teaching this class???
+        (is that a thing???)
+        """
         print(f'the {self.time} session of {self.class_name} is taught by {self.teacher}')
 
     def due(self, project):
+        """
+        a project is due today!
+        Parameters:
+        project(str): The project that is due today in {self.class_name}
+        
+        """
         print(f'the {project} project is due today in {self.class_name}.')
 
 #can we set variables like this?
