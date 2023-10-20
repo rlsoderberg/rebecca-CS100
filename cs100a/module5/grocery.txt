@@ -1,2 +1,1 @@
-GROCERY LIST
-9x hair at $9.00 each: $81.00
+eggs price: $9 quantity: 9
