@@ -32,7 +32,7 @@ while item_name != 'none':
 
 
 #create a copy of the full list
-full_list = list.copy
+full_list = list.copy()
 
 #tell the user to go to the grocery store
 print('now go to the grocery store')
@@ -72,10 +72,13 @@ print("here's your receipt:")
 #it didn't make me do that before!!!
 #oh right, i just noticed the receipt isn't working on oldtuples!!!
 
-for x in full_list():
+for x in full_list:
+    #DID I LITERALLY JUST PUT THE PARENTHESES IN THE WRONG PLACE????? OMG
+    #PUT PARENTHESES BEHIND COPY BECAUSE YOU ARE UTILIZING THE COPY BEHAVIOR
+    #DO NOT PUT PARENTHESES IN THE FOR LOOP BECAUSE I GET IT YOU WERE TRYING TO MAKE IT WORK
+    #PLS DON'T DO THAT THOUGH
     (name, price, quantity) = x
     print(f"{name}  price: ${price}  quanitity: {quantity}")
 
-#so it's possibly a problem with making a copy of the list, and possibly a problem with printing receipt?
-#ask about that, and range???
+
 
