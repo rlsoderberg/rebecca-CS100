@@ -6,7 +6,7 @@ team = []
 #initialize name
 name = ''
 
-#introduce self as roster taker (roster taker later becomes involved), along with the program
+#introduce roster taker, who later becomes involved, along with the program
 print("hi, i'm rebecca, and i'm here to take down the team roster.")
 
 #while loop to take input until user presses 'x' to exit

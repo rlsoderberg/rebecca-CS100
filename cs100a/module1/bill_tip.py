@@ -15,7 +15,6 @@ while i != '1' and i != '2' and i != '3' and i != '4':
     i = input(f'1. {tiplist[1]}% 2. {tiplist[2]}% 3. {tiplist[3]}% 4. {tiplist[4]}%  ')
 
 #select tiplevel corresponding to input
-#if you haven't learned about lists yet, if statements would also work
 tiplevel = tiplist[int(i)]
 
 #calculate tip and total bill, based on tiplevel

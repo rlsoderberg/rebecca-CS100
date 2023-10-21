@@ -31,7 +31,7 @@ sum = int1 + int2
 #press any key!!! just plain old input
 input('press any key to see the solution')
 
-#using groovy f string for string interpolation and formatting
+#using f string for string interpolation and formatting
 print(f'solution: {int1} + {int2} = {sum}')
 #press any key
 input('press any key to see the next operation')

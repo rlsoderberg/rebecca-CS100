@@ -13,7 +13,6 @@ while w == False:
 print(f'i will ask of you {panda} panda')
 
 #initialize list of int pandas
-#if you haven't learned about lists yet, free range variables would also work
 pandalist = []
 
 #int input function

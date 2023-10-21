@@ -1,6 +1,4 @@
-#remember, you don't initialize the variables up here
 class Course():
-    #is it more efficient to give initial values down below? this way kind of makes sense to me? maybe?
     def __init__(self, ID = 0, class_name='', room=0, time = '', teacher = ''):
 
         """
