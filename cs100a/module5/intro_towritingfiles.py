@@ -1,11 +1,8 @@
-#ok, i kind of remembered this, half glancing at the examples
-#what i forgot was 1) you need to equal the open to something
-#and 2) you need to put 'w' or 'r' in quotes
-#apparently the otehr one is 'a', which appends to a file
+#set a new variable equal to the filename, with 'w' for write, 'r' for read, or 'a' for append
 
 #allow user to input filename
 filename = input('please enter a filename to write to; ')
-#so what do you mean exactly, 'it could be a literal value or a string variable'?
+#request for user to input message to write to given filename
 message = input(f'what message do you wish to write in {filename}? ')
 
 #open a file, f

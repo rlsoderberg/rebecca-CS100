@@ -1,8 +1,3 @@
-/welcome to the madlib test
-/i think i can pretty much say whatever i want in here, as long as it doesn't begin with *
-/or, well, i guess i'll also have to include comments in my code, marked with /
-/the madlib text will be 'i've got a lovely bunch of coconuts'
-
 *pronoun contracted with possessive verb
 *past tense verb
 a

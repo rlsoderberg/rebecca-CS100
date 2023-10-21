@@ -1,26 +1,11 @@
-#4
-
-#oh, right, i had it looping, but i had no winner! well, it will be over there, number 13
-
-#5
-
-#well, this one is also rps-related. maybe i'll just make a new copy over here.
-
-
-#importing random, do determine computer plays
+#importing random, to determine computer plays
 import random
-#let's also import the input function from 11_12
-#from 11_12 import int_input_function what, this is getting all underlined???
-#ohhhh, you can only do that with CLASSES, can't you...
-#looks like it's time for a little copy pastey
+#define input function
 def int_input_function():
     valid = False
     while valid == False:
         try: 
             result = int(input())
-            #oh i'd better put in the empty string catcher
-            #oh wait, there was an error when i said 'if not result', and i made one of the variables 0
-            #so i think i prefer "if result == '' "???
             if result == '':
                 raise ValueError('empty string')
             valid = True
@@ -30,25 +15,25 @@ def int_input_function():
 
 #list of play names
 rps = [0, 'rock', 'scissors', 'paper']
-#i know there will have to be a big turn loop here!
 
-#coming in from module 2 number 4, and i'd better initialize some point variables first!
+#initialize point variables
 user_pts = 0
 comp_pts = 0
 
-#we are putting in a for loop for a set number of rounds
+#initialize round count and winner variables
 roundcount = 0
 winner = 0
+
 #welcome user to program
 print('\nwelcome to rock paper scissors')
 
-#using a while loop, because it's easier to keep track of roundcount that way
+#using a while loop, to keep track of round count
 while roundcount < 7:
 
     #announce round
     print(f'\nround {roundcount+1}')
 
-    #so we're going to have another loop in here, making sure no ties
+    #another loop in here, playing until winner (no ties)
     while winner == 0:
         #computer play determined by random
         comp = random.randrange(1, 4)
@@ -69,10 +54,11 @@ while roundcount < 7:
             comp_pts += 1
             winner = 1
 
-    #remember to reset winner!
+    #remember to reset winner, and increase round count, after completing a round
     winner = 0        
     roundcount += 1
 
+#display match results
 print(f'you won {user_pts} times and computer won {comp_pts} times.')
 if user_pts > comp_pts:
     print('you are the rock paper scissors champion!')

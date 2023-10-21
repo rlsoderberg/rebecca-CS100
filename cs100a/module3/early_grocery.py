@@ -6,12 +6,9 @@ list = []
 #initialize item
 item = ''
 
-#request for user to input items on grocery list
-#right, i guess i should always start with input in a while loop like this
-#because what if they start with none???
+#begin list input with exit term, just in case they exit right away
 while item != 'none':
     item = input('enter a grocery item, or none to exit: ')
-    #oh, haha, forgot to append items
     list.append(item)
 
 #tell the user to go to the grocery store
@@ -23,7 +20,7 @@ cart_item = ''
 #initialize done detector
 done = 0
 
-#no while loop here! user is mandated to complete shopping list!
+#user must put all items from shopping list in cart, before they can check out
 while done == 0:
     cart_item = input('what did you put in your cart? ')
     if cart_item in list:

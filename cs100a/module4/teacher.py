@@ -1,8 +1,7 @@
 class Teacher:
-    #wasn't i writing something before where i initialized up here? is that ok?
     def __init__(self, name = '', office = 0, department = ''):
         """
-        Default parameters are up there
+        Create a default statement
         """
         self.name = name
         self.office = office
@@ -11,7 +10,7 @@ class Teacher:
     def ask_question(self, subject):
         """
         Parameters:
-        subject(str): the subject (topic in course curriculum, or whatever) that {self.name} is asking about
+        subject(str): the subject that {self.name} is asking about
         """
         print(f'{self.name} asks a question about {subject}')
         
@@ -29,10 +28,12 @@ class Teacher:
         """
         print(f'{self.name} calls {recipient} on the phone.')
 
+#create new teacher object, assign variables
 teacher1 = Teacher()
 teacher1.name = 'mr. bob'
 teacher1.office = 309
 teacher1.subject = 'horticulture'
 
+#use variable, execute behavior
 print(f"teacher name = {teacher1.name}")
 teacher1.ask_question('ferns')
