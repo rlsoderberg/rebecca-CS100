@@ -58,7 +58,7 @@ while valid == False:
         print(f'solution: {int1} / {int2} = undefined')
         valid = True
 
-#NUMBER 12 (prisoner reference, in hindsight)
+#NUMBER 12
 #output suitable activities for user, based on age input
 #we already asked for age up at the top
 

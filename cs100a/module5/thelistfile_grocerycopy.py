@@ -10,6 +10,7 @@ item_name = ''
 #open grocery file for writing list
 g = open('grocery.txt', 'w')
 
+#while loop, taking input for new grocery items, until exit
 while item_name != 'none':
     item_name = input('enter a grocery item, or none to exit: ')
     if item_name != 'none':
@@ -18,17 +19,11 @@ while item_name != 'none':
         #the difference with writing to a file, is instead of using a tuple, you print directly into the file
         #remember to include enter at the end, if you are making a list
         g.write(item_name + ' price: $' + item_price + ' quantity: ' + item_quantity + '\n')
-        #remember, you still need to use the list, for putting items in the cart
+        #remember, you still need to use the list, for keeping track of items put in cart
         list.append(item_name)
 
 #don't forget to close the file!
 g.close()
-
-
-#programmer's note... so far, things to look out for
-#1. variable names
-#2. parentheses
-#3. indentation
 
 
 #writing to file eliminates need for list copy
@@ -68,7 +63,8 @@ lineno = 1
 
 #for each line, print line number and line from file
 for line in g:
-    print(str(lineno) + '. ' + line)
+    #it is important to strip the line, otherwise it newlines weirdly!
+    print(str(lineno) + '. ' + line.strip())
     lineno += 1
 
 #don't forget to close the file!

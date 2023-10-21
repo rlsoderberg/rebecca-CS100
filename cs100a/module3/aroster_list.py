@@ -26,7 +26,7 @@ for x in range(len(team)-2, -1, -1):
 #2
 
 #print whether roster taker is on list, and roster taker's response
-if 'rebecca' in team or 'REBECCA' in team or 'Reecca' in team:
+if 'rebecca' in team or 'REBECCA' in team or 'Rebecca' in team:
     print("I can't wait to play")
 else:
     print("Put me in coach, I'm ready to play.")
