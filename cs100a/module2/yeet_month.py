@@ -1,15 +1,14 @@
 #8
-#just a note, i was really reaching for an alphabetical sort of filename here. yeet_month? i don't know
 
+#import calendar
 import calendar
 
-#function for get month from number
+#define number to month function
 def getmonth(number):
     month = calendar.month_name[number]
     return month
 
-#we also need an int input function
-
+#define int input function
 def int_input_function():
     valid = False
     while valid == False:

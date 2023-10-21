@@ -1,37 +1,32 @@
-#4
-
-#we are copying and pasting grocery, because... tuples??? who knows how this will go!!!
-
 #initialize list
 list = []
 
 #initialize item
 item = ''
 
-#request for user to input items on grocery list
-#right, i guess i should always start with input in a while loop like this
-#because what if they start with none???
-
-#now i need to initialize item_name, because i am using it for my while loop!
+#initialize item_name
 item_name = ''
 
+#while loop, allowing user to exit anytime
 while item_name != 'none':
+    #request for user to input grocery item, as well as price and quantity
     item_name = input('enter a grocery item, or none to exit: ')
     if item_name != 'none':
-        item_price = input(f'how much does {item_name} cost?') #yoooo!!! there is room for illegal prices here!!!
+        item_price = input(f'how much does {item_name} cost?') 
         item_quantity = input(f'what quantity of {item_name} do you need?')
+        #store item characteristics in tuple
         item = (item_name, item_price, item_quantity)
+        #store tuple in list
         list.append(item)
-#what, i really don't get it!!! why isn't it exiting???
-#ohhh i get it i get it!!! i forgot to put item_name in the top of the while loop!!!!
-#always make sure your variable names are correct!!!!!
-#like, i need to make a list of things to check for
+
+
+#programmer's note... so far, things to look out for
 #1. variable names
 #2. parentheses
 #3. indentation
 
 
-#create a copy of the full list
+#create a copy of the full list. remember to put parentheses behind copy, a behavior
 full_list = list.copy()
 
 #tell the user to go to the grocery store
@@ -44,39 +39,29 @@ cart_item = ''
 done = 0
 
 
-#no while loop here! user is mandated to complete shopping list!
-#wait, what? there is indeed a while loop. with the wonderfully simple condition of len(list) > 0
+#user must put all items from shopping list in cart before they can check out
 while len(list) > 0:
+    #request 
     cart_item = input('what did you put in your cart? ')
-    #oh i see, in oldtuples, i unpacked the tuple before removing the item from the list
     for item in list:
+        #unpack tuple item from list
         (n, p, q) = item
+        #use item name to check if list item is same as item in cart; if so, remove item from list
         if n == cart_item:
             list.remove(item)
 
-#well, that worked, unpacking first!
-
-#now i am going to print this down here instead.
+#introduce checkout
 print('you can check out now.')
 
 #5
-
-#we are further modifying the program to display a receipt!
 
 #press any key. build suspense for receipt.
 input('press any key to complete checkout.')
 print("here's your receipt:")
 
-#look, it's mad here, and i don't get it!!!
-#what, does it want me to use parentheses because it's a list of tuples?
-#it didn't make me do that before!!!
-#oh right, i just noticed the receipt isn't working on oldtuples!!!
-
+#loop printing items bought from shopping list
 for x in full_list:
-    #DID I LITERALLY JUST PUT THE PARENTHESES IN THE WRONG PLACE????? OMG
-    #PUT PARENTHESES BEHIND COPY BECAUSE YOU ARE UTILIZING THE COPY BEHAVIOR
-    #DO NOT PUT PARENTHESES IN THE FOR LOOP BECAUSE I GET IT YOU WERE TRYING TO MAKE IT WORK
-    #PLS DON'T DO THAT THOUGH
+    #unpacking tuple from list copy
     (name, price, quantity) = x
     print(f"{name}  price: ${price}  quanitity: {quantity}")
 

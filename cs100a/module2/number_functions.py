@@ -1,6 +1,6 @@
 #6
 
-#functions for megasum and factorial
+#define functions for megasum and factorial
 def megasum(number):
     total = 0
     addend = 1
@@ -17,6 +17,7 @@ def factorial(number):
         factor += 1
     return total
 
+#define int input function
 def int_input_function():
     valid = False
     while valid == False:
@@ -30,12 +31,10 @@ def int_input_function():
     return intput
 
 #request for user to enter a number
-#for this we need our good old inty input function
 print('please enter a number: ')
 number = int_input_function()
 
 #request for user to choose megasum or factorial
-#i might as well use letters!!!
 choice = input(f'would you like to a. calculate the megasum of {number} or b. calculate the factorial of {number}?')
 
 #repeat choice request until user enters 'a' or 'b'
@@ -45,13 +44,13 @@ while choice != 'a' and choice != 'b':
 #initialize total
 total = 0
 
+#run megasum or factorial function, depending on user input
 if choice == 'a':
-    #oop, almost forgot to include the argument
     total = megasum(number)
 elif choice == 'b':
     total = factorial(number)
 
-#print some kind of result
+#print result of function
 print(f'your result is {total}')
 
 

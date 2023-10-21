@@ -1,1 +1,2 @@
 eggs price: $9 quantity: 9
+hair price: $9 quantity: 9
