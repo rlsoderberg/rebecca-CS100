@@ -1,6 +1,6 @@
 import random
 
-#define function to generate random letter string
+#define function to generate random number string
 def number_list():
     list = []
     for x in range (0, 50):
@@ -31,12 +31,16 @@ def binary_search(haystack, needle):
     return -1
 
 
+#use number list function to generate list
 list = number_list()
+#sort list for binary search
 list.sort()
 print(f'sorted random string: {list}')
 search_term = 59
 
+#search list with binary search
 location = binary_search(list, search_term)
+#print results
 if location == -1:
     print(f'did not find {search_term}')
 else:
