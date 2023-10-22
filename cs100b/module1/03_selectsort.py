@@ -16,21 +16,31 @@ def selection_sort(list):
         #now that we have gone through the second loop, and we have found the lowest value to swap with item
         #we swap the lowest value with item
         tmp = list[item]
-        list[item] = list[min]
-        list[min] = tmp 
+        list[item] = ''
+        list.split()
+        list[min] = list[item]
+        newlist = list[0] + list[min] + list[1]
+        
     #return sorted list
-    return list
+    return newlist
 
 #define function to generate random letter string
-def number_list():
-    list = []
-    for x in range (0, 50):
-        r = random.randrange(100)
-        list.append(r)
-    return list
+def random_string():
+    #generate string containing all letters in alphabet
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    #initialize string to put random letters in
+    random_string = ''
+    #initialize random character
+    char = ''
+    #for loop to generate a string of 26 random characters
+    for x in range (0, 27):
+        rando = random.randrange(len(alphabet))
+        char = alphabet[rando]
+        random_string = random_string + char
+    return random_string
 
 #random number list
-list = number_list()
+list = random_string()
 #sort list with selection sort function
 sorted_list = selection_sort(list)
 #display results
