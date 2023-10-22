@@ -22,8 +22,8 @@ def random_string():
     random_string = ''
     #initialize random character
     char = ''
-    #for loop to generate a string of 20 random characters
-    for x in range (0, 26):
+    #for loop to generate a string of 26 random characters
+    for x in range (0, 27):
         rando = random.randrange(len(alphabet))
         char = alphabet[rando]
         random_string = random_string + char
