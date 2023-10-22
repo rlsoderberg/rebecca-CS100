@@ -1,3 +1,4 @@
+#import random to generate randomized list
 import random
 
 #define function to generate random number string
