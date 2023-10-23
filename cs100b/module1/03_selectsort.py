@@ -22,17 +22,24 @@ def selection_sort(list):
     #return sorted list
     return list
 
-#define function to generate random number string
-def number_list():
-    list = []
-    for x in range (0, 50):
-        r = random.randrange(100)
-        list.append(r)
-    return list
+def main():
+    #generate random number list
+    int_list = []
+    for x in range(0, 50):
+        int_list.append(random.randrange(0, 25))
 
-#generate random number list
-list = number_list()
-#sort list with selection sort function
-sorted_list = selection_sort(list)
-#display results
-print(f'sorted list: {sorted_list}')
+    #sort list with selection sort function
+    sorted_list = selection_sort(int_list)
+
+    #create alphabet string
+    alphabet='abcdefghijklmnopqrstuvwxyz'
+    #initialize char list
+    char_list = []
+    #convert num list to char list
+    for x in range(0, len(int_list)):
+        char_list.append(alphabet[int_list[x]])
+
+    #display results
+    print(f'sorted list: {char_list}')
+
+main()

@@ -1,13 +1,4 @@
-#import random to generate randomized list
 import random
-
-#define function to generate random number string
-def number_list():
-    list = []
-    for x in range (0, 50):
-        r = random.randrange(100)
-        list.append(r)
-    return list
 
 def binary_search(haystack, needle):
     #keep track of begin and end as numbers, not as values on list
@@ -31,21 +22,40 @@ def binary_search(haystack, needle):
     #if loop has completed without finding needle, then return -1
     return -1
 
+#generate int list, char list, sort & search
+def main():
+    #generate list of random numbers 0-25, to be later converted into character string
+    int_list = []
+    for i in range(0, 40):
+        int_list.append(random.randrange(0,25))
+    #sort numbers for binary search
+    int_list.sort()
 
-#use number list function to generate list
-list = number_list()
-#sort list for binary search
-list.sort()
-print(f'sorted random string: {list}')
-search_term = 59
+    #create alphabet string
+    alphabet='abcdefghijklmnopqrstuvwxyz'
+    #initialize char list
+    char_list = []
+    #convert num list to char list
+    for x in range(0, len(int_list)):
+        char_list.append(alphabet[int_list[x]])
 
-#search list with binary search
-location = binary_search(list, search_term)
-#print results
-if location == -1:
-    print(f'did not find {search_term}')
-else:
-    print(f'found {search_term} at location {location}')
+    #display char list in sorted order
+    print(f'sorted random string: {char_list}')
+
+    #generate random search term
+    search_term = random.randrange(0,25)
+    #search list with binary search
+    location = binary_search(int_list, search_term)
+
+        
+    #print results
+    if location == -1:
+        print(f'did not find {alphabet[search_term]}')
+    else:
+        print(f'found {alphabet[search_term]} at location {location}')
+
+#don't forget to run main
+main()
 
 
 
