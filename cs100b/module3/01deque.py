@@ -1,12 +1,16 @@
 #deque lives in collection
 import collections
 import random
+import json
 
 #we're using a lifesaver object, which basically allows us to make a collection of strings
 class LifeSaver():
     #lifesaver object is all about flavor
     def __init__(self, flavor):
         self.flavor = flavor
+    #function within class lifesaver enables json export
+    def toJson(self):
+        return self.__dict__
     
 #rollgen function generates a roll of randomly flavored lifesavers
 def rollgen():
@@ -35,11 +39,26 @@ def remove(roll, side):
             print(f'eating {s.flavor} lifesaver from the right side ')
     print('you finished the roll of life savers!')
 
+def roll_log(roll):
+    lifesavers = []
+    for l in roll:
+        #convert LifeSaver list to dictionary so we can append it to json
+        lifesavers.append(l.toJson())
+    #open json file to write
+    f = open('tube.json', 'w')
+    f.write(json.dumps(lifesavers))
+    f.close()
+
+
 def main():
     #initialize exit
     exit = ''
     #run the rollgen function
     roll = rollgen()
+    jinput = input('press j to export your lifesavers to json now, and any other key to just start eating ')
+    if jinput == 'j':
+        roll_log(roll)
+        print(f'printed to tube.json!')
     while exit != 'x':
         #initialize side
         side = ''
@@ -48,6 +67,7 @@ def main():
             side = input('what side do you want to remove from, l or r?')
         #run the remove function
         remove(roll, side)
-        exit = input('press any key to continue, or x to exit')
+
+        exit = input('press any key to continue, or x to exit ')
 
 main()
