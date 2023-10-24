@@ -12,7 +12,7 @@ def insertion_sort(list):
         while pos > 0 and list[pos - 1] > number:
             list[pos] = list[pos - 1]
             pos = pos - 1
-        #does this just take care of pos = 0?
+        #this line just takes care of end
         list[pos] = number
 
 #define function to generate random number string

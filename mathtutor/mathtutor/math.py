@@ -1,4 +1,5 @@
-from quizquestion import Quiz_Question()
+#do not follow Quiz_Question with parentheses because it is not a behavior
+from quizquestion import Quiz_Question
 
 #int input function, preventing blank & non-int input
 def int_input_function():
@@ -26,7 +27,7 @@ def main():
 
     #generate problems_list
     problems_list = []
-    for x in range(1, 10):
+    for x in range(1, 11):
         #get question_string & answer from generate question function
         question_string, answer = quizquestion.generate_question(x)
 
@@ -49,12 +50,13 @@ def main():
     #give user preparation before hitting them with the list of results
     input('press any key to see your full results')
     for x in problems_list:
-        (n, p, a, u, c) = x
+        number_x = x
+        (q, a, u, c) = x
         if c == 1:
             correct = 'correct'
         else:
             correct = 'incorrect'
-        print(f"problem {n}: {p}. correct answer: {a}. user answer: {u}. {correct}")
+        print(f"{q}. correct answer: {a}. user answer: {u}. {correct}")
 
 main()
 

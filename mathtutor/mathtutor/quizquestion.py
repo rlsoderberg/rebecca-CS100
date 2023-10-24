@@ -9,7 +9,8 @@ class Quiz_Question():
         self.grade_level = grade_level
 
     #parameter for number of question. should this belong to quiz_question as a whole, of generate_question?
-    def generate_question(num):
+    #always include self as the first argument otherwise compiler complains about positional arguments
+    def generate_question(self, num):
         """
         generate random variables
         print question based on these variables, and create question string
@@ -23,7 +24,8 @@ class Quiz_Question():
         rand2 = random.randrange(1, 10)
 
         #create question string with these random variables
-        question_string = num + '. ' + [rand1] + ' - ' + [rand2] + ' = '
+        #remember to convert everything to a string
+        question_string = str(num) + '. ' + str(rand1) + ' - ' + str(rand2) + ' = '
 
         #calculate correct answer
         answer = rand1 - rand2
@@ -34,7 +36,7 @@ class Quiz_Question():
         return question_string, answer
 
     #paramaters for correct answer, and user answer, to see if they are the same
-    def check(answer, user_ans):
+    def check(self, answer, user_ans):
         """
         generate random variables
         print question based on these variables, and create question string
