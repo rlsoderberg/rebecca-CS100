@@ -14,6 +14,23 @@ def int_input_function():
             print('Invalid Input')
     return result
 
+def run_problem(quizquestion, problems_list, x, total_correct):
+    #get question_string & answer from generate question function
+    question_string, answer = quizquestion.generate_question(x)
+
+    #request user input with int input function
+    user_ans = int_input_function()
+
+    #check answer with check function
+    correct, correct_string = quizquestion.check(answer, user_ans)
+    
+    #increment total correct by correct
+    total_correct += correct
+
+    #store problem info in prob_tuple
+    prob_tuple = (question_string, answer, user_ans, correct_string)
+    problems_list.append(prob_tuple)
+
 #main function displays questions & results
 def main():
     #ask user for name
@@ -27,22 +44,11 @@ def main():
 
     #generate problems_list
     problems_list = []
+
+    #loop through 10 problems
     for x in range(1, 11):
-        #get question_string & answer from generate question function
-        question_string, answer = quizquestion.generate_question(x)
-
-        #request user input with int input function
-        user_ans = int_input_function()
-
-        #check answer with check function
-        correct = quizquestion.check(answer, user_ans)
-        
-        #increment total correct by correct
-        total_correct += correct
-
-        #store problem info in prob_tuple
-        prob_tuple = (question_string, answer, user_ans, correct)
-        problems_list.append(prob_tuple)
+        #you need all these variables to run the problem
+        run_problem(quizquestion, problems_list, x, total_correct)
 
     #display results
     print(f'you solved {total_correct} out of 10 problems correctly')
@@ -50,13 +56,9 @@ def main():
     #give user preparation before hitting them with the list of results
     input('press any key to see your full results')
     for x in problems_list:
-        number_x = x
+        #unpack each tuple in problems_list
         (q, a, u, c) = x
-        if c == 1:
-            correct = 'correct'
-        else:
-            correct = 'incorrect'
-        print(f"{q}. correct answer: {a}. user answer: {u}. {correct}")
+        print(f"{q}. correct answer: {a}. user answer: {u}. {c}")
 
 main()
 
