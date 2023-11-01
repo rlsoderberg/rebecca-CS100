@@ -1,6 +1,6 @@
-import sys
 from PyQt6.QtWidgets import *
-from pathlib import Path
+
+from playsound import playsound
 
 #Banjo Tyrwo: Bango Gyro/The Dark Tower crossover
 class mainwindow (QWidget):
@@ -52,6 +52,7 @@ def main():
     app = QApplication([])
     app.setStyleSheet(Path('style.qss').read_text())
     w = mainwindow()
+    playsound.playsound('banjo.wav')
     w.show()
     app.exec()
 
