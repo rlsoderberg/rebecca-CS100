@@ -5,31 +5,8 @@ QLabel {
   color: #fff;
   font-weight: 800;
   text-align:center;
-}
-QLabel#heading {
-  color: #0f1925;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-QLabel#subheading {
-  color: #0f1925;
-  font-size: 12px;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-QLineEdit {
-  border-radius: 8px;
-  border: 1px solid #e0e4e7;
-  padding: 5px 15px;
-}
-
-QLineEdit:focus {
-  border: 1px solid #d0e3ff;
-}
-
-QLineEdit::placeholder {
-  color: #767e89;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 QPushButton {
   background-color: #202378;
@@ -41,8 +18,35 @@ QPushButton {
   margin-top: 10px;
   outline: 0px;
 }
-QPushButton:hover,
-QPushButton:focus {
-  background-color: #0b5ed7;
-  border: 3px solid #f89b36;
+
+QPushButton:hover {
+  background-color: yellow;
+  color:black;
+}
+
+QPushButton:pressed {
+  background-color: green;
+  color:red; 
+  font-weight:900;   
+}
+QComboBox {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 1px 18px 1px 3px;
+  min-width: 6em;
+  background-color:#fff;
+}
+
+QListView::item{
+  background-color: #000;
+  color:#fff;
+}
+
+QListView::item:selected {
+  border: 1px solid #000;
+}
+
+QListView::item:selected:active {
+  background: #f2f064;
+  color:#000;
 }

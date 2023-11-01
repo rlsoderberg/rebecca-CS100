@@ -1,7 +1,6 @@
 from PyQt6.QtWidgets import *
 from pathlib import Path
-
-#import playsound
+from pygame import mixer
 
 #Banjo Tyrwo: Bango Gyro/The Dark Tower crossover
 class mainwindow (QWidget):
@@ -9,7 +8,7 @@ class mainwindow (QWidget):
         #super init
         super(mainwindow, self).__init__(parent)
         #set geometry
-        self.setGeometry(100, 100, 800, 50)
+        self.setGeometry(300, 100, 300, 50)
         #set window title
         self.setWindowTitle("Banjo Tyrwo")
 
@@ -20,43 +19,34 @@ class mainwindow (QWidget):
         self.textboxes = {}
 
         #grid layout
-        layout = QGridLayout()
+        layout = QVBoxLayout()
         self.setLayout(layout)
 
         title = QLabel("We are on the lookout for")
         #addWidget(QWidget, row, column, rowspan, column span)
-        layout.addWidget(title, 1, 1, 1, 1)
+        layout.addWidget(title)
 
-        #add label
-        b1 = QLabel("1. Magicians")
-        #addWidget(QWidget, row, column)
-        layout.addWidget(b1, 2, 0)
-
-        #add textbox
-        b2 = QLabel("2. Villagers")
-        #addWidget(QWidget, row, column)
-        layout.addWidget(b2, 2, 1)
-
-        #add textbox
-        b3 = QLabel("3. Demons")
-        #addWidget(QWidget, row, column)
-        layout.addWidget(b3, 2, 2)
-
-
-        b = QPushButton("Submit")
-        #addWidget(QWidget, row, column, rowspan, column span)
-        layout.addWidget(b, len(labels), 1, 1, 1)
+        self.checkbox1 = QComboBox()
+        self.checkbox1.addItems(['1. Magicians', '2. Villagers', '3. Demons'])
+        layout.addWidget(self.checkbox1)
+        
+        button = QPushButton("Submit")
+        layout.addWidget(button)
 
         self.show()
 
 def main():
-    #don't stick this right in the middle
-    #playsound.playsound('banjo.wav')
+    #don't stick the music right in the middle
+    #pygame wins for now
+    mixer.init()
+    mixer.music.load("banjo.wav")
+    mixer.music.play()
 
     app = QApplication([])
     app.setStyleSheet(Path('style.qss').read_text())
     w = mainwindow()
     w.show()
+    #at one point, sys.exit(app.exec()) seemed necessary for the combo box to work, but idk
     app.exec()
 
 if __name__ == '__main__':
