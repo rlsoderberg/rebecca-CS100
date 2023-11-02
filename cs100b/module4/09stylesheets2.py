@@ -1,10 +1,12 @@
 #pyqt6 tutorial pt 3 - displaying image with qlabel
+#pyqt6 tutorial pt 4 - adding icon to button
 
 from PyQt6.QtWidgets import *
 from pathlib import Path
 from pygame import mixer
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QIcon
 
 #Banjo Tyrwo: Bango Gyro/The Dark Tower crossover
 class mainwindow (QWidget):
@@ -50,34 +52,48 @@ class mainwindow (QWidget):
         label3.setPixmap(img3)
         imglayout.addWidget(label3)
         
-        #i know sublayout isn't the right way to do this
+        #sublayout doesn't seem like the best way to do this
         #i will do the tutorials and then find a better way, right???
 
         mainlayout.addLayout(sublayout)
 
-        button1 = QPushButton("MAGICIANS")
-        button1.setGeometry(100,100,100,100)
-        button1.clicked.connect(self.click1)
-        sublayout.addWidget(button1)
+        self.button1 = QPushButton("MAGICIANS")
+        self.button1.clicked.connect(self.click1)
+        sublayout.addWidget(self.button1)
 
-        button2 = QPushButton("VILLAGERS")
-        button2.setGeometry(100,100,100,100)
-        button2.clicked.connect(self.click2)
-        sublayout.addWidget(button2)
+        self.button2 = QPushButton("VILLAGERS")
+        self.button2.clicked.connect(self.click2)
+        sublayout.addWidget(self.button2)
 
-        button3 = QPushButton("DEMONS")
-        button3.setGeometry(100,100,100,100)
-        button3.clicked.connect(self.click3)
-        sublayout.addWidget(button3)
+        self.button3 = QPushButton("DEMONS")
+        #honestly, idk how to set geometry
+        self.button3.setGeometry(100,100,100,100)
+        self.button3.clicked.connect(self.click3)
+        sublayout.addWidget(self.button3)
+
+        button = QPushButton("Submit")
+        button.setIcon(QIcon('submit.png'))
+        mainlayout.addWidget(button)
 
         self.show()
-        
+            
     def click1(self):
-        print('magicians')
+            print('magicians')
+            self.button1.setStyleSheet('QPushButton {background-color: red}')
+            #this seems like not the best way to do this either
+            self.button2.setStyleSheet('QPushButton {background-color: blue}')
+            self.button3.setStyleSheet('QPushButton {background-color: blue}')
     def click2(self):
-        print('villagers')
+            print('villagers')
+            self.button2.setStyleSheet('QPushButton {background-color: red}')
+            self.button1.setStyleSheet('QPushButton {background-color: blue}')
+            self.button3.setStyleSheet('QPushButton {background-color: blue}')
     def click3(self):
-        print('demons')
+            print('demons')
+            self.button3.setStyleSheet('QPushButton {background-color: red}')
+            self.button1.setStyleSheet('QPushButton {background-color: blue}')
+            self.button2.setStyleSheet('QPushButton {background-color: blue}')
+            
 
 def main():
     #don't stick the music right in the middle
