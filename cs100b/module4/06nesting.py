@@ -13,6 +13,7 @@ class mainwindow(QWidget):
         mainlayout = QVBoxLayout()
         #formlayout for input rows 
         formlayout = QFormLayout()
+        
         self.setLayout(mainlayout)
         mainlayout.addLayout(formlayout)
 
