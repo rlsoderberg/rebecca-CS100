@@ -4,32 +4,30 @@ from PyQt6.QtWidgets import *
 from pathlib import Path
 from pygame import mixer
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtCore import Qt
 
 #Banjo Tyrwo: Bango Gyro/The Dark Tower crossover
 class mainwindow (QWidget):
     def __init__(self, parent = None):
         #super init
         super(mainwindow, self).__init__(parent)
-        #set geometry
-        self.setGeometry(500, 100, 300, 50)
 
         #set window title
         self.setWindowTitle("Banjo Tyrwo")
-
-        #list of labels
-        labels = ['first name', 'last name', 'email']
-        #dictionary of textboxes
-        #this is a property
-        self.textboxes = {}
 
         #qvbox for button
         mainlayout = QVBoxLayout()
         #qhboxlayout for images 
         imglayout = QHBoxLayout()
+        #qhboxlayout for subheadings 
+        sublayout = QHBoxLayout()
 
         self.setLayout(mainlayout)
         
-        title = QLabel("We are on the lookout for")
+        title = QLabel(objectName='title')
+        title.setText("We are on the lookout for")
+        #a center align that works!!! i had to import qt from qtcore. not sure how to put this into qss?
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         mainlayout.addWidget(title)
 
         mainlayout.addLayout(imglayout)
@@ -52,10 +50,34 @@ class mainwindow (QWidget):
         label3.setPixmap(img3)
         imglayout.addWidget(label3)
         
-        button = QPushButton("Submit")
-        mainlayout.addWidget(button)
+        #i know sublayout isn't the right way to do this
+        #i will do the tutorials and then find a better way, right???
+
+        mainlayout.addLayout(sublayout)
+
+        button1 = QPushButton("MAGICIANS")
+        button1.setGeometry(100,100,100,100)
+        button1.clicked.connect(self.click1)
+        sublayout.addWidget(button1)
+
+        button2 = QPushButton("VILLAGERS")
+        button2.setGeometry(100,100,100,100)
+        button2.clicked.connect(self.click2)
+        sublayout.addWidget(button2)
+
+        button3 = QPushButton("DEMONS")
+        button3.setGeometry(100,100,100,100)
+        button3.clicked.connect(self.click3)
+        sublayout.addWidget(button3)
 
         self.show()
+        
+    def click1(self):
+        print('magicians')
+    def click2(self):
+        print('villagers')
+    def click3(self):
+        print('demons')
 
 def main():
     #don't stick the music right in the middle

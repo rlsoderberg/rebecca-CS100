@@ -1,12 +1,14 @@
 QWidget {
   background-color: #6b8cdd;
+  text-align:center;
 }
 QLabel {
   color: #fff;
   font-weight: 800;
-  text-align:center;
-  margin-bottom: 30px;
-  margin-top: 20px;
+}
+QLabel#title{
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 QPushButton {
   background-color: #202378;
