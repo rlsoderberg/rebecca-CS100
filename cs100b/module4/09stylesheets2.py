@@ -1,6 +1,9 @@
+#pyqt6 tutorial pt 3 - displaying image with qlabel
+
 from PyQt6.QtWidgets import *
 from pathlib import Path
 from pygame import mixer
+from PyQt6.QtGui import QPixmap
 
 #Banjo Tyrwo: Bango Gyro/The Dark Tower crossover
 class mainwindow (QWidget):
@@ -8,7 +11,8 @@ class mainwindow (QWidget):
         #super init
         super(mainwindow, self).__init__(parent)
         #set geometry
-        self.setGeometry(300, 100, 300, 50)
+        self.setGeometry(500, 100, 300, 50)
+
         #set window title
         self.setWindowTitle("Banjo Tyrwo")
 
@@ -18,20 +22,38 @@ class mainwindow (QWidget):
         #this is a property
         self.textboxes = {}
 
-        #qvbox layout
-        layout = QVBoxLayout()
-        self.setLayout(layout)
+        #qvbox for button
+        mainlayout = QVBoxLayout()
+        #qhboxlayout for images 
+        imglayout = QHBoxLayout()
 
+        self.setLayout(mainlayout)
+        
         title = QLabel("We are on the lookout for")
-        #addWidget(QWidget, row, column, rowspan, column span)
-        layout.addWidget(title)
+        mainlayout.addWidget(title)
 
-        self.checkbox1 = QComboBox()
-        self.checkbox1.addItems(['1. Magicians', '2. Villagers', '3. Demons'])
-        layout.addWidget(self.checkbox1)
+        mainlayout.addLayout(imglayout)
+
+        #label/QPixMap widget
+        label1 = QLabel()
+        img1 = QPixmap("magicians.png")
+        label1.setPixmap(img1)
+        imglayout.addWidget(label1)
+
+        #label/QPixMap widget
+        label2 = QLabel()
+        img2 = QPixmap("villagers.png")
+        label2.setPixmap(img2)
+        imglayout.addWidget(label2)
+
+        #label/QPixMap widget
+        label3 = QLabel()
+        img3 = QPixmap("demons.png")
+        label3.setPixmap(img3)
+        imglayout.addWidget(label3)
         
         button = QPushButton("Submit")
-        layout.addWidget(button)
+        mainlayout.addWidget(button)
 
         self.show()
 

@@ -1,3 +1,5 @@
+#pyqt tutorial 2 - signals and slots, pt 2 (line_edit.textChanged/label.setText)
+
 from PyQt6.QtWidgets import *
 
 class mainwindow(QWidget):

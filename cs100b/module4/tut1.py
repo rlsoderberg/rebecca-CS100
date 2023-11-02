@@ -1,3 +1,5 @@
+#pyqt tutorial 1 - signals and slots, pt 1 (button.clicked/button_clicked)
+
 from PyQt6.QtWidgets import *
 
 #i really don't get this *args, **kwargs thing
