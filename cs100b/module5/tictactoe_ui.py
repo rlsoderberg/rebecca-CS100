@@ -90,7 +90,7 @@ class mainwindow(QWidget):
         
         #force a repaint
         #i changed this to paintEvent for now? because there's nothing called repaint?
-        self.paintEvent(self, event)
+        self.paintEvent(event)
 
 
 def main():
