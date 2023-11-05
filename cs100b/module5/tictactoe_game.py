@@ -1,4 +1,3 @@
-from tictactoe_ui import mainwindow
 
 class Game:
     def __init__(self):

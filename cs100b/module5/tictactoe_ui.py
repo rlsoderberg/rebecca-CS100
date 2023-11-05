@@ -31,21 +31,25 @@ class mainwindow(QWidget):
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
 
-        def drawX(self, qp, c, r, colsize, rowsize):
-            #skipping blank space, and scaling c/r 
-            x = colsize + c*colsize
-            y = rowsize + r*rowsize
+    #well, this is what i got so far, and it broke when i clicked it, so that's a good sign
+    def clickEvent(self, event):
+        self.size.clicked.connect(mainwindow.mousePressEvent)
 
-            #drawing x
-            qp.drawline(x, y, x+colsize, y+rowsize)
-            qp.drawline(x+colsize, y, x, y+rowsize)
+    def drawX(self, qp, c, r, colsize, rowsize):
+        #skipping blank space, and scaling c/r 
+        x = colsize + c*colsize
+        y = rowsize + r*rowsize
 
-        def drawO(self, qp, c, r, colsize, rowsize):
-            x = colsize + c*colsize
-            y = rowsize + r*rowsize
+        #drawing x
+        qp.drawline(x, y, x+colsize, y+rowsize)
+        qp.drawline(x+colsize, y, x, y+rowsize)
 
-            #drawing o
-            qp.drawEllipse(x, y, colsize, rowsize)
+    def drawO(self, qp, c, r, colsize, rowsize):
+        x = colsize + c*colsize
+        y = rowsize + r*rowsize
+
+        #drawing o
+        qp.drawEllipse(x, y, colsize, rowsize)
 
         #now, draw the tokens that are on the board
         for r in range(0, 3):
@@ -97,6 +101,7 @@ def main():
     #i'm trying to figure out how to do that!!! i will try it tomorrow, or monday, or something
     #up there before i used self.button3.clicked.connect(self.click3) so maybe something like that
     #and then it runs mousepressevent
+    
 
     #i still don't EXACTLY get the deal with sys.exit
     sys.exit(app.exec())
