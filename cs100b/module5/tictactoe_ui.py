@@ -2,22 +2,21 @@ import sys
 import math
 import random
 from PyQt6.QtWidgets import *
-#so qtgui is for making graphics?
 from PyQt6.QtGui import *
-#and qtcore is for... animation and stuff?
 from PyQt6.QtCore import *
 
-#let's gooo!!! i'm thinking, i totally have to make a gui version of risk later. tic tac toe first tho
+from tictactoe_game import Game
+
 class mainwindow(QWidget):
     def __init__(self, parent = None):
-        #oh, and i'm totally waiting before making proper comments. at the end of cs100b i'll come back!!!
+        #i'm actually making proper comments now because i need to understand this new code!!!
         super(mainwindow, self).__init__(parent)
-        #so this is a new thing!!! i think it's just from qtwidgets, right?
+        #resize adjusts window size
         self.resize(500,500)
         self.setWindowTitle('Tic Tac Toe')
 
-        #waiting to see what this is for???
-        #self.game = Game()
+        #create game object using class from tictactoe_game
+        self.game = Game()
 
     def paintEvent(self, event):
         qp = QPainter(self)
@@ -27,33 +26,79 @@ class mainwindow(QWidget):
         colsize = size.width() // 5
         rowsize = size.height() // 5
 
-        #i am totally going to have to look at qpainter, and see what is actually happening!!!
-        """
         qp.drawLine(colsize*2, rowsize, colsize * 2, rowsize*4)
         qp.drawLine(colsize*3, rowsize, colsize * 3, rowsize * 4)
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
+
+        def drawX(self, qp, c, r, colsize, rowsize):
+            #skipping blank space, and scaling c/r 
+            x = colsize + c*colsize
+            y = rowsize + r*rowsize
+
+            #drawing x
+            qp.drawline(x, y, x+colsize, y+rowsize)
+            qp.drawline(x+colsize, y, x, y+rowsize)
+
+        def drawO(self, qp, c, r, colsize, rowsize):
+            x = colsize + c*colsize
+            y = rowsize + r*rowsize
+
+            #drawing o
+            qp.drawEllipse(x, y, colsize, rowsize)
+
+        #now, draw the tokens that are on the board
+        for r in range(0, 3):
+            for c in range(0, 3):
+                #use the game object we created, & self.board from Game
+                if self.game.board[c][r] == 'X':
+                    #what is this drawing letters thing??? (painter, coordinates, scale)???
+                    self.drawX(qp, c, r, colsize, rowsize)
+                elif self.game.board[c][r] == 'O':
+                    self.drawO(qp, c, r, colsize, rowsize)
+                    #oh i see!! we're defining the functions!!
+
         """
-        #i do not have that much time today so i just drew a face
         img1 = QPixmap("trfarclio.png")
 
-        qp.drawLine(50, 50, 150, 150)
         qp.drawLine(350, 150, 450, 50)
 
-        qp.drawEllipse(100, 300, 300, 100)
-
-        brush = QBrush(Qt.BrushStyle.SolidPattern)
+        brush = QBrush(Qt.GlobalColor.red, Qt.BrushStyle.SolidPattern)
         qp.setBrush(brush)
 
-        qp.drawEllipse(100, 130, 10, 10)
         qp.drawEllipse(400, 130, 10, 10)
         qp.drawPixmap(215, 310, img1)
+        """
+    #respond to mousepress events
+    def mousePressEvent(self, event):
+        size = self.size()
+
+        colsize = size.width()//5
+        rowsize = size.height()//5
+
+        #math.floor rounds down; subtracting 1... ignores empty space?
+        col = math.floor((event.position().x() // colsize )) - 1
+        row = math.floor((event.position().y() // rowsize)) - 1
+
+        #we finish ignoring empty space... by only dealing with a 3x3 square?
+        if col >= 0 and col < 3 and row >= 0 and row < 3:
+            self.game.takeTurn(col, row, self.rect)
+        
+        #force a repaint
+        #i changed this to paintEvent for now? because there's nothing called repaint?
+        self.paintEvent(self, event)
+
 
 def main():
     app = QApplication([])
     w = mainwindow()
     w.show()
-    #i don't EXACTLY get the deal with this
+    #what i'm missing is an actual event detector, i'm thinking maybe it should go here
+    #i'm trying to figure out how to do that!!! i will try it tomorrow, or monday, or something
+    #up there before i used self.button3.clicked.connect(self.click3) so maybe something like that
+    #and then it runs mousepressevent
+
+    #i still don't EXACTLY get the deal with sys.exit
     sys.exit(app.exec())
 
 if __name__ == '__main__':
