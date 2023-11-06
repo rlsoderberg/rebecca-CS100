@@ -83,7 +83,7 @@ class mainwindow(QWidget):
 
         #drawing x
         qp.drawLine(x, y, x+colsize, y+rowsize)
-        qp.drawine(x+colsize, y, x, y+rowsize)
+        qp.drawLine(x+colsize, y, x, y+rowsize)
 
     def drawO(self, qp, c, r, colsize, rowsize):
         x = colsize + c*colsize

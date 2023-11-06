@@ -9,7 +9,7 @@ from game_extra import Game
 
 class mainwindow(QWidget):
     def __init__(self, parent = None):
-        #i'm actually making proper comments now because i need to understand this new code!!!
+        #super window
         super(mainwindow, self).__init__(parent)
         #resize adjusts window size
         self.resize(500,500)
@@ -18,21 +18,22 @@ class mainwindow(QWidget):
         #create game object using class from tictactoe_game
         self.game = Game()
 
-    #well, this is what i got so far, and it broke when i clicked it, so that's a good sign
+    #detect click event
     def clickEvent(self):
-        event = self.clicked.connect(mainwindow.mousePressEvent)
-        pos = PySide2.QtWidgets.QGraphicsSceneMouseEvent.pos()
+        #event = self.clicked.connect(mainwindow.mousePressEvent)
+        event = PySide6.QtGui.QSinglePointEvent()
+        #i'm very likely not dealing with position correctly
+        (col, row) = PySide6.QtGui.QSinglePointEvent.globalPosition(col, row)
+        #pos = PySide2.QtWidgets.QGraphicsSceneMouseEvent.pos()
         if event:
-            self.repaint(pos)
-
-
-        #alright!!! we're taking drastic measures against this paint error!!!
+            self.paintEvent(col, row)
         
-
-    def paintEvent(self, pos):
+    #why is it being so weird about arguments??? it's done this before. 
+    #i'm giving it a row but it's not taking it!!!
+    def paintEvent(self, col, row):
         qp = QPainter(self)
         qp.setPen(QColor(0,0,0))
-        #i'm redoing rect again... even though i passed it in? back down to paint errors, so leaving this
+
         rect = QRect(0, 0, 500, 500)
 
         colsize = rect.width()//5
@@ -44,7 +45,7 @@ class mainwindow(QWidget):
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
 
 
-        print(pos)
+        #print(pos)
         #pos = PySide2.QtWidgets.QGraphicsSceneMouseEvent.pos()
         """
         col = math.floor((event.position().x() // colsize)) - 1
