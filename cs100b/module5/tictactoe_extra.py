@@ -1,6 +1,12 @@
 import sys
 import math
 import random
+"""
+#well, here's the thing, i'm trying to use this to find mouse event location
+#but it seems to not work alongside all the other imports!!!
+from PySide6.QtWidgets import *
+#nvm, i'm going to try to stick to pyqt6
+"""
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
 from PyQt6.QtCore import *
@@ -18,7 +24,18 @@ class mainwindow(QWidget):
         #create game object using class from tictactoe_game
         self.game = Game()
 
-    #detect click event
+    #idk, i stole this mousePressEvent thing from somewhere, and idk how it works
+    #but for now i'm hung up on arguments for paintEvent
+    def mousePressEvent(self, e):
+        #i was just trying to get around paintEvent's weird argument hunger, so i put this down there instead
+        #but then it complained about QPaintEvent object has no attribute position!!!
+        position = e.position()
+        if e: 
+            #i'm trying to figure out why paintEvent is hungry for arguments, and idk about these selfs
+            self.paintEvent(self, e, position)
+
+
+    """
     def clickEvent(self):
         #event = self.clicked.connect(mainwindow.mousePressEvent)
         event = PySide6.QtGui.QSinglePointEvent()
@@ -26,15 +43,19 @@ class mainwindow(QWidget):
         (col, row) = PySide6.QtGui.QSinglePointEvent.globalPosition(col, row)
         #pos = PySide2.QtWidgets.QGraphicsSceneMouseEvent.pos()
         if event:
-            self.paintEvent(col, row)
-        
-    #why is it being so weird about arguments??? it's done this before. 
-    #i'm giving it a row but it's not taking it!!!
-    def paintEvent(self, col, row):
+            self.paintEvent(event)
+    """  
+    #seriously!!! why is paintEvent ALWAYS an argument short???
+    def paintEvent(self, event, position):
         qp = QPainter(self)
         qp.setPen(QColor(0,0,0))
 
         rect = QRect(0, 0, 500, 500)
+
+        #i was going to try to figure out how to deal with this Qpoint integer that QMouseEvent is giving me
+        #but this is behind paintEvent's weird hunger so at this point who knows
+        col = position.x()
+        row = position.y()
 
         colsize = rect.width()//5
         rowsize = rect.height()//5
