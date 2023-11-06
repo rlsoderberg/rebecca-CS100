@@ -18,7 +18,7 @@ class Game:
 
     def takeTurn(self, x, y):
         #takes coordinates of click, and makes sure click is within board
-        if self.board[x][y] != ' ' or self.gameOver:
+        if self.board[int(x)][int(y)] != ' ' or self.gameOver:
             return
         
         #sets token to match turn
