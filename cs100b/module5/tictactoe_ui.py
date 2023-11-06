@@ -18,23 +18,51 @@ class mainwindow(QWidget):
         #create game object using class from tictactoe_game
         self.game = Game()
 
-    def paintEvent(self, event):
+    #well, this is what i got so far, and it broke when i clicked it, so that's a good sign
+    def clickEvent(self):
+        event = self.clicked.connect(mainwindow.mousePressEvent)
+        if event:
+            self.mousePressEvent(event)
+
+    #respond to mousepress events
+    def mousePressEvent(self, event):
+        #right, so this size is not working, but i'm putting rect up here for now
+        """        
+        size = self.size()
+
+        colsize = size.width()//5
+        rowsize = size.height()//5
+        """
+        rect = QRect(0, 0, 500, 500)
+
+        colsize = rect.width()//5
+        rowsize = rect.height()//5
+
+        #math.floor rounds down; subtracting 1... ignores empty space?
+        col = math.floor((event.position().x() // colsize )) - 1
+        row = math.floor((event.position().y() // rowsize)) - 1
+
+        #we finish ignoring empty space... by only dealing with a 3x3 square?
+        if col >= 0 and col < 3 and row >= 0 and row < 3:
+            self.game.takeTurn(col, row, self.rect)
+        
+        #force a repaint
+        #i changed this to paintEvent for now? because there's nothing called repaint?
+        self.paintEvent(rect)
+
+    def paintEvent(self, rect):
         qp = QPainter(self)
         qp.setPen(QColor(0,0,0))
-        #i did this, but now the board doesn't resize!!!
-        size = QRect(0, 0, 500, 500)
+        #i'm redoing rect again... even though i passed it in? back down to paint errors, so leaving this
+        rect = QRect(0, 0, 500, 500)
 
-        colsize = size.width() // 5
-        rowsize = size.height() // 5
+        colsize = rect.width()//5
+        rowsize = rect.height()//5
 
         qp.drawLine(colsize*2, rowsize, colsize * 2, rowsize*4)
         qp.drawLine(colsize*3, rowsize, colsize * 3, rowsize * 4)
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
-
-    #well, this is what i got so far, and it broke when i clicked it, so that's a good sign
-    def clickEvent(self, event):
-        self.size.clicked.connect(mainwindow.mousePressEvent)
 
     def drawX(self, qp, c, r, colsize, rowsize):
         #skipping blank space, and scaling c/r 
@@ -74,24 +102,7 @@ class mainwindow(QWidget):
         qp.drawEllipse(400, 130, 10, 10)
         qp.drawPixmap(215, 310, img1)
         """
-    #respond to mousepress events
-    def mousePressEvent(self, event):
-        size = self.size()
 
-        colsize = size.width()//5
-        rowsize = size.height()//5
-
-        #math.floor rounds down; subtracting 1... ignores empty space?
-        col = math.floor((event.position().x() // colsize )) - 1
-        row = math.floor((event.position().y() // rowsize)) - 1
-
-        #we finish ignoring empty space... by only dealing with a 3x3 square?
-        if col >= 0 and col < 3 and row >= 0 and row < 3:
-            self.game.takeTurn(col, row, self.rect)
-        
-        #force a repaint
-        #i changed this to paintEvent for now? because there's nothing called repaint?
-        self.paintEvent(event)
 
 
 def main():
