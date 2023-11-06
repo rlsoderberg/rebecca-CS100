@@ -52,6 +52,7 @@ class mainwindow(QWidget):
 
     def paintEvent(self, rect):
         qp = QPainter(self)
+        qp.begin(self)
         qp.setPen(QColor(0,0,0))
         #i'm redoing rect again... even though i passed it in? back down to paint errors, so leaving this
         rect = QRect(0, 0, 500, 500)
@@ -64,22 +65,7 @@ class mainwindow(QWidget):
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
 
-    def drawX(self, qp, c, r, colsize, rowsize):
-        #skipping blank space, and scaling c/r 
-        x = colsize + c*colsize
-        y = rowsize + r*rowsize
-
-        #drawing x
-        qp.drawline(x, y, x+colsize, y+rowsize)
-        qp.drawline(x+colsize, y, x, y+rowsize)
-
-    def drawO(self, qp, c, r, colsize, rowsize):
-        x = colsize + c*colsize
-        y = rowsize + r*rowsize
-
-        #drawing o
-        qp.drawEllipse(x, y, colsize, rowsize)
-
+        #oh!!! this was in the wrong place!!!
         #now, draw the tokens that are on the board
         for r in range(0, 3):
             for c in range(0, 3):
@@ -90,6 +76,21 @@ class mainwindow(QWidget):
                 elif self.game.board[c][r] == 'O':
                     self.drawO(qp, c, r, colsize, rowsize)
                     #oh i see!! we're defining the functions!!
+
+    def drawX(self, qp, c, r, colsize, rowsize):
+        x = colsize + c*colsize
+        y = rowsize + r*rowsize
+
+        #drawing x
+        qp.drawLine(x, y, x+colsize, y+rowsize)
+        qp.drawLine(x+colsize, y, x, y+rowsize)
+
+    def drawO(self, qp, c, r, colsize, rowsize):
+        x = colsize + c*colsize
+        y = rowsize + r*rowsize
+
+        #drawing o
+        qp.drawEllipse(x, y, colsize, rowsize)
 
         """
         img1 = QPixmap("trfarclio.png")
