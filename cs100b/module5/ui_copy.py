@@ -1,95 +1,83 @@
-
 import math
 import sys
 import random
-
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
-
 from tictactoe_game import Game
 
-class mainwindow(QWidget):
+class MainWindow(QWidget):
     def __init__(self, parent = None):
-        #super window
-        super(mainwindow, self).__init__(parent)
-        #resize adjusts window size
+        super(MainWindow, self).__init__(parent)
         self.resize(500,500)
-        self.setWindowTitle('Tic Tac Toe')
+        self.setWindowTitle("Tic-Tac-Toe")
 
-        #create game object using class from tictactoe_game
         self.game = Game()
 
+    #respond to paint events
     def paintEvent(self, event):
         qp = QPainter(self)
-        #i saw SOME thing that had qp.begin, but it doesn't seem necessary here
         qp.setPen(QColor(0,0,0))
-
-        #so this doesn't allow resizing, but it does work
         rect = QRect(0, 0, 500, 500)
 
-        colsize = rect.width()//5
-        rowsize = rect.height()//5
+        # draw the board to fit the size
+        colsize = rect.width() // 5
+        rowsize = rect.height() // 5
 
-        qp.drawLine(colsize*2, rowsize, colsize * 2, rowsize*4)
-        qp.drawLine(colsize*3, rowsize, colsize * 3, rowsize * 4)
+        qp.drawLine(colsize*2, rowsize, colsize*2, rowsize*4)
+        qp.drawLine(colsize*3, rowsize, colsize*3, rowsize*4)
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
 
-        #now, this goes up here, with all the qp stuff!!!
-        #remember, c and r come from INSIDE the loops!!!
-        for r in range(0, 3):
-            for c in range(0, 3):
-                #use the game object we created, & self.board from Game
+        # now, draw the tokens that are on the board
+        for r in range(0,3):
+            for c in range(0,3):
                 if self.game.board[c][r] == 'X':
                     self.drawX(qp, c, r, colsize, rowsize)
                 elif self.game.board[c][r] == 'O':
                     self.drawO(qp, c, r, colsize, rowsize)
 
-
     def drawX(self, qp, c, r, colsize, rowsize):
         x = colsize + c*colsize
         y = rowsize + r*rowsize
-
-        #drawing x
-        qp.drawLine(x, y, x+colsize, y+rowsize)
-        qp.drawLine(x+colsize, y, x, y+rowsize)
+        colmargin = int(colsize * 0.05)
+        rowmargin = int(rowsize * 0.05)
+        pen = QPen(QBrush(QColor(255,0,0)), 8)
+        qp.setPen(pen)
+        qp.drawLine(x+colmargin, y+rowmargin, x+colsize-2*colmargin, y+rowsize-2*rowmargin)
+        qp.drawLine(x+colsize-2*colmargin, y+rowmargin, x+colmargin, y+rowsize-2*rowmargin)
 
     def drawO(self, qp, c, r, colsize, rowsize):
         x = colsize + c*colsize
         y = rowsize + r*rowsize
+        colmargin = int(colsize * 0.05)
+        rowmargin = int(rowsize * 0.05)
+        pen = QPen(QBrush(QColor(0,255,0)), 5)
+        qp.setPen(pen)
+        qp.drawEllipse(x+colmargin, y+rowmargin, colsize-2*colmargin, rowsize-2*rowmargin)
 
-        #drawing o
-        qp.drawEllipse(x, y, colsize, rowsize)
-
-    #idk, i stole this mousePressEvent function from somewhere, and it's very mysterious
-    #didn't help messing with the order of these functions, this is going at the bottom, and catching everything
+    #respond to mousepress events
     def mousePressEvent(self, event):
-        #so we're passing event.position straight from nowhere, into the QUADRANT DETERMINATOR? mysterious
         size = self.size()
-        
-        #do this again down here
+
         colsize = size.width() // 5
         rowsize = size.height() // 5
 
-        #for some reason it is important to have double parentheses here????
         col = math.floor((event.position().x() // colsize)) - 1
         row = math.floor((event.position().y() // rowsize)) - 1
 
-        #oh, but i didn't have this, and this is important
         if col >= 0 and col < 3 and row >= 0 and row < 3:
             self.game.takeTurn(col, row)
 
-        #so... this is a built-in function!
+        # force a repaint
         self.repaint()
 
-        #check for winner
         winner = self.game.checkForWinner()
         if winner != ' ':
             dlg = WinnerDialog(winner)
             if dlg.exec():
                 self.game.clearBoard()
-    
+
 class WinnerDialog(QDialog):
     def __init__(self, winner):
         super().__init__()
@@ -116,13 +104,8 @@ class WinnerDialog(QDialog):
 
 def main():
     app = QApplication([])
-    w = mainwindow()
+    w = MainWindow()
     w.show()
-    #well, when i try to call this here the program breaks!!!
-    #w.clickEvent()
-    
-
-    #i still don't EXACTLY get the deal with sys.exit
     sys.exit(app.exec())
 
 if __name__ == '__main__':
