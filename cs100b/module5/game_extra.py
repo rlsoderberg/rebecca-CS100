@@ -16,8 +16,7 @@ class Game:
         #gameover variable
         self.gameOver = False
 
-#fix this!!! you don't need that rect, do you?
-    def takeTurn(self, x, y, rect):
+    def takeTurn(self, x, y):
         #takes coordinates of click, and makes sure click is within board
         if self.board[x][y] != ' ' or self.gameOver:
             return

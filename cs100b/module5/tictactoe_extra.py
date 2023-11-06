@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
 from PyQt6.QtCore import *
 
-from tictactoe_game import Game
+from game_extra import Game
 
 class mainwindow(QWidget):
     def __init__(self, parent = None):
@@ -21,38 +21,16 @@ class mainwindow(QWidget):
     #well, this is what i got so far, and it broke when i clicked it, so that's a good sign
     def clickEvent(self):
         event = self.clicked.connect(mainwindow.mousePressEvent)
+        pos = PySide2.QtWidgets.QGraphicsSceneMouseEvent.pos()
         if event:
-            self.mousePressEvent(event)
+            self.repaint(pos)
 
-    #respond to mousepress events
-    def mousePressEvent(self, event):
-        #right, so this size is not working, but i'm putting rect up here for now
-        """        
-        size = self.size()
 
-        colsize = size.width()//5
-        rowsize = size.height()//5
-        """
-        rect = QRect(0, 0, 500, 500)
-
-        colsize = rect.width()//5
-        rowsize = rect.height()//5
-
-        #math.floor rounds down; subtracting 1... ignores empty space?
-        col = math.floor((event.position().x() // colsize )) - 1
-        row = math.floor((event.position().y() // rowsize)) - 1
-
-        #we finish ignoring empty space... by only dealing with a 3x3 square?
-        if col >= 0 and col < 3 and row >= 0 and row < 3:
-            self.game.takeTurn(col, row, self.rect)
+        #alright!!! we're taking drastic measures against this paint error!!!
         
-        #force a repaint
-        #i changed this to paintEvent for now? because there's nothing called repaint?
-        self.paintEvent(rect)
 
-    def paintEvent(self, rect):
+    def paintEvent(self, pos):
         qp = QPainter(self)
-        qp.begin(self)
         qp.setPen(QColor(0,0,0))
         #i'm redoing rect again... even though i passed it in? back down to paint errors, so leaving this
         rect = QRect(0, 0, 500, 500)
@@ -64,6 +42,16 @@ class mainwindow(QWidget):
         qp.drawLine(colsize*3, rowsize, colsize * 3, rowsize * 4)
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
+
+
+        print(pos)
+        #pos = PySide2.QtWidgets.QGraphicsSceneMouseEvent.pos()
+        """
+        col = math.floor((event.position().x() // colsize)) - 1
+        row = math.floor((event.position().y() // rowsize)) - 1
+        """
+        """
+        Game.takeTurn(self, col, row)
 
         #oh!!! this was in the wrong place!!!
         #now, draw the tokens that are on the board
@@ -83,7 +71,7 @@ class mainwindow(QWidget):
 
         #drawing x
         qp.drawLine(x, y, x+colsize, y+rowsize)
-        qp.drawine(x+colsize, y, x, y+rowsize)
+        qp.drawLine(x+colsize, y, x, y+rowsize)
 
     def drawO(self, qp, c, r, colsize, rowsize):
         x = colsize + c*colsize
@@ -91,21 +79,7 @@ class mainwindow(QWidget):
 
         #drawing o
         qp.drawEllipse(x, y, colsize, rowsize)
-
-        """
-        img1 = QPixmap("trfarclio.png")
-
-        qp.drawLine(350, 150, 450, 50)
-
-        brush = QBrush(Qt.GlobalColor.red, Qt.BrushStyle.SolidPattern)
-        qp.setBrush(brush)
-
-        qp.drawEllipse(400, 130, 10, 10)
-        qp.drawPixmap(215, 310, img1)
-        """
-
-
-
+"""
 def main():
     app = QApplication([])
     w = mainwindow()
