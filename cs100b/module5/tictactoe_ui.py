@@ -21,7 +21,8 @@ class mainwindow(QWidget):
     def paintEvent(self, event):
         qp = QPainter(self)
         qp.setPen(QColor(0,0,0))
-        size = event.rect().size()
+        #i did this, but now the board doesn't resize!!!
+        size = QRect(0, 0, 500, 500)
 
         colsize = size.width() // 5
         rowsize = size.height() // 5
@@ -97,10 +98,8 @@ def main():
     app = QApplication([])
     w = mainwindow()
     w.show()
-    #what i'm missing is an actual event detector, i'm thinking maybe it should go here
-    #i'm trying to figure out how to do that!!! i will try it tomorrow, or monday, or something
-    #up there before i used self.button3.clicked.connect(self.click3) so maybe something like that
-    #and then it runs mousepressevent
+    #well, when i try to call this here the program breaks!!!
+    #w.clickEvent()
     
 
     #i still don't EXACTLY get the deal with sys.exit
