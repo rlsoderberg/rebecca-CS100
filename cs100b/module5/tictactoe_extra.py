@@ -31,13 +31,10 @@ class mainwindow(QWidget):
         position = e.position()
         if e: 
             qp = QPainter(self)
+            qp.begin(self)
             qp.setPen(QColor(0,0,0))
 
             rect = QRect(0, 0, 500, 500)
-
-            #figure out how to deal with this Qpoint integer that QMouseEvent is giving me
-            col = position.x()
-            row = position.y()
 
             colsize = rect.width()//5
             rowsize = rect.height()//5
@@ -46,6 +43,13 @@ class mainwindow(QWidget):
             qp.drawLine(colsize*3, rowsize, colsize * 3, rowsize * 4)
             qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
             qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
+
+            col = math.floor(position.x()//colsize) -1
+            row = math.floor(position.y()//rowsize) -1
+
+            #well, i at least got it so i can see col & row of my click position, that's kind of fun
+            print(col)
+            print(row)
 
             Game.clearBoard(self)
             Game.takeTurn(self, col, row)
@@ -72,6 +76,7 @@ class mainwindow(QWidget):
 
         #drawing o
         qp.drawEllipse(x, y, colsize, rowsize)
+        
 
 def main():
     app = QApplication([])

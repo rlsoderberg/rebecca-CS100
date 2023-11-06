@@ -3,6 +3,7 @@ class Game:
     def __init__(self):
         self.clearBoard()
 
+
     def clearBoard(self):
         #2d list of characters representing board
         self.board = [
