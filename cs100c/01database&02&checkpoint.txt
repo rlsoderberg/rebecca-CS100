@@ -35,8 +35,6 @@ Whereas TransID and CheckNumber are examples of primary keys.
 
 03. Checkpoint
 
-1. Student table: see above
-
 Name: Teachers
 Attributes: Teacher ID(integer), Teacher First Name(string), Teacher Last Name(string), Teacher Birthdate(string)
 

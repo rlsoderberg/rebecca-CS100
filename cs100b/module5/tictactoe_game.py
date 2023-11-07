@@ -12,6 +12,17 @@ class Game:
         self.turnX = True
         self.gameOver = False
 
+        #we are sticking the data in here since... board is cleared at the end/start of every game, right?
+        p = open(plays.txt, 'r')
+        current_p = p.read()
+        p.close()
+
+        p = open(plays.txt, "w")
+        p.write(current_p + 1)
+        p.close()
+
+
+
     #oh wait, there WAS a difference in the arguments of takeTurn? how did that get there???
     def takeTurn(self, x, y):
         if self.board[x][y] != ' ' or self.gameOver:
@@ -30,6 +41,7 @@ class Game:
         self.turnX = not self.turnX
 
     def checkForWinner(self):
+        roundCount += 1
         self.gameOver = True
         for i in range (0, 3):
             #remember to check if not blank
