@@ -16,14 +16,18 @@ class Game:
         current_f = 0
         #we are sticking the data in here since... board is cleared at the end/start of every game, right?
         f = open('plays.txt', 'r')
+        #ohhh, the value in the text file keeps disappearing as i work on this, which is why it can't read!
         current_f = int(f.read())
         f.close()
 
         #oh, i forgot to put the filename in parentheses!!!
         f = open('plays.txt', "w")
         current_f += 1
+        current_f = str(current_f)
         f.write(current_f)
         f.close()
+
+        self.roundCount = 0
 
 
 
@@ -45,7 +49,7 @@ class Game:
         self.turnX = not self.turnX
 
     def checkForWinner(self):
-        roundCount += 1
+        self.roundCount += 1
         self.gameOver = True
         for i in range (0, 3):
             #remember to check if not blank
@@ -76,6 +80,8 @@ class Game:
 
         self.gameOver = False
         return ' '
+    
+        
 
 
         #if you get through all the returns without returning anything, THEN game isn't over

@@ -90,7 +90,6 @@ class mainwindow(QWidget):
             dlg = WinnerDialog(winner)
             if dlg.exec():
                 self.game.clearBoard()
-                roundCount += 1
     
 class WinnerDialog(QDialog):
     def __init__(self, winner):
@@ -111,6 +110,7 @@ class WinnerDialog(QDialog):
         msg = "Congratulations " + winner + ". New Game?"
         if winner == 'C':
             msg = "No winner this time. New Game?"
+        print(f"rounds for this game: {game.roundCount}")
         lbl = QLabel(msg)
         self.layout.addWidget(lbl)
         self.layout.addWidget(self.buttonBox)
@@ -119,8 +119,6 @@ class WinnerDialog(QDialog):
 def main():
     app = QApplication([])
     w = mainwindow()
-    #can i stick this in here???
-    self.roundCount = 0
     w.show()
     
 
