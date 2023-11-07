@@ -3,7 +3,7 @@
 1. Schema of Student Database
 
 Name: Student
-Attributes: Student ID(int), Student First Name(string), Student Last Name, Student Birthdate(string), Student Grade Level(int)
+Attributes: ID(int), FirstName(string), LastName, Birthdate(string), GradeLevel(int)
 
 We are starting with four rows in the table (cardinality of 4)
 
@@ -36,7 +36,7 @@ Whereas TransID and CheckNumber are examples of primary keys.
 03. Checkpoint
 
 Name: Teachers
-Attributes: Teacher ID(integer), Teacher First Name(string), Teacher Last Name(string), Teacher Birthdate(string)
+Attributes: ID(integer), FirstName(string), LastName(string), Birthdate(string)
 
 Tuples:
 <10923, "Frederick", "Rathburn", "07/03/80">
@@ -45,9 +45,9 @@ Tuples:
 <94287, "Julia", "Preston", "10/25/78">
 
 Name: Advising Teams
-Attributes: Team Number(int), Student ID(int), Student Last Name(string), Advisor ID(int), Advisor Last Name(string)>
+Attributes: TeamNumber(int), StudentID(int), StudentLastName(string), AdvisorID(int), AdvisorLastName(string)>
 2. Primary Key: Team Number
-Foreign Keys: Student ID, Advisor ID
+Foreign Keys: StudentID, AdvisorID
 
 Tuples:
 <01, 88153, "Ulbright", 81279, "Washington">
@@ -59,7 +59,7 @@ What do you mean, add relations to manage courses? That sounds like a whole othe
 Well, how about we have another table for classes, and one for student registrations?
 
 Name: Entomology Class Roster
-Attributes: Class Number(int), Date(string), Class Name(string), Teacher ID(int), Room Number(int), Time(string)
+Attributes: ClassNumber(int), Date(string), ClassName(string), TeacherID(int), RoomNumber(int), Time(string)
 
 Tuples:
 <81904, Fall23, "Arthropods Among Us", 47604, 206, "11:00 MWF">
@@ -68,7 +68,7 @@ Tuples:
 <81919, Fall23, "Scientific Illustration", 81279, 104, "10:00 MWF">
 
 Name: Student Registrations
-Attributes: Registration Number, Class Number(int), Date(string), Student ID(int), Student Last Name(string)
+Attributes: RegistrationNumber, ClassNumber(int), Date(string), StudentID(int), StudentLastName(string)
 
 Tuples:
 <920379, 81913, Fall23, "Forensic Entomology", 75296, "Stetley">
