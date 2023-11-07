@@ -35,16 +35,18 @@ class Game:
         self.gameOver = True
         for i in range (0, 3):
             #remember to check if not blank
-            if self.board != ' ' and self.board[i][0] == self.board[i][1] and self.board[i][1] == self.board[i][2]:
+
+            #well, i forgot to make this first self.board specific. is that what's messing it up? really?
+            if self.board[i][0] != ' ' and self.board[i][0] == self.board[i][1] and self.board[i][1] == self.board[i][2]:
                 #winner is owner of chain
                 return self.board[i][0]
-            if self.board != ' ' and self.board[0][i] == self.board[1][i] and self.board[1][i] == self.board[2][i]:
+            if self.board[i][0] != ' ' and self.board[0][i] == self.board[1][i] and self.board[1][i] == self.board[2][i]:
                 return self.board[0][i]
 
         if self.board[0][0] != ' ' and self.board[0][0] == self.board[1][1] and self.board[1][1] == self.board[2][2]:
             return self.board[0][0]
         
-        if self.board[2][0] != ' ' and self.board[0][0] == self.board[1][1] and self.board[1][1] == self.board[0][2]:
+        if self.board[2][0] != ' ' and self.board[2][0] == self.board[1][1] and self.board[1][1] == self.board[0][2]:
             return self.board[2][0]
         
         #first mark cat true so you can go through and check if all the spaces are not blank
