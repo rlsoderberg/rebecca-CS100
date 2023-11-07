@@ -94,6 +94,45 @@ class mainwindow(QWidget):
         #i changed this to paintEvent for now? because there's nothing called repaint?
         paintEvent()
 
+#QDialog creates popup window
+class WinnerDialog(QDialog):
+    #another use of the winner variable from checkforwinner!
+    #i guess gameover is just more simple & internal to tictactoe_game 
+    def __init__(self, winner):
+        super().__init__()
+    
+        self.setWindowTitle(f/'{winner} has won!')
+
+        self.buttonBox = QDialogBox(qbtn)
+        #vertical bar is... bitwise or? WAT?
+        #qbtn = QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
+        #this accept/reject thing... it's too convenient!!!
+        
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+
+        self.layout = QVBoxLayout()
+
+        lbl = QLabel(f/"Congratulations, {winner}. New Game?")
+        self.layout.addWidget(lbl)
+        self.layout.addWidget(self.buttonBox)
+        self.setlayout(self.layout)
+        """
+        #see, i would just go like... 
+        
+        okbtn = qbtn.addButton('OK', QDialogButtonBox.StandardButton)
+        xbtn = qbtn.addButton('Cancel', QDialogButtonBox.StandardButton)
+
+        self.buttonBox.okbtn.connect(self.newGame)
+        self.buttonBox.xbtn.connect(self.closeDialog)
+
+        if self.newGame:
+            game.clearBoard()
+            #i'm trying to figure out how to manually close the dialog box...
+            #ok true!!! there aren't that many actions besides accept and reject!!!
+            #fine, i'll just do the dialog like normal
+            #but this is messing with the arguments for takeTurn and i'm not sure why
+        """
 
 def main():
     app = QApplication([])
