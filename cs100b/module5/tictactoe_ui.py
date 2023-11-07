@@ -1,3 +1,8 @@
+#see, i felt kind of lame for going back and copying the examples
+#but look, i'm having trouble with the arguments for paint event again!!! what even is that????
+#ohhhh, it was that weird auto-generating mousepressevent!!! what even was that???
+#but it's true i've been pretty hands off tictactoe_game...
+
 import sys
 import math
 import random
@@ -18,43 +23,11 @@ class mainwindow(QWidget):
         #create game object using class from tictactoe_game
         self.game = Game()
 
-    #well, this is what i got so far, and it broke when i clicked it, so that's a good sign
-    def clickEvent(self):
-        event = self.clicked.connect(mainwindow.mousePressEvent)
-        if event:
-            self.mousePressEvent(event)
-
-    #respond to mousepress events
-    def mousePressEvent(self, event):
-        #right, so this size is not working, but i'm putting rect up here for now
-        """        
-        size = self.size()
-
-        colsize = size.width()//5
-        rowsize = size.height()//5
-        """
-        rect = QRect(0, 0, 500, 500)
-
-        colsize = rect.width()//5
-        rowsize = rect.height()//5
-
-        #math.floor rounds down; subtracting 1... ignores empty space?
-        col = math.floor((event.position().x() // colsize )) - 1
-        row = math.floor((event.position().y() // rowsize)) - 1
-
-        #we finish ignoring empty space... by only dealing with a 3x3 square?
-        if col >= 0 and col < 3 and row >= 0 and row < 3:
-            self.game.takeTurn(col, row, self.rect)
-        
-        #force a repaint
-        #i changed this to paintEvent for now? because there's nothing called repaint?
-        self.paintEvent(rect)
-
-    def paintEvent(self, rect):
+    def paintEvent(self, event):
         qp = QPainter(self)
         qp.begin(self)
         qp.setPen(QColor(0,0,0))
-        #i'm redoing rect again... even though i passed it in? back down to paint errors, so leaving this
+
         rect = QRect(0, 0, 500, 500)
 
         colsize = rect.width()//5
@@ -92,7 +65,6 @@ class mainwindow(QWidget):
         #drawing o
         qp.drawEllipse(x, y, colsize, rowsize)
 
-        """
         img1 = QPixmap("trfarclio.png")
 
         qp.drawLine(350, 150, 450, 50)
@@ -102,8 +74,25 @@ class mainwindow(QWidget):
 
         qp.drawEllipse(400, 130, 10, 10)
         qp.drawPixmap(215, 310, img1)
-        """
 
+        #respond to mousepress events
+    def mousePressEvent(self, event):        
+        size = self.size()
+
+        colsize = size.width()//5
+        rowsize = size.height()//5
+
+        #math.floor rounds down; subtracting 1... ignores empty space?
+        col = math.floor((event.position().x() // colsize )) - 1
+        row = math.floor((event.position().y() // rowsize)) - 1
+
+        #we finish ignoring empty space... by only dealing with a 3x3 square?
+        if col >= 0 and col < 3 and row >= 0 and row < 3:
+            self.game.takeTurn(col, row)
+        
+        #force a repaint
+        #i changed this to paintEvent for now? because there's nothing called repaint?
+        paintEvent()
 
 
 def main():

@@ -85,6 +85,9 @@ class mainwindow(QWidget):
 
         #check for winner
         winner = self.game.checkForWinner()
+        #i'm not ENTIRELY sure why this is a different variable from gameOver
+        #i guess it was easier to just go get it once
+        #now i have to think of more questions!!
         if winner != ' ':
             dlg = WinnerDialog(winner)
             if dlg.exec():
@@ -120,7 +123,6 @@ def main():
     w.show()
     #well, when i try to call this here the program breaks!!!
     #w.clickEvent()
-    
 
     #i still don't EXACTLY get the deal with sys.exit
     sys.exit(app.exec())
