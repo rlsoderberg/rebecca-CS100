@@ -110,7 +110,6 @@ class WinnerDialog(QDialog):
         msg = "Congratulations " + winner + ". New Game?"
         if winner == 'C':
             msg = "No winner this time. New Game?"
-        print(f"rounds for this game: {game.roundCount}")
         lbl = QLabel(msg)
         self.layout.addWidget(lbl)
         self.layout.addWidget(self.buttonBox)

@@ -50,6 +50,7 @@ class Game:
 
     def checkForWinner(self):
         self.roundCount += 1
+        print(f"roundCount: {self.roundCount}")
         self.gameOver = True
         for i in range (0, 3):
             #remember to check if not blank
