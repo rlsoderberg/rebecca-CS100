@@ -11,7 +11,6 @@ from tictactoe_game import Game
 
 class mainwindow(QWidget):
     def __init__(self, parent = None):
-        #super window
         super(mainwindow, self).__init__(parent)
         #resize adjusts window size
         self.resize(500,500)
@@ -65,7 +64,6 @@ class mainwindow(QWidget):
     #idk, i stole this mousePressEvent function from somewhere, and it's very mysterious
     #didn't help messing with the order of these functions, this is going at the bottom, and catching everything
     def mousePressEvent(self, event):
-        #so we're passing event.position straight from nowhere, into the QUADRANT DETERMINATOR? mysterious
         size = self.size()
         
         #do this again down here

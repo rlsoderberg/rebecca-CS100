@@ -4,23 +4,20 @@ class Game:
 
     def clearBoard(self):
         self.board = [
-            [' ',' ',' '],
-            [' ',' ',' '],
-            [' ',' ',' '],
-        ]
-        #are these variables archaic or something? they're not used anywhere else
+                [' ',' ',' '],
+                [' ',' ',' '],
+                [' ',' ',' ']
+            ]
 
-        #wait what, 'self' is not defined?????
-        #ohhhh, i forgot to indent
-        self.TurnX = True
+        self.turnX = True
         self.gameOver = False
 
-    def takeTurn(x, y):
-        #oh wait, here's gameover again
-        if self.board[x][y] == ' ' or self.gameOver:
-            mainwindow.mousepressevent()
+    #oh wait, there WAS a difference in the arguments of takeTurn? how did that get there???
+    def takeTurn(self, x, y):
+        if self.board[x][y] != ' ' or self.gameOver:
+            return
         
-        if self.TurnX:
+        if self.turnX:
             token = 'X'
 
         else:
@@ -29,7 +26,8 @@ class Game:
         #mark token on board
         self.board[x][y] = token
         #switch to opposite turn
-        self.TurnX = not TurnX
+        #oh!! i DID forget to call the second one self.turnX!
+        self.turnX = not self.turnX
 
     def checkForWinner(self):
         self.gameOver = True
