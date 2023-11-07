@@ -12,14 +12,18 @@ class Game:
         self.turnX = True
         self.gameOver = False
 
+        #i'm going to initialize this just in case
+        current_f = 0
         #we are sticking the data in here since... board is cleared at the end/start of every game, right?
-        p = open(plays.txt, 'r')
-        current_p = p.read()
-        p.close()
+        f = open('plays.txt', 'r')
+        current_f = int(f.read())
+        f.close()
 
-        p = open(plays.txt, "w")
-        p.write(current_p + 1)
-        p.close()
+        #oh, i forgot to put the filename in parentheses!!!
+        f = open('plays.txt', "w")
+        current_f += 1
+        f.write(current_f)
+        f.close()
 
 
 
