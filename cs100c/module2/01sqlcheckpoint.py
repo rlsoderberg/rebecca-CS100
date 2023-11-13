@@ -14,4 +14,33 @@
 #idk tho. can i ask about this?
 
 
-#also i need to figure out how to exit partially instead of using ctrl+c
+#oh, i got it to work with student
+#apparently the arrows are it just asking for a semicolon, so that's kind of nice
+
+#haha, this is what I get when I try to select first name from customers
+
+"""
++------------+
+| First Name |
++------------+
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
+| First Name |
++------------+
+"""
+
+
