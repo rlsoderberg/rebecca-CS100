@@ -35,7 +35,7 @@ Whereas TransID and CheckNumber are examples of primary keys.
 
 03. Checkpoint
 
-Name: Teachers
+Name: Teacher
 Attributes: ID(integer), FirstName(string), LastName(string), Birthdate(string)
 
 Tuples:
@@ -44,7 +44,7 @@ Tuples:
 <47604, "Cornelius", "Spelde", "08/23/64">
 <94287, "Julia", "Preston", "10/25/78">
 
-Name: Advising Teams
+Name: Advising
 Attributes: TeamNumber(int), StudentID(int), StudentLastName(string), AdvisorID(int), AdvisorLastName(string)>
 2. Primary Key: Team Number
 Foreign Keys: StudentID, AdvisorID
