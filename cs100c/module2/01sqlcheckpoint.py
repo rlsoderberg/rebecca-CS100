@@ -47,7 +47,7 @@
 #you use... back quotes!!! for things like table names & attributes!!!
 #you also use double quotes for quotations in sql
 
-#checkpoint
+#BASIC SQL
 
 #1. look at this, i had to select distinct
 #select distinct `first name` from customers where `job title` = 'owner';
@@ -92,323 +92,7 @@
 |                                                   0 |
 |                                                   0 |
 |                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-|                                                   0 |
-+-----------------------------------------------------+
+...
 """
 #seriously???
 #ok, well, let me just have lunch first, and then...
@@ -424,322 +108,2699 @@
 | Northwind Traders Syrup                  | 7.50          | 10.00      |
 | Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
 | Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-| Northwind Traders Chai                   | 13.50         | 18.00      |
-| Northwind Traders Syrup                  | 7.50          | 10.00      |
-| Northwind Traders Chocolate Biscuits Mix | 6.90          | 9.20       |
-| Northwind Traders Scones                 | 7.50          | 10.00      |
-| Northwind Traders Beer                   | 10.50         | 14.00      |
-| Northwind Traders Crab Meat              | 13.80         | 18.40      |
-| Northwind Traders Clam Chowder           | 7.24          | 9.65       |
-| Northwind Traders Chocolate              | 9.56          | 12.75      |
-| Northwind Traders Long Grain Rice        | 5.25          | 7.00       |
-| Northwind Traders Ravioli                | 14.63         | 19.50      |
-| Northwind Traders Tomato Sauce           | 12.75         | 17.00      |
-| Northwind Traders Almonds                | 7.50          | 10.00      |
-| Northwind Traders Mustard                | 9.75          | 13.00      |
-| Northwind Traders Dried Plums            | 3.00          | 3.50       |
-| Northwind Traders Green Tea              | 2.00          | 2.99       |
-| Northwind Traders Granola                | 2.00          | 4.00       |
-| Northwind Traders Potato Chips           | 0.50          | 1.80       |
-| Northwind Traders Brownie Mix            | 9.00          | 12.49      |
-| Northwind Traders Cake Mix               | 10.50         | 15.99      |
-| Northwind Traders Tea                    | 2.00          | 4.00       |
-| Northwind Traders Pears                  | 1.00          | 1.30       |
-| Northwind Traders Peaches                | 1.00          | 1.50       |
-| Northwind Traders Pineapple              | 1.00          | 1.80       |
-| Northwind Traders Cherry Pie Filling     | 1.00          | 2.00       |
-| Northwind Traders Green Beans            | 1.00          | 1.20       |
-| Northwind Traders Corn                   | 1.00          | 1.20       |
-| Northwind Traders Peas                   | 1.00          | 1.50       |
-| Northwind Traders Tuna Fish              | 0.50          | 2.00       |
-| Northwind Traders Smoked Salmon          | 2.00          | 4.00       |
-| Northwind Traders Hot Cereal             | 3.00          | 5.00       |
-| Northwind Traders Vegetable Soup         | 1.00          | 1.89       |
-| Northwind Traders Chicken Soup           | 1.00          | 1.95       |
-+------------------------------------------+---------------+------------+
+...
 """
-#well there, that one's working, but i'm still not sure about funky o'donnell
+#so it's select `product name`, `standard cost`, `list price` from products where `list price` < 20;
+#well there, that one's working, but i'm still not sure about funky o'donnell. oh well
+
+#MORE SQL
+
+#1. well... i finally got it to the point where it gave me an empty set (sign of progress???)
+#for a while there i was using 'for' instead of 'from', but i finally fixed that!!!
+#SELECT e.`First Name`, e.`Last Name`, o.`Ship City`
+#FROM `employees` e, `orders` o
+#WHERE o.`employee id` = e.`id` and o.`ship city` = 'california'
+#oh, i had to abbreviate california!! AND use state/province instead of city
+#SELECT e.`First Name`, e.`Last Name`, o.`Ship State/Province`
+#FROM `Employees` e, `Orders` o
+#WHERE o.`Employee ID` = e.`ID` and o.`Ship State/Province` = 'CA';
+"""
++------------+-----------+---------------------+
+| First Name | Last Name | Ship State/Province |
++------------+-----------+---------------------+
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Mariya     | Sergienko | CA                  |
+| Andrew     | Cencini   | CA                  |
+| Andrew     | Cencini   | CA                  |
+| Andrew     | Cencini   | CA                  |
+| Andrew     | Cencini   | CA                  |
+| Andrew     | Cencini   | CA                  |
++------------+-----------+---------------------+
+"""
+#2. 
+#SELECT c.`First Name`, c.`Last Name`, o.`Ship State/Province`
+#FROM `Customers` c, `Orders` o
+#WHERE o.`Customer ID` = c.`ID` and o.`Ship State/Province` = 'CA';
+"""
++------------+-----------+---------------------+
+| First Name | Last Name | Ship State/Province |
++------------+-----------+---------------------+
+| Thomas     | Axen      | CA                  |
+| Thomas     | Axen      | CA                  |
+| Thomas     | Axen      | CA                  |
+| Thomas     | Axen      | CA                  |
+...
+"""
+#the only customer in california...
+
+#3. 
+#SELECT e.`First Name`, e.`Last Name`, c.`First Name`, c.`Last Name`, o.`Ship City`
+#FROM `Employees` e, `Customers` c, `Orders` o
+#WHERE o.`Employee ID` = e.`ID` and o.`Customer ID` = c.`ID` and o.`Ship State/Province` = 'CA';
+#well, look at that, this is a lot longer than my first table!
+"""
++------------+-----------+------------+-----------+---------------------+
+| First Name | Last Name | First Name | Last Name | Ship State/Province |
++------------+-----------+------------+-----------+---------------------+
+| Mariya     | Sergienko | Thomas     | Axen      | CA                  |
+| Mariya     | Sergienko | Thomas     | Axen      | CA                  |
+| Mariya     | Sergienko | Thomas     | Axen      | CA                  |
+| Mariya     | Sergienko | Thomas     | Axen      | CA                  |
+....................
+"""
+#file that under 'weird sql questions'...
+#oh wait, i'm structuring this wrong, or something!
+#SELECT e.`First Name`, e.`Last Name`, c.`First Name`, c.`Last Name`, o.`Ship State/Province`
+#FROM `Employees` e, `Customers` c, `Orders` o
+#WHERE o.`Employee ID` = e.`ID` and o.`Ship State/Province` = 'CA';
+#whoaaa. now i got a totally different table for this one.
+"""
++------------+-----------+---------------+------------------+---------------------+
+| First Name | Last Name | First Name    | Last Name        | Ship State/Province |
++------------+-----------+---------------+------------------+---------------------+
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Martin        | OÆDonnell        | CA                  |
+| Andrew     | Cencini   | Martin        | OÆDonnell        | CA                  |
+| Andrew     | Cencini   | Martin        | OÆDonnell        | CA                  |
+| Andrew     | Cencini   | Martin        | OÆDonnell        | CA                  |
+| Andrew     | Cencini   | Martin        | OÆDonnell        | CA                  |
+| Andrew     | Cencini   | Martin        | OÆDonnell        | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Andrew     | Cencini   | Anna          | Bedecs           | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Andrew     | Cencini   | Antonio       | Gratacos Solsona | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Andrew     | Cencini   | Thomas        | Axen             | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Andrew     | Cencini   | Christina     | Lee              | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Andrew     | Cencini   | Martin        | O'Donnell        | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Andrew     | Cencini   | Francisco     | Perez-Olaeta     | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Andrew     | Cencini   | Ming-Yang     | Xie              | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Andrew     | Cencini   | Elizabeth     | Andersen         | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Andrew     | Cencini   | Sven          | Mortensen        | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Andrew     | Cencini   | Roland        | Wacker           | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Andrew     | Cencini   | Peter         | Krschne          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Andrew     | Cencini   | John          | Edwards          | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Andrew     | Cencini   | Andre         | Ludick           | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Andrew     | Cencini   | Carlos        | Grilo            | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Andrew     | Cencini   | Helena        | Kupkova          | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Andrew     | Cencini   | Daniel        | Goldschmidt      | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Andrew     | Cencini   | Jean Philippe | Bagel            | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Andrew     | Cencini   | Catherine     | Autier Miconi    | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Andrew     | Cencini   | Alexander     | Eggerer          | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Mariya     | Sergienko | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Andrew     | Cencini   | George        | Li               | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Andrew     | Cencini   | Bernard       | Tham             | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Andrew     | Cencini   | Luciana       | Ramos            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Andrew     | Cencini   | Michael       | Entin            | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Andrew     | Cencini   | Jonas         | Hasselberg       | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Andrew     | Cencini   | John          | Rodman           | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Andrew     | Cencini   | Run           | Liu              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Andrew     | Cencini   | Karen         | Toh              | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Andrew     | Cencini   | Amritansh     | Raghav           | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Mariya     | Sergienko | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
+| Andrew     | Cencini   | Soo Jung      | Lee              | CA                  |
++------------+-----------+---------------+------------------+---------------------+
+"""
+#what am i actually doing???
+
+#i counted orders and employees and customers... and yeah, there are more orders.
+#that seems normal... so why are so few showing up on the first one???
+
+
