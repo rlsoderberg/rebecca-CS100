@@ -1,0 +1,83 @@
+EXTENSIONS TO THE SELECT CLAUSE
+
+1.
+SELECT `product name`, `list price`
+FROM `products`
+WHERE `list price` > 25;
++----------------------------------+------------+
+| product name                     | list price |
++----------------------------------+------------+
+| Northwind Traders Dried Pears    | 30.00      |
+| Northwind Traders Curry Sauce    | 40.00      |
+| Northwind Traders Fruit Cocktail | 39.00      |
+| Northwind Traders Marmalade      | 81.00      |
+...
+
+2.
+SELECT `company` 
+FROM `customers` 
+WHERE `job title` != 'owner' and `city` = 'chicago';
++-----------+
+| company   |
++-----------+
+| Company J |
+| Company Y |
+...
+
+>3. 
+SELECT DISTINCT s.`company`, e.`last name` 
+FROM orders o, shippers s, employees e 
+WHERE s.`id` = o.`shipper id` and e.`id` = o.`employee id` and e.`city` = 'redmond';
+| company            | last name |
++--------------------+-----------+
+| Shipping Company A | Kotas     |
+| Shipping Company B | Kotas     |
+| Shipping Company C | Kotas     |
+| Shipping Company C | Neipper   |
+| Shipping Company B | Neipper   |
+| Shipping Company B | Giussani  |
++--------------------+-----------+
+Hey, this one's really funky!!! Kotas working at three companies? No way! I'll need to fix this one...
+Really, I don't feel like I have a good handle on those where statements yet
+
+4. 
+SELECT DISTINCT `product name` 
+FROM `products` 
+WHERE `discontinued` != 'True';
++------------------------------------------+
+| product name                             |
++------------------------------------------+
+| Northwind Traders Chai                   |
+| Northwind Traders Syrup                  |
+| Northwind Traders Cajun Seasoning        |
+...
+
+5. 
+SELECT DISTINCT concat(`first name`, ' ', `last name`, '(', `company`, ')') as 'Name(Company)' FROM `customers` WHERE `job title` != 'owner';
++------------------------------------+
+| Name(Company)                      |
++------------------------------------+
+| Thomas Axen(Company C)             |
+| Christina Lee(Company D)           |
+| Francisco Perez-Olaeta(Company F)  |
+...
+Hey, I had to select distinct in this one AND the last one, when I didn't expect I'd need to!
+What's the deal with that???
+Are products & customers listed by order?
+
+I'm doing this in a text file, and it wants me to close my parentheses. NN O)))
+
+>6.
+SELECT `product name`, MIN(`list price`), MAX(`list price`) FROM `products` WHERE `category` = 'beverages';
++------------------------+-------------------+-------------------+
+| product name           | MIN(`list price`) | MAX(`list price`) |
++------------------------+-------------------+-------------------+
+| Northwind Traders Chai | 14.00             | 46.00             |
++------------------------+-------------------+-------------------+
+Hey, I only got ONE beverage here!!! I think I should have three...
+Also, I see in your examples that I don't need back quotes EVERYWHERE...
+I will need to play with that. It's SO FAR TO THE LEFT...
+
+Like, I'm looking at file 1 from class, and you're like
+select `last name`, `job title`, city
+What????? Why does that work?????
