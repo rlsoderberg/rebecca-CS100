@@ -25,9 +25,7 @@ WHERE `job title` != 'owner' and `city` = 'chicago';
 ...
 
 >3. 
-SELECT DISTINCT s.`company`, e.`last name` 
-FROM orders o, shippers s, employees e 
-WHERE s.`id` = o.`shipper id` and e.`id` = o.`employee id` and e.`city` = 'redmond';
+SELECT DISTINCT s.`company`, e.`last name` FROM orders o, shippers s, employees e WHERE e.`city` = 'redmond';
 | company            | last name |
 +--------------------+-----------+
 | Shipping Company A | Kotas     |
@@ -39,6 +37,9 @@ WHERE s.`id` = o.`shipper id` and e.`id` = o.`employee id` and e.`city` = 'redmo
 +--------------------+-----------+
 Hey, this one's really funky!!! Kotas working at three companies? No way! I'll need to fix this one...
 Really, I don't feel like I have a good handle on those where statements yet
+
+well, this one looked trippy at first, but i guess it's actually ok
+Kotas isn't WORKING at three companies, Kotas is just shipping to them
 
 4. 
 SELECT DISTINCT `product name` 
@@ -68,7 +69,7 @@ Are products & customers listed by order?
 I'm doing this in a text file, and it wants me to close my parentheses. NN O)))
 
 >6.
-SELECT `product name`, MIN(`list price`), MAX(`list price`) FROM `products` WHERE `category` = 'beverages';
+SELECT `product name`, MIN(`list price`), MAX(`list price`) FROM `products` WHERE category = 'beverages';
 +------------------------+-------------------+-------------------+
 | product name           | MIN(`list price`) | MAX(`list price`) |
 +------------------------+-------------------+-------------------+
@@ -81,3 +82,20 @@ I will need to play with that. It's SO FAR TO THE LEFT...
 Like, I'm looking at file 1 from class, and you're like
 select `last name`, `job title`, city
 What????? Why does that work?????
+
+OH IT WORKS BECAUSE IT'S ONLY ONE WORD DOESN'T IT
+well no consistency must be paramount
+
+anyway... 
+first i removed the back quotes on category, because i could (no effect)
+then i tried selecting product name only; distinct/no distinct switched it between a full list and just chai
+???
+oh wait wait wait!!! i forgot how min/max worked!!! so i guess it just picked the first name it found?
+and then gave the min/max?
+now, the thing i don't get, is why tea is not showing up as the cheapest
+
+i'm going to try and see if the decimal is affecting anything
+SELECT `product name`, MIN(FLOOR(`list price`)), MAX(FLOOR(`list price`)) FROM `products` WHERE category = 'beverages';
+that seemed to work!!!
+
+
