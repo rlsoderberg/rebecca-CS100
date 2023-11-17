@@ -99,3 +99,15 @@ SELECT `product name`, MIN(FLOOR(`list price`)), MAX(FLOOR(`list price`)) FROM `
 that seemed to work!!!
 
 
+great!!! so to fix my extra results, i thought, well, the problem here is probably that i 
+created the northwind database back when i first started, 
+and i went in with the gui, and now i'm not sure what's going on...
+so i tried creating a new database, and like, i have no idea what i'm doing
+this is what i want to try next
+mariadb --user='username' --password='password' db1 < clients.sql
+but i don't get how to be in, like, the place that mariadb knows, at the same time as the sql file!
+is that what the bin is for?
+well, now i'm getting ERROR 2026!
+certification??? oh no, what's that
+
+
