@@ -42,9 +42,7 @@ well, this one looked trippy at first, but i guess it's actually ok
 Kotas isn't WORKING at three companies, Kotas is just shipping to them
 
 4. 
-SELECT DISTINCT `product name` 
-FROM `products` 
-WHERE `discontinued` != 'True';
+SELECT `product name` FROM `products` WHERE `discontinued` != 'True';
 +------------------------------------------+
 | product name                             |
 +------------------------------------------+
@@ -54,7 +52,7 @@ WHERE `discontinued` != 'True';
 ...
 
 5. 
-SELECT DISTINCT concat(`first name`, ' ', `last name`, '(', `company`, ')') as 'Name(Company)' FROM `customers` WHERE `job title` != 'owner';
+SELECT concat(`first name`, ' ', `last name`, '(', `company`, ')') as 'Name(Company)' FROM `customers` WHERE `job title` != 'owner';
 +------------------------------------+
 | Name(Company)                      |
 +------------------------------------+
@@ -65,6 +63,9 @@ SELECT DISTINCT concat(`first name`, ' ', `last name`, '(', `company`, ')') as '
 Hey, I had to select distinct in this one AND the last one, when I didn't expect I'd need to!
 What's the deal with that???
 Are products & customers listed by order?
+
+turns out i had too many sql files in my folder!
+is that how it works? one folder per database?
 
 I'm doing this in a text file, and it wants me to close my parentheses. NN O)))
 
@@ -109,4 +110,8 @@ but i don't get how to be in, like, the place that mariadb knows, at the same ti
 is that what the bin is for?
 well, now i'm getting ERROR 2026!
 certification??? oh no, what's that
+
+hey, i tried one folder per database, and that fixed my extra results
+still... what am i doing creating databases? there wasn't ANYTHING in the earlier lessons!!!
+
 
