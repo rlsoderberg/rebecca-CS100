@@ -1,0 +1,100 @@
+CHECKPOINT 1
+
+1.
+SELECT e.`first name`, e.`last name`, o.`ship city` 
+FROM employees e, orders o 
+WHERE e.`id` = o.`employee id` and o.`ship state/province` = 'CA';
+it wanted me to put back quotes around id. i thought i would get away with no quotes on that one!!
+does it ALWAYS want back quotes on attributes?
+
+2. 
+SELECT e.`first name`, e.`last name`, o.`ship city` 
+FROM employees e join orders o on e.`id` = o.`employee id`
+WHERE o.`ship state/province` = 'CA';
+
+3.
+well... it sure felt good converting style 1 to style 2... 
+but honestly, style 1 feels simpler to me. maybe because i'm more used to it.
+simple things every day (sing it zero 7!!!)
+
+4. 
+SELECT c.`first name`, c.`last name`, o.`ship city` 
+FROM `orders` o join `customers` c on c.`id` = o.`customer id` 
+WHERE `Ship State/Province` = 'CA';
+
+SELECT e.`first name`, e.`last name`, c.`first name`, c.`last name`, o.`ship city` 
+FROM `orders` o join `employees` e join `customers` c 
+WHERE `Ship State/Province` = 'CA';
+well... i've got to admit, i'm kind of coming around to the join. it kind of makes more sense.
+putting the equality between the tables in where always felt a little weird to me.
+
+CHECKPOINT 2
+
+1. 
+SELECT o.`shipping fee`FROM order o right outer join products on ... WHERE p.`category` = 'sauce'
+i am tripping so hard!!! i am not even done with this!!!
+first of all, what are you looking for? quantity? surely you want an attribute from orders, but idk which
+so i picked a random one, shipping fee, for now
+second of all, i am trying decide what to join the tables on
+i want something like product code in the orders table, but it isn't there!!!
+
+2. 
+well... ok, joining multiple tables... on checkpoint 1/problem 4.2, i have no idea if i did it right
+because, well, in that one i wasn't joining ON anything
+so for this one... can i like... put one of these joins in parentheses?
+i know i should put in some substitute value for product code in problem 1
+and then get that one to work and then try this one
+but you know what? i love to be trippin
+i will skip these problems for now
+
+3. 
+hey!!! this one's also dependent on problem 1/2!!!
+
+4. 
+now THIS one...
+SELECT o.`ship state/province', o.'order date'
+FROM orders o, (select ) X
+
+OH OH WAIT WAIT NEVER MIND EVERYTHING!!! I JUST REALIZED THERE WAS A TABLE CALLED ORDER DETAILS!!!
+well great, now i am not sure if i will have a good reason to come see pete tomorrow
+now what am i going to do???
+i'd better do all the problems and see if i can come up with any questions
+
+ok sooo orders has
+	`Order ID` int
+
+order details has
+	,`Order ID` int
+	,`Product ID` int
+	,`Quantity` varchar(255)
+    	,`Inventory ID` int
+
+purchase order details has
+	`ID` int
+	,`Purchase Order ID` int
+	,`Product ID` int
+	,`Quantity` varchar(255)
+
+oops, now i have gotten into the underbelly of purchase order ids, i doubt if i need those right now
+um, what i need is something that keeps track of the different products in one order
+my first thought is, they would all have the same order id, but order id always seems to go up by 1
+ohhh, order details has something called inventory id!!!!!
+
+1. SELECT o.`shipping fee` FROM order o right outer join products on ... WHERE p.`category` = 'sauce'
+well, i'm going to still have plenty to ask about!!!
+i don't know how you're supposed to join more than two tables!!!
+all the examples have two tables!!!
+the only way i can to think to join them is the subquery, so let me try number 4
+wait, where was that??? i thought 4 was the one where it had the hint to use the subquery
+i am trippin so hard tonight
+well, at least my question is very vague and i don't need to know what problem i'm on
+
+
+
+
+
+
+
+
+
+
