@@ -1,0 +1,4 @@
+github continues to display my previous commit
+evn though i did a hard reset
+i did two hard resets, which is probably too many
+i pretty much need to stop
