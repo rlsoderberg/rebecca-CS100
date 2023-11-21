@@ -1,0 +1,83 @@
+CHECKPOINT 1
+
+
+
+1.
+
+SELECT e.`first name`, e.`last name`, o.`ship city` 
+
+FROM employees e, orders o 
+
+WHERE e.`id` = o.`employee id` and o.`ship state/province` = 'CA';
+
+it wanted me to put back quotes around id. i thought i would get away with no quotes on that one!!
+
+does it ALWAYS want back quotes on attributes?
+
+
+
+2. 
+
+SELECT e.`first name`, e.`last name`, o.`ship city` 
+
+FROM employees e join orders o on e.`id` = o.`employee id`
+
+WHERE o.`ship state/province` = 'CA';
+
+
+
+3.
+
+well... it sure felt good converting style 1 to style 2... 
+
+but honestly, style 1 feels simpler to me. maybe because i'm more used to it.
+
+simple things every day (sing it zero 7!!!)
+
+
+
+4. 
+
+SELECT c.`first name`, c.`last name`, o.`ship city` 
+
+FROM `orders` o join `customers` c on c.`id` = o.`customer id` 
+
+WHERE `Ship State/Province` = 'CA';
+
+
+
+SELECT e.`first name`, e.`last name`, c.`first name`, c.`last name`, o.`ship city` 
+
+FROM `orders` o join `employees` e join `customers` c 
+
+WHERE `Ship State/Province` = 'CA';
+
+well... i've got to admit, i'm kind of coming around to the join. it kind of makes more sense.
+
+putting the equality between the tables in where always felt a little weird to me.
+
+
+
+CHECKPOINT 2
+
+orders:
+order id
+
+order details:
+order id
+product id
+quantity
+inventory id
+
+products:
+id
+category
+
+1. 
+
+SELECT o.`shipping fee`FROM order o right outer join products on ... WHERE p.`category` = 'sauce'
+so... what you want left over is unordered sauces
+so you want one side to have a list of all the product ids for the sauces
+and you want the other side to have [the product ids of] the sauces that are ordered?
+
+SELECT od.`quantity` FROM `order details` od right outer join products p on od.`product id` = p.`id` WHERE p.`category` = 'sauce';
