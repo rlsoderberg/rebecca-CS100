@@ -30,6 +30,13 @@
 #SELECT DISTINCT e.`first name`, e.`last name`, c.`first name`, c.`last name`, o.`ship city`
 #FROM `orders` o, `employees` e, `customers` c
 #WHERE `Ship State/Province` = 'CA';
+
+#oh, i just saw some examples, this version is a lot better
+#SELECT e.`first name`, e.`last name`, o.`ship city`
+#FROM (select *
+#   from orders
+#   where `ship state/province` = 'CA') o, employees e
+#WHERE p.category = 'sauces'
 """
 +------------+----------------+---------------+------------------+-------------+
 | first name | last name      | first name    | last name        | ship city   |
