@@ -129,3 +129,30 @@ for x in recipe:
             newnum = (newnum/3)
             newmsr = 'tbsp'
     print(f'{newnum} {newmsr} {x[2]}')
+
+#8.
+
+name = input('what is your name? ')
+print(f'{name}, welcome to the program.')
+
+#9.
+
+adjective = input('please input an adjective: ')
+subject = input('please input a noun: ')
+verb = input('please input a past-tense verb: ')
+object = input('please input a noun: ')
+
+print(f'the quick, {adjective} {subject} {verb} over the lazy {object}.')
+
+#this is an og classic soderberg madlib!!!
+print(f'{plant} {gerund} us on a scooter with {watercraft} {machine}')
+
+#10.
+
+plant = input('please input a flowering plant (singular): ')
+gerund = input('please input a gerund: ')
+watercraft = input('please input a personal watercraft: ')
+machine = input('please input a simple machine (pural): ')
+
+#this is an og classic soderberg madlib!!!
+print(f'{plant} {gerund} us on a scooter with {watercraft} {machine}')
