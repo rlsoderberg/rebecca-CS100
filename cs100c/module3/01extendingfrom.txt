@@ -77,7 +77,40 @@ category
 
 SELECT o.`shipping fee`FROM order o right outer join products on ... WHERE p.`category` = 'sauce'
 so... what you want left over is unordered sauces
-so you want one side to have a list of all the product ids for the sauces
-and you want the other side to have [the product ids of] the sauces that are ordered?
+so you want one side to have a list of product ids for all sauces
+and you want the other side to have the product ids of the sauces that are ordered?
 
 SELECT od.`quantity` FROM `order details` od right outer join products p on od.`product id` = p.`id` WHERE p.`category` = 'sauce';
+
+is p.`id` the wrong attribute?
+i don't know what else to use!!!
+i'll come back to this later 
+
+OH I WAS USING THE WRONG VALUE 'SAUCE' INSTEAD OF 'SAUCES'
+
+SELECT p.`product name`, od.`quantity` FROM `order details` od right outer join products p on od.`product id` = p.`id` WHERE p.`category` = 'sauces';
+(by the way, i'm also including product name on these, just to make sure i did them right)
+
+2. 
+
+SELECT p.`product name`, od.`quantity`, o.`paid date` FROM (`order details` od right outer join products p on od.`product id` = p.`id`) join orders o WHERE p.`category` = 'sauces';
+Well, I got a table that is way longer than 1. Does that make sense?
+I think so, because whatever tables you were using in 1, are just lost in there among all the orders, right?
+
+3. 
+
+I'm assuming we're still dealing with just sauces?
+SELECT p.`product name`, o.`ship city`, o.`ship state/province`, s.`company` FROM (((orders o join `order details` od on od.`order id` = o.`order id`) left outer join products p on od.`product id` = p.`id`) right outer join shippers s on o.`shipper id` = s.`id`) WHERE p.`category` = 'sauces';
+I almost forgot to do the outer joins ON something!!
+
+Also... I'm looking for shippers who haven't shipped anything! 
+I'm not SUPER sure I'm ordering these joins correctly.
+Oh right, so... shippers is currently kind of on the inside, so maybe I need to move it to the outside?
+
+4. 
+
+SELECT p.`product name`, o.`ship city`, o.`ship state/province`, concat(e.`first name`, ' ', e.`last name`) as 'Employee Name' FROM (((orders o join `order details` od on od.`order id` = o.`order id`) left outer join products p on od.`product id` = p.`id`) right outer join employees e on o.`employee id` = e.`id`) WHERE p.`category` = 'sauces';
+
+
+
+
