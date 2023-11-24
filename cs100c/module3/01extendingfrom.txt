@@ -115,12 +115,23 @@ CHECKPOINT 3
 
 1.
 
-SELECT concat(e.`first name`, ' ', e.`last name`) as `Employee Name` FROM employees e right outer join orders o WHERE o.`employee id` in (select e.`id` from employees e where e.`last name` like 'C%');
-rough draft where there are things going wrong
+SELECT e.`last name`, o.`ship city`, o.`ship state/province` FROM orders o left outer join employees e on o.`employee id` = e.`id` WHERE o.`employee id` in (select `id` from employees where `last name` like 'C%');
+well, A) it didn't like when i labeled things in the subquery with the e prefix
+B) it didn't like when i was asking it for e.`last name` outside the subquery
+like, what!! i wanted to make sure the last names started with C!!
 
-simplified version
-SELECT e.`last name`, o.`ship city`, o.`ship state/province` FROM orders o, employees e WHERE o.`employee id` in (select e.`id` from employees e where e.`last name` like 'C%');
-hey!! this last name thing isn't working!!
+the solution seemed to be joining orders and employees...
+
+2.
+
+SELECT p.`product name`, o.`ship city`, o.`ship state/province` FROM (orders o left outer join `order details` od on o.`order id` = od.`order id`) right outer join products p on p.`id` = od.`product id` WHERE od.`product id` in (select `id` from products where `product name` like '%dried%');
+so... i A)... well... i mainly needed to get the order of the joins right, i guess
+
+3. 
+
+SELECT p.`product name` FROM products p join orders o WHERE p.`id` not in (select `product id` from order where `order id` like '%');
+oh, i don't know!! i just want to check if it exists...
+i tried it without 'where ...' too, but that didn't work either
 
 
 
