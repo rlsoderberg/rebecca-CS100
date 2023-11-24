@@ -111,6 +111,16 @@ Oh right, so... shippers is currently kind of on the inside, so maybe I need to 
 
 SELECT p.`product name`, o.`ship city`, o.`ship state/province`, concat(e.`first name`, ' ', e.`last name`) as 'Employee Name' FROM (((orders o join `order details` od on od.`order id` = o.`order id`) left outer join products p on od.`product id` = p.`id`) right outer join employees e on o.`employee id` = e.`id`) WHERE p.`category` = 'sauces';
 
+CHECKPOINT 3
+
+1.
+
+SELECT concat(e.`first name`, ' ', e.`last name`) as `Employee Name` FROM employees e right outer join orders o WHERE o.`employee id` in (select e.`id` from employees e where e.`last name` like 'C%');
+rough draft where there are things going wrong
+
+simplified version
+SELECT e.`last name`, o.`ship city`, o.`ship state/province` FROM orders o, employees e WHERE o.`employee id` in (select e.`id` from employees e where e.`last name` like 'C%');
+hey!! this last name thing isn't working!!
 
 
 
