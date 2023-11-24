@@ -136,12 +136,13 @@ but i also needed to get the subquery right???
 4. 
 
 SELECT o.`ship state/province`, o.`order date`, p.`category` 
-FROM orders o join products p
-WHERE o.`order id` not in 
-	(select `order id` from `order details` where `product id` in 
-		(select `id` from products where category = 'beverages'));
-well... THAT was not what i wanted!!!
-i will definitely have to sleep on this one...
+FROM (orders o join products p) left outer join `order details` od on p.`id` = od.`product id` 
+WHERE od.`purchase order id` not in 
+	(select `purchase order id` from `order details` where `product id` in 
+		(select `id` from products where `category` = 'beverages'));
+
+well, i woke up and thought, this must be the answer!
+well... it's giving me an empty set...
 
 
 
