@@ -129,9 +129,19 @@ so... i A)... well... i mainly needed to get the order of the joins right, i gue
 
 3. 
 
-SELECT p.`product name` FROM products p join orders o WHERE p.`id` not in (select `product id` from order where `order id` like '%');
-oh, i don't know!! i just want to check if it exists...
-i tried it without 'where ...' too, but that didn't work either
+SELECT p.`product name`, od.`order id` FROM (`order details` od join orders o) right outer join products p on p.`id` = od.`product id` WHERE p.`id` not in (select `product id` from `order details`);
+there, i think that looks nice. so, well, it basically came down to the order of the joins again
+but i also needed to get the subquery right???
+
+4. 
+
+SELECT o.`ship state/province`, o.`order date`, p.`category` 
+FROM orders o join products p
+WHERE o.`order id` not in 
+	(select `order id` from `order details` where `product id` in 
+		(select `id` from products where category = 'beverages'));
+well... THAT was not what i wanted!!!
+i will definitely have to sleep on this one...
 
 
 
