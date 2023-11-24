@@ -135,34 +135,58 @@ but i also needed to get the subquery right???
 
 4. 
 
-SELECT DISTINCT o.`ship state/province`, o.`order date`, p.`category`, od. `purchase order id`
+SELECT o.`ship state/province`, o.`order date`, p.`category`, od. `purchase order id`
 FROM (products p right outer join 
 		(orders o right outer join `order details` od on od.`order id` = o.`order id`)
 			on p.`id` = od.`product id`)
 				right outer join `purchase orders` po on po.`purchase order id` = od.`purchase order id`
-WHERE po.`purchase order id` in 
-	(select `purchase order id` from `order details` where `product id` in 
-		(select `id` from products where `category` = 'beverages'));
+WHERE od.`product id` in (select `id` from products where `category` = 'beverages');
 
 i woke up and thought, this must be the answer! use purchase order ids!
 well... it's giving me an empty set...
 
 ohhhh, i was using not in, instead of in.
 still, that's a lot of beverages, i need to limit it to one result per purchase order id
+wait, i guess i don't HAVE to limit it to one result per purchase order id, do i???
+i mean, i've still got the funky dates in there, and it doesn't seem super efficient, but it will do for now
 
-well, it took like 5 minutes to execute, and it's a ton of beverages again
-i am rewriting my joins 
+CHECKPOINT 4
 
-well, now it's executing immediately, at least
-can confirm that changing the first two right outer joins to inner joins is what slows it down
+1.
 
-i changed WHERE od.`purchase order id` to WHERE po.`purchase order id`, and i was hoping that would fix it
-still giving repeat purchase order ids though!!!
+SELECT o.`ship state/province`, count(*)
+FROM orders o
+GROUP BY o.`ship state/province`;
+for some reason, using 'order by' instead of 'group by' made it show just nevada (state of first order)
 
-well, i can always select distinct, and that kind of fixes it
-although i hate to be relying on that
-and this is clearly not right
-look at this table!!! there are duplicate purchase order ids, separated by date format... 
+2. 
+
+SELECT o.`order id`, S.shipcount
+FROM orders o join employees e on o.`employee id` = e.`id`,
+	(select count(*) as shipcount) S
+GROUP BY empships desc
+HAVING empships > 4;
+
+SELECT o.`employee id`, S.shipcount
+FROM orders o, (select `employee id`, count(*) as shipcount
+				from `orders`
+				group by `employee id`) S
+WHERE o.`employee id`= S.`employee id`;
+yeah, i took this from in class examples, i totally need to go back and look at those more
+i mean, i haven't hardly been looking at those at all, so really i should go back and redo EVERYTHING
+hmmmm, i mean it wouldn't be THAT hard, if i was basically just checking everything
+hmmmmmmmm
+
+anyway, this was a pretty haphazard copy, and i'm doing this wrong, but i'll come back and rewrite it
+i mean, i'm not really doing anything else
+fine, i'll try to get this now
+
+look idk!!! this had better be the last redo!!!
+
+
+
+
+
 
 
 
