@@ -1,9 +1,12 @@
+#import random for rps
 import random
 
 #11. 
 
+#create blank list for int input
 ints = []
 
+#loop through desired length(2 ints)
 for x in range(0, 2):
     valid = False
     while valid == False:
@@ -21,9 +24,11 @@ for x in range(0, 2):
 #valid = True
 #key thing: for the range of the for loop, create a range instead of going through empty list
 
+#perform operations
 print(f'int(#1) + int(#1) = {(ints[0] + ints[0])}')
 print(f'int(#1) - int(#2) = {(ints[0]-ints[1])}')
 print(f'int(#2) * int(#2) = {(ints[1]*ints[1])}')
+#perform division/mod only if second int > 0
 if ints[1] != 0:
     print(f'int(#2) / int(#1) = {(ints[1]/ints[0])}')
     print(f'int(#1) % int(#2) = {(ints[0]%ints[1])}')
@@ -32,8 +37,10 @@ else:
 
 #12.
 
+#get user age
 age = int(input('how old are you? '))
 
+#print age-based permissions
 if age < 0:
     print('invalid age')
 elif age >= 16:
@@ -47,13 +54,15 @@ elif age >= 55:
 
 #13.
 
+#start game loop
 stop = 0
 while stop == 0:
+    #get user and computer moves
     usermove = int(input('rock (1), paper(2), or scissors(3)? '))
     compmove = random.randrange(1, 4)
     moves = [0, 'rock', 'paper', 'scissors']
 
-#i'm rewriting this, and it's really long again!!! my cool algorithm depended on modifying rps order, right?
+    #calculate winner
     win = ''
     if usermove == 1:
         if compmove == 3:
@@ -77,6 +86,7 @@ while stop == 0:
         elif compmove == 1:
             win = 'c'
 
+    #show results
     if win == 'u': 
         print(f'user({moves[usermove]}) defeats computer({moves[compmove]})')
     elif win == 'c':
@@ -84,6 +94,7 @@ while stop == 0:
     elif win == 't':
         print(f'user({moves[usermove]}) ties with computer({moves[compmove]})')
 
+    #get user input to repeat/exit
     valid = False
     while valid == False:
         try:
@@ -96,7 +107,7 @@ while stop == 0:
         except ValueError:
             print('invalid input! ')
 
-#and remember to get the range right!
+#and remember to get the range right for the computer move!
 
 
 

@@ -1,6 +1,6 @@
 #1. 
 
-#create int and float variables; perform arithemtic operations
+#create int and float variables
 int1 = int(2)
 int2 = int(3.5)
 int3 = int(7.6)
@@ -9,6 +9,7 @@ float1 = float(6)
 float2 = float(3.7)
 float3 = float(0.5)
 
+#perform arithemtic operations
 ans1 = int1+int2
 print(f'int1 + int2 = {(int1 + int2)}')
 ans2 = float2-int3
@@ -19,10 +20,7 @@ print(f'float1/int1={(float1/int1)}')
 print(f'int2%int3={(int2%int3)}')
 
 #uh, the first time i tried performing calculations inside an f string, it didn't work
-
-#you know, this 'many problems all in one file' thing was really only practical for the sql
-#i'm just going to make a test file
-
+#(use parentheses)
 #right!! you have to put the quotation marks OUTSIDE your, uh, interpolated value
 
 #2. 
@@ -65,4 +63,5 @@ for x in range (0, 5):
     gametotal += gamelist[x]
 avg = gametotal / 5
 
+#print average
 print(f"diana's average point total in the last 5 games(rounded to the nearest whole number): {int(avg)}") 

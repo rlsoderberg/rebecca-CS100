@@ -1,8 +1,10 @@
 #4.
 
+#request user input of digits
 print('please input 6 digits of any kind (int or float):')
-inp = []
+digits = []
 
+#for each digit, 
 for x in range(0, 7):
     valid = False
     while valid == False:
@@ -13,7 +15,7 @@ for x in range(0, 7):
             valid = True
         except ValueError:
             print('invalid input!')
-    inp.append(result)
+    digits.append(result)
 #here, i'm trying to forbid blank input & non-numerical input, but i still get errors from those things!!
 #OH, i forgot valid = false AND i needed to put append result outside the try except
 #or, well, i don't know if i NEED to put append result outside, but it seems more correct
@@ -21,12 +23,12 @@ for x in range(0, 7):
 #remember to append whenever you have an empty list
 #also don't use input as a variable name...
 
-print(f'int(#1) + int(#2) = {(int(inp[1]) + int(inp[2]))}')
+print(f'int(#1) + int(#2) = {(int(digits[1]) + int(digits[2]))}')
 #you need to put parentheses around calculations in an f string
-print(f'float(#5) - int(#3) = {(float(inp[5])-int(inp[3]))}')
-print(f'float(#2) * float(#6) = {(float(inp[2])*float(inp[6]))}')
-print(f'float(#4) / int(#4) = {(float(inp[4])/int(inp[4]))}')
-print(f'int(#5) % int(#6) = {(int(inp[5])%int(inp[6]))}')
+print(f'float(#5) - int(#3) = {(float(digits[5])-int(digits[3]))}')
+print(f'float(#2) * float(#6) = {(float(digits[2])*float(digits[6]))}')
+print(f'float(#4) / int(#4) = {(float(digits[4])/int(digits[4]))}')
+print(f'int(#5) % int(#6) = {(int(digits[5])%int(digits[6]))}')
 
 #5.
 
@@ -95,12 +97,14 @@ for x in range (0, 5):
     gametotal += gamelist[x]
 avg = gametotal / 5
 
+#display average point total
 print(f"diana's average point total in the last 5 games(rounded to the nearest whole number): {int(avg)}") 
 
 #7.
 
 #oh, i know, i need to write a mug cake program...
 
+#request number of mugs
 valid = False
 while valid == False:
     try:
@@ -109,11 +113,13 @@ while valid == False:
     except ValueError:
         print('invalid input!')
 
+#recipe template
 recipe = [(1, 'tbsp', 'butter'),(2, 'tbsp', 'sugar'), 
           (3, 'tbsp', 'milk'), (2, 'tbsp', 'lemon juice'), 
           (4, 'tbsp', 'flour'), (0.5, 'tsp', 'baking soda'),
           (0.125, 'tsp', 'salt')]
 
+#loop to modify each recipe quantity, based on number of mugs
 for x in recipe:
     newnum = (mugnum * x[0])
     newmsr = x[1]
@@ -128,27 +134,30 @@ for x in recipe:
         elif newnum >= 3:
             newnum = (newnum/3)
             newmsr = 'tbsp'
+    #print modified recipe, as part of loop
     print(f'{newnum} {newmsr} {x[2]}')
 
 #8.
 
+#request name string 
 name = input('what is your name? ')
+#print welcome message containing name string
 print(f'{name}, welcome to the program.')
 
 #9.
 
+#get user input for words to be modified
 adjective = input('please input an adjective: ')
 subject = input('please input a noun: ')
 verb = input('please input a past-tense verb: ')
 object = input('please input a noun: ')
 
+#print modified madlib
 print(f'the quick, {adjective} {subject} {verb} over the lazy {object}.')
-
-#this is an og classic soderberg madlib!!!
-print(f'{plant} {gerund} us on a scooter with {watercraft} {machine}')
 
 #10.
 
+#get user input for words to be modified
 plant = input('please input a flowering plant (singular): ')
 gerund = input('please input a gerund: ')
 watercraft = input('please input a personal watercraft: ')
