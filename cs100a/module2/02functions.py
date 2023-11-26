@@ -1,3 +1,6 @@
+#import calendar module for month
+import calendar
+
 #6.
 
 #number input function
@@ -73,5 +76,67 @@ def main():
 #execute main
 main()
 
+#7.
+#string input function
+def getinput():
+    #request string from user
+    inputstring = input('please input a string: ')
+    return inputstring
+
+#find sum of numerical characters function
+def sumstring(inputstring, sum):
+
+    #loop through digits; check if current character is digit; if digit, add to sum
+    for c in inputstring:
+        if c.isdigit():
+        #oh!!! i forgot the parentheses again!!! that totally messed me up!!!
+            sum = sum + int(c)
+
+    return sum
+
+#result display function
+def printresult(sumstring):
+    #print result
+    print(f'the sum of numerical characters in your string was {sumstring}.')
+
+#main function
+def main():
+    inputstring = getinput()
+
+    #initialize sum
+    sum = 0
+
+    sum = sumstring(inputstring, sum)
+    printresult(sum)
+
+main()
+
+#8.
+
+import calendar
+
+#input function
+def getnum():
+    num = input('please enter a number from 1 to 12: ')
+    return num
+
+#convert number to month function
+def numtomonth(num):
+    month = calendar.month_name[num]
+
+#display results function
+def displayresults(num, month):
+    print(f'{month} is the month corresponding to your number, {num}.')
+
+def main():
+    num = getnum()
+    month = numtomonth(num)
+    displayresults(num, month)
+
+main()
+
     
+
+
+
     
