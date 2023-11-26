@@ -118,10 +118,17 @@ def getnum():
     #initialize number
     num = 0 
 
-    #i stole this limiting method from my earlier version of this problem
-    #it's neat, see, i can't help feeling like my brain is becoming more boring right now
-    while num < 1 or num > 12:
-        num = int(input('please enter a number from 1 to 12: '))
+    valid = False
+    while valid == False:
+        try:
+            num = int(input('please enter a number from 1 to 12: '))
+            if num == '': 
+                raise ValueError('empty input')
+            if num < 1 or num > 12:
+                raise ValueError('input out of range')
+            valid = True
+        except ValueError:
+            print('invalid input')
 
     return num
 

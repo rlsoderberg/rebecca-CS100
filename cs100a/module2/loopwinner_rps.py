@@ -25,7 +25,7 @@ roundcount = 0
 winner = 0
 
 #welcome user to program
-print('\nwelcome to rock paper scissors')
+print('\nwelcome to rock scissors paper')
 
 #using a while loop, to keep track of round count
 while roundcount < 7:
@@ -61,9 +61,9 @@ while roundcount < 7:
 #display match results
 print(f'you won {user_pts} times and computer won {comp_pts} times.')
 if user_pts > comp_pts:
-    print('you are the rock paper scissors champion!')
+    print('you are the rock scissors paper champion!')
 elif user_pts < comp_pts:
-    print('computer is the rock paper scissors champion!')
+    print('computer is the rock scissors paper champion!')
 elif user_pts > comp_pts:
     print('you reach a grand tie with computer!')
 

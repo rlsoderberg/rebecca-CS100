@@ -4,24 +4,16 @@
 userstring = input('please input a string and press enter: ')
 
 #request user choice of case conversion
-valid = False
-while valid == False:
-    try:
-        num = int(input('would you like to convert your string to 1) upper case, 2) lower case, or 3) title case? '))
-        if num == "":
-            raise ValueError('empty input')
-        if num !=1 and num!=2 and num!=3:
-            raise ValueError('input out of range')
-        valid = True
-    except ValueError:
-        print('invalid input!')
+#i just stole this from an earlier answer, and this is legitimately a better way to do it, in this case
+while case != '1' and case != '2' and case != '3':
+    case = input('would you like to see the string in 1. upper case, 2. lower case, or 3. title case?')
 
 #convert string to chosen case
-if num == 1:
+if case == 1:
     print(userstring.upper())
-elif num == 2:
+elif case == 2:
     print(userstring.lower())
-elif num == 3:
+elif case == 3:
     print(userstring.title())
 
 #remember to use the parentheses for the methods!
@@ -42,8 +34,13 @@ else:
 #request user to input name
 name = input('please enter your name: ')
 
-#print welcome text, using stripped name 
-print(f'welcome, {(name.strip())}, to the program.')
+#reminder that you can strip specific things. how cool is that??
+if name[-1] in ('a', 'e', 'i', 'o', 'u'):
+    namestrip = name.strip('aeiou')
+else:
+    namestrip = name.strip('bcdfghjklmnpqrstvwxyz')
+#welcome message, using stripped name
+print(f'hello, {namestrip}, and welcome to the strip club')
 
 
 
