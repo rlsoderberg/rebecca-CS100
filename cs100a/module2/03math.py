@@ -11,13 +11,20 @@ def randop():
     return symb
 
 #lists where we store x, y, and symb
-xlist = []
-ylist = []
-symblist = []
+xlist = [0]
+ylist = [0]
+symblist = ['']
 
+#initialize x and y
+#they are global variables!
+x = 0
+y = 0
 
 #define equation for contents of problem loop
 def probloop(loopcount, repeat):
+    #declaring global variables inside function lets us change them from within
+    global x
+    global y
     
     if repeat == 0:
         #generate random operation symbol
@@ -33,20 +40,17 @@ def probloop(loopcount, repeat):
           '*': lambda x, y: x * y
           }
 
-    #initialize x and y
-    oldx = 0
-    oldy = 0
-    x = 0
-    y = 0
-
     #depending on whether you've run the loop before, generate & store x & y, or take from list
     if repeat == 0:
         #trying to prevent repeat problems. hard to tell if this is working!
-        while x == oldx and y == oldy:
+        #oh wait, all we have to do is use xlist and ylist!
+        while x == xlist[-1] and y == ylist[-1]:
             x = random.randrange(1, 6)
             y = random.randrange(1, 6)
         xlist.append(x)
         ylist.append(y)
+        print(xlist)
+        print(ylist)
     if repeat == 1:
         x = xlist[-1]
         y = ylist[-1]
