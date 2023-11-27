@@ -4,7 +4,7 @@ import random
 #define function to pick random operation symbol
 def randop():
     #list of operation symbols
-    oplist = ['+', '-', '*', '/', '%']
+    oplist = ['+', '-', '*']
     opnum = random.randrange(0, 3)
     symb = oplist[opnum]
 
