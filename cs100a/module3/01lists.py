@@ -13,9 +13,10 @@ player = ''
 number = -1
 while player != 'done':
     player = input('give me a player name: ')
-    if player != 'done':
+    if player != 'done' and number not in numlist:
+    #oh, it just didn't like my while loop!!!
         number = random.randrange(99)
-        team.append((str(player), str(number)))
+        team.append((player, number))
 #well... i'm going back to a version that works
 #it didn't like me preventing duplicates!!!
 
@@ -26,12 +27,16 @@ print('your team is:')
 #so i was like, well, why don't i do for p in team?
 #and then it's like oh yeah, i wanted something that was reversable
 #so idk if the loop is the issue, or my lambda, or my tuple declaration, but those are my 3 suspects 
-for p in range(0, len(sorted_by_num)):
-    print(p[0] + p[1])
+
+#well, ok, i went back to basics, and i am just printing from an unsorted list
+#it gives me a weird output, but no errors
+#like wat tho? i thought i clearly gave it the name strings
+for p in range(0, len(team)):
+    print(p)
 
 print('your team is:')
-for p in reversed(range(0, len(sorted_by_num))):
-    print(p[0] + p[1])
+for p in reversed(range(0, len(team))):
+    print(p)
         
 """
 #print instructions
