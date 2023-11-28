@@ -16,34 +16,28 @@ numlist = []
 # ask the user for names.
 # enter 'done' when complete
 player = ''
-number = -1
-while player != 'done':
-    player = input('name of player 1: ')
-    if player != 'done':
-    #oh, it got stuck because it didn't like my 'while number not in numlist' loop!!!
+while name != 'done':
+    name = input('name of player 1: ')
+    if name != 'done':
+        number = random.randrange(99)
+        while number in numlist:
+            number = random.randrange(99)
+        #ah, perhaps the key is to make the tuple first, and then append that
+        #(name, number) = player
+        #oh hey wait, that's UNPACKING a tuple. how are you supposed to create them???
+        #well, it's true that, in this final version, at no point do i use the double parentheses
+        #let me try those...
+        player = ((name, number))
         team.append(player)
 
-#i'm going to try zip, to make a list of tuples, and make a whole other thing for the numbers
-for p in team:
-    number = random.randrange(99)
-    while number in numlist:
-        number = random.randrange(99)
-    numlist.append(number)
-    #well, this is simpler, which is a good sign
-    #and it kind of looks like it's working
-    
-#zip up names with numbers
-tupleteam = list(zip(team, numlist))
-#now, according to the tuple lesson, the key to creating a tuple is to put the parentheses first
-
 #sort by numbers
-sorted_by_num = sorted(tupleteam, key=lambda tup: tup[1])
+sorted_by_num = sorted(team, key=lambda tup: tup[1])
 
 print('your team is:')
 print(sorted_by_num)
 
 #sort by numbers in reverse
-reverse = sorted(tupleteam, key=lambda tup: -tup[1])
+reverse = sorted(team, key=lambda tup: -tup[1])
 
 print('your team in reverse:')
 print(reverse)
@@ -51,7 +45,7 @@ print(reverse)
 #2. (continuation)
 
 #see if user name is in list of names
-if name in tupleteam:
+if name in team:
     print("I can't wait to play")
 else:
     print("Put me in coach, I'm ready to play.")
