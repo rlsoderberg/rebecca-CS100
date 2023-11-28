@@ -1,6 +1,4 @@
-#what??? i more or less finished, was just fussing about with the rounding
-#and then it all of a sudden stopped working!!!
-#here, i'm going to try... committing, and THEN undoing...
+#oh never mind, i think i just panicked because i forgot where i was asking about item characteristics
 
 #i am going to put #3 from 01lists here, because #4 and #5 continue it
 
@@ -77,12 +75,15 @@ for i in itemsforcheckout:
     tuple = i
     (name, price, quantity) = tuple
     #format price
+    #here, i'm trying round, trying to get exactly two digits after the decimal point
     roundprice = '%.2f' % price
     print(f'Item: {name} Price: {roundprice} Quantity: {quantity}')
     totalcost = float(totalcost) + float(roundprice)
 
 #format total cost
-roundcost = '%.2f' % cost
+#but yeah, i guess this is what got me out of sorts
+#this isn't exactly working the way i want it to!!!
+roundcost = '%.2f' % totalcost
 print(f'Total Cost: {totalcost}')
 
 #4 get price/quantity when putting item in cart (see cart loop, 'while len(glist) > 0:')

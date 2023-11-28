@@ -1,5 +1,3 @@
-
-
 #import random for math
 import random
 
@@ -11,16 +9,6 @@ def randop():
     symb = oplist[opnum]
 
     return symb
-
-#lists where we store x, y, and symb
-xlist = [0]
-ylist = [0]
-symblist = ['']
-
-#initialize x and y
-#they are global variables!
-x = 0
-y = 0
 
 #define equation for contents of problem loop
 def probloop(loopcount, repeat):
@@ -51,14 +39,21 @@ def probloop(loopcount, repeat):
             y = random.randrange(1, 6)
         xlist.append(x)
         ylist.append(y)
-        print(xlist)
-        print(ylist)
     if repeat == 1:
         x = xlist[-1]
         y = ylist[-1]
 
     #solve equation
     compans = op[str(symb)](x,y)
+
+    #look, i put all the writing stuff inside the loop, but it's still not writing!!!
+    #open file to write equations
+    file = open('equationstrings.txt', 'w')
+    #i am writing these to a file
+    file.write(str(x) + " " + str(symb) + " " + str(y))
+    #close file
+    file.close()
+    
 
     #print equation
     valid = False
@@ -81,6 +76,17 @@ def probloop(loopcount, repeat):
 
     return repeat
 
+#lists where we store x, y, and symb
+xlist = [0]
+ylist = [0]
+symblist = ['']
+
+#initialize x and y
+#they are global variables!
+x = 0
+y = 0
+
+
 #define main
 def main():
     #ask user for their name
@@ -88,6 +94,9 @@ def main():
 
     #initialize correct
     correct = 0
+
+    #open file to write equations
+    #file = open('equationstrings.txt', 'w')
 
     #loop to generate 10 random math equations
     for loopcount in range(0, 10):
@@ -100,10 +109,13 @@ def main():
             while repeat == 1:
                 repeat = probloop(loopcount, repeat)
         correct = correct + newcorrect
-
+    
+    #close file
+    #file.close()
 
     #print overall results
     print(f'\n{name} answered {correct} out of 10 questions correctly.\n')
+
 
 main()
 

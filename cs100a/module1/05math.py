@@ -1,3 +1,12 @@
+#get name
+#display 10 random equations
+    #ask for answer
+    #congratulate/show correct answer
+    #increment total correct
+#display total correct
+
+#oh bother, i am trying to come back and make this organized, i guess i'll just work on mod3
+
 #import random for math
 import random
 
