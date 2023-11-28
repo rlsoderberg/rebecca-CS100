@@ -19,14 +19,11 @@ while player != 'done':
 #i'm going to try zip, to make a list of tuples, and make a whole other thing for the numbers
 for p in team:
     number = random.randrange(99)
-    if number not in numlist:
-        numlist.append(number)
-    #here's what i wish i could use, but it gets stuck: while number in numlist:
-    else:
+    while number in numlist:
         number = random.randrange(99)
-        numlist.append(number)
-    #see, this only gives me two chances at non-duplicacy, where i really want to use a while loop
-    #but it doesn't seem to like when i use while loops!!!
+    numlist.append(number)
+    #well, this is simpler, which is a good sign
+    #and it kind of looks like it's working
     
 #zip up names with numbers
 tupleteam = list(zip(team, numlist))
