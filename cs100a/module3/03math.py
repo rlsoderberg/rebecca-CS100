@@ -47,7 +47,7 @@ def probloop(loopcount, repeat, file):
     compans = op[str(symb)](x,y)
 
     #i am writing these to a file
-    file.write(str(x) + " " + str(symb) + " " + str(y))
+    file.write(str(x) + " " + str(symb) + " " + str(y) + "\n")
     
 
     #print equation
@@ -91,16 +91,12 @@ def main():
     correct = 0
 
     #open file to write equations
-    #file = open('equationstrings.txt', 'w')
+    file = open('equationstrings.txt', 'w')
 
     #loop to generate 10 random math equations
     for loopcount in range(0, 10):
         repeat = 0
-        #hahaha noooo, i forgot to put the 04 at the beginning of my filename
-        file = open('04equations.txt', 'w')
         repeat = probloop(loopcount, repeat, file)
-        #close file
-        file.close()
         if repeat == 0:
             newcorrect = 1
         elif repeat == 1:
@@ -110,7 +106,7 @@ def main():
         correct = correct + newcorrect
     
     #close file
-    #file.close()
+    file.close()
 
     #print overall results
     print(f'\n{name} answered {correct} out of 10 questions correctly.\n')
