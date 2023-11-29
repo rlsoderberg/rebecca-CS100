@@ -69,16 +69,13 @@ print("here's your receipt: ")
 totalcost = 0
 
 #loop to go through items
-for i in itemsforcheckout:
-    #unpack tuple
-    #aha! the key was to equal the tuple for i! i always feel a little weird dealing with for loops in python
-    tuple = i
-    (name, price, quantity) = tuple
-    #format price
-    #here, i'm trying round, trying to get exactly two digits after the decimal point
-    roundprice = '%.2f' % price
-    print(f'Item: {name} Price: {roundprice} Quantity: {quantity}')
-    totalcost = float(totalcost) + float(roundprice)
+#whoa, look at this! unpacking the tuple in the for loop!
+for (name, price, quantity) in itemsforcheckout:
+    #i am taking heavily from example down here, and it is sooo good!
+    print(f'\t{name} @ ${price:.2f} X {quantity} = {price*quantity:.2f}')
+    totalcost = totalcost + (quantity*price)
+print('---------------------------------------------')
+print(f'total: ${totalcost:.2f}')
 
 #format total cost
 #but yeah, i guess this is what got me out of sorts
