@@ -47,9 +47,8 @@ def probloop(loopcount, repeat, file):
     compans = op[str(symb)](x,y)
 
 
-    #i am writing these to a file
-    file.write(str(x) + " " + str(symb) + " " + str(y) + " = " + str(compans) + "\n")
-
+    #i am writing these to a file. make sure to use newline
+    file.write(str(x) + " " + str(symb) + " " + str(y) + " = " + str(compans) + "\n") 
 
     #print equation
     valid = False
@@ -62,6 +61,13 @@ def probloop(loopcount, repeat, file):
         except ValueError:
             print('invalid input')
 
+    #write equation tuple (equation, correct answer, user answer) to equation list
+    eq = (str(x) + " " + str(symb) + " " + str(y))
+    #oh right, so is double parentheses kind of like, a shortcut for these two lines?
+    eqtuple = (eq, compans, userans)
+    equationlist.append(eqtuple)
+
+
     #display results; modify correct count
     if userans == compans:
         print(f'user answer({userans}) is correct.')
@@ -72,10 +78,15 @@ def probloop(loopcount, repeat, file):
 
     return repeat
 
+def resultloop(index, tuple):
+    (eq, compans, userans) = tuple
+    print(f'{index}. {eq}\nCorrect Answer: {compans} -- User Answer: {userans}\n')
+
 #lists where we store x, y, and symb
 xlist = [0]
 ylist = [0]
 symblist = ['']
+equationlist = []
 
 #initialize x and y
 #they are global variables!
@@ -91,7 +102,7 @@ def main():
     #initialize correct
     correct = 0
 
-    #open file to write equations
+    #open file to write . make sure to get correct filename
     file = open('04equations.txt', 'w')
 
     #loop to generate 10 random math equations
@@ -111,6 +122,12 @@ def main():
 
     #print overall results
     print(f'\n{name} answered {correct} out of 10 questions correctly.\n')
+
+    #print results, with equation, correct answer, and user answer
+    for index, tuple in enumerate(equationlist, start = 1):
+        #right, so i'm using x to represent a particular tuple in equationlist...
+        #but how do i get a numerical value for x? enumerate?
+        resultloop(index, tuple)
 
 
 main()
