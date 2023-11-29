@@ -11,7 +11,7 @@ def randop():
     return symb
 
 #define equation for contents of problem loop
-def probloop(loopcount, repeat):
+def probloop(loopcount, repeat, file):
     #declaring global variables inside function lets us change them from within
     global x
     global y
@@ -46,12 +46,10 @@ def probloop(loopcount, repeat):
     #solve equation
     compans = op[str(symb)](x,y)
 
-    #open file to write equations
-    file = open('04equations.txt', 'w')
+
     #i am writing these to a file
     file.write(str(x) + " " + str(symb) + " " + str(y) + " = " + str(compans) + "\n")
-    #close file
-    file.close()
+
 
     #print equation
     valid = False
@@ -93,10 +91,13 @@ def main():
     #initialize correct
     correct = 0
 
+    #open file to write equations
+    file = open('04equations.txt', 'w')
+
     #loop to generate 10 random math equations
     for loopcount in range(0, 10):
         repeat = 0
-        repeat = probloop(loopcount, repeat)
+        repeat = probloop(loopcount, repeat, file)
         if repeat == 0:
             newcorrect = 1
         elif repeat == 1:
@@ -104,6 +105,9 @@ def main():
             while repeat == 1:
                 repeat = probloop(loopcount, repeat)
         correct = correct + newcorrect
+
+    #close file
+    file.close()
 
     #print overall results
     print(f'\n{name} answered {correct} out of 10 questions correctly.\n')
