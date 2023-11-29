@@ -21,7 +21,7 @@ while name != 'done':
     if name != 'done':
         number = random.randrange(99)
         while number in numlist:
-            number = random.randrange(99)
+            number = random.randrange(99) 
         #ah, perhaps the key is to make the tuple first, and then append that
         #(name, number) = player
         #oh hey wait, that's UNPACKING a tuple. how are you supposed to create them???
