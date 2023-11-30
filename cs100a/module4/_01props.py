@@ -1,5 +1,7 @@
 #1. 
 
+import random
+
 class Student:
     #so, i'm trying to remember... i'm used to initializing attributes up here, right?
     #and then assigning them to themselves in the body of the function?
@@ -28,6 +30,8 @@ class Course:
         self.name = ''
         self.id = -1
         self.teacher_id = -1
+
+
 
 #create student object
 #and if you initialize the attributes in init parenths, you can define them in these parenths here, can't you?
@@ -101,12 +105,13 @@ for t in teachlist:
 
 #3.
 
-import random
+#initialize student list
+students = []
 
 #list of names
 namepile = ['Maeve', 'Mahabala', 'Mary', 'Mathrudev', 'Meghan', 'Meru', 'Moira']
 #list of students
-students = []
+
 
 #create student objects
 stud01 = Student()

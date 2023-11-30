@@ -1,4 +1,12 @@
-#1. 
+#1.
+
+import random
+
+#import function to generate students
+#don't start filenames with numbers
+#and remember not to label them .py in import statements
+#from _01props import student_objects
+#that's not working, since i think it uses the old student class, which doesn't have behavior ask_question
 
 class Student:
     #default statement
@@ -63,6 +71,8 @@ class Teacher:
         """
         print(f'{self.name} is giving a lecture on {course}')
 
+#2.
+
 class Course:
     def __init__(self):
         """
@@ -90,6 +100,25 @@ class Course:
         """
         print(f'{self.name} is required for these majors: {req}')
 
+#function to generate student objects
+def student_objects(students):
+    #list of names
+    namepile = ['Maeve', 'Mahabala', 'Mary', 'Mathrudev', 'Meghan', 'Meru', 'Moira']
+    #list of students
+    
+
+    #create student objects
+    stud01 = Student()
+    stud02 = Student()
+    stud03 = Student()
+    stud04 = Student()
+    stud05 = Student()
+    #'extend' students to student list. here's those double parentheses, there must be a better way to do this...
+    students.extend((stud01, stud02, stud03, stud04, stud05))
+    for index, s in enumerate(students, start = 1):
+        s.name = namepile[random.randrange(len(namepile))]
+        #oh, THIS is a better way to prevent duplicates, you remove after using...
+        namepile.remove(s.name)
 
 
 stud = Student()
@@ -130,6 +159,26 @@ c1.teacher_id = 74147
 c1.fill_up()
 c1.advising_week()
 c1.required(("math", "computer science"))
+
+#3.
+
+#initialize roster
+students = []
+
+student_objects(students)
+
+for s in students:
+    rando = random.randrange(0, 3)
+    if rando == 0:
+        s.ask_question()
+    elif rando == 1:
+        s.do_homework("Statistics")
+    elif rando == 2:
+        s.study()
+
+
+
+
 
 
 
