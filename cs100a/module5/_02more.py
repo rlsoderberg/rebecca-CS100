@@ -30,8 +30,10 @@ print('which madlib file do you want to read as a madlib?')
 #well, now i'm going to do my madlib selection 
 #i had to duplicate the backslashes
 for txt_file in pathlib.Path('C:\\Users\\rlsod\\rebeccaCS100\\cs100a\\module5').glob('*.txt'):
-    print(txt_file)
-    #what i also want to do, is check if the filename contains 'lib'
+    #check if the filename contains 'lib'
+    if txt_file in pathlib.Path('C:\\Users\\rlsod\\rebeccaCS100\\cs100a\\module5').glob('*lib*'):
+        print(txt_file)
+    
 filename = input()
 print(f'now reading {filename}')
 madread(filename)
