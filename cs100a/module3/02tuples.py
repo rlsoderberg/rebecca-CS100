@@ -52,7 +52,8 @@ while len(itemsforcart) > 0:
         except ValueError:
             print('invalid input')
     #put the 3 item characteristics in a tuple. double parentheses to the rescue!!!
-    cartitem = ((itemname, itemprice, itemquantity))
+    #wait, i didn't even need the double parentheses, did i??? not sure what is going on here
+    cartitem = (itemname, itemprice, itemquantity)
 
     #append cartitem to itemsforcheckout
     itemsforcheckout.append(cartitem)

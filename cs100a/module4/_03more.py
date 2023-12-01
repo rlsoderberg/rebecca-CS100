@@ -56,7 +56,7 @@ class Course():
         self.teacher_id = teacher_id
 
     def is_full(self):
-        print(f'{self} is full')
+        print(f'{self.name} is full')
 
     def advising_week(self):
         print(f'{self.name} is letting out early for advising week')
@@ -100,10 +100,13 @@ for t in teacher_objects:
     teachs.remove(t.name)
     rando = random.randrange(0, 3)
     if rando == 0:
+        print('\nt rand = 0')
         t.erase_board()
     elif rando == 1:
+        print('\nt rand = 1')
         t.give_lecture("self-defense")
     elif rando == 2:
+        print('\nt rand = 2')
         t.grade_homework("Lisa Blamfort")
 
 #loop of courses
@@ -112,9 +115,24 @@ for c in course_objects:
     courses.remove(c.name)
     rando = random.randrange(0, 3)
     #you know, sometimes it tweaks out like '<__main__.Course object at 0x00000202941A3050> is full' and idk
+    #ok, well, i'd better figure this out
+    #i'm pretty sure this c0 the only one giving me trouble
+    #well, i just rewrote it like this, and now it's working
+
+    """
+
+        def is_full(self):
+
+        print(f'{self.name} is full')
+
+    """
+    #ohhhh, i was printing {self} is full
     if rando == 0:
+        print('\nc rand = 0')
         c.is_full()
     elif rando == 1:
+        print('\nc rand = 1')
         c.advising_week()
     elif rando == 2:
+        print('\nc rand = 2')
         c.required(('knitting', "sewing"))

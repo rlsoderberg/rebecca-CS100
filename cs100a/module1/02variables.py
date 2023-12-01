@@ -36,12 +36,12 @@ print("Please select a tip amount:")
 #initialize tiplist and input variable
 tiplist = [0, 10, 15, 20, 25]
 i = 0
-
+ 
 #limit input to given options
 while i != '1' and i != '2' and i != '3' and i != '4':
     i = input(f'1. {tiplist[1]}% 2. {tiplist[2]}% 3. {tiplist[3]}% 4. {tiplist[4]}%  ')
 
-#select tiplevel corresponding to input
+#select tiplevel corresponding to input; convert to int
 tiplevel = tiplist[int(i)]
 
 #calculate tip and total bill, based on tiplevel

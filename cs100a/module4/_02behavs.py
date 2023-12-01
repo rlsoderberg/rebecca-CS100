@@ -113,7 +113,8 @@ def student_objects(students):
     stud03 = Student()
     stud04 = Student()
     stud05 = Student()
-    #'extend' students to student list. here's those double parentheses, there must be a better way to do this...
+    #'extend' students to student list
+    #so this is REALLY the only place i use the double parentheses
     students.extend((stud01, stud02, stud03, stud04, stud05))
     for index, s in enumerate(students, start = 1):
         s.name = namepile[random.randrange(len(namepile))]
@@ -158,6 +159,8 @@ c1.teacher_id = 74147
 
 c1.fill_up()
 c1.advising_week()
+#oh, i'm also using double parentheses here.
+#well, that makes sense, right? using a tuple as an argument?
 c1.required(("math", "computer science"))
 
 #3.
