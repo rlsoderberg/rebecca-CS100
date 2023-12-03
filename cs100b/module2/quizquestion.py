@@ -2,7 +2,7 @@ import random
 
 class QuizQuestion:
     #how about i keep my lists up here? does that work?
-    def __init__(self, xlist, ylist, symblist, x, y):
+    def __init__(self, xlist, ylist, symblist):
         self.xlist = xlist
         self.ylist = ylist
         self.symblist = symblist
@@ -10,23 +10,12 @@ class QuizQuestion:
     #define equation for contents of problem loop
     #oh, of course, you need to put self as an argument!!!
     #so maybe we're going to pass x and y in from main, and then xlist & ylist are internal
-    def get_compans(self, repeat, file, x, y):     
-        if repeat == 0:
-            #generate random operation symbol
-            #list of operation symbols
-            oplist = ['+', '-', '*']
-            opnum = random.randrange(0, 3)
-            symb = oplist[opnum]
-            self.symblist.append(symb)
-        if repeat == 1:
-            symb = self.symblist[-1]
-
-        #oh cool, you could use lambda to choose operations!
-        #now, i don't REALLY know how to do this, i just stole this from some person on the internet
+    def get_compans(self, repeat, x, y):   
+        
         op = {'+': lambda x, y: x + y,
-            '-': lambda x, y: x - y,
-            '*': lambda x, y: x * y
-            }
+        '-': lambda x, y: x - y,
+        '*': lambda x, y: x * y
+        } 
 
         #depending on whether you've run the loop before, generate & store x & y, or take from list
         if repeat == 0:
@@ -39,13 +28,10 @@ class QuizQuestion:
             y = self.ylist[-1]
 
         #solve equation
-        compans = op[str(symb)](x,y)
-
-        #i am writing these to a file. make sure to use newline
-        file.write(str(x) + " " + str(symb) + " " + str(y) + " = " + str(compans) + "\n") 
+        compans = op[str(self.symblist[-1])](x,y)
 
         #return computer answer & info on whether or not to repeat the problem
-        eqtuple = (compans, repeat, x, y)
+        eqtuple = (compans, repeat)
         return eqtuple
 
     def get_userans(self, loopcount, x, y):
@@ -62,14 +48,20 @@ class QuizQuestion:
 
         return userans
 
-    def display_result(self, userans, compans):
+    def display_result(self, userans, compans, repeat):
         #display results; modify correct count
         print(f'user answer = {userans} -- computer answer = {compans}')
         if userans == compans:
             print(f'user answer({userans}) is correct.')
+            #this still seems kind of muddled in here, with all the repeats
+            if repeat == 0:
+                newcorrect = 1
+                print(f'newcorrect is 1, because answer was correct on first attempt')
             repeat = 0
         elif userans != compans:
             print(f'user answer({userans}) is incorrect. try again!')
             repeat = 1
+            newcorrect = 0
+            print(f'newcorrect is 0, because answer was incorrect')
 
-        return repeat
+        return newcorrect
