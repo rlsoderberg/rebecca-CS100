@@ -1,23 +1,21 @@
-#import person base class
 from person import Person
 
+#teacher class inherits from person class
 class Teacher(Person):
-    #constructor with basic person information as well as teacher-specific information like ID
-    def __init__(self, name = '', ID = 0, birthdate = ''):
+    def __init__(self, name = '', id = -1, birthdate = '1/1/1999'):
         self.name = name
-        self.ID = ID
+        self.id = id
         self.birthdate = birthdate
 
-    #teacher behavior
     def teach(self):
-        print(f'{self.name} is teaching.')
+        print(f'{self.name} is teaching')
 
-    def assign_homework(self):
-        print(f'{self.name} assigned homework.')
+    def assign_homework(self, course):
+        print(f'{self.name} assigned homework in {course} course')
 
     def answer_question(self):
-        print('Let me see if I can help.')
+        print(f'Let me see if I can help')
 
-    #teacher version of person behavior introduction
-    def introduce(self):
-        print(f'Good morning, my name is {self.name}')
+#introduction is polymorphic behavior
+    def introduction (self):
+        print(f'good morning, my name is professor {self.name}')

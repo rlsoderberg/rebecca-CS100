@@ -1,16 +1,21 @@
+#person is base class for student, teacher, and busdriver
 class Person:
-    #constructor with basic person information
-    def __init__(self, name = '', birthdate = ''):
+    def __init__(self, name = '', id = -1, birthdate = '1/1/1999'):
         self.name = name
+        self.id = id
         self.birthdate = birthdate
 
-    #person behaviors
     def eat(self):
-        print(f'{self.name} is eating.')
+        print('Yum')
 
     def sleep(self):
-        print(f'{self.name} is sleeping.')
-    
+        print('Snore')
+
     def introduction(self):
-        print(f'hello, my name is {self.name}')
-        
+        print(f'Hello, my name is {self.name}')
+
+
+
+
+
+    

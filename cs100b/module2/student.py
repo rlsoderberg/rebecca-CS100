@@ -1,24 +1,21 @@
-#import person base class
 from person import Person
 
+#student class inherits from person class
 class Student(Person):
-    #constructor with basic person information as well as student-specific information like grade level
-    def __init__(self, name = '', ID = 0, birthdate = '', grade_level = 0):
+    def __init__(self, name = '', id = -1, birthdate = '1/1/1999'):
         self.name = name
-        self.ID = ID
+        self.id = id
         self.birthdate = birthdate
-        self.grade_level = grade_level
-
-    #student behaviors
-    def ask_question(self):
-        print('wait, what?')
-
-    def do_homework(self):
-        print(f'{self.name} is doing homework.')
 
     def study(self):
-        print(f'{self.name} is studying.')
+        print(f'{self.name} is studying')
 
-    #student version of person behavior introduction
+    def do_homework(self, course):
+        print(f'{self.name} is doing their {course} homework')
+              
+    def ask_question(self):
+        print('Wait, what?')
+
+#introduction is polymorphic behavior
     def introduction(self):
-        print(f'yo, my name is {self.name}')
+        print(f'yo my name is {self.name}')
