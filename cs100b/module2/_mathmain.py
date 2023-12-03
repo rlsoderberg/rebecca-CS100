@@ -14,17 +14,12 @@ def main():
     #open file to write . make sure to get correct filename
     file = open('_equations.txt', 'w')
 
-    #create equation list
-    equationlist = []
-
     #loop to generate 10 random math equations
     for loopcount in range(0, 10):
         repeat = 0
         eqtuple = q.probloop(loopcount, repeat, file)
-        #put eqtuple in equationlist
-        equationlist.append(eqtuple)
-        #unpack eqtuple, just to get repeat
-        (eq, compans, userans, repeat) = eqtuple
+        #unpack eqtuple
+        (compans, userans, repeat) = eqtuple
         if repeat == 0:
             newcorrect = 1
         elif repeat == 1:
@@ -33,7 +28,7 @@ def main():
                 repeat = q.probloop(loopcount, repeat, file)
         correct = correct + newcorrect
         #oh, you just put this in here, and then you don't need all that bonky enumerate stuff
-        print(f'{loopcount}. {eq}\nCorrect Answer: {compans} -- User Answer: {userans}\n')
+        print(f'Correct Answer: {compans} -- User Answer: {userans}\n')
 
     #close file
     file.close()

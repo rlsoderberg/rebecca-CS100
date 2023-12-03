@@ -1,18 +1,18 @@
 import random
 
-#great, now i'm running into the old '1 too many positional arguments' problem... maybe i'll restart sometime
 class QuizQuestion:
     #define equation for contents of problem loop
-    def probloop(loopcount, repeat, file):
+    #oh, of course, you need to put self as an argument!!!
+    def probloop(self, loopcount, repeat, file):
         #lists where we store x, y, and symb
         xlist = [0]
         ylist = [0]
         symblist = ['']
 
 
-        #declaring global variables inside function lets us change them from within
-        global x
-        global y
+        #i'm not sure why i needed these to be global...
+        x = 0
+        y = 0
         
         if repeat == 0:
             #generate random operation symbol
@@ -72,9 +72,9 @@ class QuizQuestion:
             print(f'user answer({userans}) is incorrect. try again!')
             repeat = 1
 
-        #write equation tuple (equation, correct answer, user answer) to equation list
-        eq = (str(x) + " " + str(symb) + " " + str(y))
-        eqtuple = (eq, compans, userans, repeat)
+        #it appears i didn't really need to write the equation string at all...
+        #well, i think this is all still way too glommed together, so maybe later
+        eqtuple = (compans, userans, repeat)
         
         #if i'm separating probloop into another file, i'm pretty sure i want to return eqtuple, insted of repeat
         #or, i guess i could put repeat IN the tuple
