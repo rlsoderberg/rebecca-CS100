@@ -19,10 +19,8 @@ class QuizQuestion:
 
         #depending on whether you've run the loop before, generate & store x & y, or take from list
         if repeat == 0:
-            #set x & y, depending on repeat
-            while x == self.xlist[-1] and y == self.ylist[-1]:
-                self.xlist.append(x)
-                self.ylist.append(y)
+            self.xlist.append(x)
+            self.ylist.append(y)
         if repeat == 1:
             x = self.xlist[-1]
             y = self.ylist[-1]
@@ -34,7 +32,7 @@ class QuizQuestion:
         eqtuple = (compans, repeat)
         return eqtuple
 
-    def get_userans(self, loopcount, x, y):
+    def get_userans(self, loopcount, x, y, compans):
         #print equation
         valid = False
         while valid == False:
@@ -46,22 +44,18 @@ class QuizQuestion:
             except ValueError:
                 print('invalid input')
 
-        return userans
-
-    def display_result(self, userans, compans, repeat):
-        #display results; modify correct count
-        print(f'user answer = {userans} -- computer answer = {compans}')
         if userans == compans:
             print(f'user answer({userans}) is correct.')
             #this still seems kind of muddled in here, with all the repeats
-            if repeat == 0:
-                newcorrect = 1
-                print(f'newcorrect is 1, because answer was correct on first attempt')
+            newcorrect = 1
             repeat = 0
         elif userans != compans:
-            print(f'user answer({userans}) is incorrect. try again!')
+            print(f'user answer({userans}) is incorrect.')
             repeat = 1
             newcorrect = 0
-            print(f'newcorrect is 0, because answer was incorrect')
+            show = input('press 1 to see the correct answer, or any other key to continue.')
+            if show == '1':
+                print(f'computer answer: {x} {self.symblist[-1]} {y} = {compans}')
 
-        return newcorrect
+        anstuple = (newcorrect, userans)
+        return anstuple

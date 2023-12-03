@@ -36,13 +36,14 @@ def main():
         #generate random x & y
         x = random.randrange(1, 6)
         y = random.randrange(1, 6)
-        #duplicate forbider. well... i'm not entirely sure if this is working...
+        #duplicate forbidder. well... i'm not entirely sure if this is working...
         while x == q.xlist[-1] and y == q.ylist[-1]:
             x = random.randrange(1, 6)
             y = random.randrange(1, 6)
         
         #while loop for problem
         while newcorrect == 0:
+            #get/reuse symbol
             if repeat == 1:
                 symb = q.symblist[-1]
             elif repeat == 0:
@@ -51,16 +52,18 @@ def main():
 
             #execute equation, first getting computer answer
             eqtuple = q.get_compans(repeat, x, y)
-            #unpack eqtuple, which contains computer answer, repeat, and symbol
+            #unpack eqtuple, which contains computer answer & repeat
             (compans, repeat) = eqtuple
+
             #write equation to file
             file.write(str(x) + " " + str(symb) + " " + str(y) + " = " + str(compans) + "\n") 
             #get userans from problem interaction
-            userans = q.get_userans(loopcount, x, y)
-            #finally, display result
-            newcorrect = q.display_result(userans, compans, repeat)
+            anstuple = q.get_userans(loopcount, x, y, compans)
+            (newcorrect, userans) = anstuple
 
-            totalcorrect = totalcorrect + newcorrect
+            #ah, this is how we deal with repeat/newcorrect! nice and simple!
+            if repeat == 0:
+                totalcorrect = totalcorrect + newcorrect
             repeat = 1
 
     #close file
