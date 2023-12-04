@@ -26,30 +26,18 @@ def main():
     #initialize id
     id = 0
 
-    #show name corresponding to selected id
+    #OH!!! i spent forever trying to figure out why i had an extra query, when IT WAS UP HERE THE WHOLE TIME!!!
     i = input("which id would you like information on? type -1 to quit ")
-    i = int(i)
-    #oh, what's this? a dictionary is directly searchable? niiice
-    #wait, how does this work? i thought the roster was the thing indexed by id
-    #meaning, its actual contents are the names?
-    #so, ok, so the dictionary is indexed by id
-    #but dictionary items are ALSO equal to an object, so you can access... a lot of other properties?
     
-    #well, i'm going to try putting this in... a try except???
-    i = 0
+    complete = 0
     while i != -1:
-        i = input("which id would you like information on? type -1 to quit ")
-        i = int(i)
-        valid = False
-        while valid == False:
-            try:
-                if i in roster:
-                    print(f'{str(i)}: {roster[i].name}. birthdate: {roster[i].birthdate}')
-                valid = True
-            except i not in roster:
-                print(f'{str(i)}: {roster[i].name}. birthdate: {roster[i].birthdate}')
+        #show question again on further loops
+        if complete == 1:
+            i = input("which id would you like information on? type -1 to quit ")
+        if int(i) in roster:
+                print(f'{str(i)}: {roster[int(i)].name}. birthdate: {roster[int(i)].birthdate}')
+        complete = 1
             
-    #well... at least it quits
     print('goodbye')
-
+    
 main()
