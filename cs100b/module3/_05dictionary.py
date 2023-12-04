@@ -3,6 +3,15 @@ import random
 
 from student import Student
 
+def input_function():
+    valid = False
+    while valid == False:
+         try:
+            i = input("which id would you like information on? type -1 to quit ")
+            valid = True
+         except ValueError:
+              print('VALUE ERROR!')
+
 def main():
     #this is how you create a dictionary!!! curly brackets = {}
     #because... square brackets are used by list, indexing... parentheses are used by tuples, paramaters... 
@@ -27,15 +36,29 @@ def main():
     id = 0
 
     #OH!!! i spent forever trying to figure out why i had an extra query, when IT WAS UP HERE THE WHOLE TIME!!!
-    i = input("which id would you like information on? type -1 to quit ")
+    #for some reason, it still turns all unresponsive when i try to put input_function in a function
+    valid = False
+    while valid == False:
+         try:
+            i = int(input("which id would you like information on? type -1 to quit "))
+            valid = True
+         except ValueError:
+              print('VALUE ERROR!')
+    
     
     complete = 0
     while i != -1:
         #show question again on further loops
         if complete == 1:
-            i = input("which id would you like information on? type -1 to quit ")
-        if int(i) in roster:
-                print(f'{str(i)}: {roster[int(i)].name}. birthdate: {roster[int(i)].birthdate}')
+            valid = False
+            while valid == False:
+                try:
+                    i = int(input("which id would you like information on? type -1 to quit "))
+                    valid = True
+                except ValueError:
+                    print('VALUE ERROR!')
+        if i in roster:
+                print(f'{str(i)}: {roster[i].name}. birthdate: {roster[i].birthdate}')
         complete = 1
             
     print('goodbye')
