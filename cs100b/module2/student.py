@@ -2,10 +2,11 @@ from person import Person
 
 #student class inherits from person class
 class Student(Person):
-    def __init__(self, name = '', id = -1, birthdate = '1/1/1999'):
+    def __init__(self, name = '', id = -1, birthdate = '1/1/1999', gradelevel = 0):
         self.name = name
         self.id = id
         self.birthdate = birthdate
+        self.gradelevel = gradelevel
 
     def study(self):
         print(f'{self.name} is studying')

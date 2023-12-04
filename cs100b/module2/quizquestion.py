@@ -48,14 +48,11 @@ class QuizQuestion:
             print(f'user answer({userans}) is correct.')
             #this still seems kind of muddled in here, with all the repeats
             newcorrect = 1
-            repeat = 0
         elif userans != compans:
             print(f'user answer({userans}) is incorrect.')
-            repeat = 1
             newcorrect = 0
             show = input('press 1 to see the correct answer, or any other key to continue.')
             if show == '1':
                 print(f'computer answer: {x} {self.symblist[-1]} {y} = {compans}')
 
-        anstuple = (newcorrect, userans)
-        return anstuple
+        return newcorrect

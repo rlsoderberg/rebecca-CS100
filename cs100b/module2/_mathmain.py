@@ -11,16 +11,17 @@ def main():
     symblist = ['']
     q = QuizQuestion(xlist, ylist, symblist)
 
-    #ask user for their name
-    name = input('please enter your name: ')
+    #create student object
+    stud = Student('roberta', 24223, '7/4/1982', 5)
+
+    #get name from student class
+    name = stud.name
 
     #initialize totalcorrect
     totalcorrect = 0
 
     #open file to write . make sure to get correct filename
     file = open('_equations.txt', 'w')
-
-    repeatcounter = []
 
     #loop to generate 10 random math equations
     for loopcount in range(0, 10):
@@ -33,13 +34,19 @@ def main():
         oplist = ['+', '-', '*']
         opnum = random.randrange(0, 3) 
 
+        #example of doing stuff with gradelevel
+        if stud.gradelevel < 5:
+            max = 6
+        else:
+            max = 20
+        
         #generate random x & y
-        x = random.randrange(1, 6)
-        y = random.randrange(1, 6)
+        x = random.randrange(1, max)
+        y = random.randrange(1, max)
         #duplicate forbidder. well... i'm not entirely sure if this is working...
         while x == q.xlist[-1] and y == q.ylist[-1]:
-            x = random.randrange(1, 6)
-            y = random.randrange(1, 6)
+            x = random.randrange(1, max)
+            y = random.randrange(1, max)
         
         #while loop for problem
         while newcorrect == 0:
@@ -58,8 +65,7 @@ def main():
             #write equation to file
             file.write(str(x) + " " + str(symb) + " " + str(y) + " = " + str(compans) + "\n") 
             #get userans from problem interaction
-            anstuple = q.get_userans(loopcount, x, y, compans)
-            (newcorrect, userans) = anstuple
+            newcorrect = q.get_userans(loopcount, x, y, compans)
 
             #ah, this is how we deal with repeat/newcorrect! nice and simple!
             if repeat == 0:
