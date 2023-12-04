@@ -34,20 +34,22 @@ def main():
     #meaning, its actual contents are the names?
     #so, ok, so the dictionary is indexed by id
     #but dictionary items are ALSO equal to an object, so you can access... a lot of other properties?
-    #check for quit
+    
+    #well, i'm going to try putting this in... a try except???
+    i = 0
     while i != -1:
-        #check for invalid input
-        while i not in roster:
-            print('invalid input')
-            print("which id would you like information on? type -1 to quit ")
-        #print name by referencing specific item of dictionary roster[i]
-        if i in roster:
-            #when you look at this and wonder, why isn't my new attribute printing...
-            #pause to consider, have you included the full {roster[i].birthdate}?
-            #come to think of it, that is another instance of curly brackets: f strings
-            print(f'{str(i)}: {roster[i].name}. birthdate: {roster[i].birthdate}')
         i = input("which id would you like information on? type -1 to quit ")
         i = int(i)
+        valid = False
+        while valid == False:
+            try:
+                if i in roster:
+                    print(f'{str(i)}: {roster[i].name}. birthdate: {roster[i].birthdate}')
+                valid = True
+            except i not in roster:
+                print(f'{str(i)}: {roster[i].name}. birthdate: {roster[i].birthdate}')
+            
+    #well... at least it quits
     print('goodbye')
 
 main()
