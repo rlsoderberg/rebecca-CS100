@@ -20,16 +20,15 @@ tube = collections.deque()
 #i'm copying this in from lifesavers, because it seems like it might want to go here
 flavors = ['orange', 'pineapple', 'cherry', 'raspberry', 'watermelon']
 
-#make the whole roll of lifesavers
+#for loop to make tube of lifesavers
 for l in range(0, 14):
-    #whoa! now there's a shortcut, random.choice!
     flavor = random.choice(flavors)
     lifesaver = Lifesaver(flavor)
     tube.append(lifesaver)
 
 lifesavers = []
 
-#so i tried to cobble together this thing really fast while i was writing, because it had errors...
+#the point is im not sure what was wrong with it but this is a pastey version
 for l in tube:
     #convert lifesavers object to dictionary so we can then convert it to json
     lifesavers.append(l.toJson())
@@ -42,4 +41,6 @@ f.write(str(now) + '\n')
 #json comes through with vivid wordage of textformat.dumps
 f.write(json.dumps(lifesavers))
 f.close()
+
+#it's awfully pastey, it is, but i did basically write it, other than maybe i left off something on one side
 
