@@ -13,6 +13,8 @@ class mainwindow(QWidget):
         #this person uses self as an argument, for, like, everything
         super(mainwindow, self).__init__(parent)
 
+        self.w = None
+
         self.setWindowTitle('PyQt QTabWidget')
 
         main_layout = QGridLayout(self)
@@ -34,6 +36,10 @@ class mainwindow(QWidget):
         combobox1.addItem('Lower Left')
         combobox1.addItem('Lower Right')
 
+        location = combobox1.currentTextChanged.connect(self.text_changed)
+        #and when i try to print location it gives me some object...
+        print(location)
+
         self.push_counter = 0
 
         # impatience pane
@@ -54,18 +60,58 @@ class mainwindow(QWidget):
         tab.addTab(contact_page, 'Impatience')
 
         main_layout.addWidget(tab, 0, 0, 2, 1)
-        main_layout.addWidget(QPushButton('Open'), 2, 0,
+        open_button = QPushButton('Open')
+        main_layout.addWidget(open_button, 2, 0,
                               alignment=Qt.AlignmentFlag.AlignLeft)
+        #i am trying to plug in location here, def show_new_window, call secondwindow, def secondwindow
+        #but it doesn't like when i try to do that!!!
+        open_button.clicked.connect(self.show_new_window)
         main_layout.addWidget(QPushButton('Cancel'), 2, 0,
                               alignment=Qt.AlignmentFlag.AlignRight)
 
         self.show()
 
+    def text_changed(self, s):
+        if s == 'Upper Left':
+            location = 1
+        elif s == 'Upper Right':
+            location = 2
+        elif s == 'Lower Left':
+            location = 3
+        elif s == 'Lower Right':
+            location = 4
+        
+        return location
+
     def push_button(self):
         self.push_counter += 1
+
+    def show_new_window(self):
+        if self.w is None:
+            self.w = secondwindow()
+            self.w.show()
+
+        else:
+            self.w = None
+
+
+
+class secondwindow(QWidget):
+    """
+    This "window" is a QWidget. If it has no parent, it
+    will appear as a free-floating window as we want.
+    """
+    def __init__(self):
+        super().__init__()
+        layout = QVBoxLayout()
+        self.label = QLabel("Another Window")
+        layout.addWidget(self.label)
+        self.setLayout(layout)
+
+        self.setGeometry(50, 50, 200, 50)
 
 
 if __name__ == '__main__':
     app = QApplication([])
-    window = mainwindow()
+    w = mainwindow()
     sys.exit(app.exec())
