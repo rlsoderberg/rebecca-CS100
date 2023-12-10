@@ -12,7 +12,8 @@ class mainwindow(QWidget):
         self.setWindowTitle('PyQt6.1')
 
         #well... here's a bunch of stuff to toggle windows
-        #so... self.w = None to begin with??? i thought that was later... when you clicked on it...
+        #oh wait!!! self.w is None because there's no external window yet!!! that kind of makes sense...
+        #i still don't ENTIRELY get how this works, along with show_new_window
         self.w = None  # No external window yet.
         #the example i was looking at on...pythonguis.com... hey, is that even a reputable website???
         #it wanted me to do like, 'self.setCentralWidget(self.button)'
