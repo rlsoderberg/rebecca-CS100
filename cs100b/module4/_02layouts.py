@@ -24,10 +24,11 @@ class mainwindow(QWidget):
         tab = QTabWidget(self)
 
         # window pane
-        personal_page = QWidget(self)
+        window_page = QWidget(self)
         layout = QFormLayout()
-        personal_page.setLayout(layout)
+        window_page.setLayout(layout)
         combobox1 = QComboBox()
+        
         #here i am replacing this person's 'QComboBox(self)' with combobox1, which i think makes more sense
         layout.addRow('New Window Location:', combobox1)
 
@@ -43,9 +44,9 @@ class mainwindow(QWidget):
         self.push_counter = 0
 
         # impatience pane
-        contact_page = QWidget(self)
+        impatience_page = QWidget(self)
         layout = QFormLayout()
-        contact_page.setLayout(layout)
+        impatience_page.setLayout(layout)
         input = QLineEdit()
         layout.addRow('Impatience:', input)
 
@@ -56,8 +57,8 @@ class mainwindow(QWidget):
         button1.clicked.connect(self.push_button)
 
         # add pane to the tab widget
-        tab.addTab(personal_page, 'New Window')
-        tab.addTab(contact_page, 'Impatience')
+        tab.addTab(window_page, 'New Window')
+        tab.addTab(impatience_page, 'Impatience')
 
         main_layout.addWidget(tab, 0, 0, 2, 1)
         open_button = QPushButton('Open')
