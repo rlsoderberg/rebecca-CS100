@@ -8,15 +8,15 @@ from PyQt6 import QtGui
 
 
 class MainWindow(QWidget):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, parent = None:
+        super(mainwindow, self).__init__(parent)
 
         #maybe we could skip this whole screen size thing... maybe there's a way to do negative coords
 
         #for now... this one seems to give me the correct w&h, but 'cannot unpack non-iterable QRect object'
-        geometry = QtGui.QGuiApplication.primaryScreen().availableGeometry()
-        print(geometry)
-        #this one, i can unpack, but i'm not sure what it's giving me???
+        #this one gave me height of 720, while the other one gave me 768, so i'm keeping it just in case
+        #geometry = QtGui.QGuiApplication.primaryScreen().availableGeometry()
+        #print(geometry)
         screen = QtGui.QGuiApplication.primaryScreen()
         screenWidth = screen.geometry().width()
         screenHeight = screen.geometry().height()
@@ -43,26 +43,37 @@ class MainWindow(QWidget):
         layout.addWidget(self.cb_location)
         layout.addWidget(self.result_label)
 
+        self.update()
+        
         # show the window
         self.show()
 
-        #when i try to do this, the window disappears instantaneously!!!
-        #screen_size = QSize(width(), height())
-        #should i put it up here, in mainwindow def?
-        #and i don't know how i would pass it into my new window classes, or whatever...
+    def show_new_window(self, label):
+        if self.w is None:
+            if label == 'UL':
+                self.w = UL_Window()
+            elif label == 'UR':
+                self.w = UR_Window(screenWidth)
+            self.w.show()
+
+        else:
+            self.w = None
+
 
     def update(self):
         if self.cb_location.currentText() == 'Upper Left':
             self.result_label.setText('Upper Left')
+            self.show_new_window('UL')
         elif self.cb_location.currentText() == 'Upper Right':
             self.result_label.setText('Upper Right')
+            self.show_new_window('UR')
         elif self.cb_location.currentText() == 'Lower Left':
             self.result_label.setText('Lower Left')
         elif self.cb_location.currentText() == 'Lower Right':
             self.result_label.setText('Lower Right')
 
 #is this REALLY the best way to do it? to make a class for each window location???
-class UL_window(QWidget):
+class UL_Window(QWidget):
     def __init__(self):
         super().__init__()
         layout = QVBoxLayout()
@@ -71,6 +82,16 @@ class UL_window(QWidget):
         self.setLayout(layout)
 
         self.setGeometry(50, 50, 200, 50)
+
+class UR_Window(QWidget):
+    def __init__(self, screenWidth):
+        super().__init__()
+        layout = QVBoxLayout()
+        self.label = QLabel("UR Window")
+        layout.addWidget(self.label)
+        self.setLayout(layout)
+
+        self.setGeometry((screenWidth - 50), 50, 200, 50)
 
 if __name__ == '__main__':
     app = QApplication([])
