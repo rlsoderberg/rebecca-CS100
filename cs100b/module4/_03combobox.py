@@ -1,20 +1,26 @@
 #oops, i think i only went through the first section of the pyqt tutorials
 #i'll go through them all later!!! but here's the one on combo boxes, which i will use to get mine working
 
-#i'm not sure how to do get screen resolution in pyqt6!!!
-#i'm trying... qsize?
-
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QRadioButton, QLabel, QVBoxLayout, QComboBox
-from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import *
+from PyQt6 import QtGui
+
 
 
 class MainWindow(QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.setWindowTitle('PyQt QComboBox')
-        self.setMinimumWidth(300)
+        #maybe we could skip this whole screen size thing... maybe there's a way to do negative coords
+
+        #for now... this one seems to give me the correct w&h, but 'cannot unpack non-iterable QRect object'
+        geometry = QtGui.QGuiApplication.primaryScreen().availableGeometry()
+        print(geometry)
+        #this one, i can unpack, but i'm not sure what it's giving me???
+        screen = QtGui.QGuiApplication.primaryScreen()
+        screenWidth = screen.geometry().width()
+        screenHeight = screen.geometry().height()
+        print(f'{screenWidth}, {screenHeight}')
 
         # create a grid layout
         layout = QVBoxLayout()
