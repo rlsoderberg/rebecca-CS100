@@ -5,6 +5,8 @@
 #like, i've tried including a location keyword in this argument on line 53 'self.w = secondwindow()'
 #but then it complains about arguments!!!
 
+#well, i'd better see if i can fix this thing. but still, metaclasses, like what?
+
 import sys
 from PyQt6.QtWidgets import *
 from PyQt6 import QtGui
@@ -13,6 +15,7 @@ class MainWindow(QWidget):
     def __init__(self, parent = None):
         super(MainWindow, self).__init__(parent)
 
+        #we are getting screen dimensions up here, theoretically, if we weren't having trouble with metaclasses?
         screen = QtGui.QGuiApplication.primaryScreen()
         screenWidth = screen.geometry().width()
         screenHeight = screen.geometry().height()
@@ -28,6 +31,7 @@ class MainWindow(QWidget):
         self.cb_location.addItem('Lower Left')
         self.cb_location.addItem('Lower Right')
 
+        #this is just a little connection for location label, isn't it?
         location_label = self.cb_location.activated.connect()
         print(location_label)
 
@@ -66,6 +70,8 @@ class MainWindow(QWidget):
         b = QLabel(self)
         # announce our presence with authority
         b.setText('push to toggle window')
+        #wait, would this even work? wouldn't we need to add it to the window or something?
+        #at some point i'll have to rewrite this whole program...
 
 #so... i'm trying to figure out how to pass in location!!!
 #oh wait!!! something just happened!!! i labeled them with MainWindow!!! aha!!!
