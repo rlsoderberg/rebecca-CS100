@@ -58,17 +58,17 @@ class mainwindow (QWidget):
         mainlayout.addLayout(sublayout)
 
         self.button1 = QPushButton("MAGICIANS")
-        self.button1.clicked.connect(self.click1)
+        result = self.button1.clicked.connect(self.click1)
         sublayout.addWidget(self.button1)
 
         self.button2 = QPushButton("VILLAGERS")
-        self.button2.clicked.connect(self.click2)
+        result = self.button2.clicked.connect(self.click2)
         sublayout.addWidget(self.button2)
 
         self.button3 = QPushButton("DEMONS")
         #honestly, idk how to set geometry
         self.button3.setGeometry(100,100,100,100)
-        self.button3.clicked.connect(self.click3)
+        result = self.button3.clicked.connect(self.click3)
         sublayout.addWidget(self.button3)
 
         button = QPushButton("Submit")
@@ -78,21 +78,28 @@ class mainwindow (QWidget):
         self.show()
             
     def click1(self):
-            print('magicians')
+            #print('magicians')
             self.button1.setStyleSheet('QPushButton {background-color: red}')
             #this seems like not the best way to do this either
             self.button2.setStyleSheet('QPushButton {background-color: blue}')
             self.button3.setStyleSheet('QPushButton {background-color: blue}')
+            return('magicians')
     def click2(self):
-            print('villagers')
+            #print('villagers')
             self.button2.setStyleSheet('QPushButton {background-color: red}')
             self.button1.setStyleSheet('QPushButton {background-color: blue}')
             self.button3.setStyleSheet('QPushButton {background-color: blue}')
+            return('villagers')
     def click3(self):
-            print('demons')
+            #print('demons')
             self.button3.setStyleSheet('QPushButton {background-color: red}')
             self.button1.setStyleSheet('QPushButton {background-color: blue}')
             self.button2.setStyleSheet('QPushButton {background-color: blue}')
+            return('demons')
+    
+
+    
+    
             
 
 def main():
