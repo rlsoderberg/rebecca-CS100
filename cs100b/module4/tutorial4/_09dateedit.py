@@ -2,6 +2,16 @@
 #and i totally don't get how to pass things in and out of the functions!
 #but it kind of started working anyway? whoa freaky
 
+#oh, you know, i never labeled value as self.value, maybe that has something to do with it, idk tho
+
+#ohhh, i was printing type(value)
+#how did that even get there???
+#anyway, I'm going to try to set result label in a way that's easier to understand
+
+#ohhh, it was already setting result label, but with editingFinished, which weirds me out
+#like, what even is that???
+#also, toPyDate() is a thing apparently
+
 import sys
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt
@@ -17,7 +27,6 @@ class MainWindow(QWidget):
         self.setLayout(layout)
 
         self.date_edit = QDateEdit(self)
-        self.date_edit.editingFinished.connect(self.update)
 
 
         self.result_label = QLabel('', self)
@@ -29,13 +38,13 @@ class MainWindow(QWidget):
         button1.setText("Submit")
 
         layout.addRow(button1)
+        button1.clicked.connect(self.update)
 
         self.show()
 
     def update(self):
         value = self.date_edit.date()
-        print(type(value))
-        self.result_label.setText(str(value.toPyDate()))
+        self.result_label.setText((f'Date is {value.toPyDate()}.'))
         
 if __name__ == '__main__':
     app = QApplication([])
