@@ -1,6 +1,7 @@
 import sys
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import *
 
 class MainWindow(QWidget):
     def __init__(self, parent=None):
@@ -39,37 +40,32 @@ class MainWindow(QWidget):
         )
     
     def warning(self):
-        QMessageBox.information(
+        QMessageBox.warning(
             self,
             'Warning',
             'You would die before your stroke fell.'
         )
 
     def critical(self):
-        QMessageBox.information(
+        QMessageBox.critical(
             self,
             'Critical',
             'Core overload. Emergency shutdown overridden.'
         )
+        
     #hahaha, abstract buttons man
     #no actually, i'm still not sure how to put custom text on buttons
-    #but at least it's kind of working? for some reason?
+    #i'm just not entirely sure how to read these reference materials on pyqt6???
+            
     def question(self):
         answer = QMessageBox.question(
             self, 
             'Confirmation',
             'What is love?',
+            QMessageBox.StandardButton.Yes | 
+            QMessageBox.StandardButton.No
         )
-
-#
-       # answer.setStandardButtons(QtGui.QMessageBox.Yes|QtGui.QMessageBox.No)
-        #buttonX = answer.StandardButton(QtGui.QMessageBox.Yes)
-      #  buttonX.setText("Don't Hurt Me")
-       # buttonY = answer.StandardButton(QtGui.QMessageBox.No)
-        #buttonY.setText('No More')
-
-
-
+        
         if answer == QMessageBox.StandardButton.Yes:
             QMessageBox.information(
                 self,
@@ -83,7 +79,7 @@ class MainWindow(QWidget):
             QMessageBox.information(
                 self,
                 'Information',
-                'Ooh',
+                'Wooo',
                 QMessageBox.StandardButton.Ok
             )
             self.close()
@@ -92,3 +88,7 @@ if __name__ == '__main__':
     app = QApplication([])
     w = MainWindow()
     sys.exit(app.exec())
+
+#i still need to learn about... Qt & alignment flags for screen dimensions? creating new screens? 
+#i'm skipping input dialog & file dialog!!! this is the only thing happening today!!!
+#and i'd still like to customize button text...
