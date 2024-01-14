@@ -1,0 +1,54 @@
+QWidget {
+  background-color: #6b8cdd;
+  text-align:center;
+}
+QLabel {
+  color: #fff;
+  font-weight: 800;
+}
+QLabel#title{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+QPushButton {
+  background-color: blue;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #0d6efd;
+  padding: 5px 15px;
+  margin-top: 10px;
+  outline: 0px;
+}
+
+QPushButton:hover {
+  background-color: yellow;
+  color:black;
+}
+
+QPushButton:pressed {
+  background-color: green;
+  color:red; 
+  font-weight:900;   
+}
+QComboBox {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 1px 18px 1px 3px;
+  min-width: 6em;
+  background-color:#fff;
+}
+
+QListView::item{
+  background-color: #000;
+  color:#fff;
+}
+
+QListView::item:selected {
+  border: 1px solid #000;
+}
+
+QListView::item:selected:active {
+  background: #f2f064;
+  color:#000;
+}
