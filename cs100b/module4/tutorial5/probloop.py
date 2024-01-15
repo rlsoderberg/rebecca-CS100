@@ -1,9 +1,3 @@
-#ok, well, it seems like pyqt is made more for interfaces, not for creating new screens
-#i will make a new version of this quiz program, and i can use message boxes for a lot of the stuff 
-#but look, i started, and now everything is incorrect!
-#i am going to have to just rewrite this whole thing sometime
-#i totally am not doing variables right!
-
 from PyQt6.QtWidgets import *
 from pathlib import Path
 from pygame import mixer
@@ -17,80 +11,80 @@ class mainwindow (QWidget):
         #super init
         super(mainwindow, self).__init__(parent)
 
-        #qvbox for button
-        mainlayout = QVBoxLayout()
-        #qhboxlayout for images 
-        imglayout = QHBoxLayout()
-        #qhboxlayout for subheadings 
-        sublayout = QHBoxLayout()
+        self.setGeometry(100,100,350,300)
 
-        self.setLayout(mainlayout)
+        #qvbox for button
+        self.mainlayout = QVBoxLayout()
+        #qhboxlayout for images 
+        self.imglayout = QHBoxLayout()
+        #qhboxlayout for subheadings 
+        self.sublayout = QHBoxLayout()
+
+        self.setLayout(self.mainlayout)
 
         self.show()
-        #well, pyqt is complaining that function object has no attribute closed
-        #like, whaaat? sure, this is something i stole off the internet...
-        #like, QWidget::isVisible() seems promising? maybe?
-        #i just can't think of anywhere else to start the probloop
-        self.info.closed.connect(self.probloop)
+        #wait, can i literally just say the name of the probloop after info???
         self.info()
+        self.probloop()
         
 
     #i'm going to have to import data later...
     def probloop(self):
+        #import data here
         title = QLabel(objectName='title')
         title.setText("1. We are on the lookout for")
         #a center align that works!!! i had to import qt from qtcore. not sure how to put this into qss?
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        #so right now it's not displaying at all... i thought about moving these up, but i do need title, etc.
-        mainlayout.addWidget(title)
 
-        mainlayout.addLayout(imglayout)
+        self.mainlayout.addWidget(title)
 
+        self.mainlayout.addLayout(self.imglayout)
+
+        #import data here
         #label/QPixMap widget
         label1 = QLabel()
         img1 = QPixmap("img/magicians.png")
         label1.setPixmap(img1)
-        imglayout.addWidget(label1)
+        self.imglayout.addWidget(label1)
 
         #label/QPixMap widget
         label2 = QLabel()
         img2 = QPixmap("img/villagers.png")
         label2.setPixmap(img2)
-        imglayout.addWidget(label2)
+        self.imglayout.addWidget(label2)
 
         #label/QPixMap widget
         label3 = QLabel()
         img3 = QPixmap("img/demons.png")
         label3.setPixmap(img3)
-        imglayout.addWidget(label3)
+        self.imglayout.addWidget(label3)
 
-        mainlayout.addLayout(sublayout)
+        self.mainlayout.addLayout(self.sublayout)
         
+        #import data here
         self.select = 0
         self.correct = 3
 
-        #well... i don't think i need to be involving select this way, do i?
-        #i just... like, can i set a self variable from an outside function?
+        #correctness still isn't working!!!! i really don't know which of my things are in the right place...
         self.button1 = QPushButton("MAGICIANS")
         self.button1.clicked.connect(self.click1)
-        sublayout.addWidget(self.button1)
+        self.sublayout.addWidget(self.button1)
 
         self.button2 = QPushButton("VILLAGERS")
         self.button2.clicked.connect(self.click2)
-        sublayout.addWidget(self.button2)
+        self.sublayout.addWidget(self.button2)
 
         self.button3 = QPushButton("DEMONS")
         self.button3.setGeometry(100,100,100,100)
         self.button3.clicked.connect(self.click3)
-        sublayout.addWidget(self.button3)
+        self.sublayout.addWidget(self.button3)
 
         self.button = QPushButton("Submit")
         self.button.setIcon(QIcon('img/submit.png'))
-        mainlayout.addWidget(self.button)
+        self.mainlayout.addWidget(self.button)
     def click1(self):
             #print('magicians')
             self.button1.setStyleSheet('QPushButton {background-color: red}')
-            #this seems like not the best way to do this either
             self.button2.setStyleSheet('QPushButton {background-color: blue}')
             self.button3.setStyleSheet('QPushButton {background-color: blue}')
             self.select = 1
@@ -133,8 +127,6 @@ class mainwindow (QWidget):
 
 #oh!!! it wasn't displaying, and you know what i did? i forgot this part!!!
 def main():
-    #don't stick the music right in the middle
-    #pygame wins for now
     mixer.init()
     mixer.music.load("img/banjo.wav")
     mixer.music.play()
