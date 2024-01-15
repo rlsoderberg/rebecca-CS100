@@ -25,12 +25,24 @@ class mainwindow (QWidget):
         self.show()
         #wait, can i literally just say the name of the probloop after info???
         self.info()
-        self.probloop()
+        #putting probloop in actual loop
+        probcount = 1
+        for e in range(probcount):
+            #now here is where i need a way to connect my different data, so i can go question by question 
+            #for now, it works, and that's fine, because i actually need to go read the dark tower
+            #i'll have to come back and look at it again in... well, maybe not in THAT long...
+            self.probloop()
         
 
-    #i'm going to have to import data later...
+    #alright, well... data??? uhhhh, i'm sure we've covered how to import from text files... so i need:
+    #A) a txt of questions
+    #B) a txt of image filenames
+    #C) images
+    #D) a txt of correct numbers
+    #E) a txt of possible answers
     def probloop(self):
-        #import data here
+        #like, what though? why is it looping twice?
+        print('loopcount')
         title = QLabel(objectName='title')
         title.setText("1. We are on the lookout for")
         #a center align that works!!! i had to import qt from qtcore. not sure how to put this into qss?
@@ -40,7 +52,6 @@ class mainwindow (QWidget):
 
         self.mainlayout.addLayout(self.imglayout)
 
-        #import data here
         #label/QPixMap widget
         label1 = QLabel()
         img1 = QPixmap("img/magicians.png")
@@ -61,7 +72,6 @@ class mainwindow (QWidget):
 
         self.mainlayout.addLayout(self.sublayout)
         
-        #import data here
         self.select = 0
         self.correct = 3
 
@@ -85,23 +95,23 @@ class mainwindow (QWidget):
         self.mainlayout.addWidget(self.button)
 
     def click1(self):
-            #print('magicians')
-            self.button1.setStyleSheet('QPushButton {background-color: red}')
-            self.button2.setStyleSheet('QPushButton {background-color: blue}')
-            self.button3.setStyleSheet('QPushButton {background-color: blue}')
-            self.select = 1
+        #print('magicians')
+        self.button1.setStyleSheet('QPushButton {background-color: red}')
+        self.button2.setStyleSheet('QPushButton {background-color: blue}')
+        self.button3.setStyleSheet('QPushButton {background-color: blue}')
+        self.select = 1
     def click2(self):
-            #print('villagers')
-            self.button2.setStyleSheet('QPushButton {background-color: red}')
-            self.button1.setStyleSheet('QPushButton {background-color: blue}')
-            self.button3.setStyleSheet('QPushButton {background-color: blue}')
-            self.select = 2
+        #print('villagers')
+        self.button2.setStyleSheet('QPushButton {background-color: red}')
+        self.button1.setStyleSheet('QPushButton {background-color: blue}')
+        self.button3.setStyleSheet('QPushButton {background-color: blue}')
+        self.select = 2
     def click3(self):
-            #print('demons')
-            self.button3.setStyleSheet('QPushButton {background-color: red}')
-            self.button1.setStyleSheet('QPushButton {background-color: blue}')
-            self.button2.setStyleSheet('QPushButton {background-color: blue}')
-            self.select = 3 
+        #print('demons')
+        self.button3.setStyleSheet('QPushButton {background-color: red}')
+        self.button1.setStyleSheet('QPushButton {background-color: blue}')
+        self.button2.setStyleSheet('QPushButton {background-color: blue}')
+        self.select = 3 
     def submit(self):
         #oh, well, it became obvious when i actually printed the select & correct values
         #i have to put this in a separate function...
@@ -109,33 +119,28 @@ class mainwindow (QWidget):
         print(f'self.correct = {self.correct}')
         #i renamed the functions so it didn't get confused, but they're still not working...
         if self.select == self.correct:
-            self.button.clicked.connect(self.corrects)
+            #OH, well, i don't really need these connections now, do i...
+            self.corrects()
         else:
-            self.button.clicked.connect(self.incorrects)
+            self.incorrects()
     def info(self):
         QMessageBox.information(
             self,
-            'Banjo Twyro',
+            'Banjo Tyrwo',
             'Answer all questions\nto gain super combo'
         )
     def corrects(self):
         QMessageBox.information(
             self,
-            'That is correct!',
-            'Answer all questions\nto gain super combo'
+            'Banjo Tyrwo',
+            'That is correct! \nPoints:1/1'
         )
     def incorrects(self):
         QMessageBox.information(
             self,
-            'Banjo Twyro',
-            'That is incorrect!'
+            'Banjo Tyrwo',
+            'That is incorrect! \nPoints:0/0'
         )
-    #oh i see, there was already a submit function, but i lost it somewhere...
-    def button_clicked(self):
-        if self.select == self.correct:
-            self.button.clicked.connect(self.corrects)
-        else:
-            self.button.clicked.connect(self.incorrects)
 
 #oh!!! it wasn't displaying, and you know what i did? i forgot this part!!!
 def main():
