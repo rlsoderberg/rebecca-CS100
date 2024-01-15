@@ -81,14 +81,8 @@ class mainwindow (QWidget):
 
         self.button = QPushButton("Submit")
         self.button.setIcon(QIcon('img/submit.png'))
+        self.button.clicked.connect(self.submit)
         self.mainlayout.addWidget(self.button)
-
-        #well, i forgot this part... THAT might be a problem...
-        #everything is still incorrect though, so i need to fix my variables still, i guess
-        if self.select == self.correct:
-            self.button.clicked.connect(self.correct)
-        else:
-            self.button.clicked.connect(self.incorrect)
 
     def click1(self):
             #print('magicians')
@@ -107,31 +101,41 @@ class mainwindow (QWidget):
             self.button3.setStyleSheet('QPushButton {background-color: red}')
             self.button1.setStyleSheet('QPushButton {background-color: blue}')
             self.button2.setStyleSheet('QPushButton {background-color: blue}')
-            self.select = 3    
+            self.select = 3 
+    def submit(self):
+        #oh, well, it became obvious when i actually printed the select & correct values
+        #i have to put this in a separate function...
+        print(f'self.select = {self.select}')
+        print(f'self.correct = {self.correct}')
+        #i renamed the functions so it didn't get confused, but they're still not working...
+        if self.select == self.correct:
+            self.button.clicked.connect(self.corrects)
+        else:
+            self.button.clicked.connect(self.incorrects)
     def info(self):
         QMessageBox.information(
             self,
             'Banjo Twyro',
             'Answer all questions\nto gain super combo'
         )
-    def correct(self):
+    def corrects(self):
         QMessageBox.information(
             self,
             'That is correct!',
             'Answer all questions\nto gain super combo'
         )
-    def incorrect(self):
+    def incorrects(self):
         QMessageBox.information(
             self,
             'Banjo Twyro',
             'That is incorrect!'
         )
-
+    #oh i see, there was already a submit function, but i lost it somewhere...
     def button_clicked(self):
         if self.select == self.correct:
-            self.button.clicked.connect(self.correct)
+            self.button.clicked.connect(self.corrects)
         else:
-            self.button.clicked.connect(self.incorrect)
+            self.button.clicked.connect(self.incorrects)
 
 #oh!!! it wasn't displaying, and you know what i did? i forgot this part!!!
 def main():
