@@ -82,6 +82,14 @@ class mainwindow (QWidget):
         self.button = QPushButton("Submit")
         self.button.setIcon(QIcon('img/submit.png'))
         self.mainlayout.addWidget(self.button)
+
+        #well, i forgot this part... THAT might be a problem...
+        #everything is still incorrect though, so i need to fix my variables still, i guess
+        if self.select == self.correct:
+            self.button.clicked.connect(self.correct)
+        else:
+            self.button.clicked.connect(self.incorrect)
+
     def click1(self):
             #print('magicians')
             self.button1.setStyleSheet('QPushButton {background-color: red}')
