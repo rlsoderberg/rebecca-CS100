@@ -56,7 +56,7 @@ class mainwindow (QWidget):
         self.img3 = QPixmap('')
         self.label3.setPixmap(self.img3)
         self.imglayout.addWidget(self.label3)
-
+        print('so it is from here that i go to the click functions')
         self.button1 = QPushButton('')
         self.button1.clicked.connect(self.click1)
         self.sublayout.addWidget(self.button1)
@@ -86,10 +86,6 @@ class mainwindow (QWidget):
         #putting probloop in actual loop
         #this loop still isn't working, i don't think!!! so i'm kind of cheating on it for now...
         for self.probcount in range(0, self.probtotal):
-            #now here is where i need a way to connect my different data, so i can go question by question 
-            #for now, it works, and that's fine, because i actually need to go read the dark tower
-            #i'll have to come back and look at it again in... well, maybe not in THAT long...
-            #oh wait!!!! all i have to do is use different filenames!!!
             self.probloop(self.probcount)
         
 
@@ -100,38 +96,38 @@ class mainwindow (QWidget):
     #D) a txt of correct numbers
     #E) a txt of answer options
     def probloop(self, probcount):
-
+        #so what i'm trying to do... is stop it from looping through, regardless of whether the user answered...
+        #so could i put an interaction marker on incorrect & correct?
+        self.interaction_marker = False
+        
+        #uh, i'll think about how to use my interaction marker!!!
         self.get_variables(probcount)
+        self.setTheText()
+
         self.select = 0
 
 
-        #i want to use some kind of loop to keep it from automatically going to the last question
-        #'while self.select == 0' totally did not work!!!
-
-        #so, REALLY... all i should have to do is setText, right?
-        self.title.setText(str(probcount + 1) + '. ' + self.thisquestion)
-
-        self.img1 = QPixmap(self.imagelist[0])
-        self.label1.setPixmap(self.img1)
-
-        self.img2 = QPixmap(self.imagelist[1])
-        self.label2.setPixmap(self.img2)
-
-        self.img3 = QPixmap(self.imagelist[2])
-        self.label3.setPixmap(self.img3)
-
-        self.button1.setText(self.optionchoices[0])
-
-        self.button2.setText(self.optionchoices[1])
-
-        self.button3.setText(self.optionchoices[2])
-
-        self.button.setText('Submit')
+    def setTheText(self):
         
-        #well, i was going to put something here, to make it repeat the question if you're wrong
-        #but i guess that's not entirely necessary
-        #if self.select != 0 and self.select != self.correct:
-        #    self.select = 0
+            #so, REALLY... all i should have to do is setText, right?
+            self.title.setText(str(self.probcount + 1) + '. ' + self.thisquestion)
+
+            self.img1 = QPixmap(self.imagelist[0])
+            self.label1.setPixmap(self.img1)
+
+            self.img2 = QPixmap(self.imagelist[1])
+            self.label2.setPixmap(self.img2)
+
+            self.img3 = QPixmap(self.imagelist[2])
+            self.label3.setPixmap(self.img3)
+
+            self.button1.setText(self.optionchoices[0])
+
+            self.button2.setText(self.optionchoices[1])
+
+            self.button3.setText(self.optionchoices[2])
+
+            self.button.setText('Submit')
 
 
     def click1(self):
@@ -153,11 +149,8 @@ class mainwindow (QWidget):
         self.button2.setStyleSheet('QPushButton {background-color: blue}')
         self.select = 3 
     def submit(self):
-        #oh, well, it became obvious when i actually printed the select & correct values
-        #i have to put this in a separate function...
-        print(f'self.select = {self.select}')
-        print(f'self.correct = {self.correct}')
-        #oh, they were different variable types. are we surprised?
+        #to keep everything from being incorrect all the time, we must put this in a separate function...
+        #we also need to make sure they are the same variable type
         if int(self.select) == int(self.correct):
             print('you are correct')
             self.corrects()
@@ -165,50 +158,33 @@ class mainwindow (QWidget):
             print('you are incorrect')
             self.incorrects()
     
-    
     def info(self):
         QMessageBox.information(
             self,
             'Banjo Tyrwo',
             'Answer all questions\nto gain super combo'
         )
-        self.continueloop = False
     def corrects(self):
         QMessageBox.information(
             self,
-            'Information',
-            'This is important information.'
+            'Correct',
+            'You are correct.'
         )
-        self.continueloop = True
-        """
-        QMessageBox.information(
-            self,
-            'Banjo Tyrwo',
-            'That is correct!'
-            #for some reason, it doesn't like my correctline, so i'm just using a generic one for now
-            #self.correctline
-
-            #well, these text variables just won't be correct, but we're going to ignore that for now...
-            
-            #oh right!!! i need to stop it between loops...
-            #i guess i should include the corrects?
-            self.next_question = True
-
-        )
-        """
         self.probcount += 1
         self.points += 1
+        self.interaction_marker = True
     def incorrects(self):
         QMessageBox.information(
             self,
-            'Information',
-            'This is important information.'
+            'Incorrect',
+            'You are incorrect.'
         )
+        self.interaction_marker = True
 
     def get_variables(self, probcount):
         #i am putting this in its own function because it is a lot
 
-        #import all the files - first, questions
+        #import all the data - first, questions
         questionlist = open("img/questionlist.txt", "r")
 
         data = questionlist.read()
@@ -233,7 +209,6 @@ class mainwindow (QWidget):
 
         data = self.correcttxt.read()
         self.correctlist = data.replace('\n', ' ').split(".")
-        #this is pretty awkward... subtracting 1...
         self.correct = self.correctlist[probcount]
         self.correcttxt.close()
 
