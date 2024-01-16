@@ -22,12 +22,62 @@ class mainwindow (QWidget):
         #qhboxlayout for subheadings 
         self.sublayout = QHBoxLayout()
 
+        #ok, i'm going to try setting the layout first up here!
+        #so i'm copying this ALL up here... more duplicates... i'm pretty sure none of this is ideal!
+        #well... i'm going to make sure i'm labeling everything with self...
         self.setLayout(self.mainlayout)
+
+        self.mainlayout.addLayout(self.imglayout)
+        self.mainlayout.addLayout(self.sublayout)
+
+        self.title = QLabel(objectName='title')
+        self.title.setText('')
+        self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.mainlayout.addWidget(self.title)
+
+        #label/QPixMap widget
+        self.label1 = QLabel()
+        #at first i was trying to use (f"img/{imagelist[1]}") for my pixmap...
+        #i had to get around it by posting duplicate images in the main folder!!!
+
+        #oh right, that means when i rename the images, i have to rename them twice!!!
+        self.img1 = QPixmap('')
+        self.label1.setPixmap(self.img1)
+        self.imglayout.addWidget(self.label1)
+
+        #label/QPixMap widget
+        self.label2 = QLabel()
+        self.img2 = QPixmap('')
+        self.label2.setPixmap(self.img2)
+        self.imglayout.addWidget(self.label2)
+
+        #label/QPixMap widget
+        self.label3 = QLabel()
+        self.img3 = QPixmap('')
+        self.label3.setPixmap(self.img3)
+        self.imglayout.addWidget(self.label3)
+
+        self.button1 = QPushButton('')
+        self.button1.clicked.connect(self.click1)
+        self.sublayout.addWidget(self.button1)
+
+        self.button2 = QPushButton('')
+        self.button2.clicked.connect(self.click2)
+        self.sublayout.addWidget(self.button2)
+
+        self.button3 = QPushButton('')
+        self.button3.setGeometry(100,100,100,100)
+        self.button3.clicked.connect(self.click3)
+        self.sublayout.addWidget(self.button3)
+
+        self.button = QPushButton('')
+        self.button.setIcon(QIcon(''))
+        self.button.clicked.connect(self.submit)
+        self.mainlayout.addWidget(self.button)
 
         #set the probcount up here, because what i should really be doing is writing all of this in the probloop
         self.probtotal = 2
         self.points = 0
-
 
         self.show()
         #wait, can i literally just say the name of the probloop after info???
@@ -40,8 +90,6 @@ class mainwindow (QWidget):
             #i'll have to come back and look at it again in... well, maybe not in THAT long...
             #oh wait!!!! all i have to do is use different filenames!!!
             self.probloop(self.probcount)
-
-        self.clearLayout()
         
 
     #alright, well... data??? uhhhh, i'm sure we've covered how to import from text files... so i need:
@@ -53,64 +101,42 @@ class mainwindow (QWidget):
     def probloop(self, probcount):
 
         self.get_variables(probcount)
+        self.select = 0
 
-        title = QLabel(objectName='title')
-        title.setText(str(probcount) + '. ' + self.thisquestion)
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.mainlayout.addWidget(title)
-
-        self.mainlayout.addLayout(self.imglayout)
+        self.title.setText(str(probcount) + '. ' + self.thisquestion)
 
         #label/QPixMap widget
-        label1 = QLabel()
         #at first i was trying to use (f"img/{imagelist[1]}") for my pixmap...
         #i had to get around it by posting duplicate images in the main folder!!!
 
         #oh right, that means when i rename the images, i have to rename them twice!!!
-        img1 = QPixmap(self.imagelist[0])
-        label1.setPixmap(img1)
-        self.imglayout.addWidget(label1)
+        self.img1 = QPixmap(self.imagelist[0])
+        self.label1.setPixmap(self.img1)
 
         #label/QPixMap widget
-        label2 = QLabel()
-        img2 = QPixmap(self.imagelist[1])
-        label2.setPixmap(img2)
-        self.imglayout.addWidget(label2)
+        self.img2 = QPixmap(self.imagelist[1])
+        self.label2.setPixmap(self.img2)
 
         #label/QPixMap widget
-        label3 = QLabel()
-        img3 = QPixmap(self.imagelist[2])
-        label3.setPixmap(img3)
-        self.imglayout.addWidget(label3)
+        self.img3 = QPixmap(self.imagelist[2])
+        self.label3.setPixmap(self.img3)
 
-        self.mainlayout.addLayout(self.sublayout)
-        
-        self.select = 0
+        self.correcttxt = 'That is correct! \nPoints: ' + str(self.points) + '/' + str(self.probtotal)
+        self.incorrecttxt = 'That is incorrect! \nPoints: ' + str(self.points) + '/' + str(self.probtotal)
 
-        self.correcttext = 'That is correct! \nPoints: ' + str(self.points) + '/' + str(self.probtotal)
-        self.incorrecttext = 'That is incorrect! \nPoints: ' + str(self.points) + '/' + str(self.probtotal)
-
-        print(f'self.optionlist = {self.optionlist}') 
-        print(f'self.optionchoices = {self.optionchoices}')
-
-        self.button1 = QPushButton(self.optionchoices[0])
+        self.button1.setText(self.optionchoices[0])
         self.button1.clicked.connect(self.click1)
-        self.sublayout.addWidget(self.button1)
 
-        self.button2 = QPushButton(self.optionchoices[1])
+        self.button2.setText(self.optionchoices[1])
         self.button2.clicked.connect(self.click2)
-        self.sublayout.addWidget(self.button2)
 
-        self.button3 = QPushButton(self.optionchoices[2])
+        self.button3.setText(self.optionchoices[2])
         self.button3.setGeometry(100,100,100,100)
         self.button3.clicked.connect(self.click3)
-        self.sublayout.addWidget(self.button3)
 
-        self.button = QPushButton("Submit")
+        self.button.setText("Submit")
         self.button.setIcon(QIcon('img/submit.png'))
         self.button.clicked.connect(self.submit)
-        self.mainlayout.addWidget(self.button)
 
     def click1(self):
         #print('magicians')
@@ -211,17 +237,6 @@ class mainwindow (QWidget):
         data = self.optiontxt.read()
         self.optionchoices = data.replace('\n', ' ').split(".")
         self.optiontxt.close()
-
-    #look at this nifty little clear function i found on stackoverflow!
-    def clearLayout(layout):
-        while layout.count():
-            child = layout.takeAt(0)
-            if child.widget():
-                child.widget().deleteLater()
-    #never mind, this is definitely not the right way to do this! tomorrow i will try... qstackedwidget?
-
-
-
 
 #oh!!! it wasn't displaying, and you know what i did? i forgot this part!!!
 def main():
