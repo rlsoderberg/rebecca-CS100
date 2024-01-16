@@ -78,6 +78,7 @@ class mainwindow (QWidget):
         #set the probcount up here, because what i should really be doing is writing all of this in the probloop
         self.probtotal = 2
         self.points = 0
+        self.continueloop = False
 
         self.show()
         #wait, can i literally just say the name of the probloop after info???
@@ -103,40 +104,35 @@ class mainwindow (QWidget):
         self.get_variables(probcount)
         self.select = 0
 
-        self.title.setText(str(probcount) + '. ' + self.thisquestion)
 
-        #label/QPixMap widget
-        #at first i was trying to use (f"img/{imagelist[1]}") for my pixmap...
-        #i had to get around it by posting duplicate images in the main folder!!!
+        #i want to use some kind of loop to keep it from automatically going to the last question
+        #'while self.select == 0' totally did not work!!!
 
-        #oh right, that means when i rename the images, i have to rename them twice!!!
+        #so, REALLY... all i should have to do is setText, right?
+        self.title.setText(str(probcount + 1) + '. ' + self.thisquestion)
+
         self.img1 = QPixmap(self.imagelist[0])
         self.label1.setPixmap(self.img1)
 
-        #label/QPixMap widget
         self.img2 = QPixmap(self.imagelist[1])
         self.label2.setPixmap(self.img2)
 
-        #label/QPixMap widget
         self.img3 = QPixmap(self.imagelist[2])
         self.label3.setPixmap(self.img3)
 
-        self.correcttxt = 'That is correct! \nPoints: ' + str(self.points) + '/' + str(self.probtotal)
-        self.incorrecttxt = 'That is incorrect! \nPoints: ' + str(self.points) + '/' + str(self.probtotal)
-
         self.button1.setText(self.optionchoices[0])
-        self.button1.clicked.connect(self.click1)
 
         self.button2.setText(self.optionchoices[1])
-        self.button2.clicked.connect(self.click2)
 
         self.button3.setText(self.optionchoices[2])
-        self.button3.setGeometry(100,100,100,100)
-        self.button3.clicked.connect(self.click3)
 
-        self.button.setText("Submit")
-        self.button.setIcon(QIcon('img/submit.png'))
-        self.button.clicked.connect(self.submit)
+        self.button.setText('Submit')
+        
+        #well, i was going to put something here, to make it repeat the question if you're wrong
+        #but i guess that's not entirely necessary
+        #if self.select != 0 and self.select != self.correct:
+        #    self.select = 0
+
 
     def click1(self):
         #print('magicians')
@@ -176,21 +172,37 @@ class mainwindow (QWidget):
             'Banjo Tyrwo',
             'Answer all questions\nto gain super combo'
         )
+        self.continueloop = False
     def corrects(self):
         QMessageBox.information(
             self,
+            'Information',
+            'This is important information.'
+        )
+        self.continueloop = True
+        """
+        QMessageBox.information(
+            self,
             'Banjo Tyrwo',
+            'That is correct!'
+            #for some reason, it doesn't like my correctline, so i'm just using a generic one for now
+            #self.correctline
+
             #well, these text variables just won't be correct, but we're going to ignore that for now...
-            str(self.correcttxt)
+            
+            #oh right!!! i need to stop it between loops...
+            #i guess i should include the corrects?
+            self.next_question = True
 
         )
+        """
         self.probcount += 1
         self.points += 1
     def incorrects(self):
         QMessageBox.information(
             self,
-            'Banjo Tyrwo',
-            str(self.incorrecttxt)
+            'Information',
+            'This is important information.'
         )
 
     def get_variables(self, probcount):

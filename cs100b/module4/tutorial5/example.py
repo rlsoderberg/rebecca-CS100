@@ -1,4 +1,4 @@
-#i'm keeping this because it is cool!!!
+#i'm keeping this because it is cool
 """
 ZetCode PyQt6 tutorial
 
