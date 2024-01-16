@@ -34,12 +34,14 @@ class mainwindow (QWidget):
         self.info()
         #putting probloop in actual loop
         #this loop still isn't working, i don't think!!! so i'm kind of cheating on it for now...
-        for self.probcount in range(self.probtotal):
+        for self.probcount in range(0, self.probtotal):
             #now here is where i need a way to connect my different data, so i can go question by question 
             #for now, it works, and that's fine, because i actually need to go read the dark tower
             #i'll have to come back and look at it again in... well, maybe not in THAT long...
             #oh wait!!!! all i have to do is use different filenames!!!
-            self.probloop(self.probtotal)
+            self.probloop(self.probcount)
+
+        self.clearLayout()
         
 
     #alright, well... data??? uhhhh, i'm sure we've covered how to import from text files... so i need:
@@ -175,11 +177,11 @@ class mainwindow (QWidget):
         self.questionlist = data.replace('\n', ' ').split(".")
         questionlist.close()
 
-        self.thisquestion = self.questionlist[probcount - 1]
+        self.thisquestion = self.questionlist[probcount]
 
         #images. now, HOW am i going to reference images within a specific subfolder?
         #i can do images up here, because i've got self.filenames!
-        dir = (f"./img/{probcount}")
+        dir = (f"./img/{probcount + 1}")
         self.dirlist = os.listdir(path=dir)
         #making an imagelist... from the dirlist...
         self.imagelist = []
@@ -194,7 +196,7 @@ class mainwindow (QWidget):
         data = self.correcttxt.read()
         self.correctlist = data.replace('\n', ' ').split(".")
         #this is pretty awkward... subtracting 1...
-        self.correct = self.correctlist[probcount - 1]
+        self.correct = self.correctlist[probcount]
         self.correcttxt.close()
 
         #answer options
@@ -204,11 +206,19 @@ class mainwindow (QWidget):
                 self.optionlist = file
         
         #uh, i wasn't expecting this complicated address to work, but it might have? idk?
-        self.optiontxt = open(f'img/{probcount}/{str(self.optionlist)}', "r")
+        self.optiontxt = open(f'img/{probcount + 1}/{str(self.optionlist)}', "r")
 
         data = self.optiontxt.read()
         self.optionchoices = data.replace('\n', ' ').split(".")
         self.optiontxt.close()
+
+    #look at this nifty little clear function i found on stackoverflow!
+    def clearLayout(layout):
+        while layout.count():
+            child = layout.takeAt(0)
+            if child.widget():
+                child.widget().deleteLater()
+    #never mind, this is definitely not the right way to do this! tomorrow i will try... qstackedwidget?
 
 
 
