@@ -138,39 +138,31 @@ class mainwindow (QWidget):
 
         self.button.setText('Submit')
 
-        self.timer()
-        input()
+        self.timerer()
+
 
     #ok fine, i'm just going to put in a timer. but... there MUST be an easier way to do this...
-    #i stole this timer off udacity
-    # Timer starts
-    def timer(self):
-        import time
-        import datetime
-        
-        # Create class that acts as a countdown
-        def countdown(h, m, s):
-        
-            # Calculate the total number of seconds
-            total_seconds = m * 1
-        
-            # While loop that checks if total_seconds reaches zero
-            # If not zero, decrement total time by one second
-            while total_seconds > 0:
-        
-                # Timer represents time left on countdown
-                timer = datetime.timedelta(seconds = total_seconds)
-                
-                # Prints the time left on the timer
-                print(timer, end="\r")
-        
-                # Delays the program one second
-                time.sleep(1)
-        
-                # Reduces total time by one second
-                total_seconds -= 1
-        
-            print("Bzzzt! The countdown is at zero seconds!")
+    #now i'm using this one from stack overflow. the good thing, is i know how to abort it.
+    def timerer(self):
+        from threading import Timer
+
+        self.iteration_count = 0
+        self.heartbeat = 1
+
+        self.timer = Timer(
+            interval=self.heartbeat,
+            function=self.start_job,
+        )
+        self.timer.start()
+
+        if self.iteration_count >= 60:
+            self.timer.cancel()
+
+    def start_job(self):
+        self.print_msg()
+        self.iteration_count += 1
+
+
         
 
 
@@ -201,6 +193,7 @@ class mainwindow (QWidget):
             print('you are incorrect')
             self.incorrects()
         self.interaction_marker = True
+        self.timer.cancel()
     def info(self):
         QMessageBox.information(
             self,
@@ -208,6 +201,7 @@ class mainwindow (QWidget):
             'Answer all questions\nto gain super combo.\nYou have one minute\nto answer each question.'
         )
         self.interaction_marker = True
+        self.timer.cancel()
     def corrects(self):
         QMessageBox.information(
             self,
