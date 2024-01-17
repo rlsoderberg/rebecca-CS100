@@ -65,21 +65,21 @@ class mainwindow (QWidget):
         #self.interaction_marker = False
 
         self.button1 = QPushButton('')
-        #self.button1.clicked.connect(self.click1)
+        self.button1.clicked.connect(self.click1)
         self.sublayout.addWidget(self.button1)
 
         self.button2 = QPushButton('')
-        #self.button2.clicked.connect(self.click2)
+        self.button2.clicked.connect(self.click2)
         self.sublayout.addWidget(self.button2)
 
         self.button3 = QPushButton('')
         self.button3.setGeometry(100,100,100,100)
-        #self.button3.clicked.connect(self.click3)
+        self.button3.clicked.connect(self.click3)
         self.sublayout.addWidget(self.button3)
 
         self.button = QPushButton('')
         self.button.setIcon(QIcon(''))
-        #self.button.clicked.connect(self.submit)
+        self.button.clicked.connect(self.submit)
         self.mainlayout.addWidget(self.button)
 
         self.probtotal = 3
@@ -105,23 +105,14 @@ class mainwindow (QWidget):
         for self.probcount in range(1, self.probtotal):
             print(f'probcount right before for loop body: {self.probcount}')
             print(f'interaction_marker right before for loop body: {self.interaction_marker}')
-            #i'm putting the timer in here, instead of a function, because it had a hard time locating thread1?
-            self.thread1 = threading.Timer(interval = 1)
-            print("Starting the timer object")
-            print()
-            
-            # Starting the function after 3 seconds
-            self.thread1.start()
-            # Sleeping this thread for 5 seconds
-            time.sleep(60)
 
-            #i'm going to try putting these in... after the thread...
-            self.button1.clicked.connect(self.click1)
-            self.button1.clicked.connect(self.click2)
-            self.button1.clicked.connect(self.click3)
-            self.button1.clicked.connect(self.submit)
+            #new timer? very simple?
+            T = self.threading.Timer (60, function, args = None, kwargs = None)
+            T.start()
 
-            while self.interaction_marker == False:
+            #i thought i was being smooth, info generating interaction marker, and that being the only criterion
+            #well, now my program is being weird, so... back to the awkward double while criteria
+            while self.probcount == 1 or self.interaction_marker == True:
                 self.printing(self.probcount)
                 #it's looping (or failing to loop) before i hit submit... how do i force it to wait for submit???
                 #do i have to set a timer or something??? that seems... like... 
@@ -194,21 +185,21 @@ class mainwindow (QWidget):
         #to keep everything from being incorrect all the time, we must put this in a separate function...
         #we also need to make sure they are the same variable type
         if int(self.select) == int(self.correct):
-            print('you are correct')
             self.corrects()
         elif self.select != self.correct:
-            print('you are incorrect')
             self.incorrects()
         self.interaction_marker = True
-        self.thread1.cancel()
+        #i'm just taking out cancel right now, since it seems to be causing problems. let them wait
+        #self.thread1.cancel()
     def info(self):
         QMessageBox.information(
             self,
             'Banjo Tyrwo',
             'Answer all questions\nto gain super combo.\nYou have one minute\nto answer each question.'
         )
-        self.interaction_marker = True
-        self.thread1.cancel()
+        #self.interaction_marker = True
+        #self.thread1.cancel()
+    def corrects(self):
         QMessageBox.information(
             self,
             'Correct',
