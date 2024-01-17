@@ -99,9 +99,10 @@ class mainwindow (QWidget):
         for self.probcount in range(1, self.probtotal):
             print(f'probcount right before for loop body: {self.probcount}')
             print(f'interaction_marker right before for loop body: {self.interaction_marker}')
-            if self.probcount == 1 or self.interaction_marker == True:
+            if self.interaction_marker == True:
                 self.printing(self.probcount)
                 #it's looping (or failing to loop) before i hit submit... how do i force it to wait for submit???
+                #do i have to set a timer or something??? that seems... like... 
         
 
     #alright, well... data??? uhhhh, i'm sure we've covered how to import from text files... so i need:
@@ -137,6 +138,42 @@ class mainwindow (QWidget):
 
         self.button.setText('Submit')
 
+        self.timer()
+        input()
+
+    #ok fine, i'm just going to put in a timer. but... there MUST be an easier way to do this...
+    #i stole this timer off udacity
+    # Timer starts
+    def timer(self):
+        import time
+        import datetime
+        
+        # Create class that acts as a countdown
+        def countdown(h, m, s):
+        
+            # Calculate the total number of seconds
+            total_seconds = m * 1
+        
+            # While loop that checks if total_seconds reaches zero
+            # If not zero, decrement total time by one second
+            while total_seconds > 0:
+        
+                # Timer represents time left on countdown
+                timer = datetime.timedelta(seconds = total_seconds)
+                
+                # Prints the time left on the timer
+                print(timer, end="\r")
+        
+                # Delays the program one second
+                time.sleep(1)
+        
+                # Reduces total time by one second
+                total_seconds -= 1
+        
+            print("Bzzzt! The countdown is at zero seconds!")
+        
+
+
 
     def click1(self):
         self.button1.setStyleSheet('QPushButton {background-color: red}')
@@ -163,13 +200,14 @@ class mainwindow (QWidget):
         elif self.select != self.correct:
             print('you are incorrect')
             self.incorrects()
-    
+        self.interaction_marker = True
     def info(self):
         QMessageBox.information(
             self,
             'Banjo Tyrwo',
-            'Answer all questions\nto gain super combo'
+            'Answer all questions\nto gain super combo.\nYou have one minute\nto answer each question.'
         )
+        self.interaction_marker = True
     def corrects(self):
         QMessageBox.information(
             self,
@@ -178,14 +216,12 @@ class mainwindow (QWidget):
         )
         self.probcount += 1
         self.points += 1
-        self.interaction_marker = True
     def incorrects(self):
         QMessageBox.information(
             self,
             'Incorrect',
             'You are incorrect.'
         )
-        self.interaction_marker = True
 
     def get_variables(self, probcount):
         #i am putting this in its own function because it is a lot
