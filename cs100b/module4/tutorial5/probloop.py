@@ -6,6 +6,9 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 import os
 import pathlib
+import threading
+import time
+from threading import Timer
 
 #Banjo Tyrwo: Bango Gyro/The Dark Tower crossover
 class mainwindow (QWidget):
@@ -62,27 +65,28 @@ class mainwindow (QWidget):
         #self.interaction_marker = False
 
         self.button1 = QPushButton('')
-        self.button1.clicked.connect(self.click1)
+        #self.button1.clicked.connect(self.click1)
         self.sublayout.addWidget(self.button1)
 
         self.button2 = QPushButton('')
-        self.button2.clicked.connect(self.click2)
+        #self.button2.clicked.connect(self.click2)
         self.sublayout.addWidget(self.button2)
 
         self.button3 = QPushButton('')
         self.button3.setGeometry(100,100,100,100)
-        self.button3.clicked.connect(self.click3)
+        #self.button3.clicked.connect(self.click3)
         self.sublayout.addWidget(self.button3)
 
         self.button = QPushButton('')
         self.button.setIcon(QIcon(''))
-        self.button.clicked.connect(self.submit)
+        #self.button.clicked.connect(self.submit)
         self.mainlayout.addWidget(self.button)
 
         self.probtotal = 3
         self.points = 0
         self.probcount = 0
         self.interaction_marker = False
+        timer_runs = 60
 
         self.show()
         #wait, can i literally just say the name of the probloop after info???
@@ -95,11 +99,29 @@ class mainwindow (QWidget):
 
         #um, this doesn't seem exactly right either, but at least it's starting on the first problem...
         #i'll probably have to sleep on this, AGAIN!!!
+
+
        
         for self.probcount in range(1, self.probtotal):
             print(f'probcount right before for loop body: {self.probcount}')
             print(f'interaction_marker right before for loop body: {self.interaction_marker}')
-            if self.interaction_marker == True:
+            #i'm putting the timer in here, instead of a function, because it had a hard time locating thread1?
+            self.thread1 = threading.Timer(interval = 1)
+            print("Starting the timer object")
+            print()
+            
+            # Starting the function after 3 seconds
+            self.thread1.start()
+            # Sleeping this thread for 5 seconds
+            time.sleep(60)
+
+            #i'm going to try putting these in... after the thread...
+            self.button1.clicked.connect(self.click1)
+            self.button1.clicked.connect(self.click2)
+            self.button1.clicked.connect(self.click3)
+            self.button1.clicked.connect(self.submit)
+
+            while self.interaction_marker == False:
                 self.printing(self.probcount)
                 #it's looping (or failing to loop) before i hit submit... how do i force it to wait for submit???
                 #do i have to set a timer or something??? that seems... like... 
@@ -138,30 +160,15 @@ class mainwindow (QWidget):
 
         self.button.setText('Submit')
 
-        self.timerer()
-
 
     #ok fine, i'm just going to put in a timer. but... there MUST be an easier way to do this...
     #now i'm using this one from stack overflow. the good thing, is i know how to abort it.
-    def timerer(self):
-        from threading import Timer
+    #basically, threading is a mess, and i'd better find another way...
+    #how about this one? it seems pretty simple
 
-        self.iteration_count = 0
-        self.heartbeat = 1
-
-        self.timer = Timer(
-            interval=self.heartbeat,
-            function=self.start_job,
-        )
-        self.timer.start()
-
-        if self.iteration_count >= 60:
-            self.timer.cancel()
-
-    def start_job(self):
-        self.print_msg()
-        self.iteration_count += 1
-
+        
+        
+        
 
         
 
@@ -193,7 +200,7 @@ class mainwindow (QWidget):
             print('you are incorrect')
             self.incorrects()
         self.interaction_marker = True
-        self.timer.cancel()
+        self.thread1.cancel()
     def info(self):
         QMessageBox.information(
             self,
@@ -201,8 +208,7 @@ class mainwindow (QWidget):
             'Answer all questions\nto gain super combo.\nYou have one minute\nto answer each question.'
         )
         self.interaction_marker = True
-        self.timer.cancel()
-    def corrects(self):
+        self.thread1.cancel()
         QMessageBox.information(
             self,
             'Correct',
