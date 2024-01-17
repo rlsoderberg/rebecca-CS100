@@ -32,6 +32,7 @@ class MainWindow(QWidget):
 
         self.show()
 
+
     def info(self):
         QMessageBox.information(
             self,
