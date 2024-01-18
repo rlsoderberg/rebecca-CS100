@@ -78,6 +78,7 @@ class mainwindow (QWidget):
 
         #set variables for number of problems & point total
         self.probtotal = 2
+        self.probcount = 0
         self.points = 0
 
         #show window, and then first info box
@@ -87,11 +88,11 @@ class mainwindow (QWidget):
         #we have this probloop, which we will try to replace...
         self.probloop(0)
         self.probloop(1)
-        #self.probloop(2)
+        self.probloop(2)
 
     #probloop sets display for each problem, based on problem data
     def probloop(self, probcount):
-        print(f'probcount in probloop is {probcount}')
+
         self.get_variables(probcount)
         self.set_variables()
 
@@ -118,14 +119,17 @@ class mainwindow (QWidget):
             self.corrects()
         elif self.select != self.correct:
             self.incorrects()
+        print('this is the variable you should be using')
     
     #first info box function
     def info(self):
-        QMessageBox.information(
+        info = QMessageBox.information(
             self,
             'Banjo Tyrwo',
             'Answer all questions\nto gain super combo'
         )
+        if info.Close:
+            print('info closed')
 
     #correct/incorrect functions
     def corrects(self):
@@ -136,8 +140,7 @@ class mainwindow (QWidget):
         )
         self.probcount += 1
         self.points += 1
-        if corrects.Close:
-            print('CLOSED CORRECTS')
+
     def incorrects(self):
         incorrects = QMessageBox.information(
             self,
@@ -145,13 +148,10 @@ class mainwindow (QWidget):
             'You are incorrect.'
         )
         self.probcount += 1
-        if incorrects.Close:
-            print('CLOSED INCORRECTS')
 
     #function to import problem data from file
     def get_variables(self, probcount):
 
-        print(f'probcount in get_variables is {probcount}')
         questionlist = open("img/questionlist.txt", "r")
         data = questionlist.read()
         self.questionlist = data.replace('\n', ' ').split(".")
