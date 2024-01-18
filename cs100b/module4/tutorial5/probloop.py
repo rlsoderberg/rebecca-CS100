@@ -34,7 +34,7 @@ class mainwindow (QWidget):
         self.mainlayout.addLayout(self.sublayout)
 
         self.title = QLabel(objectName='title')
-        self.title.setText('')
+        self.title.setText('We are on the lookout for')
         self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.mainlayout.addWidget(self.title)
 
@@ -101,21 +101,7 @@ class mainwindow (QWidget):
         #i'll probably have to sleep on this, AGAIN!!!
 
 
-       
-        for self.probcount in range(1, self.probtotal):
-            print(f'probcount right before for loop body: {self.probcount}')
-            print(f'interaction_marker right before for loop body: {self.interaction_marker}')
 
-            #new timer? very simple?
-            T = self.threading.Timer (60, function, args = None, kwargs = None)
-            T.start()
-
-            #i thought i was being smooth, info generating interaction marker, and that being the only criterion
-            #well, now my program is being weird, so... back to the awkward double while criteria
-            while self.probcount == 1 or self.interaction_marker == True:
-                self.printing(self.probcount)
-                #it's looping (or failing to loop) before i hit submit... how do i force it to wait for submit???
-                #do i have to set a timer or something??? that seems... like... 
         
 
     #alright, well... data??? uhhhh, i'm sure we've covered how to import from text files... so i need:
@@ -200,13 +186,15 @@ class mainwindow (QWidget):
         #self.interaction_marker = True
         #self.thread1.cancel()
     def corrects(self):
-        QMessageBox.information(
+        corrects = QMessageBox.information(
             self,
             'Correct',
             'You are correct.'
         )
         self.probcount += 1
         self.points += 1
+        if corrects.close:
+            print('CLOSED CORRECTS')
     def incorrects(self):
         QMessageBox.information(
             self,
