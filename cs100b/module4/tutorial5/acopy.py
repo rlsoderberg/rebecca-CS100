@@ -1,9 +1,8 @@
-#here's an actual working copy, where i initialize widgets in mainwindow
-#i think the only thing to fix is that it goes through all the problems instantly
-#so i just put wrote that exactly in mainwindow for now
-#i put in one more problem, just to make sure it's working
-#but my images in the third problem aren't working!!!! even though my images in previous problems work fine!!!
-#very mysterious!!! the curse of king crimson
+#i'm doing away with button color for now because i realized it is complicated to unclick!
+#i just realized my button color is messed up and doesn't unclick!
+#i'll have to come back to it...
+#because my counts are still messed up
+#i most recently put the bit that calls ending into corrects and incorrects, but that can't be right...
 
 
 from PyQt6.QtWidgets import *
@@ -13,6 +12,7 @@ from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 import os
+import random
 
 class mainwindow (QWidget):
     #initialize superwindow
@@ -77,7 +77,7 @@ class mainwindow (QWidget):
         self.mainlayout.addWidget(self.button)
 
         #set variables for number of problems & point total
-        self.probtotal = 2
+        self.probtotal = 3
         self.probcount = 0
         self.points = 0
 
@@ -85,13 +85,13 @@ class mainwindow (QWidget):
         self.show()
         self.info()
 
-        #we have this probloop, which we will try to replace...
+        #list of problems
         self.probloop(0)
-        self.probloop(1)
-        self.probloop(2)
 
     #probloop sets display for each problem, based on problem data
     def probloop(self, probcount):
+
+        print(f'probcount: {probcount}')
 
         self.get_variables(probcount)
         self.set_variables()
@@ -99,18 +99,12 @@ class mainwindow (QWidget):
     #functions to show button which button is selected, and communicate selection data
     def click1(self):
         self.button1.setStyleSheet('QPushButton {background-color: red}')
-        self.button2.setStyleSheet('QPushButton {background-color: blue}')
-        self.button3.setStyleSheet('QPushButton {background-color: blue}')
         self.select = 1
     def click2(self):
         self.button2.setStyleSheet('QPushButton {background-color: red}')
-        self.button1.setStyleSheet('QPushButton {background-color: blue}')
-        self.button3.setStyleSheet('QPushButton {background-color: blue}')
         self.select = 2
     def click3(self):
         self.button3.setStyleSheet('QPushButton {background-color: red}')
-        self.button1.setStyleSheet('QPushButton {background-color: blue}')
-        self.button2.setStyleSheet('QPushButton {background-color: blue}')
         self.select = 3 
 
     #function to handle either correct or incorrect selection, upon submit
@@ -119,8 +113,9 @@ class mainwindow (QWidget):
             self.corrects()
         elif self.select != self.correct:
             self.incorrects()
-        print('this is the variable you should be using')
-    
+
+        self.probcount += 1
+
     #first info box function
     def info(self):
         info = QMessageBox.information(
@@ -138,7 +133,12 @@ class mainwindow (QWidget):
             'Correct',
             'You are correct.'
         )
-        self.probcount += 1
+
+        if self.probcount <= self.probtotal:
+            self.probloop(self.probcount)
+        elif self.probcount == self.probtotal:
+            self.ending()
+        
         self.points += 1
 
     def incorrects(self):
@@ -147,7 +147,11 @@ class mainwindow (QWidget):
             'Incorrect',
             'You are incorrect.'
         )
-        self.probcount += 1
+
+        if self.probcount <= self.probtotal:
+            self.probloop(self.probcount)
+        elif self.probcount == self.probtotal:
+            self.ending()
 
     #function to import problem data from file
     def get_variables(self, probcount):
@@ -166,7 +170,6 @@ class mainwindow (QWidget):
         for file in self.dirlist:
             if file.endswith('.png'):
                 self.imagelist.append(file)
-        print(f'imagelist: {self.imagelist}')
 
         self.correcttxt = open("img/correctlist.txt", "r")
         data = self.correcttxt.read()
@@ -202,6 +205,12 @@ class mainwindow (QWidget):
 
         self.button.setText(self.thisSubmit)
 
+    def ending(self):
+        if self.points == self.probtotal:
+            print('congratulations! you have achieved super bonus!')
+        else:
+            print('so sorry, you have not achieved super bonus.')
+
 #main function to execute app & play music
 def main():
     mixer.init()
@@ -212,5 +221,6 @@ def main():
     w = mainwindow()
     w.show()
     app.exec()
+
 if __name__ == '__main__':
     main()
