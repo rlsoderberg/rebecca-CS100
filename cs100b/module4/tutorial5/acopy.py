@@ -1,9 +1,17 @@
-#my images still aren't working
-#the one that IS working has the same filename as an image used previously
-#that KIND of seems like it's about memory or something, but idk how that would be an issue?
-#i am also totally failing to set the text in the ending message box
-#and i have to fix the button color
-#and go through and debug
+#oh, i needed duplicates for my images
+#yeah, it was a memory problem... a problem with MY memory...
+
+#i used a workaround for setting the text in the ending message box
+#and i wish i knew how to set text properly, from outside!
+#but that was annoyingly not included in the pyqt6 tutorial!
+
+#now, button color...
+#i actually think qbuttongroup is not exactly what i'm looking for
+#all i want to do is modify the color of multiple buttons at once...
+#so now i am modifying color in a really inefficient way but you know what?
+#i am sooo done working on this thing
+
+#i'm also not sure how to set the logo for a qmessagebox
 
 
 from PyQt6.QtWidgets import *
@@ -67,7 +75,6 @@ class mainwindow (QWidget):
         self.sublayout.addWidget(self.button2)
 
         self.button3 = QPushButton('')
-        self.button3.setGeometry(100,100,100,100)
         self.button3.clicked.connect(self.click3)
         self.sublayout.addWidget(self.button3)
 
@@ -92,6 +99,14 @@ class mainwindow (QWidget):
     #probloop sets display for each problem, based on problem data
     def probloop(self, probcount):
 
+        self.button1.setStyleSheet("background-color: blue")
+        self.button2.setStyleSheet("background-color: blue")
+        self.button3.setStyleSheet("background-color: blue")
+
+        self.alreadyselect1 = False
+        self.alreadyselect2 = False
+        self.alreadyselect3 = False
+
         self.get_variables(probcount)
         self.set_variables()
 
@@ -99,12 +114,32 @@ class mainwindow (QWidget):
     def click1(self):
         self.button1.setStyleSheet('QPushButton {background-color: red}')
         self.select = 1
+
+        if self.alreadyselect1 == True:
+            self.button1.setStyleSheet('QPushButton {background-color: blue}')
+            self.alreadyselect1 = False
+        else:
+            self.alreadyselect1 = True
+
     def click2(self):
         self.button2.setStyleSheet('QPushButton {background-color: red}')
         self.select = 2
+
+        if self.alreadyselect2 == True:
+            self.button2.setStyleSheet('QPushButton {background-color: blue}')
+            self.alreadyselect2 = False
+        else:
+            self.alreadyselect2 = True
+
     def click3(self):
         self.button3.setStyleSheet('QPushButton {background-color: red}')
         self.select = 3 
+
+        if self.alreadyselect3 == True:
+            self.button3.setStyleSheet('QPushButton {background-color: blue}')
+            self.alreadyselect3 = False
+        else:
+            self.alreadyselect3 = True
 
     #function to handle either correct or incorrect selection, upon submit
     def submit(self):
@@ -118,7 +153,10 @@ class mainwindow (QWidget):
         if self.probcount < self.probtotal:
             self.probloop(self.probcount)
         elif self.probcount == self.probtotal:
-            self.ending()
+            if self.points == self.probtotal:
+                self.happyending()
+            else:
+                self.sadending()
 
     #first info box function
     def info(self):
@@ -196,16 +234,20 @@ class mainwindow (QWidget):
 
         self.button.setText(self.thisSubmit)
 
-    def ending(self):
+    def sadending(self):
         ending = QMessageBox.critical(
             self,
             'Game Over',
-            'Game Over'
+            'So sorry, you have not achieved super bonus.'
         )
-        if self.points == self.probtotal:
-            ending.setText()('congratulations! you have achieved super bonus!')
-        else:
-            ending.setText()('so sorry, you have not achieved super bonus.')
+        QApplication.quit()
+
+    def happyending(self):
+        ending = QMessageBox.question(
+            self,
+            'Game Over',
+            'Congratulations! you have achieved super bonus!',
+        )
         QApplication.quit()
 
 #main function to execute app & play music
