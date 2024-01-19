@@ -1,8 +1,9 @@
-#i'm doing away with button color for now because i realized it is complicated to unclick!
-#i just realized my button color is messed up and doesn't unclick!
-#i'll have to come back to it...
-#because my counts are still messed up
-#i most recently put the bit that calls ending into corrects and incorrects, but that can't be right...
+#my images still aren't working
+#the one that IS working has the same filename as an image used previously
+#that KIND of seems like it's about memory or something, but idk how that would be an issue?
+#i am also totally failing to set the text in the ending message box
+#and i have to fix the button color
+#and go through and debug
 
 
 from PyQt6.QtWidgets import *
@@ -78,20 +79,18 @@ class mainwindow (QWidget):
 
         #set variables for number of problems & point total
         self.probtotal = 3
-        self.probcount = 0
         self.points = 0
+        self.probcount = 0
 
         #show window, and then first info box
         self.show()
         self.info()
 
         #list of problems
-        self.probloop(0)
+        self.probloop(self.probcount)
 
     #probloop sets display for each problem, based on problem data
     def probloop(self, probcount):
-
-        print(f'probcount: {probcount}')
 
         self.get_variables(probcount)
         self.set_variables()
@@ -116,6 +115,11 @@ class mainwindow (QWidget):
 
         self.probcount += 1
 
+        if self.probcount < self.probtotal:
+            self.probloop(self.probcount)
+        elif self.probcount == self.probtotal:
+            self.ending()
+
     #first info box function
     def info(self):
         info = QMessageBox.information(
@@ -123,8 +127,6 @@ class mainwindow (QWidget):
             'Banjo Tyrwo',
             'Answer all questions\nto gain super combo'
         )
-        if info.Close:
-            print('info closed')
 
     #correct/incorrect functions
     def corrects(self):
@@ -133,12 +135,6 @@ class mainwindow (QWidget):
             'Correct',
             'You are correct.'
         )
-
-        if self.probcount <= self.probtotal:
-            self.probloop(self.probcount)
-        elif self.probcount == self.probtotal:
-            self.ending()
-        
         self.points += 1
 
     def incorrects(self):
@@ -147,11 +143,6 @@ class mainwindow (QWidget):
             'Incorrect',
             'You are incorrect.'
         )
-
-        if self.probcount <= self.probtotal:
-            self.probloop(self.probcount)
-        elif self.probcount == self.probtotal:
-            self.ending()
 
     #function to import problem data from file
     def get_variables(self, probcount):
@@ -206,10 +197,16 @@ class mainwindow (QWidget):
         self.button.setText(self.thisSubmit)
 
     def ending(self):
+        ending = QMessageBox.critical(
+            self,
+            'Game Over',
+            'Game Over'
+        )
         if self.points == self.probtotal:
-            print('congratulations! you have achieved super bonus!')
+            ending.setText()('congratulations! you have achieved super bonus!')
         else:
-            print('so sorry, you have not achieved super bonus.')
+            ending.setText()('so sorry, you have not achieved super bonus.')
+        QApplication.quit()
 
 #main function to execute app & play music
 def main():
