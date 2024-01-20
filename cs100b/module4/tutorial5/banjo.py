@@ -1,17 +1,18 @@
-#oh, i needed duplicates for my images
-#yeah, it was a memory problem... a problem with MY memory...
+#i restructured my files so i didn't need duplicate images
+
+#i am still modifying color inefficiently
+#i guess what i should do is go through the buttons at first and add them to a button list
+#but i actually don't have time for that right now!
 
 #i used a workaround for setting the text in the ending message box
 #and i wish i knew how to set text properly, from outside!
 #but that was annoyingly not included in the pyqt6 tutorial!
 
-#now, button color...
-#i actually think qbuttongroup is not exactly what i'm looking for
-#all i want to do is modify the color of multiple buttons at once...
-#so now i am modifying color in a really inefficient way but you know what?
-#i am sooo done working on this thing
-
 #i'm also not sure how to set the logo for a qmessagebox
+#see, whenever i try to modify my qmessageboxes, i get this same error
+#AttributeError: 'StandardButton' object has no attribute 'setText'
+#which kind of leads me to believe i'm doing the whole thing wrong?
+#if it thinks my messagebox is a button???
 
 
 from PyQt6.QtWidgets import *
@@ -88,6 +89,8 @@ class mainwindow (QWidget):
         self.probtotal = 3
         self.points = 0
         self.probcount = 0
+        #initialize correctlist so you only have to grab it once
+        self.correctlist = 0
 
         #show window, and then first info box
         self.show()
@@ -185,7 +188,7 @@ class mainwindow (QWidget):
     #function to import problem data from file
     def get_variables(self, probcount):
 
-        questionlist = open("img/questionlist.txt", "r")
+        questionlist = open("src/questiontxt.txt", "r")
         data = questionlist.read()
         self.questionlist = data.replace('\n', ' ').split(".")
         questionlist.close()
@@ -193,26 +196,24 @@ class mainwindow (QWidget):
 
         self.thisTitle = str(probcount + 1) + '. ' + str(self.thisquestion)
 
-        dir = (f"./img/{probcount + 1}")
-        self.dirlist = os.listdir(path=dir)
-        self.imagelist = []
-        for file in self.dirlist:
-            if file.endswith('.png'):
-                self.imagelist.append(file)
+        self.imgtxt = open(f"src/{probcount+1}/imgtxt{probcount+1}.txt", "r")
+        data = self.imgtxt.read()
+        self.imglist = data.replace('\n', ' ').split("/")
+        print(self.imglist)
+        self.imgtxt.close()
 
-        self.correcttxt = open("img/correctlist.txt", "r")
+        self.correcttxt = open("src/correcttxt.txt", "r")
         data = self.correcttxt.read()
-        self.correctlist = data.replace('\n', ' ').split(".")
+        if self.correctlist == 0:
+            self.correctlist = data.replace('\n', ' ').split(".")
         self.correct = self.correctlist[probcount]
         self.correcttxt.close()
 
-        for file in self.dirlist:
-            if file.endswith('.txt'):
-                self.optionlist = file
-        self.optiontxt = open(f'img/{probcount + 1}/{str(self.optionlist)}', "r")
+        self.optiontxt = open(f"src/{probcount+1}/optiontxt{probcount+1}.txt", "r")
         data = self.optiontxt.read()
-        self.optionchoices = data.replace('\n', ' ').split(".")
+        self.optionlist = data.replace('\n', ' ').split(".")
         self.optiontxt.close()
+        
 
         self.thisSubmit = 'Submit'
     
@@ -221,16 +222,16 @@ class mainwindow (QWidget):
 
         self.title.setText(self.thisTitle)
 
-        self.img1 = QPixmap(self.imagelist[0])
+        self.img1 = QPixmap(f'src/img/{self.imglist[0]}')
         self.label1.setPixmap(self.img1)
-        self.img2 = QPixmap(self.imagelist[1])
+        self.img2 = QPixmap(f'src/img/{self.imglist[1]}')
         self.label2.setPixmap(self.img2)
-        self.img3 = QPixmap(self.imagelist[2])
+        self.img3 = QPixmap(f'src/img/{self.imglist[2]}')
         self.label3.setPixmap(self.img3)
 
-        self.button1.setText(self.optionchoices[0])
-        self.button2.setText(self.optionchoices[1])
-        self.button3.setText(self.optionchoices[2])
+        self.button1.setText(self.optionlist[0])
+        self.button2.setText(self.optionlist[1])
+        self.button3.setText(self.optionlist[2])
 
         self.button.setText(self.thisSubmit)
 
@@ -248,15 +249,16 @@ class mainwindow (QWidget):
             'Game Over',
             'Congratulations! you have achieved super bonus!',
         )
+        #ending.setIconPixmap('src/logo.png')
         QApplication.quit()
 
 #main function to execute app & play music
 def main():
     mixer.init()
-    mixer.music.load("img/banjo.wav")
+    mixer.music.load("src/banjo.wav")
     mixer.music.play()
     app = QApplication([])
-    app.setStyleSheet(Path('img/style.qss').read_text())
+    app.setStyleSheet(Path('src/style.qss').read_text())
     w = mainwindow()
     w.show()
     app.exec()
