@@ -1,19 +1,18 @@
-#i think i just need to reject the tutorial's method of making message boxes by stuffing parentheses
-#it is totally messing with me
-#so a big thing i was missing is message box exec. OH!!!!
+#this is... harder than expected, trying to relocate message box
+#i think i'm just going to relocate the whole mainwindow to the center of the screen
+#look, i found ways to get the coordinates of mainwindow AND the screen
+#but the question is, how do i extract these coordinates so i get usable numbers???
+#ah, the key was parentheses after width
 
-#but now it's having different problems, like the messagebox is in the middle of the screen...
-#and TypeError: 'str' object is not callable? something with the button
+#my new sadending wasn't working for some reason, so i replaced it with my old one
+#it must be something about critical...
+#i should see this as an opportunity to add my own losing graphic
 
-#i threw out the unclick function, because for the button & alreadyselect lists, i needed probcount
-#i should figure out some sneaky way to pass that around
-#now... i was originally going to modify color with my button list
-#oh right, that was ok, because that happened in probloop
+#i want to make unclick clearer by making it unclick when you click a different option...
+#i was going to make list prevselect... but you know what??? for now i'm just going to make everything blue!!!
+#is it me, or are the buttons a little tiny bit harder to click now?
 
-#anyway, the point is, i've still got errors to fix in my message boxes, but let me save first
-
-#i am leaving in my selects & unclick for now, will delete later
-
+#i did also go through and put everything in camelcase
 
 
 from PyQt6.QtWidgets import *
@@ -22,253 +21,270 @@ from pygame import mixer
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
+from PyQt6 import QtCore, QtGui, QtWidgets
 import os
 import random
 
-class mainwindow (QWidget):
+class MainWindow (QWidget):
     #initialize superwindow
     def __init__(self, parent = None):
-        super(mainwindow, self).__init__(parent)
+        super(MainWindow, self).__init__(parent)
 
-        #set geometry and layouts
-        self.setGeometry(100,100,350,300)
+        window = self.frameGeometry()
+        wWidth = window.width()
+        wHeight = window.height()
+        screen = QtGui.QGuiApplication.primaryScreen().availableGeometry()
+        sWidth = screen.width()
+        sHeight = screen.height()
+        self.setGeometry(int((sWidth/2)-(500/2)), int((sHeight/2)-(300/2)), 500, 300)
 
+        #initialize variables
+        self.initVariables()
+        
+        #show window, and then first info box
+        self.show()
+        self.info()
+
+        #start list of problems
+        self.probLoop(self.probCount)
+
+    #function for initializing graphics & variables
+    def initVariables(self):
         #qvbox for button
-        self.mainlayout = QVBoxLayout()
+        self.mainLayout = QVBoxLayout()
         #qhbox for images
-        self.imglayout = QHBoxLayout()
+        self.imgLayout = QHBoxLayout()
         #qhbox for subheadings
-        self.sublayout = QHBoxLayout()
+        self.subLayout = QHBoxLayout()
 
         #setting & adding layouts
-        self.setLayout(self.mainlayout)
-        self.mainlayout.addLayout(self.imglayout)
-        self.mainlayout.addLayout(self.sublayout)
+        self.setLayout(self.mainLayout)
+        self.mainLayout.addLayout(self.imgLayout)
+        self.mainLayout.addLayout(self.subLayout)
 
         #title widget
         self.title = QLabel(objectName='title')
         self.title.setText('We are on the lookout for')
         self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.mainlayout.addWidget(self.title)
+        self.mainLayout.addWidget(self.title)
 
         #3 label widgets showing qpixmap images
         self.label1 = QLabel()
         self.img1 = QPixmap('')
         self.label1.setPixmap(self.img1)
-        self.imglayout.addWidget(self.label1)
+        self.imgLayout.addWidget(self.label1)
 
         self.label2 = QLabel()
         self.img2 = QPixmap('')
         self.label2.setPixmap(self.img2)
-        self.imglayout.addWidget(self.label2)
+        self.imgLayout.addWidget(self.label2)
 
         self.label3 = QLabel()
         self.img3 = QPixmap('')
         self.label3.setPixmap(self.img3)
-        self.imglayout.addWidget(self.label3)
+        self.imgLayout.addWidget(self.label3)
 
         #3 button widgets for answer options
         self.button1 = QPushButton('')
         self.button1.clicked.connect(self.click1)
-        self.sublayout.addWidget(self.button1)
+        
+        self.subLayout.addWidget(self.button1)
 
         self.button2 = QPushButton('')
         self.button2.clicked.connect(self.click2)
-        self.sublayout.addWidget(self.button2)
+        self.subLayout.addWidget(self.button2)
 
         self.button3 = QPushButton('')
         self.button3.clicked.connect(self.click3)
-        self.sublayout.addWidget(self.button3)
+        self.subLayout.addWidget(self.button3)
 
         #list of option buttons
-        self.buttonlist = [self.button1, self.button2, self.button3]
+        self.buttonList = [self.button1, self.button2, self.button3]
 
         #button widget for submit button
         self.button = QPushButton('')
         self.button.setIcon(QIcon(''))
         self.button.clicked.connect(self.submit)
-        self.mainlayout.addWidget(self.button)
+        self.mainLayout.addWidget(self.button)
 
         #variables for unclicking buttons
-        self.alreadyselect1 = False
-        self.alreadyselect2 = False
-        self.alreadyselect3 = False
-
-        #list of unclick variables
-        self.selects = [self.alreadyselect1, self.alreadyselect2, self.alreadyselect3]
+        self.alreadySelect1 = False
+        self.alreadySelect2 = False
+        self.alreadySelect3 = False
 
         #set variables for number of problems & point total
-        self.probtotal = 3
+        self.probTotal = 3
         self.points = 0
-        self.probcount = 0
+        self.probCount = 0
         #initialize correctlist so you only have to grab it once
-        self.correctlist = 0
+        self.correctList = 0
 
-        #show window, and then first info box
-        self.show()
-        self.info()
 
-        #list of problems
-        self.probloop(self.probcount)
 
     #probloop sets display for each problem, based on problem data
-    def probloop(self, probcount):
+    def probLoop(self, probCount):
+
+        self.prevSelect = []
         
-        for o in self.optionbuttons:
+        for o in self.buttonList:
             o.setStyleSheet("background-color: blue")
 
-
-
-        self.get_variables(probcount)
-        self.set_variables()
+        self.getVariables(probCount)
+        self.setVariables()
 
     #functions to show button which button is selected, and communicate selection data
     def click1(self):
         self.button1.setStyleSheet('QPushButton {background-color: red}')
         self.select = 1
 
-        if self.alreadyselect1 == True:
+        if self.alreadySelect1 == True:
             self.button1.setStyleSheet('QPushButton {background-color: blue}')
-            self.alreadyselect1 = False
+            self.alreadySelect1 = False
         else:
-            self.alreadyselect1 = True
+            self.alreadySelect1 = True
+
+        self.button2.setStyleSheet('QPushButton {background-color: blue}')
+        self.button3.setStyleSheet('QPushButton {background-color: blue}')
 
     def click2(self):
         self.button2.setStyleSheet('QPushButton {background-color: red}')
         self.select = 2
 
-        if self.alreadyselect2 == True:
+        if self.alreadySelect2 == True:
             self.button2.setStyleSheet('QPushButton {background-color: blue}')
-            self.alreadyselect2 = False
+            self.alreadySelect2 = False
         else:
-            self.alreadyselect2 = True
+            self.alreadySelect2 = True
+
+        self.button1.setStyleSheet('QPushButton {background-color: blue}')
+        self.button3.setStyleSheet('QPushButton {background-color: blue}')
 
     def click3(self):
         self.button3.setStyleSheet('QPushButton {background-color: red}')
         self.select = 3 
 
-        if self.alreadyselect3 == True:
+        if self.alreadySelect3 == True:
             self.button3.setStyleSheet('QPushButton {background-color: blue}')
-            self.alreadyselect3 = False
+            self.alreadySelect3 = False
         else:
-            self.alreadyselect3 = True
+            self.alreadySelect3 = True
+
+        self.button1.setStyleSheet('QPushButton {background-color: blue}')
+        self.button2.setStyleSheet('QPushButton {background-color: blue}')
 
     #function to handle either correct or incorrect selection, upon submit
     def submit(self):
         if int(self.select) == int(self.correct):
-            self.correct()
+            self.corrects()
         elif self.select != self.correct:
-            self.incorrect()
+            self.incorrects()
 
-        self.probcount += 1
+        self.probCount += 1
 
-        if self.probcount < self.probtotal:
-            self.probloop(self.probcount)
-        elif self.probcount == self.probtotal:
-            if self.points == self.probtotal:
-                self.happyending()
+        if self.probCount < self.probTotal:
+            self.probLoop(self.probCount)
+        elif self.probCount == self.probTotal:
+            if self.points == self.probTotal:
+                self.happyEnding()
             else:
-                self.sadending()
-
-    #first info box function
-    def info(self):
-        infobox = QMessageBox()
-        infobox.setWindowTitle('Banjo Tyrwo')
-        infobox.setText('Answer all questions\nto gain super combo')
-        infobox.setStandardButtons(QMessageBox.StandardButton.Ok)
-        inf = infobox.exec()
-
-    #correct/incorrect functions
-    def correct(self):
-        correctbox = QMessageBox()
-        correctbox.setWindowTitle('Correct')
-        correctbox.setText('You are correct.')
-        correctbox.setStandardButtons(QMessageBox.StandardButton.Ok)
-        cor = correctbox.exec()
-
-        self.points += 1
-
-    def incorrect(self):
-        incorrectbox = QMessageBox()
-        incorrectbox.setWindowTitle('Incorrect')
-        incorrectbox.setText('You are incorrect.')
-        incorrectbox.setStandardButtons(QMessageBox.StandardButton.Ok)
-        inc = incorrectbox.exec()
+                self.sadEnding()
 
     #function to import problem data from file
-    def get_variables(self, probcount):
+    def getVariables(self, probCount):
 
-        questionlist = open("src/questiontxt.txt", "r")
-        data = questionlist.read()
-        self.questionlist = data.replace('\n', ' ').split(".")
-        questionlist.close()
-        self.thisquestion = self.questionlist[probcount]
+        questionList = open("src/questiontxt.txt", "r")
+        data = questionList.read()
+        self.questionList = data.replace('\n', ' ').split(".")
+        questionList.close()
+        self.thisQuestion = self.questionList[probCount]
 
-        self.thisTitle = str(probcount + 1) + '. ' + str(self.thisquestion)
+        self.thisTitle = str(probCount + 1) + '. ' + str(self.thisQuestion)
 
-        self.imgtxt = open(f"src/{probcount+1}/imgtxt{probcount+1}.txt", "r")
-        data = self.imgtxt.read()
-        self.imglist = data.replace('\n', ' ').split("/")
-        print(self.imglist)
-        self.imgtxt.close()
+        self.imgTxt = open(f"src/{probCount+1}/imgtxt{probCount+1}.txt", "r")
+        data = self.imgTxt.read()
+        self.imgList = data.replace('\n', ' ').split("/")
+        self.imgTxt.close()
 
-        self.correcttxt = open("src/correcttxt.txt", "r")
-        data = self.correcttxt.read()
-        if self.correctlist == 0:
-            self.correctlist = data.replace('\n', ' ').split(".")
-        self.correct = self.correctlist[probcount]
-        self.correcttxt.close()
+        self.correctTxt = open("src/correcttxt.txt", "r")
+        data = self.correctTxt.read()
+        if self.correctList == 0:
+            self.correctList = data.replace('\n', ' ').split(".")
+        self.correct = self.correctList[probCount]
+        self.correctTxt.close()
 
-        self.optiontxt = open(f"src/{probcount+1}/optiontxt{probcount+1}.txt", "r")
-        data = self.optiontxt.read()
-        self.optionlist = data.replace('\n', ' ').split(".")
-        self.optiontxt.close()
+        self.optionTxt = open(f"src/{probCount+1}/optiontxt{probCount+1}.txt", "r")
+        data = self.optionTxt.read()
+        self.optionList = data.replace('\n', ' ').split(".")
+        self.optionTxt.close()
         
 
         self.thisSubmit = 'Submit'
     
     #function to set problem data to display widgets
-    def set_variables(self):
+    def setVariables(self):
 
         self.title.setText(self.thisTitle)
 
-        self.img1 = QPixmap(f'src/img/{self.imglist[0]}')
+        self.img1 = QPixmap(f'src/img/{self.imgList[0]}')
         self.label1.setPixmap(self.img1)
-        self.img2 = QPixmap(f'src/img/{self.imglist[1]}')
+        self.img2 = QPixmap(f'src/img/{self.imgList[1]}')
         self.label2.setPixmap(self.img2)
-        self.img3 = QPixmap(f'src/img/{self.imglist[2]}')
+        self.img3 = QPixmap(f'src/img/{self.imgList[2]}')
         self.label3.setPixmap(self.img3)
 
-        self.button1.setText(self.optionlist[0])
-        self.button2.setText(self.optionlist[1])
-        self.button3.setText(self.optionlist[2])
+        self.button1.setText(self.optionList[0])
+        self.button2.setText(self.optionList[1])
+        self.button3.setText(self.optionList[2])
 
         self.button.setText(self.thisSubmit)
 
-    def sadending(self):
-        sadending = QMessageBox.critical()
-        sadending.setWindowTitle('Game Over')
-        sadending.setText('So sorry, you have not achieved super bonus.')
-        sadending.setStandardButtons(QMessageBox.StandardButtons.Ok)
-        sad = sadending.exec()
+    #first info box function
+    def info(self):
+        infoBox = QMessageBox()
+        infoBox.setWindowTitle('Banjo Tyrwo')
+        infoBox.setText('Answer all questions\nto gain super combo')
+        infoBox.setStandardButtons(QMessageBox.StandardButton.Ok)
+        inf = infoBox.exec()
+
+    #correct/incorrect functions
+    def corrects(self):
+        correctBox = QMessageBox()
+        correctBox.setWindowTitle('Correct')
+        correctBox.setText("You are correct.")
+        correctBox.setStandardButtons(QMessageBox.StandardButton.Ok)
+        cor = correctBox.exec()
+
+        self.points += 1
+
+    def incorrects(self):
+        incorrectBox = QMessageBox()
+        incorrectBox.setWindowTitle('Incorrect')
+        incorrectBox.setText('You are incorrect.')
+        incorrectBox.setStandardButtons(QMessageBox.StandardButton.Ok)
+        inc = incorrectBox.exec()
+
+    #happy/sad endings
+    def sadEnding(self):
+        sadEnding = QMessageBox()
+        sadEnding.setWindowTitle('Game Over')
+        sadEnding.setText('So sorry, you have not achieved super bonus.')
+        sadEnding.setStandardButtons(QMessageBox.StandardButton.Ok)
+        icon = QPixmap('src/img/sadlogo.png')
+        sadEnding.setIconPixmap(icon)
+        sad = sadEnding.exec()
 
         QApplication.quit()
 
-    def happyending(self):
-        happyending = QMessageBox()
-        happyending.setWindowTitle('Game Over')
-        happyending.setText('Congratulations! you have achieved super bonus!')
-        happyending.setStandardButtons(QMessageBox.StandardButtons.Ok)
-        happyending.setIconPixmap('src/logo.png')
-        hap = happyending.exec()
-        QApplication.quit()
+    def happyEnding(self):
+        happyEnding = QMessageBox()
+        happyEnding.setWindowTitle('Game Over')
+        happyEnding.setText('Congratulations! you have achieved super bonus!')
+        happyEnding.setStandardButtons(QMessageBox.StandardButton.Ok)
+        icon = QPixmap('src/img/happylogo.png')
+        happyEnding.setIconPixmap(icon)
+        hap = happyEnding.exec()
 
-    def unclick(self, probcount):
-        if self.selects[probcount] == True:
-            self.buttonlist[probcount].setStyleSheet('QPushButton {background-color: blue}')
-            self.selects[probcount] = False
-        else:
-            self.selects[probcount] = True
+        QApplication.quit()
 
 #main function to execute app & play music
 def main():
@@ -277,7 +293,7 @@ def main():
     mixer.music.play()
     app = QApplication([])
     app.setStyleSheet(Path('src/style.qss').read_text())
-    w = mainwindow()
+    w = MainWindow()
     w.show()
     app.exec()
 
