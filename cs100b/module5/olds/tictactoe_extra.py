@@ -7,7 +7,7 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 
-from tictactoe_game import Game
+from cs100b.module5.tictactoe_game import Game
 
 class mainwindow(QWidget):
     def __init__(self, parent = None):
