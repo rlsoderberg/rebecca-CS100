@@ -1,30 +1,19 @@
-#this is... harder than expected, trying to relocate message box
-#i think i'm just going to relocate the whole mainwindow to the center of the screen
-#look, i found ways to get the coordinates of mainwindow AND the screen
-#but the question is, how do i extract these coordinates so i get usable numbers???
-#ah, the key was parentheses after width
+#remember to use parentheses after width
 
-#my new sadending wasn't working for some reason, so i replaced it with my old one
-#it must be something about critical...
-#i should see this as an opportunity to add my own losing graphic
+#something weird about making a custom version of a critical messagebox? used custom graphic instead
 
-#i want to make unclick clearer by making it unclick when you click a different option...
-#i was going to make list prevselect... but you know what??? for now i'm just going to make everything blue!!!
-#is it me, or are the buttons a little tiny bit harder to click now?
-
-#i did also go through and put everything in camelcase
-
-#oh, right, we're separating these into multiple files!
-#you know, i could totally start doing that here...
-#i moved my click handling to game
-#and then... probloop had a hard time starting... it didn't seem to be getting probcount...
-#i tried creating an instance of probloop...
-#oh wait, you have to make a CLASS and create an instance of THAT
+#moved click handling to game, including probloop, and message boxes to message, including submit
 
 #so here's the problem...
 #at first, i tried putting the button connects in game, because they connect to stuff in game
 #but then i put them back in ui, because i created the buttons in ui
 #so what do i do with them???
+
+#i mean... i guess i could try passing the buttons into game as variables???
+#i tried including the buttons as arguments in Game()
+#i tried importing them into game and then unselfing all the buttons there
+#i tried creating buttons in game, but then i couldn't add them to the layout
+#so BASICALLY... i'm going to commit this, then undo all changes to this file, because ???
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *
@@ -95,15 +84,15 @@ class MainWindow (QWidget):
 
         #3 button widgets for answer options
         self.button1 = QPushButton('')
-        self.button1.clicked.connect(self.click1)
+        #self.button1.clicked.connect(self.click1)
         self.subLayout.addWidget(self.button1)
 
         self.button2 = QPushButton('')
-        self.button2.clicked.connect(self.click2)
+        #self.button2.clicked.connect(self.click2)
         self.subLayout.addWidget(self.button2)
 
         self.button3 = QPushButton('')
-        self.button3.clicked.connect(self.click3)
+        #self.button3.clicked.connect(self.click3)
         self.subLayout.addWidget(self.button3)
 
 
@@ -113,7 +102,7 @@ class MainWindow (QWidget):
         #button widget for submit button
         self.button = QPushButton('')
         self.button.setIcon(QIcon(''))
-        self.button.clicked.connect(self.submit)
+        #self.button.clicked.connect(self.submit)
         self.mainLayout.addWidget(self.button)
 
         #variables for unclicking buttons

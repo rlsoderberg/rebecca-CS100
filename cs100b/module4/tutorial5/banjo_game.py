@@ -5,7 +5,7 @@ from PyQt6.QtCore import *
 
 from banjo_messages import Messages
 
-class Game():
+class Game(self.button1, self,button2, self.button3, self.button):
     def __init__(self):
         self.messages = Messages()
 
