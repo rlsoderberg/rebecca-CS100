@@ -1,18 +1,13 @@
-#this is... harder than expected, trying to relocate message box
-#i think i'm just going to relocate the whole mainwindow to the center of the screen
-#look, i found ways to get the coordinates of mainwindow AND the screen
-#but the question is, how do i extract these coordinates so i get usable numbers???
-#ah, the key was parentheses after width
-
-#my new sadending wasn't working for some reason, so i replaced it with my old one
-#it must be something about critical...
-#i should see this as an opportunity to add my own losing graphic
-
-#i want to make unclick clearer by making it unclick when you click a different option...
-#i was going to make list prevselect... but you know what??? for now i'm just going to make everything blue!!!
-#is it me, or are the buttons a little tiny bit harder to click now?
-
-#i did also go through and put everything in camelcase
+#ok, so i'm thinking, i ought to be able to get some help with buttons from tic tac toe!!!
+#and i think i need to understand this event thing i was wondering about
+#so the first place i see it is in the argument of paintEvent
+#so it's getting passed INTO paintEvent... from somewhere...
+#paintEvent uses rect size from event
+#while mousePressEvent uses position
+#what, event isn't created anywhere!!! do i just... EXPECT it to exist? 
+#also, i see that in my old tictactoe ui, i never actually included w.clickEvent() in main
+#so i don't think i ever COMPLETELY got this?
+#well... i don't know how much i'm going to get done this week, but i'll ponder my ignorance
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *
