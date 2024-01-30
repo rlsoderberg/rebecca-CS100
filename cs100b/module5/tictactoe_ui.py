@@ -1,14 +1,4 @@
-#now... i'm having trouble with getting colsize. i see i did it a little differently before:
-#basically, i went size = QRect(0, 0, 500, 500)
-#and i just don't really understand the deal with size & rect anyway
-#ok, i tried the example program, and it DOES work. what am i doing???
-#I HAD TO PUT PARENTHESES AFTER SIZE
-#now, i'm still waiting to see exactly what event is
 
-#so... what about resize? why are we using resize instead of setgeometry
-#well, i guess setgeometry messes up the resizable window effect
-
-#i should totally make minesweeper & tetris next
 
 import sys
 import math

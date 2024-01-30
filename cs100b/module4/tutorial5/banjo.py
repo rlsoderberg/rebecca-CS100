@@ -1,13 +1,4 @@
-#ok, so i'm thinking, i ought to be able to get some help with buttons from tic tac toe!!!
-#and i think i need to understand this event thing i was wondering about
-#so the first place i see it is in the argument of paintEvent
-#so it's getting passed INTO paintEvent... from somewhere...
-#paintEvent uses rect size from event
-#while mousePressEvent uses position
-#what, event isn't created anywhere!!! do i just... EXPECT it to exist? 
-#also, i see that in my old tictactoe ui, i never actually included w.clickEvent() in main
-#so i don't think i ever COMPLETELY got this?
-#well... i don't know how much i'm going to get done this week, but i'll ponder my ignorance
+
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *
