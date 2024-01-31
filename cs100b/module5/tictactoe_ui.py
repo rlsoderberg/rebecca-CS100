@@ -1,14 +1,12 @@
-#well, ok, i tried to isolate the click interaction
-#you know what i got stuck on? self.setlayout!!! come on!!!
-
-#so... it's about how you label the function? like mousePressEvent? that is sooo weird
-
-#i was thinking about mousepressevent for right click... and that reminded me of the runescape examine feature
-#well, we've got to do something. runescape tictactoe?
-#i can totally cop some early 2005 graphics
-#but i don't have very much time tonight!!!
-#well, first... let me get my tictactoe file working... 
-#that means it's time for my comments to hop over!
+#oh that's right, i still need to listen to graceland tonight, time for coding
+#it might take me a while just to figure out how to do an image border
+#well, eventually i want to attach the right border to the right side of the screen so it's resizable
+#but i'll skip that for starters
+#i stole that alignmentflag thing from the tutorial, and i have no idea if it will work
+#it's not working!!! at all!!!
+#ohhh, i think i'm forgetting to add them to the layout...
+#well gee!!! how do you put them next to each other?
+#i'll also have to figure out how to tile them vertically
 
 import sys
 import math
@@ -16,8 +14,8 @@ import random
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
-
-from tictactoe_game import Game
+from PyQt6 import QtCore, QtGui, QtWidgets
+from pathlib import Path
 
 class MainWindow(QWidget):
 
@@ -29,9 +27,24 @@ class MainWindow(QWidget):
         self.resize(500,500)
         self.setWindowTitle("Tic-Tac-Toe")
 
+        lBorder = QLabel('Left Border', alignment=Qt.AlignmentFlag.AlignLeft)
+        border = QPixmap('border.png')
+        lBorder.setPixmap(border)
+
+        rBorder = QLabel('Right Border', alignment=Qt.AlignmentFlag.AlignRight)
+        rBorder.setPixmap(border)
+
+        layout = QVBoxLayout()
+        layout.addWidget(lBorder)
+        layout.addWidget(rBorder)
+        self.setLayout(layout)
+
+
+
+
         #commented out for now since we haven't made it yet
         #self.game = Game()
-
+"""
     #respond to paint event
     def paintEvent(self, event):
         qp = QPainter(self)
@@ -50,10 +63,12 @@ class MainWindow(QWidget):
         #draw horizontal lines
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
+    """
 
 def main():
     app = QApplication([])
     w = MainWindow()
+    w.setStyleSheet(Path('style.qss').read_text())
     w.show()
     sys.exit(app.exec())
 
