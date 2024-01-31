@@ -1,4 +1,14 @@
+#well, ok, i tried to isolate the click interaction
+#you know what i got stuck on? self.setlayout!!! come on!!!
 
+#so... it's about how you label the function? like mousePressEvent? that is sooo weird
+
+#i was thinking about mousepressevent for right click... and that reminded me of the runescape examine feature
+#well, we've got to do something. runescape tictactoe?
+#i can totally cop some early 2005 graphics
+#but i don't have very much time tonight!!!
+#well, first... let me get my tictactoe file working... 
+#that means it's time for my comments to hop over!
 
 import sys
 import math
@@ -6,6 +16,8 @@ import random
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
+
+from tictactoe_game import Game
 
 class MainWindow(QWidget):
 

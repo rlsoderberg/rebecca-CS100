@@ -1,8 +1,3 @@
-#see, i felt kind of lame for going back and copying the examples
-#but look, i'm having trouble with the arguments for paint event again!!! what even is that????
-#ohhhh, it was that weird auto-generating mousepressevent!!! what even was that???
-#but it's true i've been pretty hands off tictactoe_game...
-
 import sys
 import math
 import random
