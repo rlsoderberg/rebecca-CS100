@@ -1,12 +1,7 @@
-#oh that's right, i still need to listen to graceland tonight, time for coding
-#it might take me a while just to figure out how to do an image border
-#well, eventually i want to attach the right border to the right side of the screen so it's resizable
-#but i'll skip that for starters
-#i stole that alignmentflag thing from the tutorial, and i have no idea if it will work
-#it's not working!!! at all!!!
-#ohhh, i think i'm forgetting to add them to the layout...
-#well gee!!! how do you put them next to each other?
-#i'll also have to figure out how to tile them vertically
+#so i want to make a beige box in the middle of the scroll
+#i'm thinking, maybe i can make a qframe, and then give it a black border?
+#i'm not sure how to do qframes tho!!!
+#now i'm trying to addwidgets to my qframe, and it doesn't like it
 
 import sys
 import math
@@ -24,7 +19,7 @@ class MainWindow(QWidget):
         super(MainWindow, self).__init__(parent)
 
         #set geometry...
-        self.resize(500,500)
+        self.setGeometry(100, 100, 100, 100)
         self.setWindowTitle("Tic-Tac-Toe")
 
         lBorder = QLabel('Left Border', alignment=Qt.AlignmentFlag.AlignLeft)
@@ -34,8 +29,28 @@ class MainWindow(QWidget):
         rBorder = QLabel('Right Border', alignment=Qt.AlignmentFlag.AlignRight)
         rBorder.setPixmap(border)
 
-        layout = QVBoxLayout()
+
+        scrollt = QLabel('Scroll Top', alignment=Qt.AlignmentFlag.AlignTop)
+        scrolltop = QPixmap('scrollt.png')
+        scrollt.setPixmap(scrolltop)
+
+        scrollb = QLabel('Scroll Bottom', alignment=Qt.AlignmentFlag.AlignBottom)
+        scrollbottom = QPixmap('scrollb.png')
+        scrollb.setPixmap(scrollbottom)
+        
+
+        layout = QHBoxLayout()
         layout.addWidget(lBorder)
+
+        
+        scrolllayout = QFrame()
+        scrolllayout.setFrameShape(QFrame.Shape.StyledPanel)
+        scrolllayout.addWidget(scrollt)
+        scrolllayout.addWidget(scrollb)
+
+        layout.addLayout(scrolllayout)
+        
+
         layout.addWidget(rBorder)
         self.setLayout(layout)
 
@@ -44,7 +59,7 @@ class MainWindow(QWidget):
 
         #commented out for now since we haven't made it yet
         #self.game = Game()
-"""
+
     #respond to paint event
     def paintEvent(self, event):
         qp = QPainter(self)
@@ -63,7 +78,7 @@ class MainWindow(QWidget):
         #draw horizontal lines
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
-    """
+    
 
 def main():
     app = QApplication([])
