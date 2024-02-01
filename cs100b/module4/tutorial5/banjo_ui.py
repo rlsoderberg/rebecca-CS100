@@ -1,19 +1,5 @@
-#remember to use parentheses after width
-
-#something weird about making a custom version of a critical messagebox? used custom graphic instead
-
-#moved click handling to game, including probloop, and message boxes to message, including submit
-
-#so here's the problem...
-#at first, i tried putting the button connects in game, because they connect to stuff in game
-#but then i put them back in ui, because i created the buttons in ui
-#so what do i do with them???
-
-#i mean... i guess i could try passing the buttons into game as variables???
-#i tried including the buttons as arguments in Game()
-#i tried importing them into game and then unselfing all the buttons there
-#i tried creating buttons in game, but then i couldn't add them to the layout
-#so BASICALLY... i'm going to commit this, then undo all changes to this file, because ???
+#aha!!! you have to use classes!!!
+#well, this will be a whole thing to work on... i'll do it tomorrow...
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *

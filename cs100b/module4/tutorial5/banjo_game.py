@@ -5,7 +5,7 @@ from PyQt6.QtCore import *
 
 from banjo_messages import Messages
 
-class Game(self.button1, self,button2, self.button3, self.button):
+class Game:
     def __init__(self):
         self.messages = Messages()
 
@@ -80,8 +80,7 @@ class Game(self.button1, self,button2, self.button3, self.button):
 
         self.correctTxt = open("src/correcttxt.txt", "r")
         data = self.correctTxt.read()
-        if self.correctList == 0:
-            self.correctList = data.replace('\n', ' ').split(".")
+        self.correctList = data.replace('\n', ' ').split(".")
         self.correct = self.correctList[probCount]
         self.correctTxt.close()
 
@@ -95,8 +94,6 @@ class Game(self.button1, self,button2, self.button3, self.button):
 
     #function to set problem data to display widgets
     def setVariables(self):
-
-        self.title.setText(self.thisTitle)
 
         self.img1 = QPixmap(f'src/img/{self.imgList[0]}')
         self.label1.setPixmap(self.img1)
