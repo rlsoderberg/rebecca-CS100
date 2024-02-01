@@ -3,6 +3,13 @@
 #i'm not sure how to do qframes tho!!!
 #now i'm trying to addwidgets to my qframe, and it doesn't like it
 
+#i mean... i could hand paint a background, but that seems like cheating!!!
+#and the reason i didn't just use an image of an entire scroll, was i didn't know how to paintevent atop image
+#well... i tried setting qpainter to be on the scroll pixmap... and it looks like it's behind everything else
+#uh... what if i just put some spacers in the middle? instead of a qvbox?
+
+#ok, now i have to get the game working, and make some message boxes
+
 import sys
 import math
 import random
@@ -43,16 +50,13 @@ class MainWindow(QWidget):
         layout.addWidget(lBorder)
 
         
-        scrolllayout = QFrame()
-        scrolllayout.setFrameShape(QFrame.Shape.StyledPanel)
-        scrolllayout.addWidget(scrollt)
-        scrolllayout.addWidget(scrollb)
-
-        layout.addLayout(scrolllayout)
+        
+        layout.addSpacing(500)
         
 
         layout.addWidget(rBorder)
         self.setLayout(layout)
+
 
 
 
@@ -65,6 +69,8 @@ class MainWindow(QWidget):
         qp = QPainter(self)
         #set pen color
         qp.setPen(QColor(0,0,0))
+        pixmap = QPixmap("scroll3.png")
+        qp.drawPixmap(self.rect(), pixmap)
         #what is event? where is rect coming from?
         size = event.rect().size()
 
@@ -78,6 +84,7 @@ class MainWindow(QWidget):
         #draw horizontal lines
         qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
         qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
+
     
 
 def main():
