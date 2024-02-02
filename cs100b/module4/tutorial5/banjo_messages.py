@@ -5,6 +5,8 @@ from PyQt6.QtCore import *
 
 class Messages():
     def __init__(self):
+        super().__init__()
+
         #show first info box
         self.info()
 

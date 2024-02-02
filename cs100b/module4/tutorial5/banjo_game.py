@@ -1,3 +1,7 @@
+#well, i'm remaking the images every round, because it can't seem to find label1
+#AND the buttons. like, what's the deal? how do i modify existing buttons?
+#well, now the buttons are empty! what else am i supposed to do???
+
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
@@ -7,20 +11,71 @@ from banjo_messages import Messages
 
 class Game:
     def __init__(self):
-        self.messages = Messages()
+        super().__init__()
 
-        #initialize probcount up here... since it's still having trouble getting passed in...
         self.probCount = 0
 
-        self.probLoop(self.probCount)
-
-
-    #probloop sets display for each problem, based on problem data
-    def probLoop(self, probCount):
+        self.messages = Messages()
 
         #get & set variables
-        self.getVariables(probCount)
+        self.getVariables()
         self.setVariables()
+
+    #function to import problem data from file
+    def getVariables(self):
+
+        questionList = open("src/questiontxt.txt", "r")
+        data = questionList.read()
+        self.questionList = data.replace('\n', ' ').split(".")
+        questionList.close()
+        self.thisQuestion = self.questionList[self.probCount]
+
+        self.thisTitle = str(self.probCount + 1) + '. ' + str(self.thisQuestion)
+
+        self.imgTxt = open(f"src/{self.probCount+1}/imgtxt{self.probCount+1}.txt", "r")
+        data = self.imgTxt.read()
+        self.imgList = data.replace('\n', ' ').split("/")
+        self.imgTxt.close()
+
+        self.correctTxt = open("src/correcttxt.txt", "r")
+        data = self.correctTxt.read()
+        self.correctList = data.replace('\n', ' ').split(".")
+        self.correct = self.correctList[self.probCount]
+        self.correctTxt.close()
+
+        self.optionTxt = open(f"src/{self.probCount+1}/optiontxt{self.probCount+1}.txt", "r")
+        data = self.optionTxt.read()
+        self.optionList = data.replace('\n', ' ').split(".")
+        self.optionTxt.close()
+        
+
+        self.thisSubmit = 'Submit'
+
+    #function to set problem data to display widgets
+    def setVariables(self):
+        self.label1 = QLabel()
+        self.img1 = QPixmap(f'src/img/{self.imgList[0]}')
+        self.label1.setPixmap(self.img1)
+
+        self.label2 = QLabel()
+        self.img2 = QPixmap(f'src/img/{self.imgList[1]}')
+        self.label2.setPixmap(self.img2)
+
+        self.label3 = QLabel()
+        self.img3 = QPixmap(f'src/img/{self.imgList[2]}')
+        self.label3.setPixmap(self.img3)
+
+        self.button1 = QPushButton()
+        self.button1.setText(self.optionList[0])
+
+        self.button2 = QPushButton()
+        self.button2.setText(self.optionList[1])
+
+        self.button3 = QPushButton()
+        self.button3.setText(self.optionList[2])
+
+        self.button = QPushButton()
+        self.button.setText(self.thisSubmit)
 
     #functions to show button which button is selected, and communicate selection data
     def click1(self):
@@ -61,50 +116,3 @@ class Game:
 
         self.button1.setStyleSheet('QPushButton {background-color: blue}')
         self.button2.setStyleSheet('QPushButton {background-color: blue}')
-
-    #function to import problem data from file
-    def getVariables(self, probCount):
-
-        questionList = open("src/questiontxt.txt", "r")
-        data = questionList.read()
-        self.questionList = data.replace('\n', ' ').split(".")
-        questionList.close()
-        self.thisQuestion = self.questionList[probCount]
-
-        self.thisTitle = str(probCount + 1) + '. ' + str(self.thisQuestion)
-
-        self.imgTxt = open(f"src/{probCount+1}/imgtxt{probCount+1}.txt", "r")
-        data = self.imgTxt.read()
-        self.imgList = data.replace('\n', ' ').split("/")
-        self.imgTxt.close()
-
-        self.correctTxt = open("src/correcttxt.txt", "r")
-        data = self.correctTxt.read()
-        self.correctList = data.replace('\n', ' ').split(".")
-        self.correct = self.correctList[probCount]
-        self.correctTxt.close()
-
-        self.optionTxt = open(f"src/{probCount+1}/optiontxt{probCount+1}.txt", "r")
-        data = self.optionTxt.read()
-        self.optionList = data.replace('\n', ' ').split(".")
-        self.optionTxt.close()
-        
-
-        self.thisSubmit = 'Submit'
-
-    #function to set problem data to display widgets
-    def setVariables(self):
-
-        self.img1 = QPixmap(f'src/img/{self.imgList[0]}')
-        self.label1.setPixmap(self.img1)
-        self.img2 = QPixmap(f'src/img/{self.imgList[1]}')
-        self.label2.setPixmap(self.img2)
-        self.img3 = QPixmap(f'src/img/{self.imgList[2]}')
-        self.label3.setPixmap(self.img3)
-
-        self.button1.setText(self.optionList[0])
-        self.button2.setText(self.optionList[1])
-        self.button3.setText(self.optionList[2])
-
-        self.button.setText(self.thisSubmit)
-
