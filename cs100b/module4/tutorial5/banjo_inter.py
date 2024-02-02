@@ -1,14 +1,58 @@
+#oh, but now, how do i deal with changing button style upon interaction?
+#is that beyond the scope of pyqt, dynamic state changes? it couldn't be!!!
+#apparently there's a property system... maybe i'll try that sometime...
+
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
 from PyQt6.QtCore import *
 
-class Messages():
+class Inter():
     def __init__(self):
         super().__init__()
 
         #show first info box
         self.info()
+
+    #functions to show button which button is selected, and communicate selection data
+    def click1(self):
+        self.button1.setStyleSheet('QPushButton {background-color: red}')
+        self.select = 1
+
+        if self.alreadySelect1 == True:
+            self.button1.setStyleSheet('QPushButton {background-color: blue}')
+            self.alreadySelect1 = False
+        else:
+            self.alreadySelect1 = True
+
+        self.button2.setStyleSheet('QPushButton {background-color: blue}')
+        self.button3.setStyleSheet('QPushButton {background-color: blue}')
+
+    def click2(self):
+        self.button2.setStyleSheet('QPushButton {background-color: red}')
+        self.select = 2
+
+        if self.alreadySelect2 == True:
+            self.button2.setStyleSheet('QPushButton {background-color: blue}')
+            self.alreadySelect2 = False
+        else:
+            self.alreadySelect2 = True
+
+        self.button1.setStyleSheet('QPushButton {background-color: blue}')
+        self.button3.setStyleSheet('QPushButton {background-color: blue}')
+
+    def click3(self):
+        self.button3.setStyleSheet('QPushButton {background-color: red}')
+        self.select = 3 
+
+        if self.alreadySelect3 == True:
+            self.button3.setStyleSheet('QPushButton {background-color: blue}')
+            self.alreadySelect3 = False
+        else:
+            self.alreadySelect3 = True
+
+        self.button1.setStyleSheet('QPushButton {background-color: blue}')
+        self.button2.setStyleSheet('QPushButton {background-color: blue}')
 
     #function to handle either correct or incorrect selection, upon submit
     def submit(self):

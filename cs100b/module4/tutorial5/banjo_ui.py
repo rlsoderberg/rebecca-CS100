@@ -10,7 +10,7 @@ from pygame import mixer
 import os
 import random
 
-from banjo_game import Game
+from banjo_inter import Inter
 
 class MainWindow (QWidget):
     #initialize superwindow
@@ -24,61 +24,96 @@ class MainWindow (QWidget):
         #qhbox for subheadings
         self.subLayout = QHBoxLayout()
 
-        #setting & adding layouts
-        self.setLayout(self.mainLayout)
-        self.mainLayout.addLayout(self.imgLayout)
-        self.mainLayout.addLayout(self.subLayout)
-
         #set geometry
         screen = QtGui.QGuiApplication.primaryScreen().availableGeometry()
         sWidth = screen.width()
         sHeight = screen.height()
         self.setGeometry(int((sWidth/2)-(500/2)), int((sHeight/2)-(300/2)), 500, 300)
         
-        #initialize variables
-        self.initVariables()
 
         #show window
         self.show()
 
-        #create instance of game
-        self.game = Game()
+        self.inter = Inter()
 
-        #function for initializing graphics
-    def initVariables(self):
+        self.probCount = 0
+
+        #get & set variables
+        self.getVariables()
+        self.initLayout()
+
+    #function to import problem data from file
+    def getVariables(self):
+
+        questionList = open("src/questiontxt.txt", "r")
+        data = questionList.read()
+        self.questionList = data.replace('\n', ' ').split(".")
+        questionList.close()
+        self.thisQuestion = self.questionList[self.probCount]
+
+        self.thisTitle = str(self.probCount + 1) + '. ' + str(self.thisQuestion)
+
+        self.imgTxt = open(f"src/{self.probCount+1}/imgtxt{self.probCount+1}.txt", "r")
+        data = self.imgTxt.read()
+        self.imgList = data.replace('\n', ' ').split("/")
+        self.imgTxt.close()
+
+        self.correctTxt = open("src/correcttxt.txt", "r")
+        data = self.correctTxt.read()
+        self.correctList = data.replace('\n', ' ').split(".")
+        self.correct = self.correctList[self.probCount]
+        self.correctTxt.close()
+
+        self.optionTxt = open(f"src/{self.probCount+1}/optiontxt{self.probCount+1}.txt", "r")
+        data = self.optionTxt.read()
+        self.optionList = data.replace('\n', ' ').split(".")
+        self.optionTxt.close()
+        
+
+        self.thisSubmit = 'Submit'
+
+    def initLayout(self):
+        #setting & adding layouts
+        self.setLayout(self.mainLayout)
+        self.mainLayout.addLayout(self.imgLayout)
+        self.mainLayout.addLayout(self.subLayout)
+
         #title widget
         self.title = QLabel(objectName='title')
-        self.title.setText('We are on the lookout for')
+        self.title.setText(self.thisQuestion)
         self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.mainLayout.addWidget(self.title)
 
         #3 label widgets showing qpixmap images
         self.label1 = QLabel()
-        self.img1 = QPixmap('')
+        self.img1 = QPixmap(f'src/img/{self.imgList[0]}')
         self.label1.setPixmap(self.img1)
         self.imgLayout.addWidget(self.label1)
 
         self.label2 = QLabel()
-        self.img2 = QPixmap('')
+        self.img2 = QPixmap(f'src/img/{self.imgList[1]}')
         self.label2.setPixmap(self.img2)
         self.imgLayout.addWidget(self.label2)
 
         self.label3 = QLabel()
-        self.img3 = QPixmap('')
+        self.img3 = QPixmap(f'src/img/{self.imgList[2]}')
         self.label3.setPixmap(self.img3)
         self.imgLayout.addWidget(self.label3)
 
         #3 button widgets for answer options
         self.button1 = QPushButton('')
-        #self.button1.clicked.connect(self.click1)
+        self.button1.setText(self.optionList[0])
+        self.button1.clicked.connect(Inter.click1)
         self.subLayout.addWidget(self.button1)
 
         self.button2 = QPushButton('')
-        #self.button2.clicked.connect(self.click2)
+        self.button2.setText(self.optionList[1])
+        self.button2.clicked.connect(Inter.click2)
         self.subLayout.addWidget(self.button2)
 
         self.button3 = QPushButton('')
-        #self.button3.clicked.connect(self.click3)
+        self.button3.setText(self.optionList[2])
+        self.button3.clicked.connect(Inter.click3)
         self.subLayout.addWidget(self.button3)
 
 
@@ -87,8 +122,9 @@ class MainWindow (QWidget):
 
         #button widget for submit button
         self.button = QPushButton('')
-        self.button.setIcon(QIcon(''))
-        #self.button.clicked.connect(self.submit)
+        self.button.setIcon(QIcon(f'src/img/submit.png'))
+        self.button.setText('Submit')
+        self.button.clicked.connect(Inter.submit)
         self.mainLayout.addWidget(self.button)
 
         #variables for unclicking buttons
@@ -101,7 +137,6 @@ class MainWindow (QWidget):
         self.points = 0
         #initialize correctlist so you only have to grab it once
         self.correctList = 0
-
 
 #main function to execute app & play music
 def main():
