@@ -1,44 +1,21 @@
-#so... what's this, like, matrix thing that's being used to keep track of tokens?
-#well, i guess i just don't use matrixes very often, but i guess python matrixes do kind of make sense 
-
-#ok, i get where event is coming from, but i still don't get where event.rect().size() is coming from
-#i get that the size of a QWidget is the whole window
-#and mousePressEvent is a behavior of a QWidget, so i guess that makes sense
-#but why rect.size??? can't i just use size???
-#see, the previous line says qp.drawPixmap(self.rect(), pixmap), so does that have anything to do with it?
-
-#oh, so winner dialog is another class. i honestly don't really get when to use classes?
-#i wonder if that would help me to communicate between files? is that what i'm not getting?
-#anyway... so qdialog... kind of like qmessagebox?
-#super is different in the winner dialog class... is that what super does? connects all the classes?
-
 #i also still need to deal with right click & examine
 
-#i should have committed it as soon as it started working!!! now it's complaining about [' '],[' '],[' ']
+#well... i just noticed that resizing messes with my scroll... so i guess THAT'S out for now... 
+#oh, i feel so bad. is it because i'm spoiling the resizability? david bowie plz help me
+#i stole screen size from banjo
+#so THAT didn't work... 
+#i totally cheated by finding the exact size of the window
+#i'm sorry!!!
 
-#it was literally a difference between 
-"""
-self.board = [
-                [' ',' ',' '],
-                [' ',' ',' '],
-                [' ',' ',' ']
-            ]
-(CORRECT)
-and
-self.board = [
-            [' '],[' '],[' ']
-            [' '],[' '],[' ']
-            [' '],[' '],[' ']
-        ]
-(INCORRECT)
-how did that even get there??? i swear i didn't touch it!!!
-"""
-#well, now it's KIND OF working... i'm saving this version before anything else randomly stops working
-#i mean, it's almost possible that was an archaic mistake
-#and i didn't notice on my first run, because i was so excited that it was working that i closed it right away
-#however, didn't the error appeared immediately after initiating program? i guess that's the question
+#i'd have to sort out the different levels later
 
-
+#right now i'm trying to get it to paint runes, instead of xs and os
+#i'm thinking of using, uh... painter.drawimage, or something
+#the thing is, i'm on my phone right now, and i'm probably not getting much of this done tonight
+#so i'll try to at least get it to paint runes...
+#i thought, what if it drew the xs and the os exactly where you clicked???
+#yeah, that would be a whole extra thing to code i guess, but wouldn't that be cool???
+#well, maybe i'll at least get it to paint runes at some point
 
 import sys
 import math
@@ -58,7 +35,8 @@ class MainWindow(QWidget):
 
         #set geometry...
         self.setGeometry(100, 100, 100, 100)
-        self.setWindowTitle("Tic-Tac-Toe")
+        self.setFixedSize(560, 370)
+        self.setWindowTitle("Runescape Tic-Tac-Toe")
 
         #images for screen layout
         lBorder = QLabel('Left Border', alignment=Qt.AlignmentFlag.AlignLeft)
@@ -68,10 +46,8 @@ class MainWindow(QWidget):
         rBorder = QLabel('Right Border', alignment=Qt.AlignmentFlag.AlignRight)
         rBorder.setPixmap(border)
         
-
         layout = QHBoxLayout()
         layout.addWidget(lBorder)
-
         
         layout.addSpacing(400)
         
@@ -112,13 +88,8 @@ class MainWindow(QWidget):
     
     #draw ellipse(x_offset, y_offset, diameter, diameter)
     def drawO(self, qp, c, r, colsize, rowsize):
-        x = colsize + c*colsize
-        y = rowsize + r*rowsize
-        colmargin = int(colsize * 0.05)
-        rowmargin = int(rowsize * 0.05)
-        pen = QPen(QBrush(QColor(0,0,0)),5)
-        qp.setPen(pen)
-        qp.drawEllipse(x+colmargin, y+rowmargin, colsize-2*colmargin, rowsize-2*rowmargin)
+        runemap = QPixmap("water.png")
+        
 
     def drawX(self, qp, c, r, colsize, rowsize):
         x = colsize + c*colsize
@@ -127,7 +98,7 @@ class MainWindow(QWidget):
         rowmargin = int(rowsize * 0.05)
         pen = QPen(QBrush(QColor(0,0,0)),5)
         qp.setPen(pen)
-        qp.drawLine(x+colmargin, y+rowmargin, x+colsize-colmargin, y+colsize-rowmargin)
+        qp.drawLine(x+colmargin, y+rowmargin, x+colsize-2*colmargin, y+colsize-2*rowmargin)
 
     #mousePressEvent generates its own event
     def mousePressEvent(self, event):
@@ -141,6 +112,9 @@ class MainWindow(QWidget):
         #mark which col & row were clicked on
         col = math.floor((event.position().x() // colsize)) - 1
         row = math.floor((event.position().y() // rowsize)) - 1
+
+        self.clickx = event.position().x()
+        self.clicky = event.position().y()
 
         #only clicks within board are processed
         if col >= 0 and col < 3 and row >= 0 and row < 3:

@@ -2,6 +2,9 @@
 #is that beyond the scope of pyqt, dynamic state changes? it couldn't be!!!
 #apparently there's a property system... maybe i'll try that sometime...
 
+#i'm not trying properties today... i'm not sure if i'll try them ever, because wow, objects?
+#first let me finish this tictactoe
+
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
