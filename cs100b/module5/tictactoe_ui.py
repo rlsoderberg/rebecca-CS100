@@ -80,9 +80,9 @@ class MainWindow(QWidget):
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
-                    qp.drawPixmap(colsize, rowsize, self.pixmapX)
+                    qp.drawPixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapX)
                 elif self.game.board[c][r] == 'O':
-                    qp.drawPixmap(colsize, rowsize, self.pixmapO)
+                    qp.drawPixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapO)
 
     #mousePressEvent generates its own event
     def mousePressEvent(self, event):
