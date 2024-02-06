@@ -4,9 +4,7 @@
 #i get quite a few results about painting OVER an image
 #i'm trying this question about painting png image TO a widget. that's at least a better preposition, right?
 
-#well, i plugged in some of this wrong person's code. this skips drawX & drawO
-#but now the program just lags out for a sec and then closes
-#so... somewhere between my last commit, and this one...
+#now i need to get coordinates of click event
 
 import sys
 import math
@@ -55,7 +53,6 @@ class MainWindow(QWidget):
 
     #respond to paint event
     def paintEvent(self, event):
-        qp = QPainter(self)
         
         qp = QPainter(self)
         #set pen color
@@ -79,23 +76,9 @@ class MainWindow(QWidget):
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
-                    self.drawX(event.rect(), self.pixmapX)
+                    qp.drawPixmap(colsize, rowsize, self.pixmapX)
                 elif self.game.board[c][r] == 'O':
-                    self.drawO(event.rect(), self.pixmapO)
-    
-    #draw ellipse(x_offset, y_offset, diameter, diameter)
-    def drawO(self, qp, c, r, colsize, rowsize):
-        runemap = QPixmap("water.png")
-        
-
-    def drawX(self, qp, c, r, colsize, rowsize):
-        x = colsize + c*colsize
-        y = rowsize + r*rowsize
-        colmargin = int(colsize * 0.05)
-        rowmargin = int(rowsize * 0.05)
-        pen = QPen(QBrush(QColor(0,0,0)),5)
-        qp.setPen(pen)
-        qp.drawLine(x+colmargin, y+rowmargin, x+colsize-2*colmargin, y+colsize-2*rowmargin)
+                    qp.drawPixmap(colsize, rowsize, self.pixmapO)
 
     #mousePressEvent generates its own event
     def mousePressEvent(self, event):
