@@ -1,21 +1,12 @@
-#i also still need to deal with right click & examine
+#today, i'll eventually do levels
+#first let me try to get it to draw images. using painter.drawimage, or something?
+#or... ok, i'm searching 'python qpainter "image"'
+#i get quite a few results about painting OVER an image
+#i'm trying this question about painting png image TO a widget. that's at least a better preposition, right?
 
-#well... i just noticed that resizing messes with my scroll... so i guess THAT'S out for now... 
-#oh, i feel so bad. is it because i'm spoiling the resizability? david bowie plz help me
-#i stole screen size from banjo
-#so THAT didn't work... 
-#i totally cheated by finding the exact size of the window
-#i'm sorry!!!
-
-#i'd have to sort out the different levels later
-
-#right now i'm trying to get it to paint runes, instead of xs and os
-#i'm thinking of using, uh... painter.drawimage, or something
-#the thing is, i'm on my phone right now, and i'm probably not getting much of this done tonight
-#so i'll try to at least get it to paint runes...
-#i thought, what if it drew the xs and the os exactly where you clicked???
-#yeah, that would be a whole extra thing to code i guess, but wouldn't that be cool???
-#well, maybe i'll at least get it to paint runes at some point
+#well, i plugged in some of this wrong person's code. this skips drawX & drawO
+#but now the program just lags out for a sec and then closes
+#so... somewhere between my last commit, and this one...
 
 import sys
 import math
@@ -55,11 +46,17 @@ class MainWindow(QWidget):
         layout.addWidget(rBorder)
         self.setLayout(layout)
 
+        #set pixmap marker images
+        self.pixmapX = QtGui.QPixmap("water.png")
+        self.pixmapO = QtGui.QPixmap("fire.png")
+
         #game from tictactoe_game
         self.game = Game()
 
     #respond to paint event
     def paintEvent(self, event):
+        qp = QPainter(self)
+        
         qp = QPainter(self)
         #set pen color
         qp.setPen(QColor(0,0,0))
@@ -82,9 +79,9 @@ class MainWindow(QWidget):
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
-                    self.drawX(qp, c, r, colsize, rowsize)
+                    self.drawX(event.rect(), self.pixmapX)
                 elif self.game.board[c][r] == 'O':
-                    self.drawO(qp, c, r, colsize, rowsize)
+                    self.drawO(event.rect(), self.pixmapO)
     
     #draw ellipse(x_offset, y_offset, diameter, diameter)
     def drawO(self, qp, c, r, colsize, rowsize):
