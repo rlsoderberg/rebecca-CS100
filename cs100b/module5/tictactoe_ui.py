@@ -5,6 +5,10 @@
 #i'm trying this question about painting png image TO a widget. that's at least a better preposition, right?
 
 #now i need to get coordinates of click event
+#well... i haven't really been working on this much, i've mostly been compiling my organ list
+#but i made a public x and a public y in taketurn, because i thought, that might be useful?
+#i'm trying to think if there is an easier way to get the location of self.board[x][y]
+#but now it's time for lunch
 
 import sys
 import math

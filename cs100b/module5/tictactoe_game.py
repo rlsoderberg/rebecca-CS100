@@ -16,6 +16,10 @@ class Game:
         self.gameOver = False
 
     def takeTurn(self, x, y):
+
+        self.publicX = x
+        self.publicY = y
+        
         #duplicate tokens & infinite games not allowed
         if self.board[x][y] != ' ' or self.gameOver:
             return
