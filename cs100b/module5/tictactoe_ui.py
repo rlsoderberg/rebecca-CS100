@@ -1,14 +1,6 @@
 #today, i'll eventually do levels
-#first let me try to get it to draw images. using painter.drawimage, or something?
-#or... ok, i'm searching 'python qpainter "image"'
-#i get quite a few results about painting OVER an image
-#i'm trying this question about painting png image TO a widget. that's at least a better preposition, right?
 
-#now i need to get coordinates of click event
-#well... i haven't really been working on this much, i've mostly been compiling my organ list
-#but i made a public x and a public y in taketurn, because i thought, that might be useful?
-#i'm trying to think if there is an easier way to get the location of self.board[x][y]
-#but now it's time for lunch
+#well, it's not working, but this is basically what i'm trying to do, right? a graphics scene?
 
 import sys
 import math
@@ -52,6 +44,8 @@ class MainWindow(QWidget):
         self.pixmapX = QtGui.QPixmap("water.png")
         self.pixmapO = QtGui.QPixmap("fire.png")
 
+        self.graphics = QGraphicsScene()
+
         #game from tictactoe_game
         self.game = Game()
 
@@ -80,9 +74,11 @@ class MainWindow(QWidget):
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
-                    qp.drawPixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapX)
+                    thisPixmap = pixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapX)
+                    self.graphics.addPixmap(thisPixmap)
                 elif self.game.board[c][r] == 'O':
-                    qp.drawPixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapO)
+                    thisPixmap = pixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapO)
+                    self.graphics.addPixmap(thisPixmap)
 
     #mousePressEvent generates its own event
     def mousePressEvent(self, event):
