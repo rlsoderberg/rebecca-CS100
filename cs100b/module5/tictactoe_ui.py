@@ -1,8 +1,9 @@
 #today, i'll eventually do levels
 
-#well, it's not working, but this is basically what i'm trying to do, right? a graphics scene?
-#at least it made a cool funky error about 'a C++ abstract class'
-#i MIGHT have been reading tutorials in the wrong language...
+#i was trying to do a background for my graphics scene...
+#i did change qp to self.qp, and started it in mainwindow, since it wanted a painter
+#and it's complaining about endPaint() called with active painter
+#so there's probably something wrong with my painter
 
 import sys
 import math
@@ -42,12 +43,20 @@ class MainWindow(QWidget):
         layout.addWidget(rBorder)
         self.setLayout(layout)
 
+        
         #set pixmap marker images
         self.pixmapX = QtGui.QPixmap("water.png")
         self.pixmapO = QtGui.QPixmap("fire.png")
 
-        #graphics scene to contain marker pixmaps
-        self.graphics = QGraphicsItem()
+
+        self.graphics = QGraphicsScene()
+
+        loadedPicture = QPixmap("scroll3.png")
+ 
+        brushBackground = QBrush()
+        brushBackground.setTexture(loadedPicture)
+ 
+        self.graphics.setBackgroundBrush(brushBackground)
 
         #game from tictactoe_game
         self.game = Game()
@@ -55,11 +64,7 @@ class MainWindow(QWidget):
     #respond to paint event
     def paintEvent(self, event):
         
-        qp = QPainter(self)
-        #set pen color
-        qp.setPen(QColor(0,0,0))
-        pixmap = QPixmap("scroll3.png")
-        qp.drawPixmap(self.rect(), pixmap)
+        self.qp = QPainter(self)
         size = event.rect().size()
 
         #calculate width & height of rows & columnds
@@ -67,22 +72,22 @@ class MainWindow(QWidget):
         rowsize = size.height() // 5
 
         #draw vertical lines
-        qp.drawLine(colsize*2, rowsize, colsize*2, rowsize*4)
-        qp.drawLine(colsize*3, rowsize, colsize*3, rowsize*4)
+        self.qp.drawLine(colsize*2, rowsize, colsize*2, rowsize*4)
+        self.qp.drawLine(colsize*3, rowsize, colsize*3, rowsize*4)
         #draw horizontal lines
-        qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
-        qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
+        self.qp.drawLine(colsize, rowsize*2, colsize*4, rowsize*2)
+        self.qp.drawLine(colsize, rowsize*3, colsize*4, rowsize*3)
 
         #draw tokens
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
                     thisPixmap = QPixmap(self.pixmapX)
-                    sceneItem = self.graphics.addItem(thisPixmap)
+                    sceneItem = self.graphics.addPixmap(thisPixmap)
                     sceneItem.setPos(colsize*self.game.publicX+130, rowsize*self.game.publicY+80)
                 elif self.game.board[c][r] == 'O':
                     thisPixmap = QPixmap(self.pixmapO)
-                    sceneItem = self.graphics.addItem(thisPixmap)
+                    sceneItem = self.graphics.addPixmap(thisPixmap)
                     sceneItem.setPos(colsize*self.game.publicX+130, rowsize*self.game.publicY+80)
 
     #mousePressEvent generates its own event
