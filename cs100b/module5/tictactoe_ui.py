@@ -1,6 +1,8 @@
 #today, i'll eventually do levels
 
 #well, it's not working, but this is basically what i'm trying to do, right? a graphics scene?
+#at least it made a cool funky error about 'a C++ abstract class'
+#i MIGHT have been reading tutorials in the wrong language...
 
 import sys
 import math
@@ -44,7 +46,8 @@ class MainWindow(QWidget):
         self.pixmapX = QtGui.QPixmap("water.png")
         self.pixmapO = QtGui.QPixmap("fire.png")
 
-        self.graphics = QGraphicsScene()
+        #graphics scene to contain marker pixmaps
+        self.graphics = QGraphicsItem()
 
         #game from tictactoe_game
         self.game = Game()
@@ -74,11 +77,13 @@ class MainWindow(QWidget):
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
-                    thisPixmap = pixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapX)
-                    self.graphics.addPixmap(thisPixmap)
+                    thisPixmap = QPixmap(self.pixmapX)
+                    sceneItem = self.graphics.addItem(thisPixmap)
+                    sceneItem.setPos(colsize*self.game.publicX+130, rowsize*self.game.publicY+80)
                 elif self.game.board[c][r] == 'O':
-                    thisPixmap = pixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapO)
-                    self.graphics.addPixmap(thisPixmap)
+                    thisPixmap = QPixmap(self.pixmapO)
+                    sceneItem = self.graphics.addItem(thisPixmap)
+                    sceneItem.setPos(colsize*self.game.publicX+130, rowsize*self.game.publicY+80)
 
     #mousePressEvent generates its own event
     def mousePressEvent(self, event):
