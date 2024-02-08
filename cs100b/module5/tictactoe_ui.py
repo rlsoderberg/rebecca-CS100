@@ -5,6 +5,10 @@
 #and it's complaining about endPaint() called with active painter
 #so there's probably something wrong with my painter
 
+#well, i moved everything down to paintevent
+#it's still complaining about something that it seems like a destructor is supposed to cover?
+#wherever the destructor is?
+
 import sys
 import math
 import random
@@ -49,22 +53,24 @@ class MainWindow(QWidget):
         self.pixmapO = QtGui.QPixmap("fire.png")
 
 
-        self.graphics = QGraphicsScene()
 
-        loadedPicture = QPixmap("scroll3.png")
- 
-        brushBackground = QBrush()
-        brushBackground.setTexture(loadedPicture)
- 
-        self.graphics.setBackgroundBrush(brushBackground)
 
         #game from tictactoe_game
         self.game = Game()
 
     #respond to paint event
     def paintEvent(self, event):
-        
+
+        self.graphics = QGraphicsScene()
         self.qp = QPainter(self)
+        loadedPicture = QPixmap("scroll3.png")
+ 
+        brushBackground = QBrush()
+        brushBackground.setTexture(loadedPicture)
+ 
+        self.graphics.setBackgroundBrush(brushBackground)
+        
+        
         size = event.rect().size()
 
         #calculate width & height of rows & columnds
