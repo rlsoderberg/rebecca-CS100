@@ -1,8 +1,8 @@
-#well, i removed some of the selfs... and that stopped it giving me an error about endPaint...
-#but the screen is still black! what now??? i'm going to try setting the brush to just chartreuse
-#oh come on!!! that didn't even work!!!
-#how about... i skip this whole graphics scene thing for now
-
+#i swear, there was a version somewhere where it switched regularly between water & fire...
+#if i print the turns it's taking, it forms a weird pattern that i don't get!!!
+#oh wait, that's because it reprints every turn
+#now, ok, the reason i'm here, is i wanted to try storing the pixmaps in a list
+#but i don't see how that's going to work!!! 
 
 import sys
 import math
@@ -42,26 +42,21 @@ class MainWindow(QWidget):
         layout.addWidget(rBorder)
         self.setLayout(layout)
 
+        #set pixmap marker images
+        self.pixmapX = QtGui.QPixmap("water.png")
+        self.pixmapO = QtGui.QPixmap("fire.png")
 
         #game from tictactoe_game
         self.game = Game()
 
     #respond to paint event
     def paintEvent(self, event):
-
-        #set pixmap marker images
-        pixmapX = QtGui.QPixmap("water.png")
-        pixmapO = QtGui.QPixmap("fire.png")
-
-        graphics = QGraphicsScene()
-        qp = QPainter(self)
-        loadedPicture = QPixmap("scroll3.png")
- 
-        brushBackground = QBrush()
-        brushBackground.setTexture(loadedPicture)
- 
-        graphics.setBackgroundBrush(brushBackground)
         
+        qp = QPainter(self)
+        #set pen color
+        qp.setPen(QColor(0,0,0))
+        pixmap = QPixmap("scroll3.png")
+        qp.drawPixmap(self.rect(), pixmap)
         size = event.rect().size()
 
         #calculate width & height of rows & columnds
@@ -79,13 +74,9 @@ class MainWindow(QWidget):
         for c in range(0, 3):
             for r in range(0, 3):
                 if self.game.board[c][r] == 'X':
-                    thisPixmap = QPixmap(pixmapX)
-                    sceneItem = graphics.addPixmap(thisPixmap)
-                    sceneItem.setPos(colsize*self.game.publicX+130, rowsize*self.game.publicY+80)
+                    qp.drawPixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapX)
                 elif self.game.board[c][r] == 'O':
-                    thisPixmap = QPixmap(pixmapO)
-                    sceneItem = self.graphics.addPixmap(thisPixmap)
-                    sceneItem.setPos(colsize*self.game.publicX+130, rowsize*self.game.publicY+80)
+                    qp.drawPixmap(colsize*self.game.publicX+130, rowsize*self.game.publicY+80, self.pixmapO)
 
     #mousePressEvent generates its own event
     def mousePressEvent(self, event):
@@ -153,8 +144,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
