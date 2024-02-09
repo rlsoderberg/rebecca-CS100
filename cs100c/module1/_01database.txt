@@ -1,0 +1,118 @@
+so now i'm redoing the database unit!!! who knows what could happen the second time around!!!
+this time i'm going to try to install mysql!!! not sure what happened last time...
+
+1)))
+
+1. 
+name: student table
+schema
+attributes: id(int), name(string), gradYear(int), major(string)
+
+tuples
+<34562, "Mop Stetley", 2024, "Textile & Apparel Studies">
+<84724, "Pack Rhubarb", 2027, "Human Organization">
+<09736, "Cloud Porter", 2028, "Undecided">
+<23098, "Fawn Dolby", 2024, "Precision Metal Working">
+
+so for the third problem in this first section, i think you were referring to a project i didn't do
+but i see last time i tried to do it with tic tac toe, which was pretty amusing
+so let me try it with banjo, where i did use some external data
+
+3. banjo data
+probcount, questionList[probcount], correctAnswers[probCount], 
+imageFilenames[probcount][optionCount], optionList[probcount][optionCount]
+
+name: banjo table
+schema
+attributes: probCount(int)[primary key][foreign key to options table], question (string), correctAnswer(int)
+
+name: option table
+schema
+attributes: probCount(int)[foreign key to banjo table], optionCount(int)[primary key], question(string), optionTxt(string)
+
+tuples:
+banjo table
+<0, "We are on the lookout for", 3>
+<1, "You have three griddles: a gas griddle, a wood griddle, and a coal griddle, but only one finger; which should you touch first?", 2>
+<2. "What reads the psychedelic bulldozer?", 1>
+
+option table
+<0, 0, "magicians.png", "MAGICIANS">
+<0, 1, "villagers.png", "VILLAGERS">
+<0, 2, "demons.png", "DEMONS">
+<1, 0, "gas.png", "THE GAS GRIDDLE">
+<1, 1, "finger.png", "THE FINGER">
+<1, 2, "wood.png", "THE WOOD GRIDDLE">
+<2, 0, "crimsonking.png", "ALL HAIL THE CRIMSON KING">
+<2, 1, "schizoidman.png", "ALL HAIL THE SCHIZOID MAN">
+<2, 2, "moonchild.png", "ALL HAIL THE MOONCHILD">
+
+2)))
+i think last time i did this, i had a whole separate advising table
+i'm going to try lumping it all into the teacher table this time
+so is it ok to have two foreign keys???
+
+name:Student
+schema
+attributes: studentID(int)[foreign key to teacher table & class table], name(string), gradYear(int), major(string), classID(int)[foreign key to class table], advisorID[KIND OF a foreign key to teacher table]
+
+tuples
+<34562, "Roof Stetley", 2024, "Chemistry">
+<84724, "Pack Rhubarb", 2027, "Human Organization">
+<09736, "Cloud Porter", 2028, "Undecided">
+<23098, "Mop Dolby", 2024, "Biology">
+
+name:Teacher
+schema
+attributes: teacherID(int), name(string), birthdate(string), departmentID(int)
+
+tuples:
+<56781, "Torvald Goulash", 4/4/44, "Humanities">
+<30322, "Storley Wolman", 6/6/66, "Humanities">
+<02736, "Craspo Potrack", 7/4/78, "Science"
+<30355, "Boily Miner", 3/22/56, "Science">
+
+name:Science Department
+schema
+attributes: departmentID(int), departmentName(string), teacherID(int), classID(int), className(string)
+
+tuples:
+<089, "Science", 30355, 140, "Physics 140">
+<089, "Science", 02736, 220, "Geology 220">
+<089, "Science", 02736, 122, "Introduction to Plate Tectonics">
+<089, "Science", 56781, 026, "Remedial Zoology">
+
+name:PHYS 140
+attributes: classID(int), semester(string), studentID(int)
+
+tuples:
+<140, F23, 34562>
+<140, F23, 93938>
+<140, F23, 46466>
+<140, F23, 12702>
+
+name:GEO 220
+attributes: classID(int), semester(string), studentID(int)
+
+tuples:
+<220, S24, 46466>
+<220, S24, 36024>
+<220, F23, 10173>
+<220, S24, 73837>
+
+name:GEO 122
+attributes: classID(int), semester(string), studentID(int)
+<122, F22, 10173>
+<122, S24, 63083>
+<122, S24, 45367>
+<122, F23, 77332>
+
+name:advising table
+attributes: teacherID(int), studentID(int), departmentID(int)
+
+<02736, 36024, "Science">
+<02736, 45367, "Science">
+<03222, 77332, "Humanities">
+<27210, 63083, "Music"
+
+
