@@ -115,4 +115,10 @@ attributes: teacherID(int), studentID(int), departmentID(int)
 <03222, 77332, "Humanities">
 <27210, 63083, "Music"
 
+3)))
+i literally have no idea what the deal is with mysql
+the tutorial isn't working!!! noooo
+
+so i tried installing it on vscode
+oh what, they want me to pay for it, is that it? well gee!!!
 
