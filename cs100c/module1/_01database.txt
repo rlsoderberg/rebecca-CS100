@@ -120,3 +120,14 @@ oh, mysql is working!!! i am totally digging this tutorial, very comprehensive
 the first problem in the tutorial is a pet table
 first problems first!!! it doesn't want to load data local infile!!!
 
+well, given that i don't seem terribly qualified to fix the data loading problem...
+i guess i'll just try doing this with the workbench...
+i have to say, this workbench does not seem very user friendly
+oh, i have to execute
+no, i'm STILL getting the same error
+i mean, the truth is i haven't slept on this
+so maybe i should at least do THAT before asking...
+i mean, maybe i'll try to skip this and do more of the tutorial, or whatever 
+
+
+
