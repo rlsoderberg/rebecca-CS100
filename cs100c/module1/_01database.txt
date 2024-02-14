@@ -120,14 +120,20 @@ oh, mysql is working!!! i am totally digging this tutorial, very comprehensive
 the first problem in the tutorial is a pet table
 first problems first!!! it doesn't want to load data local infile!!!
 
-well, given that i don't seem terribly qualified to fix the data loading problem...
-i guess i'll just try doing this with the workbench...
-i have to say, this workbench does not seem very user friendly
-oh, i have to execute
-no, i'm STILL getting the same error
-i mean, the truth is i haven't slept on this
-so maybe i should at least do THAT before asking...
 i mean, maybe i'll try to skip this and do more of the tutorial, or whatever 
+oh, so timestampdiff is how you figure out death age of pets
+like,  select name, birth, death, timestampdiff(year, birth, death) as age from pet order by age;
+you can get curdate, and manipulate date with date_add
+i honestly don't get the calc SELECT name, birth FROM pet WHERE MONTH(birth) = MOD(MONTH(CURDATE()), 12) + 1;
+like, the way i know mod is the remainder of division
+but that's apparently not this???
+useful pattern matching with like and not like (% and _), and regexp_like (a bunch of other stuff)
+other useful functions include count and max
+ok, well, i guess the main thing i didn't get was local import, and i still don't get that
+everything else is working, so i guess i'll go back to cs100...
+
+
+
 
 
 
