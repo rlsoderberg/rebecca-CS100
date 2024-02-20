@@ -1,0 +1,12 @@
+well, in order to do any of this stuff, i need to use mysql
+the command line client closes as soon as i enter the password
+wish i could access it through the command prompt, but ???
+
+oh, I had to go into services > properties > startup type: automatic, i think?
+
+so... that's right! i have to use backticks for these annoying column names!
+
+1. select `First name` from customers where `Job Title` = 'owner';
+2. select `First name`, `Last name`, `Company` from customers where `Job Title` = 'owner';
+3. select `Product Name`, `Standard Cost`, `List Price` from products where `List Price` < 20.00;
+

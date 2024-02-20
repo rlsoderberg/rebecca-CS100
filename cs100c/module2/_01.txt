@@ -1,3 +1,0 @@
-well, in order to do any of this stuff, i need to use mysql
-the command line client closes as soon as i enter the password
-wish i could access it through the command prompt, but ???
