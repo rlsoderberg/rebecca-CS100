@@ -6,7 +6,50 @@ oh, I had to go into services > properties > startup type: automatic, i think?
 
 so... that's right! i have to use backticks for these annoying column names!
 
+Checkpoint - Basic SQL
 1. select `First name` from customers where `Job Title` = 'owner';
 2. select `First name`, `Last name`, `Company` from customers where `Job Title` = 'owner';
 3. select `Product Name`, `Standard Cost`, `List Price` from products where `List Price` < 20.00;
+
+Checkpoint - More SQL
+1. 
+select E.`First name`, E.`Last name`
+from employees E, orders O 
+where O.`Employee ID` = E.`ID` and O.`Ship State/Province` = 'CA';
+2.
+select C.`First Name`, C.`Last Name`
+from customers C, orders O 
+where O.`Customer ID` = C.`ID` and O.`Ship State/Province` = 'CA';
+3.
+select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`First name`, ' ', E.`Last name`) as `Employee Name`, O.`Ship City` as `Order Ship City`
+from customers C, orders O, employees E
+where O.`Customer ID` = C.`ID` and O.`Employee ID` = E.`ID` and O.`Ship State/Province` = 'CA';
+
+Extensions to Select/Wrapping it up
+1.
+select distinct P.`Product Name`, OD.`Unit Price`
+from products P, `Order Details` OD
+where OD.`Product ID` = P.ID and OD.`Unit Price` > 25.00;
+2.
+select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, C.`Job Title`, C.Company, C.City
+from customers C
+where C.`Job Title` != 'Owner' and C.city = 'Chicago';
+3. 
+select O.`Order Date`, S.Company, E.`Last Name`, E.City
+from orders O, employees E, shippers S 
+where O.`Shipper ID` = S.ID and E.`ID` = O.`Employee ID` and E.City = 'Redmond';
+4.
+select P.`Product Name`, P.Discontinued
+from products P
+where P.Category = 'Beverages' and P.Discontinued IS NOT NULL and P.Discontinued = 1;
+5.
+select concat(C.`First Name`, ' ', C.`Last Name`, '(', C.`Job Title`, ', ', C.Company, ')') as `Customer Info`
+from customers C
+where C.`Job Title` != 'Owner';
+6.
+select P.`Product Name`, P.`List Price`, P.Category
+from products P
+where P.`List Price` = SELECT MIN(`List Price`) FROM products;
+
+well, this one isn't quite working!!!
 
