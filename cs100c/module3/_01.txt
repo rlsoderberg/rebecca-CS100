@@ -1,0 +1,56 @@
+Advanced SQL: Checkpoint
+1. 
+select E.`First name`, E.`Last name`
+from employees E, orders O 
+where O.`Employee ID` = E.`ID` and O.`Ship State/Province` = 'CA';
+
+2. 
+select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, O.`Ship City`
+from employees E join orders O on E.ID = O.`Employee ID`
+where O.`Ship State/Province` = 'CA';
+
+3.
+Well, I'm still not really used to messing with from that much. But it does feel nice.
+Although, honestly, doing multiple joins like on 5 made me a little nervous.
+
+4. 
+Original:
+select C.`First Name`, C.`Last Name`, O.`Ship City`
+from customers C, orders O 
+where O.`Customer ID` = C.`ID` and O.`Ship State/Province` = 'CA';
+Join Version:
+select C.`First Name`, C.`Last Name`, O.`Ship City`
+from customers C join orders O on O.`Customer ID` = C.`ID`
+where O.`Ship State/Province` = 'CA';
+
+5.
+Original:
+select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`First name`, ' ', E.`Last name`) as `Employee Name`, O.`Ship City` as `Order Ship City`
+from customers C, orders O, employees E
+where O.`Customer ID` = C.`ID` and O.`Employee ID` = E.`ID` and O.`Ship State/Province` = 'CA';
+Join Version:
+select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`First name`, ' ', E.`Last name`) as `Employee Name`, O.`Ship City`
+from customers C join orders O on O.`Customer ID` = C.`ID` join employees E on O.`Employee ID` = E.`ID`
+where O.`Ship State/Province` = 'CA';
+
+Other joins: Checkpoint
+1.
+select OD.Quantity, P.`Product Name`, O.`Order Date`
+from `Order Details` OD join products P on OD.`Product ID` = P.`ID` left outer join Orders O on O.`Order ID` = OD.`Order ID`
+where P.Category = 'Sauces';
+
+Well... I was looking out for sauces that had never been ordered!!! 
+I can't tell if I did that right, or if there are any of those!
+
+2. See 1
+
+3. 
+select O.`Ship City`, O.`Ship State/Province`, S.Company
+from orders O right outer join shippers S 
+
+So there's no order quantity column for shippers, right? Can I make one?
+Can I use Count() to make my own pseudo-column somehow?
+And how would I join it to the original command?
+
+
+
