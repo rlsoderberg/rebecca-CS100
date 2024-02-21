@@ -49,7 +49,7 @@ where C.`Job Title` != 'Owner';
 6.
 select P.`Product Name`, P.`List Price`, P.Category
 from products P
-where P.`List Price` = SELECT MIN(`List Price`) FROM products;
+where P.`List Price` in (SELECT MIN(`List Price`) FROM products);
 
-well, this one isn't quite working!!!
+oh, well gee, i just had to actually use the format from the next module...
 
