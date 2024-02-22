@@ -33,7 +33,7 @@ select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`
 from customers C join orders O on O.`Customer ID` = C.`ID` join employees E on O.`Employee ID` = E.`ID`
 where O.`Ship State/Province` = 'CA';
 
-Other joins: Checkpoint
+From extensions: Checkpoint
 1.
 select OD.Quantity, P.`Product Name`, O.`Order Date`
 from `Order Details` OD join products P on OD.`Product ID` = P.`ID` left outer join Orders O on O.`Order ID` = OD.`Order ID`
@@ -45,12 +45,55 @@ I can't tell if I did that right, or if there are any of those!
 2. See 1
 
 3. 
-select O.`Ship City`, O.`Ship State/Province`, S.Company
-from orders O right outer join shippers S 
+#
+    select O.`Ship City`, O.`Ship State/Province`, S.Company, count(S.Company) as `ships per company`
+    from orders O right outer join shippers S on O.`shipper id`= S.id
+    group by S.Company;
+#
 
-So there's no order quantity column for shippers, right? Can I make one?
-Can I use Count() to make my own pseudo-column somehow?
-And how would I join it to the original command?
+select O.`Ship City`, O.`Ship State/Province`, S.Company
+from orders O right outer join shippers S on O.`shipper id`= S.id;
+
+OK I tried doing group by but it's not quite working!!!
+let me see if i can find it in further units...
+oh, there's more in the same unit!!!
+see, let me just wait a little before trying to do this...
+like, i'm pretty sure i'm doing it wrong? counting and grouping by the same column? not sure how do it yet
+
+4. 
+#
+    select O.`Ship City`, O.`Ship State/Province`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, count(E.`Last Name`) as `ships per employee`
+    from orders O right outer join employees E on O.`Employee ID` = E.ID
+    group by E.`Last Name`;
+
+#
+select O.`Ship City`, O.`Ship State/Province`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`
+from orders O right outer join employees E on O.`Employee ID` = E.ID;
+
+Where extensions: Checkpoint
+1.
+select O.`Ship City`, O.`Ship State/Province`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`
+from employees E join orders O on E.`ID` = O.`Employee ID`
+where E.`Last Name` like 'C%'; 
+
+2. 
+select P.`Product Name`, O.`Ship City`, O.`Ship State/Province`
+from products P left outer join (`order details` OD right outer join orders O on O.`Order ID` = OD.`Order ID`) on P.ID = OD.`Product ID`
+where P.`Product Name` like '%dried%'; 
+
+I had to check this against my previous version, turns out you don't need the parentheses at the very beginning
+But I think it's a little less confusing that way
+My problem was I forgot some backticks............
+
+3. 
+select P.`Product Name`
+from products P
+where P.ID not in (select OD.`Product ID` from `Order Details` OD);
+
+4.
+ok, i'll finish this later!!!
+
+
 
 
 
