@@ -91,7 +91,13 @@ from products P
 where P.ID not in (select OD.`Product ID` from `Order Details` OD);
 
 4.
-ok, i'll finish this later!!!
+select o.`ship state/province`, o.`order date`, p.`category`
+from products p right outer join (orders o left outer join `order details` od on od.`order id` = o.`order id`) on p.id = od.`product id`
+where od.`product id` in (select p.id from products p where category = 'beverages');
+
+now, with this one, i'm totally looking at my previous version
+like... a subquery in the where clause???
+oh, it was actually just a simple in subquery that i needed
 
 
 
