@@ -99,6 +99,114 @@ now, with this one, i'm totally looking at my previous version
 like... a subquery in the where clause???
 oh, it was actually just a simple in subquery that i needed
 
+orderby/grouby/having Checkpoint
+ 
+oh!!! i didn't get that the group by keyword is used to get selection group
+
+so, for FROM 3 and 4...
+
+select O.`Ship City`, O.`Ship State/Province`, S.Company, count(O.`Order ID`) as `ships per company`
+from orders O right outer join shippers S on O.`shipper id`= S.id
+group by O.`Shipper ID`;
+
+>>1>it's complaining about a nonaggregated column!!! wat is this?
+it looks like it's ONLY_FULL_GROUP_BY
+should i disable that???
+yeah, i wanted to try it on mariadb and see if i had the same issue, but i'm generally pretty clueless
+well, let me try disabling it with this thing
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
+oops, i'm still getting the exact same error
+
+select O.`Ship City`, O.`Ship State/Province`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, count(O.`Order ID`) as `ships per employee`
+from orders O right outer join employees E on O.`Employee ID` = E.ID
+group by O.`Employee id`;
+
+maybe the problem with both of these is that i am trying to select attributes from outside the grouped table
+so like, how do you put a thing together like that?
+whoa, look at that last example, that looks pretty compound...
+
+select O.`Ship City`, O.`Ship State/Province`, S.Company
+from orders O, shippers s, (select O.`Order ID`, count(*) as numberitems
+				            from orders o
+				            group by O.`Ship State/Province`) T
+where O.`order id`=T.`order id`;
+
+>>2>ONLY_FULL_GROUP_BY error!!!!!
+
+anyway...
+
+1.
+
+wait, for 1, it looks like that is a thing where you would use count? but count is not taught?
+i'm not even sure if i'm doing count right??? or is there a better way to do it?
+aha!!! examples from class are the key!!!
+i should TOTALLY look at examples more often...
+
+select o.`ship state/province`, count(o.`order id`) as 'ships per state'
+from orders o
+group by o.`ship state/province`;
+
+2.
+
+select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, count(O.`Order ID`) as `ships per employee`
+from orders o join employees e on o.`employee id` = e.id
+group by o.`employee id`
+order by `ships per employee` desc, E.`Last Name`;
+
+>>3>ONLY_FULL_GROUP_BY error!!!!!
+
+3.
+
+select o.`order date`, count(od.`product id`) as `items in order`
+from products p join (`order details` od join orders o on od.`order id` = o.`order id`) on p.id = od.`product id`
+group by od.`order id`
+order by o.`order date` desc, p.`product name`;
+
+>>4>ONLY_FULL_GROUP_BY error!!!!!
+
+4. 
+
+select o.`order date`, count(od.`order id`) as `items in orders per order date`
+from `order details` od join orders o on od.`order id` = o.`order id`
+group by o.`order date`
+order by o.`order date` desc;
+
+this one could be actually right...
+
+wrapping it up
+
+1.
+
+update employees e
+set e.`first name` = 'Drew'
+WHERE e.`first name` = 'Nancy' ;
+
+2.
+
+create table ships (`ship id` int (5), `home port` varchar(25), `launch date` varchar(25));
+
+3.
+
+select p.category, max(p.`list price`) as `max list price`
+from products p
+group by p.category;
+
+4.
+
+alter table products add `profit margin` as (`list price` - `standard cost`);
+
+>>5>i keep getting a syntax error!!! i don't think i'm missing any back quotes!!!
+supposing this was actually working, then i would go...
+well, i'm not quite sure how to put max and min on the same table as an ordered list
+
+select p.`profit margin`, max(`profit margin`), min(`profit margin`)
+from products p
+order by p.`profit margin` asc;
+
+a different kind of ONLY_FULL_GROUP_BY error!!!!!
+
+
+
 
 
 
