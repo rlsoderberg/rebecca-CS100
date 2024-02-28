@@ -1,40 +1,59 @@
 Advanced SQL: Checkpoint
-1. 
-select E.`First name`, E.`Last name`
+
+1. Using the northwind database, find all the orders that were shipped to California. 
+Get the first and last name of the employee and the shipping city for each order. 
+Use the where clause for your join predicate. (Yes, we did this last week. Reuse that if you'd like.)
+
+select E.`First name`, E.`Last name`, E.`ship city`
 from employees E, orders O 
 where O.`Employee ID` = E.`ID` and O.`Ship State/Province` = 'CA';
 
-2. 
+2. Rewrite the query in #1 using the join/on syntax.
+
 select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, O.`Ship City`
 from employees E join orders O on E.ID = O.`Employee ID`
 where O.`Ship State/Province` = 'CA';
 
-3.
+3. Explain which you prefer and why.
+
 Well, I'm still not really used to messing with from that much. But it does feel nice.
 Although, honestly, doing multiple joins like on 5 made me a little nervous.
 
-4. 
+4. We did two other join queries last week. Rewrite those with join/on syntax:
+
+• Find all the orders that were shipped to California. 
+Get the first and last name of the customer and the shipping city for each order.
+
 Original:
 select C.`First Name`, C.`Last Name`, O.`Ship City`
 from customers C, orders O 
 where O.`Customer ID` = C.`ID` and O.`Ship State/Province` = 'CA';
+
 Join Version:
 select C.`First Name`, C.`Last Name`, O.`Ship City`
 from customers C join orders O on O.`Customer ID` = C.`ID`
 where O.`Ship State/Province` = 'CA';
 
-5.
+• Once more, find all the orders that were shipped to California. 
+Get the first and last name of the customer, the first and last name of the employee, 
+and the shipping city for each order.
+
 Original:
-select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`First name`, ' ', E.`Last name`) as `Employee Name`, O.`Ship City` as `Order Ship City`
+select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`First name`, ' ', E.`Last name`) as `Employee Name`, O.`Ship City`
 from customers C, orders O, employees E
 where O.`Customer ID` = C.`ID` and O.`Employee ID` = E.`ID` and O.`Ship State/Province` = 'CA';
+
 Join Version:
 select concat(C.`First Name`, ' ', C.`Last Name`) as `Customer Name`, concat(E.`First name`, ' ', E.`Last name`) as `Employee Name`, O.`Ship City`
 from customers C join orders O on O.`Customer ID` = C.`ID` join employees E on O.`Employee ID` = E.`ID`
 where O.`Ship State/Province` = 'CA';
 
+
 From extensions: Checkpoint
-1.
+
+1. In the Northwind database, find the quantities of products that are in the sauce category 
+for the details of each order. Also return those sauces that haven't been ordered.
+
 select OD.Quantity, P.`Product Name`, O.`Order Date`
 from `Order Details` OD join products P on OD.`Product ID` = P.`ID` left outer join Orders O on O.`Order ID` = OD.`Order ID`
 where P.Category = 'Sauces';
@@ -44,31 +63,18 @@ I can't tell if I did that right, or if there are any of those!
 
 2. See 1
 
-3. 
-#
-    select O.`Ship City`, O.`Ship State/Province`, S.Company, count(S.Company) as `ships per company`
-    from orders O right outer join shippers S on O.`shipper id`= S.id
-    group by S.Company;
-#
+3. List the order city and state along with the company name of the shipper. 
+If there are shippers that haven't shipped any orders, include them in the results.
 
 select O.`Ship City`, O.`Ship State/Province`, S.Company
 from orders O right outer join shippers S on O.`shipper id`= S.id;
 
-OK I tried doing group by but it's not quite working!!!
-let me see if i can find it in further units...
-oh, there's more in the same unit!!!
-see, let me just wait a little before trying to do this...
-like, i'm pretty sure i'm doing it wrong? counting and grouping by the same column? not sure how do it yet
+4. List the order city and state along with the name of the employee who placed the order. 
+If there are employees that haven't placed any orders, include them in the results.
 
-4. ?????
-#
-    select O.`Ship City`, O.`Ship State/Province`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, count(E.`Last Name`) as `ships per employee`
-    from orders O right outer join employees E on O.`Employee ID` = E.ID
-    group by E.`Last Name`;
-
-#
 select O.`Ship City`, O.`Ship State/Province`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`
 from orders O right outer join employees E on O.`Employee ID` = E.ID;
+
 
 Where extensions: Checkpoint
 
@@ -86,10 +92,6 @@ Again, use a subquery to find the right products.
 select P.`Product Name`, O.`Ship City`, O.`Ship State/Province`
 from products P left outer join (`order details` OD right outer join orders O on O.`Order ID` = OD.`Order ID`) on P.ID = OD.`Product ID`
 where P.`Product Name` like '%dried%'; 
-
-I had to check this against my previous version, turns out you don't need the parentheses at the very beginning
-But I think it's a little less confusing that way
-My problem was I forgot some backticks............
 
 3. Find all the products that are not in the set of products that have been ordered. 
 (Note, this could also be written as an outer join. Try it here using the not in syntax.)
@@ -109,14 +111,12 @@ now, with this one, i'm totally looking at my previous version
 like... a subquery in the where clause???
 oh, it was actually just a simple in subquery that i needed
 
+
 orderby/grouby/having Checkpoint
  
 oh!!! i didn't get that the group by keyword is used to get selection group
 
-so, for FROM 3 and 4...
-
-3. Find all the orders that were shipped to California. 
-Get the first and last name of the customer and the shipping city for each order.
+so, here are those ones from before...
 
 select O.`Ship City`, O.`Ship State/Province`, S.Company, count(O.`Order ID`) as `ships per company`
 from orders O join shippers S on O.`shipper id`= S.id
@@ -130,13 +130,11 @@ well, let me try disabling it with this thing
 SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
 oops, i'm still getting the exact same error
 
-4. Once more, find all the orders that were shipped to California. 
-Get the first and last name of the customer, the first and last name of the employee, 
-and the shipping city for each order.
-
 select O.`Ship City`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, count(O.`Order ID`) as `ships per employee`
 from orders O right outer join employees E on O.`Employee ID` = E.ID
 group by O.`Employee id`;
+
+>>2>ONLY_FULL_GROUP_BY error!
 
 maybe the problem with both of these is that i am trying to select attributes from outside the grouped table
 so like, how do you put a thing together like that?
@@ -148,7 +146,7 @@ from orders O, shippers s, (select O.`Order ID`, count(*) as numberitems
 				            group by O.`Ship State/Province`) T
 where O.`order id`=T.`order id`;
 
->>2>ONLY_FULL_GROUP_BY error!
+>>3>ONLY_FULL_GROUP_BY error!!
 
 anyway...
 
@@ -171,7 +169,7 @@ from orders o join employees e on o.`employee id` = e.id
 group by o.`employee id`
 order by `ships per employee` desc, E.`Last Name`;
 
->>3>ONLY_FULL_GROUP_BY error!!
+>>4>ONLY_FULL_GROUP_BY error!!!
 
 3. Show the number of items in each order, sorted by order date desc
 
@@ -180,7 +178,7 @@ from products p join (`order details` od join orders o on od.`order id` = o.`ord
 group by od.`order id`
 order by o.`order date` desc, p.`product name`;
 
->>4>ONLY_FULL_GROUP_BY error!!!
+>>5>ONLY_FULL_GROUP_BY error!!!!
 
 4. Show the number of items in orders placed on each order date, sorted by order date desc
 
@@ -214,17 +212,19 @@ group by p.category;
 4. Find the highest, lowest, and average profit margin (list price-standard price) 
 for each category of products, ordered by average profit margin
 
-alter table products add `profit margin` as (`list price` - `standard cost`);
+alter table products add `profit margin` as (`list price` - `standard cost`) int;
 
->>5>i keep getting a syntax error!!! i don't think i'm missing any back quotes!!!
+>>6>i keep getting a syntax error!!! i don't think i'm missing any back quotes!!!
+i tried including the data type...
+
 supposing this was actually working, then i would go...
 well, i'm not quite sure how to put max and min on the same table as an ordered list
+so i'm skipping that for now
+>>7>skip
 
-select p.`profit margin`, max(`profit margin`), min(`profit margin`)
+select p.`profit margin`
 from products p
 order by p.`profit margin` asc;
-
-a different kind of ONLY_FULL_GROUP_BY error!!!!
 
 5. List all the employees names who placed more than one order in New York, ordered by last name
 
@@ -232,10 +232,10 @@ select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`
 from employees e join orders o on e.`id` = o.`employee id`, (select count(o.`order id`) as employeeOrders
                                                                 from orders o
                                                                 group by o.`employee id`) X
-where o.`ship state/province` = 'NY', X > 1
+where o.`ship state/province` = 'NY' and X > 1
 order by E.`Last Name`;
 
->>6>this time it doesn't like my syntax near X > 1
+>>8>it doesn't like my where column x!
 
 
 
