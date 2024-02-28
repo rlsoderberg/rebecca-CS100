@@ -137,23 +137,12 @@ from orders o join employees e on o.`employee id` = e.id
 group by o.`employee id`
 order by `ships per employee` desc, E.`Last Name`;
 
->>>ONLY_FULL_GROUP_BY error!!!
-
 3. Show the number of items in each order, sorted by order date desc
 
-select o.`order date`, count(od.`id`) as `items in order`
+select od.`order id`, o.`order date`, count(od.`id`) as `items in order`
 from products p join (`order details` od join orders o on od.`order id` = o.`order id`) on p.id = od.`product id`
 group by od.`order id`
 order by o.`order date` desc, p.`product name`;
-
->>>ONLY_FULL_GROUP_BY error!!!!
-
-select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, X.employeeOrders
-from (employees e join orders o on e.`id` = o.`employee id`) join (select count(o.`order id`) as employeeOrders
-                                                                    from orders o
-                                                                    group by o.`employee id`) X
-where o.`ship state/province` = 'NY' and X.employeeOrders > 1
-order by E.`Last Name`;
 
 4. Show the number of items in orders placed on each order date, sorted by order date desc
 
@@ -191,15 +180,11 @@ alter table products add `profit margin` int as (`list price` - `standard cost`)
 
 aha! i had to put the datatype directly after the column name!
 
->>>i'm not sure how to make these tables
-
-[do this for all categories]
 select p.category, avg(`profit margin`), min(`profit margin`), max(`profit margin`)
 from products p
-group by p.category
-order by p.`profit margin` asc;
+group by p.category;
 
->>>ONLY_FULL_GROUP_BY error anyway
+it's working for some reason!!!
 
 5. List all the employees names who placed more than one order in New York, ordered by last name
 
