@@ -141,9 +141,9 @@ so like, how do you put a thing together like that?
 whoa, look at that last example, that looks pretty compound...
 
 select O.`Ship City`, O.`Ship State/Province`, S.Company
-from orders O, shippers s, (select O.`Order ID`, count(*) as numberitems
-				            from orders o
-				            group by O.`Ship State/Province`) T
+from (orders O join shippers s on O.`shipper id` = s.`id`) join (select O.`Order ID`, count(O.`Order ID`) as numberitems
+				                                                from orders o
+				                                                group by O.`Ship State/Province`) T
 where O.`order id`=T.`order id`;
 
 >>3>ONLY_FULL_GROUP_BY error!!
@@ -228,14 +228,14 @@ order by p.`profit margin` asc;
 
 5. List all the employees names who placed more than one order in New York, ordered by last name
 
-select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`
-from employees e join orders o on e.`id` = o.`employee id`, (select count(o.`order id`) as employeeOrders
-                                                                from orders o
-                                                                group by o.`employee id`) X
-where o.`ship state/province` = 'NY' and X > 1
+select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, X.employeeOrders
+from (employees e join orders o on e.`id` = o.`employee id`) join (select count(o.`order id`) as employeeOrders
+                                                                    from orders o
+                                                                    group by o.`employee id`) X
+where o.`ship state/province` = 'NY' and X.employeeOrders > 1
 order by E.`Last Name`;
 
->>8>it doesn't like my where column x!
+hey, i think this one actually worked!
 
 
 
