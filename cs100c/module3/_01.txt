@@ -116,39 +116,7 @@ orderby/grouby/having Checkpoint
  
 oh!!! i didn't get that the group by keyword is used to get selection group
 
-so, here are those ones from before...
-
-select O.`Ship City`, O.`Ship State/Province`, S.Company, count(O.`Order ID`) as `ships per company`
-from orders O join shippers S on O.`shipper id`= S.id
-group by O.`Shipper ID`;
-
->>1>it's complaining about a nonaggregated column!!! wat is this?
-it looks like it's ONLY_FULL_GROUP_BY
-should i disable that???
-yeah, i wanted to try it on mariadb and see if i had the same issue, but i'm generally pretty clueless
-well, let me try disabling it with this thing
-SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
-oops, i'm still getting the exact same error
-
-select O.`Ship City`, concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, count(O.`Order ID`) as `ships per employee`
-from orders O right outer join employees E on O.`Employee ID` = E.ID
-group by O.`Employee id`;
-
->>2>ONLY_FULL_GROUP_BY error!
-
-maybe the problem with both of these is that i am trying to select attributes from outside the grouped table
-so like, how do you put a thing together like that?
-whoa, look at that last example, that looks pretty compound...
-
-select O.`Ship City`, O.`Ship State/Province`, S.Company
-from (orders O join shippers s on O.`shipper id` = s.`id`) join (select O.`Order ID`, count(O.`Order ID`) as numberitems
-				                                                from orders o
-				                                                group by O.`Ship State/Province`) T
-where O.`order id`=T.`order id`;
-
->>3>ONLY_FULL_GROUP_BY error!!
-
-anyway...
+i'm going to skip FROM 3 & 4, because i've got other problems!
 
 1. Find how many shipments have been made to each state. Order the results by state.
 
@@ -169,16 +137,23 @@ from orders o join employees e on o.`employee id` = e.id
 group by o.`employee id`
 order by `ships per employee` desc, E.`Last Name`;
 
->>4>ONLY_FULL_GROUP_BY error!!!
+>>>ONLY_FULL_GROUP_BY error!!!
 
 3. Show the number of items in each order, sorted by order date desc
 
-select o.`order date`, count(od.`product id`) as `items in order`
+select o.`order date`, count(od.`id`) as `items in order`
 from products p join (`order details` od join orders o on od.`order id` = o.`order id`) on p.id = od.`product id`
 group by od.`order id`
 order by o.`order date` desc, p.`product name`;
 
->>5>ONLY_FULL_GROUP_BY error!!!!
+>>>ONLY_FULL_GROUP_BY error!!!!
+
+select concat(E.`First Name`, ' ', E.`Last Name`) as `Employee Name`, X.employeeOrders
+from (employees e join orders o on e.`id` = o.`employee id`) join (select count(o.`order id`) as employeeOrders
+                                                                    from orders o
+                                                                    group by o.`employee id`) X
+where o.`ship state/province` = 'NY' and X.employeeOrders > 1
+order by E.`Last Name`;
 
 4. Show the number of items in orders placed on each order date, sorted by order date desc
 
@@ -212,19 +187,19 @@ group by p.category;
 4. Find the highest, lowest, and average profit margin (list price-standard price) 
 for each category of products, ordered by average profit margin
 
-alter table products add `profit margin` as (`list price` - `standard cost`) int;
+alter table products add `profit margin` int as (`list price` - `standard cost`);
 
->>6>i keep getting a syntax error!!! i don't think i'm missing any back quotes!!!
-i tried including the data type...
+aha! i had to put the datatype directly after the column name!
 
-supposing this was actually working, then i would go...
-well, i'm not quite sure how to put max and min on the same table as an ordered list
-so i'm skipping that for now
->>7>skip
+>>>i'm not sure how to make these tables
 
-select p.`profit margin`
+[do this for all categories]
+select p.category, avg(`profit margin`), min(`profit margin`), max(`profit margin`)
 from products p
+group by p.category
 order by p.`profit margin` asc;
+
+>>>ONLY_FULL_GROUP_BY error anyway
 
 5. List all the employees names who placed more than one order in New York, ordered by last name
 
