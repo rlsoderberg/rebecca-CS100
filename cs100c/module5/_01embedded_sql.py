@@ -5,9 +5,16 @@
 #the one with the languages isn't working!!! 
 #there should totally be some results for french!!!
 #i think i'm formatting it wrong...
+#aha, i had to put the percent signs outside the first set of quotes
 
 #discounts is also not working
 #it's giving me all these discounts of 0!!!
+#hey, are all the discounts 0?
+#ok, i'm using profit margin
+
+#well, the inequality still isn't working
+#i converted input to int, but that didn't seem to help
+#seems as if maybe my problem might be with min on line 29??? not sure
 
 import pymysql
 
@@ -16,11 +23,11 @@ db.autocommit(True)
 
 #lname = input('give me a last name to search for: ')
 #lang = input('you are looking for employees with experience in what language? ')
-#disc = input('find products with discount over: ')
+min = int(input('find products with profit margin of more than: '))
 
 #sql = "select `first name`, `last name` from employees where `last name` = '"+lname+"'"
-#sql = "select `first name`, `last name`, notes from employees where notes like '"%lang%"' "
-#sql = "select p.`product name`, od.discount from products p join `order details` od on p.id = od.`product id` where discount >= 'disc'"
+#sql = "select `first name`, `last name`, notes from employees where notes like '%"+lang+"%' "
+sql = "select `product name`, `profit margin` from products p where `profit margin` >= 'min'"
 
 crsr = db.cursor()
 res = crsr.execute(sql)
@@ -29,10 +36,10 @@ row_count = crsr.rowcount
 for row in crsr:
     #print(row[0] + ' ' + row[1])
     #print(row[0] + ' ' + row[1] + ': ' + row[2])
-    #print(row[0] + ': discount of ' + str(row[1]))
+    print(row[0] + ': profit margin of ' + str(row[1]))
 if row_count == 0:
     #print(f'No employees with last name {lname}.')
     #print(f'No employees with {lang} experience.')
-    #print(f'No products with discount over {disc}.')
+    print(f'No products with discount over {min}.')
 crsr.close()
 db.close()
