@@ -1,6 +1,8 @@
 #sanitizing input by using %s as a placeholder
 #add lname as list, using brackets
 
+#this prevents things like sql injection attacks...
+
 
 import pymysql
 

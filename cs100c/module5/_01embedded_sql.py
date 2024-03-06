@@ -1,8 +1,7 @@
+#embedded sql with pymysql
+#access database, execute sql command, go through result row by row
 
-#for the language one, i put the percent signs outside the first set of quotes
-
-#i ended up using product id with join and try except, seems to be working
-
+#there are 3 different lines for the input/sql statement/print result/print failure parts of the code, for 3 different versions of the problem
 
 import pymysql
 
