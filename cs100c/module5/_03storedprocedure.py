@@ -22,3 +22,7 @@ db.close()
 
 #well, i guess the example is supposed to be used with workbench
 #oh good lord! now i have to figure out where my northwind file is, and figure out how to access it with workbench!
+#oh right, i guess i just pasted it in
+#ok, it seemed to work when i went up to database and said connect to database
+#ooh!!! it worked!!!
+
