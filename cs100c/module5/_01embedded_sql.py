@@ -1,27 +1,8 @@
-#we are back to python files!!! nice green comments
 
-#i totally stole this row counter off the internet!!! it looks pretty nice though
+#for the language one, i put the percent signs outside the first set of quotes
 
-#the one with the languages isn't working!!! 
-#there should totally be some results for french!!!
-#i think i'm formatting it wrong...
-#aha, i had to put the percent signs outside the first set of quotes
+#i ended up using product id with join and try except, seems to be working
 
-#discounts is also not working
-#it's giving me all these discounts of 0!!!
-#hey, are all the discounts 0?
-#ok, i'm using profit margin
-
-#well, the inequality still isn't working
-#i converted input to int, but that didn't seem to help
-#seems as if maybe my problem might be with min on line 29??? not sure
-#i tried to convert everything to floats, and now it's just not working
-#well, i decided to try to stick with ints, since that's the datatype of my generated column
-#how silly! i don't know what i'm doing!
-#i'm whipping out the old try except...
-
-#well, i tried to change it to get exact profit margin, and now it's acting even weirder!
-#you know, i wouldn't be surprised if the generated column was messing with it, so maybe i'll try a different column later
 
 import pymysql
 
@@ -33,17 +14,17 @@ db.autocommit(True)
 valid = False
 while valid == False:
     try:
-        min = int(input('find products with profit margin of: '))
+        input = int(input('enter product id to see the ids of orders containing that product: '))
         valid = True
     except ValueError:
-        print('please enter an integer.')
+        print('please enter a valid integer: ')
 
+prod = str(input)
 
 
 #sql = "select `first name`, `last name` from employees where `last name` = '"+lname+"'"
 #sql = "select `first name`, `last name`, notes from employees where notes like '%"+lang+"%' "
-#sql = "select `product name`, `profit margin` from products p where `profit margin` > 'min'"
-sql = "select `product name`, `profit margin` from products p where `profit margin` = 'min'"
+sql = "select p.id, p.`product name`, od.`order id` from products p join `order details` od on od.`product id` = p.id where p.id = '"+prod+"'"
 
 crsr = db.cursor()
 res = crsr.execute(sql)
@@ -52,11 +33,10 @@ row_count = crsr.rowcount
 for row in crsr:
     #print(row[0] + ' ' + row[1])
     #print(row[0] + ' ' + row[1] + ': ' + row[2])
-    #print(row[0] + ': profit margin of ' + str(row[1]))
-    print(row[0] + ': profit margin of ' + str(row[1]))
+    print('id: ' + str(row[0]) + ' product name: ' + str(row[1]) + ' order id: ' + str(row[2]))
 if row_count == 0:
     #print(f'No employees with last name {lname}.')
     #print(f'No employees with {lang} experience.')
-    print(f'No products with discount of {min}.')
+    print(f'No products found with id {prod}.')
 crsr.close()
 db.close()

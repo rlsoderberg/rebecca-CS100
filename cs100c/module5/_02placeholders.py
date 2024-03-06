@@ -1,10 +1,6 @@
 #sanitizing input by using %s as a placeholder
 #add lname as list, using brackets
 
-#lname = 'Kotas'; drop table employees; --'; employees still exists
-#i don't get exactly how that worked?
-#i also don't get why there's a comment at the end?>
-
 
 import pymysql
 
