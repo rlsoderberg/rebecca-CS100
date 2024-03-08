@@ -21,9 +21,9 @@ while valid == False:
 prod = str(input)
 
 
-#sql = "select `first name`, `last name` from employees where `last name` = '"+lname+"'"
-#sql = "select `first name`, `last name`, notes from employees where notes like '%"+lang+"%' "
-sql = "select p.id, p.`product name`, od.`order id` from products p join `order details` od on od.`product id` = p.id where p.id = '"+prod+"'"
+#sql = "select `first name`, `last name` from employees where `last name` = '" + lname + "'"
+#sql = "select `first name`, `last name`, notes from employees where notes like '%" + lang + "%'"
+sql = "select p.id, p.`product name`, od.`order id` from products p join `order details` od on od.`product id` = p.id where p.id = '" + prod + "'"
 
 crsr = db.cursor()
 res = crsr.execute(sql)
