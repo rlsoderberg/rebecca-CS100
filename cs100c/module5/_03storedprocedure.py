@@ -26,3 +26,21 @@ db.close()
 #ok, it seemed to work when i went up to database and said connect to database
 #ooh!!! it worked!!!
 
+#so that was...
+"""
+use northwind;
+delimiter \\
+
+CREATE PROCEDURE `get_employees` (
+	in lname varchar(255)
+)
+BEGIN
+	select `last name`, `first name`
+    from employees
+    where `last name` = lname;
+END \\
+
+delimiter ;
+"""
+
+# i never exactly did the procedure storage part of this?
