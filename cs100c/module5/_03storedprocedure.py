@@ -43,4 +43,4 @@ END \\
 delimiter ;
 """
 
-# i never exactly did the procedure storage part of this?
+# i never exactly did the procedure storage part of this? you know, applying to additional example queries?

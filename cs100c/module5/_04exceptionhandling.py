@@ -9,6 +9,7 @@ import pymysql
 import json
 
 
+"""
 db = None
 crsr = None
 try:
@@ -32,6 +33,37 @@ except Exception as err:
 print('almost done')
 crsr.close()
 db.close()
+"""
+#well, i took away the outer shell, and i still need to figure it out
+#it seems to not like my __getattribute__???
+
+db = None
+crsr = None
+success = False
+while not success:
+    try:
+        db = pymysql.connect(host='localhost', user='root', password='2101', database='northwind')
+        db.autocommit(True)
+        crsr = db.cursor()
+        sql = input('type an SQL string: ')
+        res = crsr.execute(sql)
+        # get the column names. We're ignoring the other parts: name
+        #    type_code, display_size, internal_size, precision, scale, null_ok
+        columns = [name for (name, _, _, _, _, _, _) in crsr.description]
+        for row in crsr:
+            for col in columns:
+                print(row.__getattribute__(col), end=' ')
+            print()
+        success = True
+    except pymysql.Error as dberror:
+        (errcode, errmsg) = dberror.args
+        print(errmsg)
+        print("Let's try again ...")
+
+if crsr is not None:
+    crsr.close()
+if db is not None:
+    db.close()
 
     
 
