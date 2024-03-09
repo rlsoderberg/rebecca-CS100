@@ -14,6 +14,10 @@
 
 #i haven't quite gotten to the point where i'm actually putting the row in the database...
 
+#my first attempt at for loop insertion failed spectacularly
+#i just tried another way and it didn't work at all! 
+#i might be using join wrong...
+
 
 import pymysql
 import re
@@ -73,15 +77,25 @@ for row in rows:
     rowlist = list(row)
     print(rowlist)
 
+base1 = "insert into " + n + " ("
+base2 = ") values ("
+base3 = ")"
+
+
 c = 'null_name'
 while c.lower() != 'a' and c.lower() != 'b' and c.lower() != 'c':
     c = input('\ndo you want to a. create new row, b. modify existing row, or c. create new column? ')
 if c == 'a':
-    print('Enter a value for each of these columns, or None for no value: ')
-    newlist = []
+    m = print('Enter a value for each of these columns, or None for no value: ')
     for e in range(0, len(rowlist)):
         item = input(columns[e] + ': ')
-        newlist.append(item)
+        base1.join("`" + columns[e] + "`, ")
+        base2.join("`" + item + "`, ")
+
+    string = base1 + base2 + base3
+    print(string)
+
+    
 
     
 
