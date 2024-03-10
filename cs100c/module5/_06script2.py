@@ -24,6 +24,9 @@
 #oh!!! maybe my datatypes are incorrect!!!
 #there, i think that worked
 
+#what a mess!!! i mean, first of all, selecting rows using the first column is super sketchy, can't expect that to be a primary key
+#but i will try adding new columns later, that might work
+
 import pymysql
 import re
 
@@ -82,15 +85,18 @@ for row in rows:
     rowlist = list(row)
     print(rowlist)
 
-base1 = "insert into " + n + " (`"
-base2 = "`) values ('"
-base3 = "')"
+
 
 
 c = 'null_name'
-while c.lower() != 'a' and c.lower() != 'b' and c.lower() != 'c':
-    c = input('\ndo you want to a. create new row, b. modify existing row, or c. create new column? ')
+while c.lower() != 'a' and c.lower() != 'b':
+    c = input('\ndo you want to a. create new row, or b. create new column? ')
 if c == 'a':
+
+    base1 = "insert into " + n + " (`"
+    base2 = "`) values ('"
+    base3 = "')"
+
     m = print('Enter a value for each of these columns, or None for no value: ')
     for e in range(0, len(rowlist)):
         
@@ -105,13 +111,7 @@ if c == 'a':
             base2 = "', '".join(tuple2)
         else:
             base2 = "".join(tuple2)
-
-    tuple3 = (base1, base2, base3)
-    string = "".join(tuple3)
-    print(string)
-
-    str = sdb.cursor()
-    str.execute(string)
+    
 
 sdb.close()
 tables.close()
