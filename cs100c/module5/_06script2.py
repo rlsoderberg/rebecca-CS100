@@ -18,6 +18,8 @@
 #i just tried another way and it didn't work at all! 
 #i might be using join wrong...
 
+#i had to make these tuples first
+#now it says my values are incorrect!!!
 
 import pymysql
 import re
@@ -77,9 +79,9 @@ for row in rows:
     rowlist = list(row)
     print(rowlist)
 
-base1 = "insert into " + n + " ("
-base2 = ") values ("
-base3 = ")"
+base1 = "insert into " + n + " (`"
+base2 = "`) values ('"
+base3 = "')"
 
 
 c = 'null_name'
@@ -88,12 +90,25 @@ while c.lower() != 'a' and c.lower() != 'b' and c.lower() != 'c':
 if c == 'a':
     m = print('Enter a value for each of these columns, or None for no value: ')
     for e in range(0, len(rowlist)):
+        
         item = input(columns[e] + ': ')
-        base1.join("`" + columns[e] + "`, ")
-        base2.join("`" + item + "`, ")
+        tuple1 = (base1, columns[e])
+        if e > 0:
+            base1 = "`, `".join(tuple1)
+        else: 
+            base1 = "".join(tuple1)
+        tuple2 = (base2, item)
+        if e > 0:
+            base2 = "', '".join(tuple2)
+        else:
+            base2 = "".join(tuple2)
 
-    string = base1 + base2 + base3
+    tuple3 = (base1, base2, base3)
+    string = "".join(tuple3)
     print(string)
+
+    str = sdb.cursor()
+    str.execute(string)
 
     
 
