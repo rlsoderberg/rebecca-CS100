@@ -21,6 +21,9 @@
 #i had to make these tuples first
 #now it says my values are incorrect!!!
 
+#oh!!! maybe my datatypes are incorrect!!!
+#there, i think that worked
+
 import pymysql
 import re
 
@@ -110,15 +113,10 @@ if c == 'a':
     str = sdb.cursor()
     str.execute(string)
 
-    
-
-    
-
-
-
-
 sdb.close()
-show.close()
+tables.close()
+rows.close()
+
 
 
 
