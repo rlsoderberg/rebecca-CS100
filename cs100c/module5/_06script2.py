@@ -1,34 +1,22 @@
-#alas! i can't always initialize with None, because it doesn't like comparing None! is this true? because i'm having other comparison issues
-#i got around the latest with a null name, although that doesn't seem entirely legit
-#oh, never mind, i don't know if i'll need that anyway, because i'm not sure how to get around this without a duplicate loop
-#aha! the solution was a list!
-#why am i having trouble stripping??? i ended up using regular expressions
+#embedded sql scripts including show database & add data
 
-#anyway... is there some way i can just add a database onto my connection? instead of creating a whole new one?
-#well, i tried the column thing from a previous problem, but it's totally still not working!
-#i've got it where it really doesn't make sense... 
+#notes:
+#it doesn't like comparing None
+#list was the key to displaying a list of databases
+#i ended up using regular expressions when database items were hard to strip
+#use join correctly (it's not the same as append); it helps to use tuples
+#correct datatypes also help
 
-#well, i'm converting to list, and then printing whole rows. not pretty, but somewhat functional?
-#it would be nice to make it look pretty, i kind of got stuck on python for loops, which always weird me out a little!!!
-#i mean, obviously the fundamental problem is that i'm dealing with cursors and stuff, but i'm skipping that for now
+#it always puts a b before the value for the last column. wat is this???
 
-#i haven't quite gotten to the point where i'm actually putting the row in the database...
-
-#my first attempt at for loop insertion failed spectacularly
-#i just tried another way and it didn't work at all! 
-#i might be using join wrong...
-
-#i had to make these tuples first
-#now it says my values are incorrect!!!
-
-#oh!!! maybe my datatypes are incorrect!!!
-#there, i think that worked
-
-#what a mess!!! i mean, first of all, selecting rows using the first column is super sketchy, can't expect that to be a primary key
-#but i will try adding new columns later, that might work
+#anyway... type selection is going to take forever!!! i don't have time for this right now!!!
 
 import pymysql
 import re
+
+def get_length(max):
+    length = print(f'enter a number between 0 and {max}: ')
+    return length
 
 db = pymysql.connect(host='localhost', user='root', password = '2101')
 db.autocommit(True)
@@ -112,7 +100,30 @@ if c == 'a':
         else:
             base2 = "".join(tuple2)
     
+    stringtuple = (base1, base2, base3)
+    string = "".join(stringtuple)
+    str = sdb.cursor()
+    str.execute(string)
 
+
+elif c == 'b':
+
+    vartuples = [('varchar', 65535),('int',255),('char',255),('datetime',0),('bool', 1)]
+
+    s = 'null_name'
+    while s != 'a' and s != 'b':
+        print('COLUMN DATATYPE\n default datatype is varchar.\n')
+        print('press a to select a length for your varchar.\npress b to select a different datatype for your column')
+
+        if s == 'b':
+            while sb != 'm' and sb != 'int' and sb != 'char' and sb != 'datetime' and sb != 'bool':
+                print('available datatypes:\n 1.int, 2.char, 3.datetime, 4.bool')
+                sb = input('enter one of these datatypes, or press m to return to the COLUMN DATATYPE menu')
+
+    newt = f'alter table {n} add {cname} {}
+    newc = sdb.cursor()
+
+newc.close()
 sdb.close()
 tables.close()
 rows.close()
