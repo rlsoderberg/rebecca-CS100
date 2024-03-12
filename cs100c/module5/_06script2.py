@@ -11,6 +11,18 @@
 
 #anyway... type selection is going to take forever!!! i don't have time for this right now!!!
 
+#oh, list of tuples is ridiculous. ok, i will just make multiple lists. it seems less correct but whatever!!!
+#ooh, when you have a list of strings, make sure it's not just one long string
+
+#i don't think types[available] is what i'm getting after at all, but how do you do that???
+
+#i'm omitting datetime because that's, like, a whole thing!
+
+#and do i really need to be making so many cursors???
+
+#ok, i obviously need to reorganize this whole thing, so the menus work right, but i'll give it a save
+
+
 import pymysql
 import re
 
@@ -102,28 +114,80 @@ if c == 'a':
     
     stringtuple = (base1, base2, base3)
     string = "".join(stringtuple)
-    str = sdb.cursor()
-    str.execute(string)
+    strex = sdb.cursor()
+    strex.execute(string)
 
 
 elif c == 'b':
 
-    vartuples = [('varchar', 65535),('int',255),('char',255),('datetime',0),('bool', 1)]
+    contdt = 0
+    while contdt == 0:
+        length = -1
+        types = ['varchar', 'int', 'char', 'bool']
+        lens = [65535, 255, 255, 1]
+        inuse = 0
 
-    s = 'null_name'
-    while s != 'a' and s != 'b':
-        print('COLUMN DATATYPE\n default datatype is varchar.\n')
-        print('press a to select a length for your varchar.\npress b to select a different datatype for your column')
+        print(f'\nCOLUMN MAIN MENU\ncurrent datatype is {types[inuse]}({length}).')
+        lentype = 'null_name'
+        while lentype != 'a' and lentype != 'b':
+            lentype = input('press a to select a different length.\npress b to select a different datatype. ')
 
-        if s == 'b':
-            while sb != 'm' and sb != 'int' and sb != 'char' and sb != 'datetime' and sb != 'bool':
-                print('available datatypes:\n 1.int, 2.char, 3.datetime, 4.bool')
-                sb = input('enter one of these datatypes, or press m to return to the COLUMN DATATYPE menu')
+        if lentype == 'b':
 
-    newt = f'alter table {n} add {cname} {}
-    newc = sdb.cursor()
+            dt = 0
+            while dt ==0:
 
-newc.close()
+                print(f'SELECT DATA TYPE\ncurrent datatype is{types[inuse]}(0).')
+
+                select = 'null_name'
+                while select != 'm' and select not in types:
+                    print('available datatypes:')
+                    for d in types:
+                        print(f'{d}. {types[d]}')
+                
+                select = input('enter one of these datatypes, or press m to return to the SELECT COLUMN DATATYPE menu: ')
+                if select != 'm':
+                    inuse = types.index(select)
+
+
+        elif lentype == 'a':
+            
+            rng = 0
+            while rng == 0:
+
+                print(f'\nSELECT RANGE\ncurrent datatype is {types[inuse]}({length}).')
+
+                length = -1
+                while int(length) not in range(0, lens[inuse]):
+                    print(f'available range: 0, {lens[inuse]}')
+                    length = input('set range max: ')
+
+                print(f'\nnew datatype & length: {types[inuse]}({length})')
+                rng = input('press 1 to return to COLUMN MAIN MENU, or 0 to return to SELECT RANGE menu: ')
+
+    nm = 0
+    while nm == 0:
+
+        print('SELECT COLUMN NAME')
+
+        valid = False
+        while valid == False:
+            try:
+                cname = input('type name for column, up to 128 characters: ')
+                valid = True
+            except len(cname) > 128:
+                print('Error: column name length exceeds 128 characters. Try again: ')
+
+        nm = input('press 1 to create column, or 0 to SELECT COLUMN NAME again')
+
+        newc = f'alter table {n} add {cname} {lens[inuse]}({length})'
+        newcex = sdb.cursor()
+        newcex.execute(newc)
+        print(f'inserting column {cname} {inuse}({length}) into {n}')
+
+
+newcex.close()
+strex.close()
 sdb.close()
 tables.close()
 rows.close()
