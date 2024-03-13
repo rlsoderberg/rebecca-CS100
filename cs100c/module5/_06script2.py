@@ -13,6 +13,9 @@
 #create new column > a. exits the program, when i try to return to COLUMN MENU!
 #create new column > b. gets stuck on types[d]????
 
+#well, i was almost able to make a bool(2000), so i'll have to work on that next
+#i'm still not totally comfortable with the whole 'columns = [name for (name, _, _, _, _, _, _) in rows.description]' thing
+
 def show_db():
 
     showdb = "show databases;"
@@ -70,7 +73,7 @@ def show_columns(tabel):
         rowlist = list(row)
         print(rowlist)
 
-    rows.close
+    rows.close()
 
     return columns, row_count, rowlist
 
@@ -100,55 +103,58 @@ def create_insert(rowlist):
     strex.execute(string)
     print('new row created.')
 
-def select_type(types, inuse, length):
+def select_type(length, types, inuse, lens, tabel):
     dt = 0
-    while dt == 0:
+    while int(dt) == 0:
 
-        print(f'SELECT DATA TYPE\ncurrent datatype is{types[inuse]}(0).')
+        print(f'\nSELECT DATA TYPE\ncurrent datatype is {inuse}({length}).')
 
-        select = 'null_name'
-        while select != 'm' and select not in types:
-            print('available datatypes:')
+        select = 0
+        fin = 0
+        while int(fin) == 0:
+            print('\navailable datatypes:')
             for d in types:
-                print(f'{d}. {types[d]}')
+                print(f'{types.index(d)}. {d}')
         
-        select = input('enter one of these datatypes: ')
-        inuse = types.index(select)
+            select = -1
+            while int(select) == -1:
+                select = input('enter one of these numbers: ')
+                inuse = types[int(select)]
+            fin = 1
 
-        print(f'\nnew datatype & length: {types[inuse]}({length})')
+        print(f'\nnew datatype & length: {inuse}({length})')
         dt = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
 
-    if dt == 1:
-        column_menu()
+    if int(dt) == 1:
+        column_menu(length, types, inuse, lens, tabel)
 
     return inuse
     
-def set_range(types, inuse, length, lens):
+def set_range(length, types, inuse, lens, tabel):
     rng = 0
-    while rng == 0:
+    while int(rng) == 0:
 
-        print(f'\nSELECT LENGTH\ncurrent datatype is {types[inuse]}({length}).')
+        print(f'\nSELECT LENGTH\ncurrent datatype is {inuse}({length}).')
 
         length = -1
-        while int(length) not in range(0, lens[inuse]):
-            print(f'available length: 0, {lens[inuse]}')
-            length = input('set range max: ')
+        fin = 0
+        while int(fin) == 0:
+            print(f'\navailable length: (0, {lens[types.index(inuse)]})')
+            while int(length) not in range(0, lens[types.index(inuse)]):
+                length = input('set length max: ')
+            fin = 1
 
-        print(f'\nnew datatype & length: {types[inuse]}({length})')
+        print(f'\nnew datatype & length: {inuse}({length})')
         rng = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
 
-    if rng == 1:
-        column_menu()
+    if int(rng) == 1:
+        column_menu(length, types, inuse, lens, tabel)
 
     return length
 
-def column_menu():
-    length = -1
-    types = ['varchar', 'int', 'char', 'bool']
-    lens = [65535, 255, 255, 1]
-    inuse = 0
+def column_menu(length, types, inuse, lens, tabel):
 
-    print(f'\nCOLUMN MAIN MENU\ncurrent datatype is {types[inuse]}({length}).')
+    print(f'\nCOLUMN MENU\ncurrent datatype is {inuse}({length}).')
     lentype = 'null_name'
     while lentype != 'a' and lentype != 'b' and lentype != 'c':
         lentype = input('press a to select a different length.\npress b to select a different datatype.\npress c to create column. ')
@@ -156,27 +162,27 @@ def column_menu():
 
     if lentype == 'a':
         
-        length = set_range(types, inuse, length, lens)
+        length = set_range(length, types, inuse, lens, tabel)
 
     elif lentype == 'b':
 
-        inuse = select_type(types, inuse, length)
+        inuse = select_type(length, types, inuse, lens, tabel)
 
     elif lentype == 'c':
 
-        if length < 0:
+        if int(length) < 0:
             print('\nyou need to set length first.')
-            column_menu()
+            column_menu(length, types, inuse, lens, tabel)
         else:
-            column_name(tabel, inuse, length, lens)
+            column_name(length, types, inuse, lens, tabel)
 
 
-def column_name(tabel, inuse, length, lens):
+def column_name(length, types, inuse, lens, tabel):
 
     nm = 0
-    while nm == 0:
+    while int(nm) == 0:
 
-        print('SELECT COLUMN NAME')
+        print('\nSELECT COLUMN NAME')
 
         valid = False
         while valid == False:
@@ -186,20 +192,27 @@ def column_name(tabel, inuse, length, lens):
             except len(cname) > 128:
                 print('Error: column name length exceeds 128 characters. Try again: ')
 
-        nm = input('press 1 to create column, or 0 to SELECT COLUMN NAME again')
+        nm = input("press 1 to create column '" + cname + "', or 0 to SELECT COLUMN NAME again: ")
 
-    if nm == 1:
-        execute_column(tabel, inuse, length, lens, cname)
+    if int(nm) == 1:
+        execute_column(length, types, inuse, lens, tabel, cname)
 
 
-def execute_column(tabel, inuse, length, lens, cname):
+def execute_column(length, types, inuse, lens, tabel, cname):
 
-    newc = f'alter table {tabel} add {cname} {lens[inuse]}({length})'
+    newc = f'alter table {tabel} add {cname} {inuse}({length})'
     newcex = sdb.cursor()
     newcex.execute(newc)
     print(f'inserting column {cname} {inuse}({length}) into {tabel}')
+    
+    showc = 'show columns from ' + tabel
+    newcex.execute(showc)
+    columns = [(name, type_code) for (name, type_code, _, _, _, _, _) in newcex.description]
 
-
+    print(f'\nnew columns for table {tabel}: ')
+    for l in newcex:
+        print(l)
+   
     newcex.close()
 
 
@@ -227,6 +240,10 @@ tabel = show_tables()
 input('press any key to see existing columns in ' + tabel)
 columns, row_count, rowlist = show_columns(tabel)
 
+length = 255
+types = ['varchar', 'int', 'char', 'bool']
+inuse = 'varchar'
+lens = [65535, 255, 255, 1]
 
 #do you want to a. create new row, or b. create new column?
 c = 'null_name'
@@ -237,7 +254,7 @@ if c == 'a':
     create_insert(rowlist)
 
 elif c == 'b':
-    column_menu()
+    column_menu(length, types, inuse, lens, tabel)
 
 sdb.close()
 
