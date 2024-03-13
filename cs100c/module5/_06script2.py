@@ -14,7 +14,9 @@
 #create new column > b. gets stuck on types[d]????
 
 #well, i was almost able to make a bool(2000), so i'll have to work on that next
-#i'm still not totally comfortable with the whole 'columns = [name for (name, _, _, _, _, _, _) in rows.description]' thing
+#i tried, but it's still not filtering right!!!
+
+#oh yeah, and the main thing is, look at all those variables i'm passing back and forth!!! seems so redundant
 
 def show_db():
 
@@ -109,25 +111,27 @@ def select_type(length, types, inuse, lens, tabel):
 
         print(f'\nSELECT DATA TYPE\ncurrent datatype is {inuse}({length}).')
 
-        select = 0
-        fin = 0
-        while int(fin) == 0:
-            print('\navailable datatypes:')
-            for d in types:
-                print(f'{types.index(d)}. {d}')
-        
-            select = -1
-            while int(select) == -1:
+        select = -1
+        while int(select) == -1:
+            try:
+                print('\navailable datatypes:')
+                for d in types:
+                    print(f'{types.index(d)}. {d}')
                 select = input('enter one of these numbers: ')
                 inuse = types[int(select)]
-            fin = 1
+            except int(length) not in range(0, lens[types.index(inuse)]): 
+                print(f'current range {length} out of range for data type {inuse}.')
+                print(f'ranges for data types are: ')
+                for x in types:
+                      print(f'{x}. {types[x]}:  {lens[types.index(x)]}')
+                select = input('enter one of these numbers: ')
+            
 
         print(f'\nnew datatype & length: {inuse}({length})')
         dt = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
 
     if int(dt) == 1:
         column_menu(length, types, inuse, lens, tabel)
-
     return inuse
     
 def set_range(length, types, inuse, lens, tabel):
@@ -137,12 +141,16 @@ def set_range(length, types, inuse, lens, tabel):
         print(f'\nSELECT LENGTH\ncurrent datatype is {inuse}({length}).')
 
         length = -1
-        fin = 0
-        while int(fin) == 0:
+        while int(length) == -1:
             print(f'\navailable length: (0, {lens[types.index(inuse)]})')
             while int(length) not in range(0, lens[types.index(inuse)]):
-                length = input('set length max: ')
-            fin = 1
+                try:
+                    length = input('set length max: ')
+                except int(length) not in range(0, lens[types.index(inuse)]):
+                    print(f'range {length} out of range for current datatype {inuse}.')
+                    print(f'range for data type {inuse} is (0, {lens[types.index(inuse)]}). please select another range. ')
+
+        
 
         print(f'\nnew datatype & length: {inuse}({length})')
         rng = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
