@@ -9,95 +9,77 @@
 
 #it always puts a b before the value for the last column. wat is this???
 
-#anyway... type selection is going to take forever!!! i don't have time for this right now!!!
+#well, i'm having problems with:
+#create new column > a. exits the program, when i try to return to COLUMN MENU!
+#create new column > b. gets stuck on types[d]????
 
-#oh, list of tuples is ridiculous. ok, i will just make multiple lists. it seems less correct but whatever!!!
-#ooh, when you have a list of strings, make sure it's not just one long string
+def show_db():
 
-#i don't think types[available] is what i'm getting after at all, but how do you do that???
+    showdb = "show databases;"
+    show = db.cursor()
+    show.execute(showdb)
+    row_count = show.rowcount
+    dblist = []
+    for row in show:
+        print(row)
+        dblist.append(re.sub('[^\w]', '', str(row)))
 
-#i'm omitting datetime because that's, like, a whole thing!
+    if row_count == 0:
+        print(f'No databases found.')
+    else:
+        base = 'null_name'
+        while base not in dblist:
+            base = input('enter the name of a database to insert data: ')
 
-#and do i really need to be making so many cursors???
+    show.close()
 
-#ok, i obviously need to reorganize this whole thing, so the menus work right, but i'll give it a save
+    return base
 
+def show_tables():
 
-import pymysql
-import re
+    showtables = "show tables;"
+    tables = sdb.cursor()
+    tables.execute(showtables)
+    row_count = tables.rowcount
+    tblist = []
+    for row in tables:
+        print(row)
+        tblist.append(re.sub('[^\w]', '', str(row)))
 
-def get_length(max):
-    length = print(f'enter a number between 0 and {max}: ')
-    return length
+    if row_count == 0:
+        print(f'No tables found.')
+    else:
+        tabel = 'null_name'
+        while tabel not in tblist:
+            tabel = input('enter the name of a table to insert data: ')
 
-db = pymysql.connect(host='localhost', user='root', password = '2101')
-db.autocommit(True)
+    tables.close()
 
-x = input('press any key to show existing databases.')
-showdb = "show databases;"
-show = db.cursor()
-show.execute(showdb)
-row_count = show.rowcount
-dblist = []
-for row in show:
-    print(row)
-    dblist.append(re.sub('[^\w]', '', str(row)))
-
-if row_count == 0:
-    print(f'No databases found.')
-else:
-    n = 'null_name'
-    while n not in dblist:
-        n = input('enter the name of a database to insert data: ')
-        
-db.close()
-show.close()
-
-        
-sdb = pymysql.connect(host='localhost', user='root', password = '2101', database = n)
-sdb.autocommit(True)
-
-p = input('now in database ' + n + '. press any key to show tables in ' + n + '.')
-showtables = "show tables;"
-tables = sdb.cursor()
-tables.execute(showtables)
-row_count = tables.rowcount
-tblist = []
-for row in tables:
-    print(row)
-    tblist.append(re.sub('[^\w]', '', str(row)))
-
-if row_count == 0:
-    print(f'No tables found.')
-else:
-    n = 'null_name'
-    while n not in tblist:
-        n = input('enter the name of a table to insert data: ')
-
-f = input('press any key to see existing columns in ' + n)
-describen = "select * from " + n
-rows = sdb.cursor()
-rows.execute(describen)
-row_count = rows.rowcount
-columns = [name for (name, _, _, _, _, _, _) in rows.description]
-
-for row in rows:
-    rowlist = list(row)
-    print(rowlist)
+    return tabel
 
 
+def show_columns(tabel):
+    
+    describen = "select * from " + tabel
+    rows = sdb.cursor()
+    rows.execute(describen)
+    row_count = rows.rowcount
+    columns = [name for (name, _, _, _, _, _, _) in rows.description]
 
+    for row in rows:
+        rowlist = list(row)
+        print(rowlist)
 
-c = 'null_name'
-while c.lower() != 'a' and c.lower() != 'b':
-    c = input('\ndo you want to a. create new row, or b. create new column? ')
-if c == 'a':
+    rows.close
 
-    base1 = "insert into " + n + " (`"
+    return columns, row_count, rowlist
+
+def create_insert(rowlist):
+    base1 = "insert into " + tabel + " (`"
     base2 = "`) values ('"
     base3 = "')"
 
-    m = print('Enter a value for each of these columns, or None for no value: ')
+    print('Enter a value for each of these columns, or None for no value: ')
     for e in range(0, len(rowlist)):
         
         item = input(columns[e] + ': ')
@@ -116,54 +98,80 @@ if c == 'a':
     string = "".join(stringtuple)
     strex = sdb.cursor()
     strex.execute(string)
+    print('new row created.')
 
+def select_type(types, inuse, length):
+    dt = 0
+    while dt == 0:
 
-elif c == 'b':
+        print(f'SELECT DATA TYPE\ncurrent datatype is{types[inuse]}(0).')
 
-    contdt = 0
-    while contdt == 0:
+        select = 'null_name'
+        while select != 'm' and select not in types:
+            print('available datatypes:')
+            for d in types:
+                print(f'{d}. {types[d]}')
+        
+        select = input('enter one of these datatypes: ')
+        inuse = types.index(select)
+
+        print(f'\nnew datatype & length: {types[inuse]}({length})')
+        dt = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
+
+    if dt == 1:
+        column_menu()
+
+    return inuse
+    
+def set_range(types, inuse, length, lens):
+    rng = 0
+    while rng == 0:
+
+        print(f'\nSELECT LENGTH\ncurrent datatype is {types[inuse]}({length}).')
+
         length = -1
-        types = ['varchar', 'int', 'char', 'bool']
-        lens = [65535, 255, 255, 1]
-        inuse = 0
+        while int(length) not in range(0, lens[inuse]):
+            print(f'available length: 0, {lens[inuse]}')
+            length = input('set range max: ')
 
-        print(f'\nCOLUMN MAIN MENU\ncurrent datatype is {types[inuse]}({length}).')
-        lentype = 'null_name'
-        while lentype != 'a' and lentype != 'b':
-            lentype = input('press a to select a different length.\npress b to select a different datatype. ')
+        print(f'\nnew datatype & length: {types[inuse]}({length})')
+        rng = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
 
-        if lentype == 'b':
+    if rng == 1:
+        column_menu()
 
-            dt = 0
-            while dt ==0:
+    return length
 
-                print(f'SELECT DATA TYPE\ncurrent datatype is{types[inuse]}(0).')
+def column_menu():
+    length = -1
+    types = ['varchar', 'int', 'char', 'bool']
+    lens = [65535, 255, 255, 1]
+    inuse = 0
 
-                select = 'null_name'
-                while select != 'm' and select not in types:
-                    print('available datatypes:')
-                    for d in types:
-                        print(f'{d}. {types[d]}')
-                
-                select = input('enter one of these datatypes, or press m to return to the SELECT COLUMN DATATYPE menu: ')
-                if select != 'm':
-                    inuse = types.index(select)
+    print(f'\nCOLUMN MAIN MENU\ncurrent datatype is {types[inuse]}({length}).')
+    lentype = 'null_name'
+    while lentype != 'a' and lentype != 'b' and lentype != 'c':
+        lentype = input('press a to select a different length.\npress b to select a different datatype.\npress c to create column. ')
 
 
-        elif lentype == 'a':
-            
-            rng = 0
-            while rng == 0:
+    if lentype == 'a':
+        
+        length = set_range(types, inuse, length, lens)
 
-                print(f'\nSELECT RANGE\ncurrent datatype is {types[inuse]}({length}).')
+    elif lentype == 'b':
 
-                length = -1
-                while int(length) not in range(0, lens[inuse]):
-                    print(f'available range: 0, {lens[inuse]}')
-                    length = input('set range max: ')
+        inuse = select_type(types, inuse, length)
 
-                print(f'\nnew datatype & length: {types[inuse]}({length})')
-                rng = input('press 1 to return to COLUMN MAIN MENU, or 0 to return to SELECT RANGE menu: ')
+    elif lentype == 'c':
+
+        if length < 0:
+            print('\nyou need to set length first.')
+            column_menu()
+        else:
+            column_name(tabel, inuse, length, lens)
+
+
+def column_name(tabel, inuse, length, lens):
 
     nm = 0
     while nm == 0:
@@ -180,17 +188,58 @@ elif c == 'b':
 
         nm = input('press 1 to create column, or 0 to SELECT COLUMN NAME again')
 
-        newc = f'alter table {n} add {cname} {lens[inuse]}({length})'
-        newcex = sdb.cursor()
-        newcex.execute(newc)
-        print(f'inserting column {cname} {inuse}({length}) into {n}')
+    if nm == 1:
+        execute_column(tabel, inuse, length, lens, cname)
 
 
-newcex.close()
-strex.close()
+def execute_column(tabel, inuse, length, lens, cname):
+
+    newc = f'alter table {tabel} add {cname} {lens[inuse]}({length})'
+    newcex = sdb.cursor()
+    newcex.execute(newc)
+    print(f'inserting column {cname} {inuse}({length}) into {tabel}')
+
+
+    newcex.close()
+
+
+
+import pymysql
+import re
+
+db = pymysql.connect(host='localhost', user='root', password = '2101')
+db.autocommit(True)
+
+#enter the name of a database to insert data
+base = show_db()
+
+db.close()
+
+
+#reconnected at new database?        
+sdb = pymysql.connect(host='localhost', user='root', password = '2101', database = base)
+sdb.autocommit(True)
+
+
+input('now in database ' + base + '. press any key to show tables in ' + base + '.')
+tabel = show_tables()
+
+input('press any key to see existing columns in ' + tabel)
+columns, row_count, rowlist = show_columns(tabel)
+
+
+#do you want to a. create new row, or b. create new column?
+c = 'null_name'
+while c.lower() != 'a' and c.lower() != 'b':
+    c = input('\ndo you want to a. create new row, or b. create new column? ')
+
+if c == 'a':
+    create_insert(rowlist)
+
+elif c == 'b':
+    column_menu()
+
 sdb.close()
-tables.close()
-rows.close()
 
 
 
