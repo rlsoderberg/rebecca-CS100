@@ -18,6 +18,8 @@
 
 #oh yeah, and the main thing is, look at all those variables i'm passing back and forth!!! seems so redundant
 
+#anyway, it's not really doing what i want, but it is kind of limiting range, one way or another, so i'll take it for now
+
 def show_db():
 
     showdb = "show databases;"
@@ -112,19 +114,23 @@ def select_type(length, types, inuse, lens, tabel):
         print(f'\nSELECT DATA TYPE\ncurrent datatype is {inuse}({length}).')
 
         select = -1
-        while int(select) == -1:
-            try:
-                print('\navailable datatypes:')
-                for d in types:
-                    print(f'{types.index(d)}. {d}')
-                select = input('enter one of these numbers: ')
-                inuse = types[int(select)]
-            except int(length) not in range(0, lens[types.index(inuse)]): 
-                print(f'current range {length} out of range for data type {inuse}.')
-                print(f'ranges for data types are: ')
-                for x in types:
-                      print(f'{x}. {types[x]}:  {lens[types.index(x)]}')
-                select = input('enter one of these numbers: ')
+        valid = False
+        while valid == False:
+            while int(select) == -1:
+                try:
+                    print('\navailable datatypes, and their length ranges:')
+                    for x in types:
+                        print(f'{types.index(x)}. {x} length:  (0, {lens[types.index(x)]})')
+                    select = input('enter one of these numbers: ')
+                    inuse = types[int(select)]
+                    length = lens[types.index(x)]
+                    valid = True
+                except int(length) not in range(0, lens[types.index(inuse)]): 
+                    print(f'current range {length} out of range for data type {inuse}.')
+                    print(f'ranges for data types are: ')
+                    for x in types:
+                        print(f'{types.index(x)}. {x} length:  (0, {lens[types.index(x)]})')
+                    select = input('enter one of these numbers: ')
             
 
         print(f'\nnew datatype & length: {inuse}({length})')
@@ -142,13 +148,16 @@ def set_range(length, types, inuse, lens, tabel):
 
         length = -1
         while int(length) == -1:
-            print(f'\navailable length: (0, {lens[types.index(inuse)]})')
+            print(f'\navailable length range for data type {inuse}: (0, {lens[types.index(inuse)]})')
             while int(length) not in range(0, lens[types.index(inuse)]):
-                try:
-                    length = input('set length max: ')
-                except int(length) not in range(0, lens[types.index(inuse)]):
-                    print(f'range {length} out of range for current datatype {inuse}.')
-                    print(f'range for data type {inuse} is (0, {lens[types.index(inuse)]}). please select another range. ')
+                valid = False
+                while valid == False:
+                    try:
+                        length = input('set length max: ')
+                        valid = True
+                    except int(length) not in range(0, lens[types.index(inuse)]):
+                        print(f'range {length} out of range for current datatype {inuse}.')
+                        print(f'range for data type {inuse} is (0, {lens[types.index(inuse)]}). please select another range. ')
 
         
 
