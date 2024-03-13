@@ -19,6 +19,8 @@
 #oh yeah, and the main thing is, look at all those variables i'm passing back and forth!!! seems so redundant
 
 #anyway, it's not really doing what i want, but it is kind of limiting range, one way or another, so i'll take it for now
+#i'm guessing that my try excepts aren't working because... they're too complex/too dependent? however it is they actually work?
+#maybe i should just try something that's not a try except. but what???
 
 def show_db():
 
@@ -114,9 +116,9 @@ def select_type(length, types, inuse, lens, tabel):
         print(f'\nSELECT DATA TYPE\ncurrent datatype is {inuse}({length}).')
 
         select = -1
-        valid = False
-        while valid == False:
-            while int(select) == -1:
+        while int(select) == -1:
+            valid = False
+            while valid == False:
                 try:
                     print('\navailable datatypes, and their length ranges:')
                     for x in types:
