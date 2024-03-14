@@ -18,9 +18,7 @@
 
 #oh yeah, and the main thing is, look at all those variables i'm passing back and forth!!! seems so redundant
 
-#anyway, it's not really doing what i want, but it is kind of limiting range, one way or another, so i'll take it for now
-#i'm guessing that my try excepts aren't working because... they're too complex/too dependent? however it is they actually work?
-#maybe i should just try something that's not a try except. but what???
+#oh, you can skip all that while loop hodge podge by just automatically adjusting length! easy!!!
 
 def show_db():
 
@@ -110,64 +108,47 @@ def create_insert(rowlist):
     print('new row created.')
 
 def select_type(length, types, inuse, lens, tabel):
+    print(f'\nSELECT DATA TYPE\ncurrent datatype is {inuse}({length}).\n available types:')
+    for t in types:
+        print(f'{types.index(t)}. {t} length:  (0, {lens[types.index(t)]})')
+
     dt = 0
     while int(dt) == 0:
-
-        print(f'\nSELECT DATA TYPE\ncurrent datatype is {inuse}({length}).')
-
         select = -1
-        while int(select) == -1:
-            valid = False
-            while valid == False:
-                try:
-                    print('\navailable datatypes, and their length ranges:')
-                    for x in types:
-                        print(f'{types.index(x)}. {x} length:  (0, {lens[types.index(x)]})')
-                    select = input('enter one of these numbers: ')
-                    inuse = types[int(select)]
-                    length = lens[types.index(x)]
-                    valid = True
-                except int(length) not in range(0, lens[types.index(inuse)]): 
-                    print(f'current range {length} out of range for data type {inuse}.')
-                    print(f'ranges for data types are: ')
-                    for x in types:
-                        print(f'{types.index(x)}. {x} length:  (0, {lens[types.index(x)]})')
-                    select = input('enter one of these numbers: ')
-            
+        while not 0 <= int(select) <= len(types):
+            select = input('please enter an integer between 0 and ' + str(len(types)-1) + ': ')
+            inuse = types[int(select)]
+            maxlength = lens[types.index(inuse)]
+            if int(length) > int(maxlength):
+                length = maxlength
+                print(f'length readjusted to max length of {inuse}, {maxlength}')
 
         print(f'\nnew datatype & length: {inuse}({length})')
-        dt = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
+        dt = input('press 0 to select data type again, or 1 to return to COLUMN MENU: ')
 
-    if int(dt) == 1:
-        column_menu(length, types, inuse, lens, tabel)
+    column_menu(length, types, inuse, lens, tabel)
+
     return inuse
     
-def set_range(length, types, inuse, lens, tabel):
-    rng = 0
-    while int(rng) == 0:
-
-        print(f'\nSELECT LENGTH\ncurrent datatype is {inuse}({length}).')
+def set_length(length, types, inuse, lens, tabel):
+    ln = 0
+    while int(ln) == 0:
+        print(f'\nSET LENGTH\ncurrent datatype is {inuse}({length}).')
+        print(f'\nmax length for data type {inuse}: {lens[types.index(inuse)]})')
 
         length = -1
-        while int(length) == -1:
-            print(f'\navailable length range for data type {inuse}: (0, {lens[types.index(inuse)]})')
-            while int(length) not in range(0, lens[types.index(inuse)]):
-                valid = False
-                while valid == False:
-                    try:
-                        length = input('set length max: ')
-                        valid = True
-                    except int(length) not in range(0, lens[types.index(inuse)]):
-                        print(f'range {length} out of range for current datatype {inuse}.')
-                        print(f'range for data type {inuse} is (0, {lens[types.index(inuse)]}). please select another range. ')
-
-        
+        while length == -1:
+            length = input('new max length: ')
+            maxlength = lens[types.index(inuse)]
+            if int(length) > int(maxlength):
+                length = maxlength
+                print(f'length readjusted to max length of {inuse}, {maxlength}')
 
         print(f'\nnew datatype & length: {inuse}({length})')
-        rng = input('press 0 to select length again, or 1 to return to COLUMN MENU: ')
+        ln = input('press 0 to set length again, or 1 to return to COLUMN MENU: ')
 
-    if int(rng) == 1:
-        column_menu(length, types, inuse, lens, tabel)
+
+    column_menu(length, types, inuse, lens, tabel)
 
     return length
 
@@ -181,7 +162,7 @@ def column_menu(length, types, inuse, lens, tabel):
 
     if lentype == 'a':
         
-        length = set_range(length, types, inuse, lens, tabel)
+        length = set_length(length, types, inuse, lens, tabel)
 
     elif lentype == 'b':
 
@@ -228,7 +209,7 @@ def execute_column(length, types, inuse, lens, tabel, cname):
     newcex.execute(showc)
     columns = [(name, type_code) for (name, type_code, _, _, _, _, _) in newcex.description]
 
-    print(f'\nnew columns for table {tabel}: ')
+    print(f'\ncolumns for table {tabel}: ')
     for l in newcex:
         print(l)
    
