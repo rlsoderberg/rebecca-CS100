@@ -11,29 +11,22 @@
 </head>
 <body>
     <div class = 'txt_div'>
-    <h class = 'title'>
-        SPOOKY SCARY SKELETONS
-    </h>
-    <p>
-        Click skeletons to shatter them.
-    </p>
-    <p id="demo"></p>
+        <h class = 'title'>
+            SPOOKY SCARY SKELETONS
+        </h>
+        <p id="demo">
+            Click skeletons to shatter them.
+        </p>
 
-    <audio controls loop>
-        <source src="spookey.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
+        <audio controls loop>
+            <source src="spookey.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
 
+        <div>
+        <img id = "skel_img" src = "skel_dance.gif" onclick=explode();>
+        </div>
     </div>
-
-    <div class = 'img_div'>
-        <img id="skel_img"
-        src="skel_dance.gif"
-        onclick="changeImage()">
-    </div>
-
  
-
-
 </body>
 </html>
