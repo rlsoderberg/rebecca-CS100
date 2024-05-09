@@ -22,59 +22,18 @@
     <script src="some.js" type="text/javascript"></script>
 </head>
 <body>
-    <div class = 'skull'>
-    <pre>
-     ⠀⠀⠀⢀⣴⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-     ⠀⠀⠀⣼⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-     ⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-     ⠀⠀⠟⢩⣷⣿⣿⣿⣿⠿⠛⣀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-     ⠀⠀⠠⠛⢉⣵⣿⡟⠁⣤⣾⢿⣄⠀⠀⠀⠀⣠⡿⣷⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀
-     ⠀⠀⠀⢠⠾⠛⠋⣠⣾⣏⠁⠀⢻⠿⠒⠒⠿⡟⠀⠈⣹⣷⣄⠀⠀⠀⠀⠀⠀⠀
-     ⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣶ ⣀⡀⢀⣀ ⣶⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀
-     ⠀⢀⣀⣠⣶⣿⣿⣿⣿⣿⣿⣿⡆⠉ ⠈ ⢰⣿⣿⣿⣿⣿⣿⣿⣶⣄⣀⡀⠀
-     ⠀⠸⣿⣿⣿⣿⣿⣿⣿⡟⠋⠁⣠⣼⣼⣧⣧⣄⠈⠙⢻⣿⣿⣿⣿⣿⣿⣿⠇⠀
-     ⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⠿⠿⠿⠿⣿⣦⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀
-     ⠀⠀⠀⠈⠻⣿⡿⠿⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠿⢿⣿⠟⠁⠀⠀⠀
-            ⢸⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠀⡇
-             ⡆⢸⠀⢀⣀⣤⣄⡀⠀⠀⢀⣤⣤⣄⡀⠀⡇⡸⠀
-⠀            ⠘⣾⠀⣿⣿⣿⣿⣿⠀⠀⣿⣿⣿⣿⣿⠀⡗⠀
-⠀⠀            ⣿⠀⠙⢿⣿⠿⠃   ⠙⠿⣿⠿⠃ ⡇⠀⠀
-⠀⠀            ⠘⣄⡀⠀⠀⠀⢠⣿⢸⣿⠀⠀⠀⠀⠀⣠⠇⠀⠀
-⠀⠀           ⠀⠀⡏⢷⡄⠀⠘⠟⠈⠿⠁⠀⢠⡞⡹⠀⠀⠀
-⠀⠀           ⠀⠀⢹⠸⠘⢢⢠⠤⠤⡤⡄⢰⢡⠁⡇⠀⠀⠀⠀
-⠀⠀           ⠀⠀⢸⠀⠣⣹⢸⠒⠒⡗⡇⣩⠌ ⡇⠀⠀⠀⠀
-⠀⠀⠀⠀           ⠈⢧⡀⠀⠉⠉⠉⠉⠁⠀⣀⠜⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀          ⠀   ⠓⠢⠤⠤⠤⠔⠊⠀⠀⠀
-    </pre>
-    </div>
-    <div class = 'text'>
-        <p>
-            Arrr! My name is Browser Pirateskull! What browserrr are ye usin'?
-        </p>
+    <div class = 'img_div'>
+        <img id="skel-img"
+        src="skel_dance.gif"
+        onclick="changeImage()">
     </div>
 
-    <div class = "buttonrow1">
-        <button onclick="displayText01()">Chrrrome or Firrrefox or Edrrrge!</button>
-        <button onclick="displayText02()">Internet Explorerrr!</button>
-    </div>
+    <embed name="GoodEnough" src="/music/spookey.wav" loop="true" hidden="true" autostart="true">
+ 
+    <audio controls loop>
+        <source src="spookey.wav" type="audio/wav">
+        Your browser does not support the audio element.
+        </audio>
 
-    <div class = "messagerow1">
-        <div id="textField01" style="display: none;">
-        Shiver me timbers, Chrrrome or Firrrefox or Edrrrge yer ridin' indeed!
-        </div>
-        <div id="textField02" style="display: none;">
-        Down to the briny deep with Chrrrome or Firrrefox or Edrrrge! That's not it!
-        </div>
-    </div>
-
-    <div class = "messagerow2">
-        <div id="textField11" style="display: none;">
-        Arr, ye old salt, that's Internet Explorerrr yer ridin, sure enough!
-        </div>
-        <div id="textField12" style="display: none;">
-        Belay that yarn! Yer on no Internet Explorerrr at all!
-        </div>
-    </div>
-    
 </body>
 </html>
