@@ -1,0 +1,53 @@
+<!--oh, i do like edge's error readout, goes right to the affected resources
+    i mean, at this point, most of my errors are too base level to get caught that way
+    still, i am now team edge
+    so it just gave me a warning about 'content-type' header charset value should be 'utf-8'.
+    like, what is that???-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator</title>
+    <link rel="stylesheet" type="text/css" href="calculator.css" />
+    <!--it was complaining about lang = "javascript"!!!-->
+    <script>
+        function number_click(btn) {
+            //get the value in the button text
+            //(where is btn?????)
+            //oh i get it, it's whatever's getting passed in from the button!!! sneaky arguments
+            var num = btn.innerHTML
+            //now get what's currently in the display
+            var disp = document.getElementById('display')
+            //if there's a 0 there, or some non-number, clear the display
+            if(parseInt(disp.innerHTML) == 0 || isNaN(parseInt(disp.innerHTML))) {
+            //wait, so... if we're writing javascript within the html, then do we not have to use the wacky brackets???
+                disp.innerHTML = ''}
+            //now, append the button text (a number) to whatever's in the display
+            disp.innerHTML = disp.innerHTML + num
+        }
+        function ce_click(btn) {
+            //i have to declare disp again here
+            var disp = document.getElementById('display')
+            disp.innerHTML == '0'
+        }
+    </script>
+</head>
+<body>
+    <td><button class = "number" onclick = "number_click(this)">0</button></td>
+    <td><button class = "number" onclick = "number_click(this)">1</button></td>
+    <td><button class = "number" onclick = "number_click(this)">2</button></td>
+    <td><button class = "number" onclick = "number_click(this)">3</button></td>
+    <td><button class = "number" onclick = "number_click(this)">4</button></td>
+    <td><button class = "number" onclick = "number_click(this)">5</button></td>
+    <td><button class = "number" onclick = "number_click(this)">6</button></td>
+    <td><button class = "number" onclick = "number_click(this)">7</button></td>
+    <td><button class = "number" onclick = "number_click(this)">8</button></td>
+    <td><button class = "number" onclick = "number_click(this)">9</button></td>
+
+    <td><button class = "ce" onclick = "ce_click()">CE</button></td>
+
+    <p class = 'display'>0</p>
+</body>
+</html>
