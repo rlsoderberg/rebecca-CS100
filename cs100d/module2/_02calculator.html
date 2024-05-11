@@ -8,12 +8,21 @@
 
 <script lang="javascript">
 
+	//so we're initializing these, because we're using them later, right?
+	//when the user hits an operator, we need to store the current display
+	var leftnum = 0
+	//we will also store the operator the user chose
+	var op = ''
+
+
     function clicknum(btn) {
         var num = btn.innerHTML
         var disp = document.getElementById('display')
         var x = parseInt(disp.innerHTML)
-        if (x = 0 || isNaN(x))
+        if (isNaN(x))
             disp.innerHTML = ''
+		if 	(disp.innerHTML == '0')
+			disp.innerHTML = num
         else
             disp.innerHTML = disp.innerHTML + num
     }
@@ -23,6 +32,41 @@
         disp.innerHTML = '0'
     }
 
+	function op_click(btn) {
+		//store the contents of the display
+		var disp = document.getElementById('display')
+		leftnum = parseInt(disp.innerHTML)
+		//store the operator we'll work with
+		op = btn.innerHTML
+		//clear the display
+		disp.innerHTML = '0'
+	}
+
+	function eq_click() {
+		//if there's no operator stored, don't do anything
+		if(op != ''){
+			//get the display value as the right side of the equation
+			var disp = document.getElementById('display')
+			var rightnum = parseInt(disp.innerHTML)
+			var res = 0
+			//perform the correct operation based on the operator
+			if (op == '+')
+				res = leftnum + rightnum
+			else if (op == '-')
+				res = leftnum - rightnum
+			else if (op == '*')
+				res = leftnum * rightnum
+			else if (op == '/')
+				res = leftnum / rightnum
+
+			//update the display
+			disp.innerHTML = res.toString()
+			//clear the operator
+			op = ''
+		}
+	}
+
+
 </script>
 
 </head>
@@ -31,9 +75,9 @@
 	<div class="main">
 		<h1 style="text-align:center">π-rates Calculator</h1>
         <table>
-            <tr>
-				<td id="display">0</span></td>
-			</tr>
+
+				<p id="display">0</p>
+
 			<tr>
                 <td><button class="number" onclick="clicknum(this)">0</button></td>
 				<td><button class="number" onclick="clicknum(this)">1</button></td>
@@ -48,6 +92,15 @@
 			</tr>
             <tr>
 				<td><button class="op" onclick="clickce()">CE</button></td>
+			</tr>
+			<tr>
+				<td><button class="op" onclick="op_click(this)">+</button></td>
+				<td><button class="op" onclick="op_click(this)">-</button></td>
+				<td><button class="op" onclick="op_click(this)">*</button></td>
+				<td><button class="op" onclick="op_click(this)">/</button></td>
+			</tr>
+			<tr>
+				<td><button class="op" onclick="eq_click()">=</button></td>
 			</tr>
 		</table>
 	</div>
