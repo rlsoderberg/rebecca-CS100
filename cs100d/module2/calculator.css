@@ -15,16 +15,16 @@ body{
     background:pink;
 }
 .ratdiv{
-    float:left;
-    width:30%;
+    display: inline-block;
+    width:20%;
 }
 .tablediv{
-    float:left;
-    width:30%;
+    display: inline-block;
+    width:20%;
 }
 .circle-div{
-    float:left;
-    width:30%;
+    display: inline-block;
+    width:20%;
 }
 #rat{
     width:100px;
