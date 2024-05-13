@@ -9,6 +9,8 @@ body{
     margin-right:auto;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
+    background:green;
+    height:400px;
 }
 .title{
     margin-left:auto;
@@ -36,5 +38,9 @@ body{
 }
 #negative { 
     visibility: hidden; 
+}
+.titlediv{
+    background:purple;
+    height:150px;
 }
 
