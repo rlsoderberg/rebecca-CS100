@@ -75,13 +75,12 @@
 			ctx.clearRect(0, 0, 200, 150);
 			ctx.beginPath();
 			ctx.arc(95, 50, eyeSize, 0, 2 * Math.PI);
+			
 			const img = document.getElementById("negative");
 			const pat = ctx.createPattern(img, "repeat");
-			
-			if (disp.innerHTML > 0)
-				ctx.fillStyle = "#3370d4";
-			else
-				ctx.fillStyle = 
+
+			ctx.fillStyle = pat;
+
 			ctx.fill();
 
 		}
