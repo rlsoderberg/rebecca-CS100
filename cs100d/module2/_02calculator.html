@@ -66,24 +66,19 @@
 			//clear the operator
 			op = ''
 
-			var rat = document.getElementById('rat')
-			if(5 <= res.toString() > 10)
-				rat.src = 'eyes/eye05.png'
-			if(10 <= res.toString() < 25)
-				rat.src = 'eyes/eye10.png'
-			if(25 <= res.toString() < 50)
-				rat.src = 'eyes/eye25.png'
-			if(50 <= res.toString() < 100)
-				rat.src = 'eyes/eye50.png'
-			if(100 <= res.toString() < 500)
-				rat.src = 'eyes/eye100.png'
-			if(500 <= res.toString() < 1000)
-				rat.src = 'eyes/eye500.png'
-			if(1000 <= res.toString())
-				rat.src = 'eyes/eye1000.png'
+			if (disp.innerHTML < 50)
+				var eyeSize = disp.innerHTML
+			else
+				var eyeSize = 100
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			ctx.beginPath();
+			ctx.arc(95, 50, eyeSize, 0, 2 * Math.PI);
+			ctx.fill();
 
 		}
 	}
+
 
 </script>
 
@@ -93,10 +88,12 @@
 	<div class="main">
 		<h1 style="text-align:center">π-rats Calculator</h1>
 		<div class = 'ratdiv'>
-			<img src = 'eyes/eye00.png' id = 'rat'></img>
+			<!--<img src = 'eyes/eye00.png' id = 'rat'></img>-->
+			<canvas id="myCanvas" width="200" height="100" style="border:1px solid black" style="background: url('eyes/eye00.png')">
+			</canvas>
 		</div>
 		<div class = 'tablediv'>
-			<table style>
+			<table class = 'table'>
 				<div class="display-bg">
 					<p id="display"></p>
 				</div>
@@ -135,3 +132,8 @@
 </body>
 
 </html>
+
+
+
+
+
