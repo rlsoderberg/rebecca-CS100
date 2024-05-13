@@ -16,6 +16,9 @@ body{
 .ratdiv{
     float:left;
 }
+.tablediv{
+    float:right;
+}
 #rat{
     width:100px;
 }
