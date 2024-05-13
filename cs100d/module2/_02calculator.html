@@ -4,6 +4,8 @@
 <head>
 <title>Whitworth Calculator</title>
 
+<link rel="icon" type="image/x-icon" href="pi-rat.png">
+
 <link rel='stylesheet' href='calculator.css'>
 
 <script lang="javascript">
@@ -63,6 +65,23 @@
 			disp.innerHTML = res.toString()
 			//clear the operator
 			op = ''
+
+			var rat = document.getElementById('rat')
+			if(5 <= res.toString() > 10)
+				rat.src = 'eyes/eye05.png'
+			if(10 <= res.toString() < 25)
+				rat.src = 'eyes/eye10.png'
+			if(25 <= res.toString() < 50)
+				rat.src = 'eyes/eye25.png'
+			if(50 <= res.toString() < 100)
+				rat.src = 'eyes/eye50.png'
+			if(100 <= res.toString() < 500)
+				rat.src = 'eyes/eye100.png'
+			if(500 <= res.toString() < 1000)
+				rat.src = 'eyes/eye500.png'
+			if(1000 <= res.toString())
+				rat.src = 'eyes/eye1000.png'
+
 		}
 	}
 
@@ -73,44 +92,45 @@
 <body>
 	<div class="main">
 		<h1 style="text-align:center">π-rats Calculator</h1>
-        <table>
+		<div class = 'ratdiv'>
+			<img src = 'eyes/eye00.png' id = 'rat'></img>
+		</div>
+		<div class = 'tablediv'>
+			<table style>
+				<div class="display-bg">
+					<p id="display"></p>
+				</div>
+				<tr>
+					<td><button class="number" onclick="clicknum(this)">7</button></td>
+					<td><button class="number" onclick="clicknum(this)">8</button></td>
+					<td><button class="number" onclick="clicknum(this)">9</button></td>
+					<td><button class="op" onclick="op_click(this)">+</button></td>
+					<!--<td><button class="op" onclick="op_click(this)">%</button></td>-->
+				</tr>
+				<tr>
+					<td><button class="number" onclick="clicknum(this)">4</button></td>
+					<td><button class="number" onclick="clicknum(this)">5</button></td>
+					<td><button class="number" onclick="clicknum(this)">6</button></td>
+					<td><button class="op" onclick="op_click(this)">-</button></td>
+					<!--<td><button class="op" onclick="factorial()">!</button></td>-->
+				</tr>
+				<tr>
+					<td><button class="number" onclick="clicknum(this)">1</button></td>
+					<td><button class="number" onclick="clicknum(this)">2</button></td>
+					<td><button class="number" onclick="clicknum(this)">3</button></td>
+					<td><button class="op" onclick="op_click(this)">*</button></td>
+					<!--<td><button class="op" onclick="op_click(this)">^</button></td>-->
+				</tr>
+				<tr>
+					<td><button class="number" onclick="clicknum(this)">0</button></td>
+					<td><button class="number" onclick="clickce()">CE</button></td>
+					<td><button class="op" onclick="eq_click()">=</button></td>
+					<td><button class="op" onclick="op_click(this)">/</button></td>
+					<!--<td><button class="op" onclick="op_click(this)">?</button></td>-->
+			</table>
+		</div>
 
-				<p id="display">0</p>
-
-			<tr>
-				<td><button class="number" onclick="clicknum(this)">7</button></td>
-				<td><button class="number" onclick="clicknum(this)">8</button></td>
-				<td><button class="number" onclick="clicknum(this)">9</button></td>
-				<td><button class="op" onclick="op_click(this)">+</button></td>
-				<td><button class="op" onclick="op_click(this)">%</button></td>
-			</tr>
-			<tr>
-				<td><button class="number" onclick="clicknum(this)">4</button></td>
-				<td><button class="number" onclick="clicknum(this)">5</button></td>
-				<td><button class="number" onclick="clicknum(this)">6</button></td>
-				<td><button class="op" onclick="op_click(this)">-</button></td>
-				<td><button class="op" onclick="factorial()">!</button></td>
-			</tr>
-			<tr>
-				<td><button class="number" onclick="clicknum(this)">1</button></td>
-				<td><button class="number" onclick="clicknum(this)">2</button></td>
-				<td><button class="number" onclick="clicknum(this)">3</button></td>
-				<td><button class="op" onclick="op_click(this)">*</button></td>
-				<td><button class="op" onclick="op_click(this)">^</button></td>
-			</tr>
-			<tr>
-				<td><button class="number" onclick="clicknum(this)">0</button></td>
-				<td><button class="number" onclick="clickce()">CE</button></td>
-				<td><button class="op" onclick="eq_click()">=</button></td>
-				<td><button class="op" onclick="op_click(this)">/</button></td>
-				<td><button class="op" onclick="op_click(this)">?</button></td>
-			<tr>
-				
-				
-				
-				
-			</tr>
-		</table>
+		
 	</div>
 </body>
 
