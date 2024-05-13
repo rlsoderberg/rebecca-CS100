@@ -10,6 +10,10 @@ body{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.title{
+    margin-left:auto;
+    margin-right:auto;
+}
 .display-bg{
     height:20px;
     width:175px;
@@ -25,9 +29,12 @@ body{
     width:30%;
 }
 #rat{
-    width:100px;
+    width:200px;
 }
 .table{
     top: 50px;
+}
+#negative { 
+    visibility: hidden; 
 }
 
