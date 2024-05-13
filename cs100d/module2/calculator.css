@@ -3,6 +3,7 @@ button{
 }
 body{
     display: flex;
+    position:relative;
 }
 .main{
     margin-left:auto;
@@ -15,9 +16,15 @@ body{
 }
 .ratdiv{
     float:left;
+    width:30%;
 }
 .tablediv{
-    float:right;
+    float:left;
+    width:30%;
+}
+.circle-div{
+    float:left;
+    width:30%;
 }
 #rat{
     width:100px;

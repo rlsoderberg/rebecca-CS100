@@ -66,10 +66,10 @@
 			//clear the operator
 			op = ''
 
-			if (disp.innerHTML < 50)
+			if (disp.innerHTML < 46)
 				var eyeSize = disp.innerHTML
 			else
-				var eyeSize = 100
+				var eyeSize = 45
 			var c = document.getElementById("myCanvas");
 			var ctx = c.getContext("2d");
 			ctx.beginPath();
@@ -89,8 +89,6 @@
 		<h1 style="text-align:center">π-rats Calculator</h1>
 		<div class = 'ratdiv'>
 			<img src = 'eyes/eye00.png' id = 'rat'></img>
-			<canvas id="myCanvas" width="200" height="150" style="border:1px solid black" style="background: url('eyes/eye00.png')">
-			</canvas>
 		</div>
 		<div class = 'tablediv'>
 			<table class = 'table'>
@@ -125,6 +123,10 @@
 					<td><button class="op" onclick="op_click(this)">/</button></td>
 					<!--<td><button class="op" onclick="op_click(this)">?</button></td>-->
 			</table>
+		</div>
+		<div class = 'circe-div'>
+			<canvas id="myCanvas" width="100" height="150" style="border:1px solid black" style="background: url('eyes/eye00.png')">
+			</canvas>
 		</div>
 
 		
