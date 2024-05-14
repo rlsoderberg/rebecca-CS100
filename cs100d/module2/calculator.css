@@ -1,20 +1,16 @@
 button{
     width: 40px;
 }
-body{
-    display: flex;
-}
 .main{
     margin-left:auto;
     margin-right:auto;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background:green;
     height:400px;
+    width:40%;
 }
 .title{
-    margin-left:auto;
-    margin-right:auto;
+    margin:auto;
 }
 .display-bg{
     height:20px;
@@ -22,13 +18,13 @@ body{
     background:pink;
 }
 .ratdiv{
-    width:30%;
+    width:100px;
 }
 .tablediv{
-    width:30%;
+    width:200px;
 }
 .circle-div{
-    width:30%;
+    width:100px;
 }
 #rat{
     width:200px;
@@ -40,7 +36,10 @@ body{
     visibility: hidden; 
 }
 .titlediv{
-    background:purple;
     height:150px;
 }
+.parent{
+    margin:auto;
+}
+.roundgif{width:100px;}
 

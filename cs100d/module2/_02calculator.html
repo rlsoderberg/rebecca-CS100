@@ -74,14 +74,10 @@
 			var ctx = c.getContext("2d");
 			ctx.clearRect(0, 0, 200, 150);
 			ctx.beginPath();
-			ctx.arc(95, 50, eyeSize, 0, 2 * Math.PI);
-			
-			const img = document.getElementById("negative");
-			const pat = ctx.createPattern(img, "repeat");
-
-			ctx.fillStyle = pat;
+			ctx.arc(50, 50, eyeSize, 0, 2 * Math.PI);
 
 			ctx.fill();
+
 
 		}
 	}
@@ -92,53 +88,67 @@
 </head>
 
 <body>
-	<div class = 'titlediv'><h1 class = 'title' style="text-align:center">π-rats Calculator</h1></div>
-	<div class="main">
-		<div class = 'ratdiv'>
-			<img src = 'eyes/eye25.png' id = 'rat'></img>
-			<img src = 'tenor.gif' id = 'negative'></img>
-		</div>
-		<div class = 'tablediv'>
-			<table class = 'table'>
-				<div class="display-bg">
-					<p id="display"></p>
-				</div>
-				<tr>
-					<td><button class="number" onclick="clicknum(this)">7</button></td>
-					<td><button class="number" onclick="clicknum(this)">8</button></td>
-					<td><button class="number" onclick="clicknum(this)">9</button></td>
-					<td><button class="op" onclick="op_click(this)">+</button></td>
-					<!--<td><button class="op" onclick="op_click(this)">%</button></td>-->
-				</tr>
-				<tr>
-					<td><button class="number" onclick="clicknum(this)">4</button></td>
-					<td><button class="number" onclick="clicknum(this)">5</button></td>
-					<td><button class="number" onclick="clicknum(this)">6</button></td>
-					<td><button class="op" onclick="op_click(this)">-</button></td>
-					<!--<td><button class="op" onclick="factorial()">!</button></td>-->
-				</tr>
-				<tr>
-					<td><button class="number" onclick="clicknum(this)">1</button></td>
-					<td><button class="number" onclick="clicknum(this)">2</button></td>
-					<td><button class="number" onclick="clicknum(this)">3</button></td>
-					<td><button class="op" onclick="op_click(this)">*</button></td>
-					<!--<td><button class="op" onclick="op_click(this)">^</button></td>-->
-				</tr>
-				<tr>
-					<td><button class="number" onclick="clicknum(this)">0</button></td>
-					<td><button class="number" onclick="clickce()">CE</button></td>
-					<td><button class="op" onclick="eq_click()">=</button></td>
-					<td><button class="op" onclick="op_click(this)">/</button></td>
-					<!--<td><button class="op" onclick="op_click(this)">?</button></td>-->
-			</table>
-		</div>
-		<div class = 'circe-div'>
-			<canvas id="myCanvas" width="200" height="150">
-			</canvas>
+	
+
+
+
+	<div id="parent">
+
+		<div class="child">
+			<div class = 'titlediv'><h1 class = 'title' style="text-align:center">π-rats Calculator</h1></div>
 		</div>
 
+		<div class="child">
+
+			<div class="main">
+
+				<div class = 'ratdiv'>
+					<img src = 'eyes/eye25.png' id = 'rat'></img>
+					<img src = 'tenor.gif' id = 'negative'></img>
+				</div>
+
+				<div class = 'tablediv'>
+					<table class = 'table'>
+						<div class="display-bg">
+							<p id="display"></p>
+						</div>
+						<tr>
+							<td><button class="number" onclick="clicknum(this)">7</button></td>
+							<td><button class="number" onclick="clicknum(this)">8</button></td>
+							<td><button class="number" onclick="clicknum(this)">9</button></td>
+							<td><button class="op" onclick="op_click(this)">+</button></td>
+							<!--<td><button class="op" onclick="op_click(this)">%</button></td>-->
+						</tr>
+						<tr>
+							<td><button class="number" onclick="clicknum(this)">4</button></td>
+							<td><button class="number" onclick="clicknum(this)">5</button></td>
+							<td><button class="number" onclick="clicknum(this)">6</button></td>
+							<td><button class="op" onclick="op_click(this)">-</button></td>
+							<!--<td><button class="op" onclick="factorial()">!</button></td>-->
+						</tr>
+						<tr>
+							<td><button class="number" onclick="clicknum(this)">1</button></td>
+							<td><button class="number" onclick="clicknum(this)">2</button></td>
+							<td><button class="number" onclick="clicknum(this)">3</button></td>
+							<td><button class="op" onclick="op_click(this)">*</button></td>
+							<!--<td><button class="op" onclick="op_click(this)">^</button></td>-->
+						</tr>
+						<tr>
+							<td><button class="number" onclick="clicknum(this)">0</button></td>
+							<td><button class="number" onclick="clickce()">CE</button></td>
+							<td><button class="op" onclick="eq_click()">=</button></td>
+							<td><button class="op" onclick="op_click(this)">/</button></td>
+							<!--<td><button class="op" onclick="op_click(this)">?</button></td>-->
+					</table>
+				</div>
+				<div class = 'circle-div'>
+					<img src = 'roundgif.gif' class = 'roundgif'>
+				</div>
+				
+		</div>
 		
 	</div>
+
 </body>
 
 </html>
