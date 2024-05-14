@@ -6,11 +6,14 @@ button{
     margin-right:auto;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height:400px;
     width:40%;
+    background-image: url('tenor.gif');
+    background-repeat: no-repeat;
+    padding-top:50px;
 }
 .title{
-    margin:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 .display-bg{
     height:20px;
