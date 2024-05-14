@@ -65,18 +65,14 @@
 			disp.innerHTML = res.toString()
 			//clear the operator
 			op = ''
+			//clear the roundgif
+			document.getElementById("roundgif").style.width = 0;
 
-			if (disp.innerHTML < 46)
-				var eyeSize = disp.innerHTML
-			else
-				var eyeSize = 45
-			var c = document.getElementById("myCanvas");
-			var ctx = c.getContext("2d");
-			ctx.clearRect(0, 0, 200, 150);
-			ctx.beginPath();
-			ctx.arc(50, 50, eyeSize, 0, 2 * Math.PI);
+			//i'm trying to get the last digit......
+			var x = parseInt(disp.innerHTML)
+			var LastDigit = Math.floor(x%10)
 
-			ctx.fill();
+			document.getElementById("roundgif").style.width = LastDigit;
 
 
 		}
@@ -142,7 +138,7 @@
 					</table>
 				</div>
 				<div class = 'circle-div'>
-					<img src = 'roundgif.gif' class = 'roundgif'>
+					<img src = 'roundgif.gif' id = 'roundgif' style="width:50px;"">
 				</div>
 				
 		</div>
