@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+class Main extends React.Component{
+    render () {
+        //you knew we'd start with hello world, didn't you?
+        return(
+            <div className = 'Main'>
+                <p>Hello World</p>
+            </div>
+        )
+    }
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//find the element with id Root in the HTML file, and place our Main class there.
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Main />);
