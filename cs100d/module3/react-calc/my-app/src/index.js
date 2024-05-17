@@ -3,7 +3,6 @@ import Draggable from 'react-draggable';
 import ReactDOM from 'react-dom/client';
 import './index.css'
 
-/*
 function clicknum(num) {
     var world = document.getElementById('world')
     if (num == 2)
@@ -13,7 +12,6 @@ function clicknum(num) {
     else if (num == 4)
         world.src = '../public/mars.png'
 }
-*/
 
 //so what's the difference between writing something in Main and writing it in the HTML???
 class Main extends React.Component{
