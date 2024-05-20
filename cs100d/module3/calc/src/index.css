@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.calc{
+.calc-pic{
   width:100px;
 }
 
@@ -31,4 +31,8 @@ code {
 .title{
   font-size:50px;
   font-weight: 800;
+}
+
+button{
+  width: 40px;
 }
