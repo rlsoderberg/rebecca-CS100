@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 class Main extends React.Component{
   constructor (){
@@ -25,9 +23,7 @@ class Main extends React.Component{
   otherClick(event) {
     const val = event.target.value
     console.log('you have clicked something else')
-    var newdisplay
-    if(val === '0')
-      newdisplay = '0'
+    var newdisplay = '0'
     this.setState ({...this.state, display: newdisplay})
   }
 
@@ -40,32 +36,35 @@ class Main extends React.Component{
       <div class = 'center'>
         <img src = 'calc-fav.png' class = 'calc-pic'></img>
         <p class = 'title'>REACT<br></br>CALC</p>
-        <p class = 'HELLO'>Hello {display}</p>
+
         <div class = 'calc-box'>
+          <div class="display-bg">
+            <td colspan="5"><span className="display" id="display">{display}</span></td>
+					</div>
           <table>
             <tr>
               <td><button class="number" onClick={numberClick} value='7'>7</button></td>
               <td><button class="number" onClick={numberClick} value='8'>8</button></td>
               <td><button class="number" onClick={numberClick} value='9'>9</button></td>
-              <td><button class="op" onclick={otherClick} value='1'>+</button></td>
+              <td><button class="op" onclick={otherClick}>+</button></td>
             </tr>
             <tr>
               <td><button class="number" onClick={numberClick} value='4'>4</button></td>
               <td><button class="number" onClick={numberClick} value='5'>5</button></td>
               <td><button class="number" onClick={numberClick} value='6'>6</button></td>
-              <td><button class="op" onClick={otherClick} value='1'>-</button></td>
+              <td><button class="op" onClick={otherClick}>-</button></td>
             </tr>
             <tr>
               <td><button class="number" onClick={numberClick} value='1'>1</button></td>
               <td><button class="number" onClick={numberClick} value='2'>2</button></td>
               <td><button class="number" onClick={numberClick} value='3'>3</button></td>
-              <td><button class="op" onClick={otherClick} value='1'>*</button></td>
+              <td><button class="op" onClick={otherClick}>*</button></td>
             </tr>
             <tr>
               <td><button class="number" onClick={numberClick} value='0'>0</button></td>
-              <td><button class="number" onClick={otherClick} value='0'>CE</button></td>
-              <td><button class="op" onClick={otherClick} value='1'>=</button></td>
-              <td><button class="op" onClick={otherClick} value='1'>/</button></td>
+              <td><button class="number" onClick={otherClick}>CE</button></td>
+              <td><button class="op" onClick={otherClick}>=</button></td>
+              <td><button class="op" onClick={otherClick}>/</button></td>
             </tr>
           </table>
         </div>

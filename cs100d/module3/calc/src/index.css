@@ -36,3 +36,9 @@ code {
 button{
   width: 40px;
 }
+
+.display-bg{
+  height:20px;
+  width:175px;
+  background:pink;
+}
