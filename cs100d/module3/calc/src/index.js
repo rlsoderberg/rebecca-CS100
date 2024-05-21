@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import {Button, ButtonType} from './button'
 
 class Main extends React.Component{
   constructor (){
@@ -71,9 +72,9 @@ class Main extends React.Component{
 					</div>
           <table>
             <tr>
-              <td><button class="number" onClick={numberClick} value='7'>7</button></td>
-              <td><button class="number" onClick={numberClick} value='8'>8</button></td>
-              <td><button class="number" onClick={numberClick} value='9'>9</button></td>
+              <td><Button type = {ButtonType.Number} onClick={numberClick} display='7'/></td>
+              <td><Button type = {ButtonType.Number} onClick={numberClick} display='8'/></td>
+              <td><Button type = {ButtonType.Number} onClick={numberClick} display='9'/></td>
               <td><button class="op" onClick={opClick} value = '+'>+</button></td>
             </tr>
             <tr>
