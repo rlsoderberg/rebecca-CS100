@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './calc.css';
+import './index.css';
 
 export const ButtonType = {
     Number: "number",
@@ -20,5 +20,3 @@ export class Button extends React.Component {
         )
     }
 }
-
-//wat
