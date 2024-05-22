@@ -72,7 +72,7 @@ class Main extends React.Component{
 					</div>
           <table>
             <tr>
-              <td><Button type={ButtonType.Number} display="7" onClick={numberClick}/></td>
+              <td><Button type={ButtonType.Number} display="7" onClick={ButtonType.onclick(numberClick)}/></td>
               <td><Button type = {ButtonType.Number} onClick={numberClick} display='8'/></td>
               <td><Button type = {ButtonType.Number} onClick={numberClick} display='9'/></td>
               <td><button class="op" onClick={opClick} value = '+'>+</button></td>

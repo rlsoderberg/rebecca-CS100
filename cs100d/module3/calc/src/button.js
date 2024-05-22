@@ -9,17 +9,17 @@ export const ButtonType = {
 
 export class Button extends React.Component {
 
-    onclick() {
-        const {onclick, display} = this.props
-        //onclick(display)
-
+    onclick(fn) {
+        const display = this.props
+        fn(display)
     }
-
 
     render() {
         const {type, display} = this.props
         return (
+            <div>
             <button className={type} value={display} onClick={this.onclick.bind(this)}>{display}</button>
+            </div>
         )
     }
 }
