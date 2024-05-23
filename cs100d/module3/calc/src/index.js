@@ -72,9 +72,9 @@ class Main extends React.Component{
 					</div>
           <table>
             <tr>
-              <td><Button type={ButtonType.Number} display="7" onClick={ButtonType.onclick(numberClick)}/></td>
-              <td><Button type = {ButtonType.Number} onClick={numberClick} display='8'/></td>
-              <td><Button type = {ButtonType.Number} onClick={numberClick} display='9'/></td>
+            <td><button class="number" onClick={numberClick} value='7'>7</button></td>
+              <td><button class="number" onClick={numberClick} value='8'>8</button></td>
+              <td><button class="number" onClick={numberClick} value='9'>9</button></td>
               <td><button class="op" onClick={opClick} value = '+'>+</button></td>
             </tr>
             <tr>
@@ -91,8 +91,8 @@ class Main extends React.Component{
             </tr>
             <tr>
               <td><button class="number" onClick={numberClick} value='0'>0</button></td>
-              <td><button class="number" onClick={ceClick}>CE</button></td>
-              <td><button class="op" onClick={eqClick}>=</button></td>
+              <td><button class="ce" onClick={ceClick}>CE</button></td>
+              <td><button class="eq" onClick={eqClick}>=</button></td>
               <td><button class="op" onClick={opClick} value = '/'>/</button></td>
             </tr>
           </table>

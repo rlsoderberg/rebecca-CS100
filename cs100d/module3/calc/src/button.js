@@ -8,18 +8,15 @@ export const ButtonType = {
 }
 
 export class Button extends React.Component {
-
-    onclick(fn) {
-        const display = this.props
-        fn(display)
+    onclick() {
+        const {onclick, display} = this.props
+        onclick(display)
     }
 
     render() {
         const {type, display} = this.props
         return (
-            <div>
             <button className={type} value={display} onClick={this.onclick.bind(this)}>{display}</button>
-            </div>
         )
     }
 }
