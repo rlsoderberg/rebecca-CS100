@@ -14,8 +14,8 @@ class Main extends React.Component {
         const { display } = this.state
         const val = btnNumber
         var newdisplay
-        // If there's a 0 there, or some non-number, clear the display
-        if (display === '0' || isNaN(parseInt(display.innerHTML)))
+        var intofdisplay = parseInt(display)
+        if (display === '0' || isNaN(intofdisplay))
             newdisplay = val
         else
             newdisplay = display + val
@@ -29,8 +29,8 @@ class Main extends React.Component {
     opClick(btnOp) {
         const { display } = this.state
         const leftnum = parseInt(display)
-        const op = event.target.value
-        this.setState({...this.state, display: newdisplay, leftnum: leftnum, op:op})
+        const newdisplay = btnOp
+        this.setState({...this.state, display: newdisplay, leftnum: leftnum, op:btnOp})
     }
     eqClick(event) {
         const {display, leftnum, op} = this.state
@@ -64,7 +64,7 @@ class Main extends React.Component {
                 <table className='calc'>
                     <tbody>
                     <tr className='calc'>
-                        <td colSpan="5"><span className="display" id="display">{display}</span></td>
+                        <td colSpan="5"><Display display={display}/></td>
                     </tr>
                     <tr>
                         <td><Button type = {ButtonType.Number} display="7" onclick={numberClick}/></td>   
@@ -88,10 +88,10 @@ class Main extends React.Component {
                         <td><Button type = {ButtonType.Op} display="?" onclick={opClick}/></td>  
                     </tr>
                     <tr>
-                        <td><Button type = {ButtonType.Number} display="0" onClick={numberClick}/></td>   
-                        <td><Button type = {ButtonType.Op} display="CE" onClick={ceClick}/></td>  
-                        <td><Button type = {ButtonType.Op} display="=" onClick={eqClick}/></td>  
-                        <td><Button type = {ButtonType.Op} display="?" onClick={opClick}/></td>  
+                        <td><Button type = {ButtonType.Number} display="0" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Op} display="CE" onclick={ceClick}/></td>  
+                        <td><Button type = {ButtonType.Op} display="=" onclick={eqClick}/></td>  
+                        <td><Button type = {ButtonType.Op} display="?" onclick={opClick}/></td>  
                     </tr>
                     </tbody>
                 </table>
