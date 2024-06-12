@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Button, ButtonType } from './button';
+import { Display } from './display'
 import './calc.css';
 
 class Main extends React.Component {
@@ -8,9 +10,9 @@ class Main extends React.Component {
         this.state = {display: '0', leftnum: 0, op: ''}
     }
 
-    numberClick(event) {
+    numberClick(btnNumber) {
         const { display } = this.state
-        const val = event.target.value
+        const val = btnNumber
         var newdisplay
         // If there's a 0 there, or some non-number, clear the display
         if (display === '0' || isNaN(parseInt(display.innerHTML)))
@@ -24,11 +26,10 @@ class Main extends React.Component {
         this.setState({...this.state, display: 0, leftnum: 0, op: ''})
     }
 
-    opClick(event) {
+    opClick(btnOp) {
         const { display } = this.state
         const leftnum = parseInt(display)
         const op = event.target.value
-        var newdisplay = event.target.value
         this.setState({...this.state, display: newdisplay, leftnum: leftnum, op:op})
     }
     eqClick(event) {
@@ -66,32 +67,31 @@ class Main extends React.Component {
                         <td colSpan="5"><span className="display" id="display">{display}</span></td>
                     </tr>
                     <tr>
-                        <td><button className="number" value='7' onClick = {numberClick}>7</button></td>
-                        <td><button className="number" value='8' onClick = {numberClick}>8</button></td>
-                        <td><button className="number" value='9' onClick = {numberClick}>9</button></td>
-                        <td><button className="op" onClick = {opClick} value='/'>/</button></td>
-                        <td><button className="op" onClick = {opClick} value='?'>?</button></td>
+                        <td><Button type = {ButtonType.Number} display="7" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Number} display="8" onclick={numberClick}/></td> 
+                        <td><Button type = {ButtonType.Number} display="9" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Op} display="/" onclick={opClick}/></td>   
+                        <td><Button type = {ButtonType.Op} display="?" onclick={opClick}/></td>  
                     </tr>
                     <tr>
-                        <td><button className="number" value='4' onClick = {numberClick}>4</button></td>
-                        <td><button className="number" value='5' onClick = {numberClick}>5</button></td>
-                        <td><button className="number" value='6' onClick = {numberClick}>6</button></td>
-                        <td><button className="op" onClick = {opClick} value='*'>*</button></td>
-                        <td><button className="op" onClick = {opClick} value='?'>?</button></td>
+                        <td><Button type = {ButtonType.Number} display="4" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Number} display="5" onclick={numberClick}/></td> 
+                        <td><Button type = {ButtonType.Number} display="6" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Op} display="*" onclick={opClick}/></td>  
+                        <td><Button type = {ButtonType.Op} display="?" onclick={opClick}/></td>  
                     </tr>
                     <tr>
-                        <td><button className="number" value='1' onClick = {numberClick}>1</button></td>
-                        <td><button className="number" value='2' onClick = {numberClick}>2</button></td>
-                        <td><button className="number" value='3' onClick = {numberClick}>3</button></td>
-                        <td><button className="op" onClick = {opClick} value='-'>-</button></td>
-                        <td><button className="op" onClick = {opClick} value='?'>?</button></td>
+                        <td><Button type = {ButtonType.Number} display="1" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Number} display="2" onclick={numberClick}/></td> 
+                        <td><Button type = {ButtonType.Number} display="3" onclick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Op} display="-" onclick={opClick}/></td>  
+                        <td><Button type = {ButtonType.Op} display="?" onclick={opClick}/></td>  
                     </tr>
                     <tr>
-                        <td><button className="number" value='0' onClick = {numberClick}>0</button></td>
-                        <td><button className="op" onClick = {ceClick} value='CE'>CE</button></td>
-                        <td><button className="op" onClick = {eqClick} value='='>=</button></td>
-                        <td><button className="op" onClick = {opClick} value='+'>+</button></td>
-                        <td><button className="op" onClick = {opClick} value='?'>?</button></td>
+                        <td><Button type = {ButtonType.Number} display="0" onClick={numberClick}/></td>   
+                        <td><Button type = {ButtonType.Op} display="CE" onClick={ceClick}/></td>  
+                        <td><Button type = {ButtonType.Op} display="=" onClick={eqClick}/></td>  
+                        <td><Button type = {ButtonType.Op} display="?" onClick={opClick}/></td>  
                     </tr>
                     </tbody>
                 </table>
