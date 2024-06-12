@@ -13,7 +13,7 @@ class Main extends React.Component {
         const val = event.target.value
         var newdisplay
         // If there's a 0 there, or some non-number, clear the display
-        if (display === '0')
+        if (display === '0' || isNaN(parseInt(display.innerHTML)))
             newdisplay = val
         else
             newdisplay = display + val
