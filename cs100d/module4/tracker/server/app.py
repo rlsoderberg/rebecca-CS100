@@ -15,7 +15,12 @@ def index():
 @app.route('/resetdb')
 def reset():
     #make sure you modify this connection string to connect to your database, not mine
-    conn = pymysql.connect(host='localhost', user='root', password='2101', database='northwind')
+    server = os.environ['DATAHOST']
+    user = os.environ['DATAUSER']
+    pwd = os.environ['DATAPWD']
+    db = os.environ['DATADATABASE']
+
+    conn = pymysql.connect(host=server, user=user, password=pwd, database=db)
     conn.autocommit(True)
     crsr = conn.cursor()
 
