@@ -6,10 +6,10 @@ import pymysql
 app = Flask(__name__)
 CORS(app)
 
-#Test API
+# Test API
 @app.route('/')
 def index():
-    return 'WELCOME TO BROWSER 5000'
+    return 'Hello World'
 
 # Reset DB
 @app.route('/resetdb')
@@ -24,16 +24,15 @@ def reset():
     conn.autocommit(True)
     crsr = conn.cursor()
 
-    #drop the tables if they already exist
-    sql = 'DROP TABLE IF EXISTS `tracker`.`login`;'
+    # Drop the tables if they already exist
+    sql = f'DROP TABLE IF EXISTS `{db}`.`login`;'
     crsr.execute(sql)
-    sql = 'DROP TABLE IF EXISTS `tracker`.`user`;'
+    sql = f'DROP TABLE IF EXISTS `{db}`.`user`;'
     crsr.execute(sql)
-
-    #create the two tables we'll need for our app
-    sql = 'CREATE TABLE `tracker`.`user` (`id` INT NOT NULL AUTO_INCREMENT, `login` VARCHAR(255) NULL, PRIMARY KEY (`id`));'
+    # Create the two tables we'll need for our app
+    sql = f'CREATE TABLE `{db}`.`user` (`id` INT NOT NULL AUTO_INCREMENT,`login` VARCHAR(255) NULL, PRIMARY KEY (`id`));'
     crsr.execute(sql)
-    sql = 'CREATE TABLE `tracker`.`login` (`id` INT NOT NULL AUTO_INCREMENT, `userid` INT NULL, `date` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (userid) REFERENCES `user`(id));'
+    sql = f'CREATE TABLE `{db}`.`login` (`id` INT NOT NULL AUTO_INCREMENT,`userid` INT NULL,`date` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (userid) REFERENCES `user`(id));'
     crsr.execute(sql)
 
     return 'Reset Successful'
