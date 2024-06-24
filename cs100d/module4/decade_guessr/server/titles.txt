@@ -92,8 +92,8 @@
 1945p4-WWII - Nagasaki Temple Destroyed
 1945p5-Yousuf Karsh - Winston Churchill
 1945p6-Ella Fitzgerald and Dizzy Gillespie in New York
-1948p1-Babe Ruth Bows Out
-1948p2-Philippe Halsman - Dali Atomicus
+1947- Edith Piaf - La Vie En Rose
+1948p1-Philippe Halsman - Dali Atomicus
 1950-Charles Schultz - Peanuts Debut
 1951p1-A Streetcar Named Desire
 1951p2-Arthur Sasse - Albert Einstein
@@ -168,38 +168,42 @@
 1994p1-Mariah Carey All I Want For Christmas Is You
 1994p2-Nelson Mandela Elected President South Africa
 1994p3-Olympics - US Women's Team Gymnastics
-1995-Macarena
+1995p1 - Windows 95 Launch
+1995p2-Macarena
 1996-Spice Girls Wannabe-Tim Roney+Getty Images
 1997p1-Anthony Crivello on Seinfeld
 1997p2-Babylon 5
 1997p3-Buffy The Vampire Slayer
 1997p4-Steve Jobs Returns To Apple
+2000-Concorde Crash in France
 2001p1-Andrea Booher - 911
-2001p2-Bjork Swan Dress - Oscars
 2001p3-Bush 911
 2001p4-Lord of the Rings - Fellowship of the Ring
 2001p5-Tiger Woods - Masters
 2003p1 Beyonce - Crazy In Love
 2003p2-Outkast - Hey Ya
+2004- Kelly Clarkson - Since U Been Gone
 2005-Hurricane Katrina
 2006-Amy Winehouse - Rehab
-2007p1-Iraq War - Soldiers
+2007p1- War in Iraq - Soldiers
 2007p2-Rihanna - Umbrella
 2008p1-Olympics - Michael Phelps
 2008p2-Olympics - Usain Bolt
+2008p3- MIA - Paper Planes
 2009p1-Jay Z, Alicia Keys - Empire State of Mind
 2009p2-Serena and Venus Williams - Wimbledon
 2009p3-War in Afghanistan - Helicopter
 2010p1-Adele - Rolling In The Deep
 2010p2-Haiti Earthquake
+2010p3-Robyn - Dancing On My Own
 2011p1-Obama and Biden await updates on Bin Laden
 2011p2-Tohoku Tsunami
 2012p1-Sandy Hook
 2012p2-War in Afghanistan - Flag Draped Coffin
-2013-Frozen
+2013p1-Frozen
+2013p2-Lorde - Royals
 2014p1-Interstellar
 2014p2-Lady Gaga - Born This Way
-2014p3-Syrian Civil War - Yarmouk Refugee Camp
 2014p4-Taylor Swift - Shake It Off
 2015p1-Kendrick Lamar - Alright
 2015p2-Paris Attacks
