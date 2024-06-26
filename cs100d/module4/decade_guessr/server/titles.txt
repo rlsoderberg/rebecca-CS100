@@ -177,7 +177,7 @@
 1997p4-Steve Jobs Returns To Apple
 2000-Concorde Crash in France
 2001p1-Andrea Booher - 911
-2001p3-Bush 911
+2001p3-911 Bush
 2001p4-Lord of the Rings - Fellowship of the Ring
 2001p5-Tiger Woods - Masters
 2003p1 Beyonce - Crazy In Love
@@ -207,6 +207,7 @@
 2014p4-Taylor Swift - Shake It Off
 2015p1-Kendrick Lamar - Alright
 2015p2-Paris Attacks
-2016-Carly Rae Jepsen - Call Me Maybe
+2016p1-Carly Rae Jepsen - Call Me Maybe
+2016p2-La La Land
 2017-Charlottesville Protest
 2018-Trump, G7 Leaders
