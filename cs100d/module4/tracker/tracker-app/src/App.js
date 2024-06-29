@@ -53,7 +53,7 @@ const SlideShow = ({ images }) => {
         </div>
         
         <div className="navigation" onClick={onNext}>
-            NEXT IMAGE
+            <div className = "actualbutton">NEXT IMAGE</div>
         </div>
     </div>
   );
