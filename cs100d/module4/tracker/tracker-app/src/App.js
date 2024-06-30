@@ -22,12 +22,12 @@ export default function App() {
       image_url:
         "https://img.freepik.com/free-photo/girl-wide-opening-hands-giving-explanation-high-quality-photo_144627-60466.jpg?w=1800&t=st=1693038021~exp=1693038621~hmac=d4520cd86b2aea3e5dda765ede05bb53d70e18a574756d0f41a6806fe325d26d",
       caption: "Image 4"
-    }/*,
+    },
     {
         image_url:
-            "./imgs/ctyslogo.png",
+            ".\imgs\ctyslogo.png",
         caption: "Test Image"
-    }*/
+    }
   ];
 
   return (
@@ -52,8 +52,8 @@ const SlideShow = ({ images }) => {
         ))}
         </div>
         
-        <div className="navigation" onClick={onNext}>
-            <div className = "actualbutton">NEXT IMAGE</div>
+        <div className="navigation">
+            <div className = "actualbutton" onClick={onNext}>NEXT IMAGE</div>
         </div>
     </div>
   );
