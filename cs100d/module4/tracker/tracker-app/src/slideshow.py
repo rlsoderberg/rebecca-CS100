@@ -14,21 +14,28 @@ def login():
     conn = pymysql.connect(host=server, user=user, password=pwd, database=db)
     conn.autocommit(True)
     crsr = conn.cursor()
+    return user, crsr, conn
 
+user, crsr, conn = login()
+
+def loadpic():
     line0 = lines[x]
     line1 = lines[x+1]
     line2 = lines[x+2]
     line3 = lines[x+3]
     line4 = lines[x+4]
+    line5 = f"(LOAD_FILE('C:\Users\rlsod\rebeccaCS100\cs100d\module4\tracker\tracker-app\src\popdecades\{lines[x+5]}')"
 
     img = ''
 
     sql = f'INSERT INTO img (filename, decade, copyright, info, title, photo)
-            VALUES ({line0}, {line1}, {line2}, {line3}, {line4}, })'
+            VALUES ({line0}, {line1}, {line2}, {line3}, {line4}, {line5})'
 
-    crsr.execute(line1, line2, line3, line4, ?, (user))
+    crsr.execute(line1, line2, line3, line4, line5, (user))
 
     conn.commit()
 
-for x in range(0, 200, 5):
-  login(x)
+login()
+for x in range(0, 200, 6):
+  loadpic()
+  
