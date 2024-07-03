@@ -25,7 +25,7 @@ export default function App() {
     },
     {
         image_url:
-            ".\imgs\ctyslogo.png",
+          ".\\popdecades\\2019.jpg",
         caption: "Test Image"
     }
   ];
