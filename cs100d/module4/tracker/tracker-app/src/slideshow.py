@@ -24,12 +24,9 @@ def loadpic():
     line2 = lines[x+2]
     line3 = lines[x+3]
     line4 = lines[x+4]
-    line5 = f"(LOAD_FILE('C:\Users\rlsod\rebeccaCS100\cs100d\module4\tracker\tracker-app\src\popdecades\{lines[x+5]}')"
+    line5 = f"(LOAD_FILE('C:\Users\rlsod\rebeccaCS100\cs100d\module4\tracker\tracker-app\src\popdecades\{lines[x+5]}', 'rb')"
 
-    img = ''
-
-    sql = f'INSERT INTO img (filename, decade, copyright, info, title, photo)
-            VALUES ({line0}, {line1}, {line2}, {line3}, {line4}, {line5})'
+    sql = f'INSERT INTO img (filename, decade, copyright, info, title, photo) VALUES ({line0}, {line1}, {line2}, {line3}, {line4}, {line5});'
 
     crsr.execute(line1, line2, line3, line4, line5, (user))
 
