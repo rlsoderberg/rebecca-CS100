@@ -22,7 +22,7 @@ def login():
 def loadpic(crsr, conn, x):
     #assign variables to different lines of data file
     line0 = lines[x]
-    print('line 0: '+line0)
+    print('line 0:'+line0)
     line1 = lines[x+1]
     print('line 1:'+line1)
     line2 = lines[x+2]
