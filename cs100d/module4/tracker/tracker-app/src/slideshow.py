@@ -18,10 +18,15 @@ def login():
 
 def loadpic(crsr, conn, x):
     line0 = lines[x]
+    print('line 0:'+line0)
     line1 = lines[x+1]
+    print('line 1:'+line0)
     line2 = lines[x+2]
+    print('line 2:'+line0)
     line3 = lines[x+3]
+    print('line 0:'+line3)
     line4 = lines[x+4]
+    print('line 0:'+line4)
     img = open(fr'C:\Users\rlsod\rebeccaCS100\cs100d\module4\tracker\tracker-app\src\popdecades\{line0}')
     
     sql = """INSERT INTO img (filename, decade, copyright, info, title, photo) VALUES (%s, %s, %s, %s, %s, %s)"""
