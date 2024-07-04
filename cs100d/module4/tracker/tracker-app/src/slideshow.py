@@ -4,7 +4,7 @@ import pymysql
 #read image data
 data_file = open("img_data.txt", "r", encoding='utf-8')
 lines = data_file.read().splitlines()
-data_file.close
+data_file.close()
 
 #log into sql (really should be using .env, but the import was having some weird problem)
 def login():
@@ -38,13 +38,13 @@ def loadpic(crsr, conn, x):
     #read binary data from image file at this image path
     img_file = open(img_path, 'rb')
     img_data = img_file.read()
-    img_file.close
+    img_file.close()
     
     #sql statement to insert variables and image data
-    sql = """INSERT INTO img (filename, decade, copyright, info, title) VALUES (%s, %s, %s, %s, %s)"""
+    sql = """INSERT INTO img (filename, decade, copyright, info, title, photo) VALUES (%s, %s, %s, %s, %s, %s)"""
 
     #define params and then execute with them
-    params = (img_data, line1, line2, line3, line4)
+    params = (img_filename, line1, line2, line3, line4, img_data)
 
     crsr.execute(sql, params)
 
@@ -53,6 +53,6 @@ def loadpic(crsr, conn, x):
 crsr, conn = login()
 #do the loop... every 6 times? do i need to make a placeholder for the image?
 #or, um, not the image... oh i see, i have 'photo' and i have 'image', 
-for x in range(0, 200, 5):
+for x in range(0, 623, 6):
   loadpic(crsr, conn, x)
 
