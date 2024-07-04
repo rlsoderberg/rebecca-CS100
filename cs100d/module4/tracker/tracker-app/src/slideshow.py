@@ -1,9 +1,9 @@
 import os
 import pymysql
 
-f = open("img_data.txt", "r", encoding='utf-8')
-lines = f.read().splitlines()
-f.close
+data_file = open("img_data.txt", "r", encoding='utf-8')
+lines = data_file.read().splitlines()
+data_file.close
 
 def login():
     server = "localhost"
@@ -27,11 +27,16 @@ def loadpic(crsr, conn, x):
     print('line 3:'+line3)
     line4 = lines[x+4]
     print('line 4:'+line4)
-    img = open(fr'C:\Users\rlsod\rebeccaCS100\cs100d\module4\tracker\tracker-app\src\popdecades\{line0}')
+
+    img_path = fr'C:\Users\rlsod\rebeccaCS100\cs100d\module4\tracker\tracker-app\src\popdecades\{line0}'
+
+    img_file = open(img_path, 'rb')
+    img_data = img_file.read()
+    img_file.close
     
     sql = """INSERT INTO img (filename, decade, copyright, info, title, photo) VALUES (%s, %s, %s, %s, %s, %s)"""
 
-    params = (line0, line1, line2, line3, line4, img)
+    params = (line0, line1, line2, line3, line4, img_data)
 
     crsr.execute(sql, params)
 
