@@ -20,13 +20,14 @@ def grab_slide(conn):
     #get all the different variables. what is the most efficient way to do this?
     crsr = conn.cursor()
     crsr.execute("SELECT filename, decade, copyright, info, title FROM img WHERE ID = %s" % rand)
-    result_row = crsr.fetchall()
+    result_row = crsr.fetchone()
 
     return result_row
 
 conn = login()
 result_row = grab_slide(conn)
-(this_filename, this_decade, this_copyright, this_info, this_title) = result_row
-print('filename is '+this_filename)
+(filename, decade, copyright, info, title) = result_row
+img_path = fr"cs100d\module4\tracker\tracker-app\src\popdecades\{filename}"
+
 
 
