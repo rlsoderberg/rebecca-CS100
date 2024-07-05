@@ -11,22 +11,21 @@ def login():
 
     conn = pymysql.connect(host=server, user=user, password=pwd, database=db)
     conn.autocommit(True)
-    crsr = conn.cursor()
-    return crsr, conn
+    return conn
 
-def grab_slide(crsr):
+def grab_slide(conn):
     #i reallly ought to make all these length counts computerized, but for now i'm just doing them manually
     rand = random.randrange(105)
     
     #get all the different variables. what is the most efficient way to do this?
-    sql = """SELECT column_name FROM img WHERE column_name = %s;""" % rand
-    params = rand
-    this_column_name = crsr.fetchall(sql)
+    sql = """SELECT ID FROM img WHERE ID = %s;""" % rand
+    crsr = conn.cursor().execute(sql)
+    this_ID = crsr.fetchall()
 
-    return this_column_name
+    return this_ID
 
-crsr = login()
-this_column_name = grab_slide(crsr)
-print(str(this_column_name))
+conn = login()
+this_ID = grab_slide(conn)
+print(str(this_ID))
 
 
