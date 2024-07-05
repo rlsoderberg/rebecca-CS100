@@ -45,7 +45,7 @@ def loadpic(crsr, conn, x):
     #img_file.close()
     
     #sql statement to insert variables (not image data)
-    sql = """INSERT INTO img (column_name, filename, decade, copyright, info, title) VALUES (%s, %s, %s, %s, %s, %s)"""
+    sql = """INSERT INTO img (ID, filename, decade, copyright, info, title) VALUES (%s, %s, %s, %s, %s, %s)"""
 
     #define params and then execute with them
     params = (line0, line1, line2, line3, line4, line5)
