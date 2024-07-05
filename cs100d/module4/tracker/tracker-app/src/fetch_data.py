@@ -16,16 +16,17 @@ def login():
 def grab_slide(conn):
     #i reallly ought to make all these length counts computerized, but for now i'm just doing them manually
     rand = random.randrange(105)
-    
+    print(rand)
+    strand = str(rand)
     #get all the different variables. what is the most efficient way to do this?
-    sql = """SELECT ID FROM img WHERE ID = %s;""" % rand
-    crsr = conn.cursor().execute(sql)
-    this_ID = crsr.fetchall()
+    crsr = conn.cursor()
+    crsr.execute("SELECT filename FROM img WHERE ID = %s" % strand)
+    this_filename = crsr.fetchall()
 
-    return this_ID
+    return this_filename
 
 conn = login()
-this_ID = grab_slide(conn)
-print(str(this_ID))
+this_filename = grab_slide(conn)
+print(str(this_filename))
 
 
