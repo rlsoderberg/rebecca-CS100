@@ -2,12 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import axios from 'axios';
 import './index.css';
-import filename from './fetch_data.py';
-import decade from './fetch_data.py';
-import copyright from './fetch_data.py';
-import info from './fetch_data.py';
-import title from './fetch_data.py';
-import img_path from './fetch_data.py';
+import {filename, decade, copyright, info, title, img_path} from './fetch_data.py';
 
 class Main extends React.Component {
     constructor() {
@@ -51,11 +46,8 @@ class Main extends React.Component {
             <div className='Main'>
                 <img src = {img_path} alt= {title} width="600"></img>
                 <p>{title}</p>
-              
             </div>
-            )
-
-                  
+            )           
     }
 }
 
