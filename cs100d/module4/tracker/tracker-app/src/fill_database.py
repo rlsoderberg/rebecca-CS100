@@ -50,6 +50,7 @@ def loadpic(crsr, conn, x):
     #define params and then execute with them
     params = (line0, line1, line2, line3, line4, line5)
 
+    #why did it have 'crsr.execute(sql, (user))' up in server?
     crsr.execute(sql, params)
 
     conn.commit()

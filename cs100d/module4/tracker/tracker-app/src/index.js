@@ -4,6 +4,7 @@ import axios from 'axios';
 import './index.css';
 import {filename, decade, copyright, info, title, img_path} from './fetch_data.py';
 
+//i'm keeping all these old functions, until i at least figure out what i'm doing with axios or whatever to import variables into render!!!
 class Main extends React.Component {
     constructor() {
         super()
