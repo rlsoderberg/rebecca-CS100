@@ -26,15 +26,12 @@ def reset():
     crsr = conn.cursor()
 
     #drop the tables if they already exist
-    sql = 'DROP TABLE IF EXISTS `tracker`.`login`;'
-    crsr.execute(sql)
-    sql = 'DROP TABLE IF EXISTS `tracker`.`user`;'
+    sql = 'DROP TABLE IF EXISTS `img_db`.`img`;'
     crsr.execute(sql)
     #create the two tables we'll need for our app
-    sql = 'CREATE TABLE `tracker`.`user` (`id` INT NOT NULL AUTO_INCREMENT, `login` VARCHAR (255) NULL, PRIMARY KEY (`id`));'
+    sql = 'CREATE TABLE `img_db`.`img` (`id` varchar(10) AUTO_INCREMENT, `filename` varchar(200), `decade` varchar(200), `copyright` varchar(200), `info` varchar(200), `title` varchar(200), PRIMARY KEY (`id`));'
     crsr.execute(sql)
-    sql = 'CREATE TABLE `tracker`.`login` (`id` INT NOT NULL AUTO_INCREMENT, `userid` INT NULL, `date` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (userid) REFERENCES `user`(id));'
-    crsr.execute(sql)
+    
 
     return 'Reset Successful'
 
@@ -53,6 +50,7 @@ def login():
     json = request.get_json()
     user = json['user']
 
+    """
     #first, check if this user already exists
     sql = 'select id from user where login = %s'
     crsr.execute(sql, (user))
@@ -80,8 +78,9 @@ def login():
     crsr.execute(sql)
     res = crsr.fetchone()
     totalcount = res[0]
-
-    return jsonify({'user': user, 'user count':usercount, 'total count':totalcount})
+    """
+    return jsonify({'id': id, 'filename': filename, 'decade':decade, 'copyright':copyright,'info':info, 'title': title})
+    #return jsonify({'user': user, 'user count':usercount, 'total count':totalcount})
 
 if __name__ == '__main__':
     app.run()

@@ -21,7 +21,7 @@ def login():
     return crsr, conn
 
 #load image data into SQL
-def loadpic(crsr, conn, x):
+def loadpic(crsr, conn, x, lines):
     #assign variables to different lines of data file (is there an easy way to do this better?)
     line0 = lines[x]
     print('line 0: '+line0)
@@ -59,5 +59,5 @@ def loadpic(crsr, conn, x):
 crsr, conn = login()
 #do the loop 6 times
 for x in range(0, 630, 6):
-  loadpic(crsr, conn, x)
+  loadpic(crsr, conn, x, lines)
 
