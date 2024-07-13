@@ -2,3 +2,72 @@ body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color:#cccccc;
 }
+
+* { 
+  box-sizing: border-box; 
+} 
+
+html { 
+  width: 100%; 
+  min-height: 100%; 
+  cursor:url(https://i.ibb.co/ZXJNKSv/smol-pancake.png), auto;
+} 
+
+body { 
+  width: inherit; 
+  min-height: inherit; 
+  margin: 0px; 
+  padding: 0px; 
+  background-color:lightslategray;
+} 
+
+.Main{
+  margin: 0px; 
+  padding: 0px; 
+}
+
+.Section1{
+  background-color:#778899;
+  color:#f0f8ff;
+  margin: 0px; 
+  padding: 50px; 
+}
+.Section1:hover {
+  background-color: #8090a1;
+}
+.Section2{
+  background-color:#f0f8ff;
+  color:#000000;
+  margin: 0px; 
+  padding: 50px; 
+}
+.Section2:hover {
+  background-color: #f8ffff;
+}
+.Section3{
+  background-color:#d3d3d3;
+  color:#000000;
+  margin: 0px; 
+  padding: 50px; 
+}
+.Section3:hover {
+  background-color: #dddddd;
+}
+.Section4{
+  background-color:#f0f8ff;
+  color:#000000;
+  margin: 0px; 
+  padding: 50px; 
+}
+.Section4:hover {
+  background-color: #f8ffff;
+}
+.Section5{
+  background-color:#778899;
+  color:#f0f8ff;
+  margin: 0px; 
+  padding: 50px; 
+}
+.Section5:hover {
+  background-color: #8090a1;
+}
