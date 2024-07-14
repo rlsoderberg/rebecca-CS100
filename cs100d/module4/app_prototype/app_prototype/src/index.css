@@ -25,25 +25,22 @@ body {
   padding: 0px; 
 }
 
-
 .Column1{
   display:inline-block;
-  width:49vw;
-  background-color:#778899;
-  color:#f0f8ff;
+  background-color:chartreuse;
   height:100vh;
+  width:49vw;
   margin:0px;
   padding:0px;
-}
-.intro-container{
-  background-color:pink;
 
 }
 
 .Column2{
   display:inline-block;
-  width:49vw;
-  background-color:#f0f8ff;
+  background-color:pink;
   height:100vh;
-  overflow:scroll;
+  width:49vw;
+  margin:0px;
+  padding:0px;
+
 }
