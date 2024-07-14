@@ -25,14 +25,6 @@ body {
   padding: 0px; 
 }
 
-.Section1{
-  background-color:#f0f8ff;
-  margin: 0px; 
-  padding: 0px;
-}
-.Section1:hover {
-  background-color: #f8ffff;
-}
 
 .Column1{
   display:inline-block;
@@ -40,17 +32,20 @@ body {
   background-color:#778899;
   color:#f0f8ff;
   height:100vh;
+  margin:0px;
+  padding:0px;
 }
 .burger-menu{
   display:inline-block;
+  margin:0px;
+  padding:0px;
 }
 .hamburger-button {
-  margin-left: 30px;
-  margin-top:30px;
-  font-size: 24px;
   cursor: pointer;
   background-color:#778899;
   border:0px;
+  margin:0px;
+  padding:0px;
 }
 .nav-links {
   display: none;
@@ -66,14 +61,10 @@ body {
 .nav-links a:hover {
   background-color: #111;
 }
-.outer-text{
+.intro-text{
   display:inline-block;
-  margin-left:30px;
-  margin-top:30px;
-  vertical-align:top;
-}
-.inner-text{
-  margin-top:50px;
+  margin:0px;
+  padding:0px;
 }
 .name{
   font-size:3em;
@@ -104,40 +95,4 @@ body {
   background-color:#f0f8ff;
   height:100vh;
   overflow:scroll;
-}
-.Section2{
-  background-color:#f0f8ff;
-  color:#000000;
-  margin: 0px; 
-  padding: 50px; 
-}
-.Section2:hover {
-  background-color: #f8ffff;
-}
-.Section3{
-  background-color:#d3d3d3;
-  color:#000000;
-  margin: 0px; 
-  padding: 50px; 
-}
-.Section3:hover {
-  background-color: #dddddd;
-}
-.Section4{
-  background-color:#f0f8ff;
-  color:#000000;
-  margin: 0px; 
-  padding: 50px; 
-}
-.Section4:hover {
-  background-color: #f8ffff;
-}
-.Section5{
-  background-color:#778899;
-  color:#f0f8ff;
-  margin: 0px; 
-  padding: 50px; 
-}
-.Section5:hover {
-  background-color: #8090a1;
 }

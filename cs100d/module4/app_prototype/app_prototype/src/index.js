@@ -19,41 +19,16 @@ class Main extends React.Component {
         const {user, usercount, totalcount} = this.state
         return (
             <div className='Main'>
-                <div className = 'Section1'>
-                    <div className = 'Column1'>
-                        <div className = 'burger-menu'>
-                            <button class="hamburger-button"><img className='burger'src="https://i.ibb.co/ZXJNKSv/smol-pancake.png"></img> </button>
-                            <div class="nav-links">
-                                <a href="#">Home</a>
-                                <a href="#">Services</a>
-                                <a href="#">Contact</a>
-                        </div>
-                    </div>
-                    <div className = 'outer-text'>
-                        <div className = 'inner-text'>
+                <div className = 'Column1'>
+                        <button class="hamburger-button"><img className='burger'src="https://i.ibb.co/ZXJNKSv/smol-pancake.png"></img> </button>
+                        <div className = 'intro-text'>
                             <p className = 'name'>Becca Soderberg</p>
                             <p className = 'field'>User Experience and Visual Design</p>
                             <button class="work-button">Let's Work Together</button>
                             <p className = 'links'>Email me or find me on Linkedin<br></br>Download my resume</p>
                         </div>
-                    </div>
-
                 </div>
-                    <div className = 'Column2'>Column2</div>
-                        <div className = 'Section2'>
-                        <p>About Me</p>
-                        </div>
-                        <div className = 'Section3'>
-                        <p>Testimonials</p>
-                        </div>
-                        <div className = 'Section4'>
-                            <p>Projects</p>
-                        </div>
-                        <div className = 'Section5'>
-                            <p>Contact Me</p>
-                        </div>
-                    </div>
-
+                <div className = 'Column2'>Column2</div>
             </div>
         )
     }
