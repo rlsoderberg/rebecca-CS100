@@ -35,58 +35,9 @@ body {
   margin:0px;
   padding:0px;
 }
-.burger-menu{
-  display:inline-block;
-  margin:0px;
-  padding:0px;
-}
-.hamburger-button {
-  cursor: pointer;
-  background-color:#778899;
-  border:0px;
-  margin:0px;
-  padding:0px;
-}
-.nav-links {
-  display: none;
-  background-color: #333;
-  color: white;
-}
-.nav-links a {
-  display: block;
-  padding: 15px;
-  color: white;
-  text-decoration: none;
-}
-.nav-links a:hover {
-  background-color: #111;
-}
-.intro-text{
-  display:inline-block;
-  margin:0px;
-  padding:0px;
-}
-.name{
-  font-size:3em;
-  line-height:20%;
-  font-weight:bold;
-}
-.field{
-  font-size:2em;
-}
-.links{
-  font-size:1em;
-}
-.work-button{
-  border-radius: 20px;
-  border:2px solid white;
-  padding:2vh;
-  color:#f0f8ff;
-  font-weight:bold;
-  font-size:1.5em;
-  background-color:#8090a1;
-  margin-top: 8vh;
-  margin-bottom:4vh;
+.intro-container{
+  background-color:pink;
+
 }
 
 .Column2{
