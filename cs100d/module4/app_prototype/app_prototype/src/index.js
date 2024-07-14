@@ -33,25 +33,27 @@ class Main extends React.Component {
                         <div className = 'inner-text'>
                             <p className = 'name'>Becca Soderberg</p>
                             <p className = 'field'>User Experience and Visual Design</p>
-                            <p className = 'links'>Find me at Github or Linkedin<br></br>Download my resume</p>
+                            <button class="work-button">Let's Work Together</button>
+                            <p className = 'links'>Email me or find me on Linkedin<br></br>Download my resume</p>
                         </div>
                     </div>
 
                 </div>
                     <div className = 'Column2'>Column2</div>
-                </div>
-                <div className = 'Section2'>
-                    <p>About Me</p>
-                </div>
-                <div className = 'Section3'>
-                    <p>Testimonials</p>
-                </div>
-                <div className = 'Section4'>
-                    <p>Projects</p>
-                </div>
-                <div className = 'Section5'>
-                    <p>Contact Me</p>
-                </div>
+                        <div className = 'Section2'>
+                        <p>About Me</p>
+                        </div>
+                        <div className = 'Section3'>
+                        <p>Testimonials</p>
+                        </div>
+                        <div className = 'Section4'>
+                            <p>Projects</p>
+                        </div>
+                        <div className = 'Section5'>
+                            <p>Contact Me</p>
+                        </div>
+                    </div>
+
             </div>
         )
     }

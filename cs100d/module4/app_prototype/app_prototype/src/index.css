@@ -33,6 +33,78 @@ body {
 .Section1:hover {
   background-color: #f8ffff;
 }
+
+.Column1{
+  display:inline-block;
+  width:49vw;
+  background-color:#778899;
+  color:#f0f8ff;
+  height:100vh;
+}
+.burger-menu{
+  display:inline-block;
+}
+.hamburger-button {
+  margin-left: 30px;
+  margin-top:30px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color:#778899;
+  border:0px;
+}
+.nav-links {
+  display: none;
+  background-color: #333;
+  color: white;
+}
+.nav-links a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  background-color: #111;
+}
+.outer-text{
+  display:inline-block;
+  margin-left:30px;
+  margin-top:30px;
+  vertical-align:top;
+}
+.inner-text{
+  margin-top:50px;
+}
+.name{
+  font-size:3em;
+  line-height:20%;
+  font-weight:bold;
+}
+.field{
+  font-size:2em;
+}
+.links{
+  font-size:1em;
+}
+.work-button{
+  border-radius: 20px;
+  border:2px solid white;
+  padding:2vh;
+  color:#f0f8ff;
+  font-weight:bold;
+  font-size:1.5em;
+  background-color:#8090a1;
+  margin-top: 8vh;
+  margin-bottom:4vh;
+}
+
+.Column2{
+  display:inline-block;
+  width:49vw;
+  background-color:#f0f8ff;
+  height:100vh;
+  overflow:scroll;
+}
 .Section2{
   background-color:#f0f8ff;
   color:#000000;
@@ -68,62 +140,4 @@ body {
 }
 .Section5:hover {
   background-color: #8090a1;
-}
-.Column1{
-  display:inline-block;
-  width:49vw;
-  background-color:#778899;
-  color:#f0f8ff;
-  height:100vh;
-  vertical-align:top;
-}
-.Column2{
-  display:inline-block;
-  width:49vw;
-  background-color:#f0f8ff;
-}
-.burger-menu{
-  display:inline-block;
-}
-.hamburger-button {
-  margin-left: 30px;
-  margin-top:30px;
-  font-size: 24px;
-  cursor: pointer;
-  background-color:#778899;
-  border:0px;
-  vertical-align:top;
-}
-.nav-links {
-  display: none;
-  background-color: #333;
-  color: white;
-}
-.nav-links a {
-  display: block;
-  padding: 15px;
-  color: white;
-  text-decoration: none;
-}
-.nav-links a:hover {
-  background-color: #111;
-}
-.outer-text{
-  display:inline-block;
-  margin-left:30px;
-  margin-top:30px;
-  background-color:pink;
-}
-.inner-text{
-  margin-top:100px;
-}
-.name{
-  font-size:30px;
-  line-height:20%;
-}
-.field{
-  font-size:16px;
-}
-.links{
-  font-size:12px;
 }
