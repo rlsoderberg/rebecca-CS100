@@ -32,7 +32,7 @@ body {
   width:49vw;
   margin:0px;
   padding:0px;
-
+  vertical-align:text-top;
 }
 
 .Column2{
@@ -42,5 +42,6 @@ body {
   width:49vw;
   margin:0px;
   padding:0px;
-
+  vertical-align:text-top;
+  overflow:scroll;
 }
