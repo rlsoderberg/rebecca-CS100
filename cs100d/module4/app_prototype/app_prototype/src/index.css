@@ -22,6 +22,7 @@ body {
   background-color:lightslategray;
   height: 100%;
   overflow: auto;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 .Main{
@@ -31,7 +32,7 @@ body {
 
 .Column1{
   display:inline-block;
-  background-color:chartreuse;
+  background-color:#291f17;
   height:100vh;
   width:49vw;
   margin:0px;
@@ -41,7 +42,7 @@ body {
 
 .Column2{
   display:inline-block;
-  background-color:pink;
+  background-color:#f0f8ff;
   height:100vh;
   width:49vw;
   margin:0px;
@@ -49,4 +50,41 @@ body {
   vertical-align:text-top;
   overflow:scroll;
   overflow-x: hidden;
+}
+
+.button-div{
+  display:inline-block;
+  margin:30px;
+}
+
+.intro-div{
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.name{
+  font-size:3em;
+  line-height:0em;
+  font-weight:bold;
+  color: #b69dff;
+}
+.field{
+  font-size:1.5em;
+  color: #b69dff;
+}
+.bio{
+  font-size:1em;
+  color: #b69dff;
+}
+
+.work-button{
+  border-radius: 20px;
+  padding:1.5em;
+  background-color: transparent;
+  border: #b69dff solid 2px;
+  color: #b69dff;
+}
+
+.links{
+  color:#f0f8ff
 }
