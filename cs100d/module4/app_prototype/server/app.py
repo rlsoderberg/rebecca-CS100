@@ -16,6 +16,26 @@ def index():
 
 @app.route('/resetdb')
 def reset():
+    # Make sure you modify this connection string to connect to your database, and not mine.
+    conn = pymysql.connect(host='localhost', user='root', password='2101', database='img_db')
+    conn.autocommit(True)
+    crsr = conn.cursor()
+
+    # Drop the tables if they already exist
+    sql = 'DROP TABLE IF EXISTS `tracker`.`login`;'
+    crsr.execute(sql)
+    sql = 'DROP TABLE IF EXISTS `tracker`.`user`;'
+    crsr.execute(sql)
+    # Create the two tables we'll need for our app
+    sql = 'CREATE TABLE `tracker`.`user` (`id` INT NOT NULL AUTO_INCREMENT,`login` VARCHAR(255) NULL, PRIMARY KEY (`id`));'
+    crsr.execute(sql)
+    sql = 'CREATE TABLE `tracker`.`login` (`id` INT NOT NULL AUTO_INCREMENT,`userid` INT NULL,`date` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (userid) REFERENCES `user`(id));'
+    crsr.execute(sql)
+
+    return 'Reset Successful'
+
+@app.route('/resetdF')
+def reset():
     server = os.environ['DATAHOST']
     user = os.environ['DATAUSER']
     pwd = os.environ['DATAPWD']
