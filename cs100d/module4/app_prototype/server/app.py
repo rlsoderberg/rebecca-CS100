@@ -29,7 +29,7 @@ def reset():
     sql = 'DROP TABLE IF EXISTS `img_db`.`img`;'
     crsr.execute(sql)
     #create the two tables we'll need for our app
-    sql = 'CREATE TABLE `img_db`.`img` (`id` varchar(10) AUTO_INCREMENT, `filename` varchar(200), `decade` varchar(200), `copyright` varchar(200), `info` varchar(200), `title` varchar(200), PRIMARY KEY (`id`));'
+    sql = 'CREATE TABLE `img_db`.`img` (`id` INT NOT NULL AUTO_INCREMENT, `filename` VARCHAR(200) NULL, `decade` VARCHAR(200) NULL, `copyright` VARCHAR(200) NULL, `info` VARCHAR(200) NULL, `title` VARCHAR(200) NULL, PRIMARY KEY (`id`));'
     crsr.execute(sql)
     
 
