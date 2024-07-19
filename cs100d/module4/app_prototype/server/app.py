@@ -45,16 +45,13 @@ def reset():
     conn.autocommit(True)
     crsr = conn.cursor()
 
-    #drop the tables if they already exist
-    sql = 'DROP TABLE IF EXISTS `img_db`.`img`;'
-    crsr.execute(sql)
     #create the two tables we'll need for our app
     sql = 'CREATE TABLE `img_db`.`img` (`id` INT NOT NULL AUTO_INCREMENT, `filename` VARCHAR(200) NULL, `decade` VARCHAR(200) NULL, `copyright` VARCHAR(200) NULL, `info` VARCHAR(200) NULL, `title` VARCHAR(200) NULL, PRIMARY KEY (`id`));'
     crsr.execute(sql)
     
 
     return 'Reset Successful'
-
+"""
 #the user's login is being sent via post, in json
 @app.route('/login', methods=['POST'])
 def login():
@@ -70,7 +67,7 @@ def login():
     json = request.get_json()
     user = json['user']
 
-    """
+   
     #first, check if this user already exists
     sql = 'select id from user where login = %s'
     crsr.execute(sql, (user))
@@ -98,9 +95,9 @@ def login():
     crsr.execute(sql)
     res = crsr.fetchone()
     totalcount = res[0]
-    """
+    
     return jsonify({'id': id, 'filename': filename, 'decade':decade, 'copyright':copyright,'info':info, 'title': title})
     #return jsonify({'user': user, 'user count':usercount, 'total count':totalcount})
-
+"""
 if __name__ == '__main__':
     app.run()
