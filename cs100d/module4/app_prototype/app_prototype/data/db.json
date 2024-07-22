@@ -209,7 +209,7 @@
         "title": "War of the Worlds broadcast"
       },
       {
-        "id": 26,
+        "id": 27,
         "filename": "1939.jpg",
         "decade": "1930s",
         "source": "MGM",
@@ -249,7 +249,7 @@
         "title": "It's a Wonderful Life"
       },
       {
-        "id": 31,
+        "id": 32,
         "filename": "1948.jpg",
         "decade": "1940s",
         "source": "Life Magazine",
@@ -257,7 +257,7 @@
         "title": "Salvador Dali - Dali Atomicus"
       },
       {
-        "id": 32,
+        "id": 33,
         "filename": "1953.jpg",
         "decade": "1950s",
         "source": "Royal Collection",
@@ -289,7 +289,7 @@
         "title": "Bobby Darin - Mack The Knife"
       },
       {
-        "id": 57,
+        "id": 37,
         "filename": "1959p2.jpg",
         "decade": "1950s",
         "source": "Mirisich Company",
@@ -297,7 +297,7 @@
         "title": "Marilyn Monroe - Some Like It Hot"
       },
       {
-        "id": 37,
+        "id": 38,
         "filename": "1963p2.jpg",
         "decade": "1960s",
         "source": "Getty Images",
@@ -305,7 +305,7 @@
         "title": "Martin Luther King Jr. - I Have A Dream"
       },
       {
-        "id": 38,
+        "id": 39,
         "filename": "1964p1.jpg",
         "decade": "1960s",
         "source": "20th Century Fox",
@@ -313,7 +313,7 @@
         "title": "The Sound of Music"
       },
       {
-        "id": 39,
+        "id": 40,
         "filename": "1966.jpg",
         "decade": "1960s",
         "source": "National Archives and Records Administration",
@@ -321,7 +321,7 @@
         "title": "Vietnam War"
       },
       {
-        "id": 40,
+        "id": 41,
         "filename": "1967.jpg",
         "decade": "1960s",
         "source": "Jim Marshall Photography LLC",
@@ -329,7 +329,7 @@
         "title": "Monterey Pop Festival"
       },
       {
-        "id": 41,
+        "id": 42,
         "filename": "1969p1.jpg",
         "decade": "1960s",
         "source": "Library of Congress",
@@ -337,20 +337,12 @@
         "title": "The Beatles - Ed Sullivan Show"
       },
       {
-        "id": 42,
+        "id": 43,
         "filename": "1969p2.jpg",
         "decade": "1960s",
         "source": "NASA Apollo Archive",
         "info": "Astronaut Edwin E. Aldrin Jr. poses for a photograph beside the deployed United States flag during Apollo 11 mission",
         "title": "Apollo 11 Lands on the Moon"
-      },
-      {
-        "id": 43,
-        "filename": "1970.jpg",
-        "decade": "1970s",
-        "source": "Public Domain",
-        "info": "Mary Ann Vecchio, taken at Kent State University immediately following the Kent State Shootings - photo by John Paul Filo",
-        "title": "Kent State Shootings"
       },
       {
         "id": 44,
@@ -585,7 +577,7 @@
         "title": "Taylor Swift - Shake It Off"
       },
       {
-        "id": 72,
+        "id": 73,
         "filename": "2019.jpg",
         "decade": "2010s",
         "source": "Walt Disney Animation Studios",
