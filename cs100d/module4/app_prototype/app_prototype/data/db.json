@@ -21,16 +21,16 @@
         "filename": "1862.jpg",
         "decade": "1860s",
         "source": "The Metropolitan Museum of Art",
-        "info": "U.S. President Abraham Lincoln visits Antietam Wood, 2 weeks after the Civil War's Battle of Antietam - photo by Alexander Gardner",
+        "info": "U.S. President Abraham Lincoln visits Antietam Wood after the Civil War's Battle of Antietam - photo by Alexander Gardner",
         "title": "Civil War"
       },
       {
         "id": 4,
-        "filename": "1876.jpg",
+        "filename": "1877.jpg",
         "decade": "1870s",
-        "source": "National Portrait Gallery/Smithsonian",
-        "info": "Alexander Graham Bell making the first call between New York and Chicago (no photo exists of the first telephone call)",
-        "title": "Alexander Graham Bell makes first telephone call"
+        "source": "Library of Congress",
+        "info": "Thomas Edison and his early phonograph",
+        "title": "Thomas Edison invents phonograph"
       },
       {
         "id": 5,
@@ -69,7 +69,7 @@
         "filename": "1903p2.jpg",
         "decade": "1900s",
         "source": "Popular Science Monthly Volume 64",
-        "info": "Pierre and Maria Skłodowska-Curie in the laboratory, demonstrating the experimental apparatus used to detect the ionization of air",
+        "info": "Pierre and Maria Skłodowska-Curie in the laboratory with their experimental apparatus, used to detect the ionization of air",
         "title": "Pierre and Marie Curie win Nobel Prize in Physics"
       },
       {
@@ -77,7 +77,7 @@
         "filename": "1908p1.jpg",
         "decade": "1900s",
         "source": "Library of Congress",
-        "info": "Harry Houdini performs one of his stunning manacled jumps from Harvard Bridge in Boston, Massachusetts, followed by an under-water escape in the Charles River - photo by John Thurston",
+        "info": "Harry Houdini performs a manacled jump from Harvard Bridge in Boston, Massachusetts - photo by John Thurston",
         "title": "Harry Houdini jumps from the Harvard Bridge"
       },
       {
@@ -117,7 +117,7 @@
         "filename": "1918p1.jpg",
         "decade": "1910s",
         "source": "Library of Congress",
-        "info": "A group of female Red Cross ambulance attendants in St. Louis, MO. holding stretchers, awaiting influenza patients",
+        "info": "A group of Red Cross ambulance attendants in St. Louis, MO. holding stretchers, awaiting influenza patients",
         "title": "Spanish Flu"
       },
       {
@@ -132,8 +132,8 @@
         "id": 17,
         "filename": "1921p1.jpg",
         "decade": "1920s",
-        "source": "Publicity Photo for 'The Kid'",
-        "info": "Publicity photo from Charlie Chaplin's movie 'The Kid'",
+        "source": "Charles Chaplin Productions",
+        "info": "Charlie Chaplin in his American silent comedy-drama film 'The Kid'",
         "title": "Charlie Chaplin - The Kid"
       },
       {
@@ -141,7 +141,7 @@
         "filename": "1921p2.jpg",
         "decade": "1920s",
         "source": "Harris & Ewing Studio",
-        "info": "Albert Einstein receives the 1921 Nobel Prize in Physics for his services to theoretical physics, especially the law of the photoelectric effect",
+        "info": "Albert Einstein receives the Nobel Prize in Physics for his studies of the law of the photoelectric effect",
         "title": "Albert Einstein - Nobel Prize"
       },
       {
@@ -157,7 +157,7 @@
         "filename": "1925.jpg",
         "decade": "1920s",
         "source": "Getty Images",
-        "info": "Public Sentiment Turns Against Prohibition Throughout the 1920s",
+        "info": "New York restaurant that it is legally prevented from selling alcohol during the Prohibition",
         "title": "Prohibition"
       },
       {
@@ -165,7 +165,7 @@
         "filename": "1928.jpg",
         "decade": "1920s",
         "source": "Tulane University, William Ransom Hogan Archive of New Orleans Jazz",
-        "info": "Louis Armstrong's Hot Five, Recording of Louis Armstrong Hot Five and Hot Seven Sessions, a part of the Harlem Renaissance",
+        "info": "Louis Armstrong's Hot Five, Recording of Louis Armstrong Hot Five and Hot Seven Sessions, influential to the Harlem Renaissance",
         "title": "Harlem Renaissance"
       },
       {
@@ -181,7 +181,7 @@
         "filename": "1933.jpg",
         "decade": "1930s",
         "source": "Courtesy Everett Collection/Rex",
-        "info": "Margaret Dumont and Groucho Marx in Duck Soup",
+        "info": "Margaret Dumont and Groucho Marx in the American pre-Code musical black comedy film 'Duck Soup'",
         "title": "The Marx Brothers - Duck Soup"
       },      
       {
@@ -197,7 +197,7 @@
         "filename": "1936p2.jpg",
         "decade": "1930s",
         "source": "Central Press/Getty Images",
-        "info": "The Olympic torch is carried into the Berlin stadium, at the start of these Olympic Games, popularly known as the 'Nazi Olympics'",
+        "info": "The Olympic torch is carried into the Berlin stadium, at the start of the Olympic Games popularly known as the 'Nazi Olympics'",
         "title": "Nazi Olympics"
       },
       {
@@ -209,12 +209,12 @@
         "title": "War of the Worlds broadcast"
       },
       {
-        "id": 27,
-        "filename": "1944p2.jpg",
-        "decade": "1940s",
-        "source": "Donaldson Collection/Getty Images",
-        "info": "Barbara Stanwyck and Fred MacMurray in a scene from Double Indemnity",
-        "title": "Double Indemnity"
+        "id": 26,
+        "filename": "1939.jpg",
+        "decade": "1930s",
+        "source": "MGM",
+        "info": " Judy Garland and American canine performer, Terry, promoting the American musical fantasy film 'The Wizard of Oz'",
+        "title": "The Wizard of Oz"
       },
       {
         "id": 28,
@@ -242,6 +242,14 @@
       },
       {
         "id": 31,
+        "filename": "1947.jpg",
+        "decade": "1940s",
+        "source": "RKO Radio Pictures",
+        "info": "James Stewart and Donna Reed in the Christmas supernatural drama film 'It's a Wonderful Life'",
+        "title": "It's a Wonderful Life"
+      },
+      {
+        "id": 31,
         "filename": "1948.jpg",
         "decade": "1940s",
         "source": "Life Magazine",
@@ -255,21 +263,13 @@
         "source": "Royal Collection",
         "info": "Queen Elizabeth II of the United Kingdom and other Commonwealth Realms on her Coronation Day - photo by Cecil Beaton",
         "title": "Queen Elizabeth II Coronation"
-      },
-      {
-        "id": 33,
-        "filename": "1954p2.jpg",
-        "decade": "1950s",
-        "source": "Publicity Photo for 'The Seven Year Itch'",
-        "info": "Marilyn Monroe - The Seven Year Itch - photo by Sam Shaw",
-        "title": "Marilyn Monroe - The Seven Year Itch"
-      },      
+      },   
       {
         "id": 34,
         "filename": "1954p3.jpg",
         "decade": "1950s",
         "source": "Associated Press",
-        "info": "Elizabeth Eckford walks through a crowd of hateful protestors into Little Rock Central High School in 1957, in a defining image of school desegregation",
+        "info": "Elizabeth Eckford walks through a crowd of hateful protestors into Little Rock Central High School",
         "title": "Brown v. Board of Education"
       },
       {
@@ -289,6 +289,14 @@
         "title": "Bobby Darin - Mack The Knife"
       },
       {
+        "id": 57,
+        "filename": "1959p2.jpg",
+        "decade": "1950s",
+        "source": "Mirisich Company",
+        "info": "Marilyn Monroe in the American crime comedy film 'Some Like It Hot'",
+        "title": "Marilyn Monroe - Some Like It Hot"
+      },
+      {
         "id": 37,
         "filename": "1963p2.jpg",
         "decade": "1960s",
@@ -300,8 +308,8 @@
         "id": 38,
         "filename": "1964p1.jpg",
         "decade": "1960s",
-        "source": "Publicity Photo for 'The Sound of Music'",
-        "info": "Christopher Plummer and Julie Andrews in The Sound of Music",
+        "source": "20th Century Fox",
+        "info": "Christopher Plummer and Julie Andrews in the American musical drama film 'The Sound of Music'",
         "title": "The Sound of Music"
       },
       {
@@ -341,7 +349,7 @@
         "filename": "1970.jpg",
         "decade": "1970s",
         "source": "Public Domain",
-        "info": "Mary Ann Vecchio, taken at Kent State University immediately following the Ohio National Guard opening fire upon student demonstrators - photo by John Paul Filo",
+        "info": "Mary Ann Vecchio, taken at Kent State University immediately following the Kent State Shootings - photo by John Paul Filo",
         "title": "Kent State Shootings"
       },
       {
@@ -357,7 +365,7 @@
         "filename": "1973p2.jpg",
         "decade": "1970s",
         "source": "Motown Records",
-        "info": "Wonder performing in 1973, during the early years of his 'classic period'",
+        "info": "Wonder performing, during the early years of his 'classic period'",
         "title": "Stevie Wonder - Superstition"
       },
       {
@@ -381,7 +389,7 @@
         "filename": "1977p2.jpg",
         "decade": "1970s",
         "source": "LucasFilm LTD",
-        "info": "Mark Hamill as Luke Skywalker, Carrie Fisher as Princess Leia, and Harrison Ford as Han Solo in a scene from 'Star Wars Episode IV: A New Hope'",
+        "info": "Mark Hamill, Carrie Fisher, and Harrison Ford in the American epic space opera film 'Star Wars Episode IV: A New Hope'",
         "title": "Star Wars: A New Hope"
       },
       {
@@ -389,7 +397,7 @@
         "filename": "1985p1.jpg",
         "decade": "1980s",
         "source": "John Carder Bush - Kate",
-        "info": "Kate Bush and her dogs, Bonnie and Clyde, in outtakes from the 'Hounds of Love' cover shoot - photo by Kate's brother, John Carder Bush",
+        "info": "Kate Bush and her dogs, Bonnie and Clyde, in outtakes from the 'Hounds of Love' cover shoot - photo by John Carder Bush",
         "title": "Kate Bush - Running Up That Hill"
       },
       {
@@ -397,7 +405,7 @@
         "filename": "1985p2.jpg",
         "decade": "1980s",
         "source": "Universal Pictures",
-        "info": "Michael J. Fox and Christopher Lloyd in 'Back to the Future'",
+        "info": "Michael J. Fox and Christopher Lloyd in the science fiction film 'Back to the Future'",
         "title": "Back to the Future"
       },
       {
@@ -413,7 +421,7 @@
         "filename": "1989p2.jpg",
         "decade": "1980s",
         "source": "Press Association",
-        "info": "Mstislav Rostropovich performs Bach's cello suites in front of the Berlin Wall, two days after the official fall of the Berlin Wall",
+        "info": "Mstislav Rostropovich performs Bach's cello suites, two days after the official fall of the Berlin Wall",
         "title": "Fall of the Berlin Wall"
       },
       {
@@ -434,147 +442,155 @@
       },
       {
         "id": 55,
-        "filename": "1908p1.jpg",
-        "decade": "1900s",
-        "source": "Library of Congress",
-        "info": "1908 - Harry Houdini jumps from the Harvard Bridge, Boston, Masachusetts",
-        "title": "Harry Houdini jumps from the Harvard Bridge"
+        "filename": "1994p1.jpg",
+        "decade": "1990s",
+        "source": "Columbia",
+        "info": "Mariah Carey's 'Merry Christmas' promotional photoshoot",
+        "title": "Mariah Carey - All I Want For Christmas Is You"
       },
       {
         "id": 56,
-        "filename": "1908p2.jpg",
-        "decade": "1900s",
-        "source": "Public Domain",
-        "info": "1908 - National Phonograph Co.- Photo of pioneer recording vocal quartet, the 'Edison Quartet', also known as the Haydn Quartet.",
-        "title": "Edison Quartet - Take Me Out To The Ball Game"
+        "filename": "1994p2.jpg",
+        "decade": "1990s",
+        "source": "Direct donation from Paul Weinberg",
+        "info": "Nelson Mandela casting his vote in the elections in South Africa, which elected him president",
+        "title": "Nelson Mandela elected president of South Africa"
       },      
       {
         "id": 57,
-        "filename": "1843.jpg",
-        "decade": "1840s",
-        "source": "The Metropolitan Museum of Art",
-        "info": "Former U.S. president John Quincy Adams - early dagguerotype by Philip Haas.",
-        "title": "First Presidential Photograph"
+        "filename": "1996p1.jpg",
+        "decade": "1990s",
+        "source": "John Mottern/AFP/Getty Images",
+        "info": "U.S. Women's Gymnastics Team wins the gold medal in the Summer Olympics",
+        "title": "U.S Women's Gynmastics Team Gold"
       },
       {
         "id": 58,
-        "filename": "1855.jpg",
-        "decade": "1850s",
-        "source": "Royal Collection Trust",
-        "info": "Crimean War - A British colonel, and two Russian boys, apprently taken prisoner, during the Crimean War - photo by Roger Fenton",
-        "title": "Crimean War"
+        "filename": "1996p2.jpg",
+        "decade": "1990s",
+        "source": "Tom Mihalek/AFP/Getty Images",
+        "info": "Garry Kasparov plays a move against Deep Blue in their first chess game, which was won by Deep Blue",
+        "title": "Deep Blue Defeats Gary Kasparov"
       },
       {
         "id": 59,
-        "filename": "1862.jpg",
-        "decade": "1860s",
-        "source": "The Metropolitan Museum of Art",
-        "info": "U.S. President Abraham Lincoln visits Antietam Wood, 2 weeks after the Civil War's Battle of Antietam - photo by Alexander Gardner",
-        "title": "Civil War"
+        "filename": "1997p1.jpg",
+        "decade": "1990s",
+        "source": "Ray Burmiston/Getty Images",
+        "info": "Spice Girls - photo by Ray Burmiston",
+        "title": "Spice Girls - Wannabe"
       },
       {
         "id": 60,
-        "filename": "1876.jpg",
-        "decade": "1870s",
-        "source": "National Portrait Gallery/Smithsonian",
-        "info": "Alexander Graham Bell making the first call between New York and Chicago (this photo does not depict the first telephone call ever)",
-        "title": "Alexander Graham Bell makes first telephone call"
+        "filename": "1999.jpg",
+        "decade": "1990s",
+        "source": "Warner Bros",
+        "info": "Actors including Keanu Reeves and Lawrence Fishburne in the science fiction action film 'The Matrix'",
+        "title": "The Matrix"
       },
       {
         "id": 61,
-        "filename": "1899p2.jpg",
-        "decade": "1890s",
-        "source": "Wellcome Collection Gallery",
-        "info": "Nikola Tesla sitting in his Colorado Springs laboratory next to his Tesla coil - photo by Dickinson V. Alley",
-        "title": "Nikola Tesla - Tesla Coil"
+        "filename": "2001.jpg",
+        "decade": "2000s",
+        "source": "National Park Service",
+        "info": "September 11 attacks in New York City: View of the World Trade Center and the Statue of Liberty",
+        "title": "9/11 Attacks"
       },
       {
         "id": 62,
-        "filename": "1902p1.jpg",
-        "decade": "1900s",
-        "source": "Breve Storia del Cinema",
-        "info": "1902 - A frame from the French silent fantasy film 'Le Voyage dans La Lune' by Georges Melies",
-        "title": "Le Voyage dans La Lune"
+        "filename": "2003p1.jpg",
+        "decade": "2000s",
+        "source": "New Line Cinema",
+        "info": "Ian McKellen and Elijah Wood in the first epic fantasy adventure film of Peter Jackson's Lord of the Rings trilogy",
+        "title": "Lord of the Rings: Fellowship of the Ring"
       },
       {
         "id": 63,
-        "filename": "1903p1.jpg",
-        "decade": "1900s",
-        "source": "Library of Congress",
-        "info": "1903 - First successful flight of the Wright Flyer, by the Wright brothers",
-        "title": "Wright Brothers - First Flight"
+        "filename": "2003p2.jpg",
+        "decade": "2000s",
+        "source": "Karma/Tree Sound/Larabee Sound",
+        "info": "Outkast music video for their song 'Hey Ya'",
+        "title": "Outkast - Hey Ya"
       },
       {
         "id": 64,
-        "filename": "1903p2.jpg",
-        "decade": "1900s",
-        "source": "Public Domain",
-        "info": "1903 - Pierre and Maria Skłodowska-Curie in the laboratory, demonstrating the experimental apparatus used to detect the ionization of air",
-        "title": "Pierre and Marie Curie win Nobel Prize in Physics"
+        "filename": "2004.jpg",
+        "decade": "2000s",
+        "source": "Elaine Chan and Priscilla Chan",
+        "info": "Mark Zuckerberg co-founds Facebook with four other Harvard College students",
+        "title": "Creation of Facebook"
       },
       {
         "id": 65,
-        "filename": "1908p1.jpg",
-        "decade": "1900s",
-        "source": "Library of Congress",
-        "info": "1908 - Harry Houdini jumps from the Harvard Bridge, Boston, Masachusetts",
-        "title": "Harry Houdini jumps from the Harvard Bridge"
+        "filename": "2006.jpg",
+        "decade": "2000s",
+        "source": "Jill Furmanovsky/Rockarchive",
+        "info": "Amy Winehouse at a concert before the release of her album, Back To Black",
+        "title": "Amy Winehouse - Rehab"
       },
       {
         "id": 66,
-        "filename": "1908p2.jpg",
-        "decade": "1900s",
-        "source": "Public Domain",
-        "info": "1908 - National Phonograph Co.- Photo of pioneer recording vocal quartet, the 'Edison Quartet', also known as the Haydn Quartet.",
-        "title": "Edison Quartet - Take Me Out To The Ball Game"
+        "filename": "2007.jpg",
+        "decade": "2000s",
+        "source": "Hellfish6",
+        "info": "U.S. Army Soldiers in Iraq",
+        "title": "Wars in Afghanistan and Iraq"
       },      
       {
         "id": 67,
-        "filename": "1843.jpg",
-        "decade": "1840s",
-        "source": "The Metropolitan Museum of Art",
-        "info": "Former U.S. president John Quincy Adams - early dagguerotype by Philip Haas.",
-        "title": "First Presidential Photograph"
+        "filename": "2008p1.jpg",
+        "decade": "2000s",
+        "source": "Dylan Martinez/Reuters",
+        "info": "At these summer Olympics, Usain Bolt was the first man to run the 100m in under 9.7sec",
+        "title": "Usain Bolt - 100m"
       },
       {
         "id": 68,
-        "filename": "1855.jpg",
-        "decade": "1850s",
-        "source": "Royal Collection Trust",
-        "info": "Crimean War - A British colonel, and two Russian boys, apprently taken prisoner, during the Crimean War - photo by Roger Fenton",
-        "title": "Crimean War"
+        "filename": "2014.jpg",
+        "decade": "2010s",
+        "source": "Frazer Harrison/Getty Images",
+        "info": "Lady Gaga and Tony Bennett pose with their Grammys for their album 'Cheek to Cheek'",
+        "title": "Lady Gaga and Tony Bennett - Cheek to Cheek"
       },
       {
         "id": 69,
-        "filename": "1862.jpg",
-        "decade": "1860s",
-        "source": "The Metropolitan Museum of Art",
-        "info": "U.S. President Abraham Lincoln visits Antietam Wood, 2 weeks after the Civil War's Battle of Antietam - photo by Alexander Gardner",
-        "title": "Civil War"
+        "filename": "2015p1.jpg",
+        "decade": "2010s",
+        "source": "Air Reserve Personnel Center",
+        "info": "Landing of a SpaceX Falcon 9 first-stage booster",
+        "title": "Privatization of spaceflight"
       },
       {
         "id": 70,
-        "filename": "1876.jpg",
-        "decade": "1870s",
-        "source": "National Portrait Gallery/Smithsonian",
-        "info": "Alexander Graham Bell making the first call between New York and Chicago (this photo does not depict the first telephone call ever)",
-        "title": "Alexander Graham Bell makes first telephone call"
+        "filename": "2015p2.jpg",
+        "decade": "2010s",
+        "source": "Chip Somodevilla/Getty",
+        "info": "Demonstrators at a protest against police brutality outside the Baltimore Police Western District station",
+        "title": "Black Lives Matter"
       },
       {
         "id": 71,
-        "filename": "1884.jpg",
-        "decade": "1880s",
-        "source": "Library of Congress",
-        "info": "Workers build the Statue of Liberty inside French sculptor Frederic Auguste Bartholdi's workshop - photo by Pierre Petit",
-        "title": "Statue of Liberty constructed"
+        "filename": "2016p1.jpg",
+        "decade": "2010s",
+        "source": "Summit Entertainment",
+        "info": "Promotional photo for the American musical romantic comedy-drama film 'La La Land'",
+        "title": "La La Land"
       },
       {
         "id": 72,
-        "filename": "1899p2.jpg",
-        "decade": "1890s",
-        "source": "Wellcome Collection Gallery",
-        "info": "Nikola Tesla sitting in his Colorado Springs laboratory next to his Tesla coil - photo by Dickinson V. Alley",
-        "title": "Nikola Tesla - Tesla Coil"
+        "filename": "2018.jpg",
+        "decade": "2010s",
+        "source": "UltimateWarrior13",
+        "info": "Taylor Swift performing on her Reputation Stadium Tour",
+        "title": "Taylor Swift - Shake It Off"
+      },
+      {
+        "id": 72,
+        "filename": "2019.jpg",
+        "decade": "2010s",
+        "source": "Walt Disney Animation Studios",
+        "info": "Hyun-min Lee, supervising animator on Anna for the Disney movie Frozen 2",
+        "title": "Frozen"
       }
     ]
   }
