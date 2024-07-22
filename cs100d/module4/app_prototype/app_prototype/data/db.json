@@ -98,14 +98,6 @@
       },
       {
         "id": 13,
-        "filename": "1914p2.jpg",
-        "decade": "1910s",
-        "source": "Getty Images",
-        "info": "The SS Ancon, the first Ship to pass through the Panama Canal",
-        "title": "Panama Canal Opens"
-      },
-      {
-        "id": 14,
         "filename": "1915.jpg",
         "decade": "1910s",
         "source": "State Library of Queensland",
@@ -113,7 +105,7 @@
         "title": "World War I"
       },
       {
-        "id": 15,
+        "id": 14,
         "filename": "1918p1.jpg",
         "decade": "1910s",
         "source": "Library of Congress",
@@ -121,7 +113,7 @@
         "title": "Spanish Flu"
       },
       {
-        "id": 16,
+        "id": 15,
         "filename": "1919.jpg",
         "decade": "1910s",
         "source": "Bryn Mawr College Library",
@@ -129,7 +121,7 @@
         "title": "Passing of The 19th Amendment"
       },
       {
-        "id": 17,
+        "id": 16,
         "filename": "1921p1.jpg",
         "decade": "1920s",
         "source": "Charles Chaplin Productions",
@@ -137,7 +129,7 @@
         "title": "Charlie Chaplin - The Kid"
       },
       {
-        "id": 18,
+        "id": 17,
         "filename": "1921p2.jpg",
         "decade": "1920s",
         "source": "Harris & Ewing Studio",
@@ -145,7 +137,7 @@
         "title": "Albert Einstein - Nobel Prize"
       },
       {
-        "id": 19,
+        "id": 18,
         "filename": "1922.jpg",
         "decade": "1920s",
         "source": "The New York Times photo archive",
@@ -153,7 +145,7 @@
         "title": "Discovery of King Tut's tomb"
       },
       {
-        "id": 20,
+        "id": 19,
         "filename": "1925.jpg",
         "decade": "1920s",
         "source": "Getty Images",
@@ -161,7 +153,7 @@
         "title": "Prohibition"
       },
       {
-        "id": 21,
+        "id": 20,
         "filename": "1928.jpg",
         "decade": "1920s",
         "source": "Tulane University, William Ransom Hogan Archive of New Orleans Jazz",
@@ -169,7 +161,7 @@
         "title": "Harlem Renaissance"
       },
       {
-        "id": 22,
+        "id": 21,
         "filename": "1932.jpg",
         "decade": "1870s",
         "source": "FPG/HULTON ARCHIVE/GETTY IMAGES",
@@ -177,7 +169,7 @@
         "title": "Amelia Earhart Solo Transatlantic Flight"
       },
       {
-        "id": 23,
+        "id": 22,
         "filename": "1933.jpg",
         "decade": "1930s",
         "source": "Courtesy Everett Collection/Rex",
@@ -185,7 +177,7 @@
         "title": "The Marx Brothers - Duck Soup"
       },      
       {
-        "id": 24,
+        "id": 23,
         "filename": "1936p1.jpg",
         "decade": "1930s",
         "source": "U.S. Farm Security Administration/Office of War Information",
@@ -193,7 +185,7 @@
         "title": "Dust Bowl"
       },
       {
-        "id": 25,
+        "id": 24,
         "filename": "1936p2.jpg",
         "decade": "1930s",
         "source": "Central Press/Getty Images",
@@ -201,7 +193,7 @@
         "title": "Nazi Olympics"
       },
       {
-        "id": 26,
+        "id": 25,
         "filename": "1938p1.jpg",
         "decade": "1930s",
         "source": "Bettmann/CORBIS",
@@ -209,7 +201,7 @@
         "title": "War of the Worlds broadcast"
       },
       {
-        "id": 27,
+        "id": 26,
         "filename": "1939.jpg",
         "decade": "1930s",
         "source": "MGM",
@@ -217,7 +209,7 @@
         "title": "The Wizard of Oz"
       },
       {
-        "id": 28,
+        "id": 27,
         "filename": "1945p1.jpg",
         "decade": "1940s",
         "source": "National Archives and Records Administration",
@@ -225,15 +217,15 @@
         "title": "Holocaust"
       },
       {
-        "id": 29,
+        "id": 28,
         "filename": "1945p2.jpg",
         "decade": "1940s",
         "source": "Life Magazine",
         "info": "V-J Day in Times Square - photo by Alfred Eisenstaedt",
-        "title": "World War II"
+        "title": "End of World War II"
       },
       {
-        "id": 30,
+        "id": 29,
         "filename": "1946.jpg",
         "decade": "1940s",
         "source": "RMN - Studio Harcourt",
@@ -241,7 +233,7 @@
         "title": "Edith Piaf - La Vie En Rose"
       },
       {
-        "id": 31,
+        "id": 30,
         "filename": "1947.jpg",
         "decade": "1940s",
         "source": "RKO Radio Pictures",
@@ -249,7 +241,7 @@
         "title": "It's a Wonderful Life"
       },
       {
-        "id": 32,
+        "id": 31,
         "filename": "1948.jpg",
         "decade": "1940s",
         "source": "Life Magazine",
@@ -257,7 +249,7 @@
         "title": "Salvador Dali - Dali Atomicus"
       },
       {
-        "id": 33,
+        "id": 32,
         "filename": "1953.jpg",
         "decade": "1950s",
         "source": "Royal Collection",
@@ -265,7 +257,7 @@
         "title": "Queen Elizabeth II Coronation"
       },   
       {
-        "id": 34,
+        "id": 33,
         "filename": "1954p3.jpg",
         "decade": "1950s",
         "source": "Associated Press",
@@ -273,7 +265,7 @@
         "title": "Brown v. Board of Education"
       },
       {
-        "id": 35,
+        "id": 34,
         "filename": "1958.jpg",
         "decade": "1950s",
         "source": "Pictorial Press Ltd./Alamy",
@@ -281,7 +273,7 @@
         "title": "Chuck Berry - Johnny B. Goode"
       },
       {
-        "id": 36,
+        "id": 35,
         "filename": "1959p1.jpg",
         "decade": "1950s",
         "source": "Harry Hammond/V&A/Getty Images",
@@ -289,7 +281,7 @@
         "title": "Bobby Darin - Mack The Knife"
       },
       {
-        "id": 37,
+        "id": 36,
         "filename": "1959p2.jpg",
         "decade": "1950s",
         "source": "Mirisich Company",
@@ -297,7 +289,7 @@
         "title": "Marilyn Monroe - Some Like It Hot"
       },
       {
-        "id": 38,
+        "id": 37,
         "filename": "1963p2.jpg",
         "decade": "1960s",
         "source": "Getty Images",
@@ -305,7 +297,7 @@
         "title": "Martin Luther King Jr. - I Have A Dream"
       },
       {
-        "id": 39,
+        "id": 38,
         "filename": "1964p1.jpg",
         "decade": "1960s",
         "source": "20th Century Fox",
@@ -313,7 +305,7 @@
         "title": "The Sound of Music"
       },
       {
-        "id": 40,
+        "id": 39,
         "filename": "1966.jpg",
         "decade": "1960s",
         "source": "National Archives and Records Administration",
@@ -321,7 +313,7 @@
         "title": "Vietnam War"
       },
       {
-        "id": 41,
+        "id": 40,
         "filename": "1967.jpg",
         "decade": "1960s",
         "source": "Jim Marshall Photography LLC",
@@ -329,7 +321,7 @@
         "title": "Monterey Pop Festival"
       },
       {
-        "id": 42,
+        "id": 41,
         "filename": "1969p1.jpg",
         "decade": "1960s",
         "source": "Library of Congress",
@@ -337,7 +329,7 @@
         "title": "The Beatles - Ed Sullivan Show"
       },
       {
-        "id": 43,
+        "id": 42,
         "filename": "1969p2.jpg",
         "decade": "1960s",
         "source": "NASA Apollo Archive",
@@ -345,7 +337,7 @@
         "title": "Apollo 11 Lands on the Moon"
       },
       {
-        "id": 44,
+        "id": 43,
         "filename": "1973p1.jpg",
         "decade": "1970s",
         "source": "Heinrich Klaffs",
@@ -353,7 +345,7 @@
         "title": "Led Zeppelin - Stairway to Heaven"
       },
       {
-        "id": 45,
+        "id": 44,
         "filename": "1973p2.jpg",
         "decade": "1970s",
         "source": "Motown Records",
@@ -361,7 +353,7 @@
         "title": "Stevie Wonder - Superstition"
       },
       {
-        "id": 46,
+        "id": 45,
         "filename": "1974.jpg",
         "decade": "1970s",
         "source": "AFP/Getty Images",
@@ -369,7 +361,7 @@
         "title": "Rumble in the Jungle"
       },      
       {
-        "id": 47,
+        "id": 46,
         "filename": "1977p1.jpg",
         "decade": "1970s",
         "source": "Michael Putland/Getty Images",
@@ -377,7 +369,7 @@
         "title": "The Bee Gees - Stayin Alive"
       },
       {
-        "id": 48,
+        "id": 47,
         "filename": "1977p2.jpg",
         "decade": "1970s",
         "source": "LucasFilm LTD",
@@ -385,7 +377,7 @@
         "title": "Star Wars: A New Hope"
       },
       {
-        "id": 49,
+        "id": 48,
         "filename": "1985p1.jpg",
         "decade": "1980s",
         "source": "John Carder Bush - Kate",
@@ -393,7 +385,7 @@
         "title": "Kate Bush - Running Up That Hill"
       },
       {
-        "id": 50,
+        "id": 49,
         "filename": "1985p2.jpg",
         "decade": "1980s",
         "source": "Universal Pictures",
@@ -401,15 +393,15 @@
         "title": "Back to the Future"
       },
       {
-        "id": 51,
+        "id": 50,
         "filename": "1989p1.jpg",
         "decade": "1980s",
         "source": "Associated Press",
         "info": "'Tank Man' blocks a column of tanks during the Tiananmen Square protests",
-        "title": "Tank Man"
+        "title": "Tianmen Square Protests"
       },
       {
-        "id": 52,
+        "id": 51,
         "filename": "1989p2.jpg",
         "decade": "1980s",
         "source": "Press Association",
@@ -417,7 +409,7 @@
         "title": "Fall of the Berlin Wall"
       },
       {
-        "id": 53,
+        "id": 52,
         "filename": "1989p3.jpg",
         "decade": "1980s",
         "source": "CERN",
@@ -425,7 +417,7 @@
         "title": "World Wide Web"
       },
       {
-        "id": 54,
+        "id": 53,
         "filename": "1989p4.jpg",
         "decade": "1980s",
         "source": "RicochetSkier",
@@ -433,7 +425,7 @@
         "title": "Nintendo Entertainment System (NES)"
       },
       {
-        "id": 55,
+        "id": 54,
         "filename": "1994p1.jpg",
         "decade": "1990s",
         "source": "Columbia",
@@ -441,7 +433,7 @@
         "title": "Mariah Carey - All I Want For Christmas Is You"
       },
       {
-        "id": 56,
+        "id": 55,
         "filename": "1994p2.jpg",
         "decade": "1990s",
         "source": "Direct donation from Paul Weinberg",
@@ -449,7 +441,7 @@
         "title": "Nelson Mandela elected president of South Africa"
       },      
       {
-        "id": 57,
+        "id": 56,
         "filename": "1996p1.jpg",
         "decade": "1990s",
         "source": "John Mottern/AFP/Getty Images",
@@ -457,7 +449,7 @@
         "title": "U.S Women's Gynmastics Team Gold"
       },
       {
-        "id": 58,
+        "id": 57,
         "filename": "1996p2.jpg",
         "decade": "1990s",
         "source": "Tom Mihalek/AFP/Getty Images",
@@ -465,7 +457,7 @@
         "title": "Deep Blue Defeats Gary Kasparov"
       },
       {
-        "id": 59,
+        "id": 58,
         "filename": "1997p1.jpg",
         "decade": "1990s",
         "source": "Ray Burmiston/Getty Images",
@@ -473,7 +465,7 @@
         "title": "Spice Girls - Wannabe"
       },
       {
-        "id": 60,
+        "id": 59,
         "filename": "1999.jpg",
         "decade": "1990s",
         "source": "Warner Bros",
@@ -481,7 +473,7 @@
         "title": "The Matrix"
       },
       {
-        "id": 61,
+        "id": 60,
         "filename": "2001.jpg",
         "decade": "2000s",
         "source": "National Park Service",
@@ -489,7 +481,7 @@
         "title": "9/11 Attacks"
       },
       {
-        "id": 62,
+        "id": 61,
         "filename": "2003p1.jpg",
         "decade": "2000s",
         "source": "New Line Cinema",
@@ -497,7 +489,7 @@
         "title": "Lord of the Rings: Fellowship of the Ring"
       },
       {
-        "id": 63,
+        "id": 62,
         "filename": "2003p2.jpg",
         "decade": "2000s",
         "source": "Karma/Tree Sound/Larabee Sound",
@@ -505,7 +497,7 @@
         "title": "Outkast - Hey Ya"
       },
       {
-        "id": 64,
+        "id": 63,
         "filename": "2004.jpg",
         "decade": "2000s",
         "source": "Elaine Chan and Priscilla Chan",
@@ -513,7 +505,7 @@
         "title": "Creation of Facebook"
       },
       {
-        "id": 65,
+        "id": 64,
         "filename": "2006.jpg",
         "decade": "2000s",
         "source": "Jill Furmanovsky/Rockarchive",
@@ -521,7 +513,7 @@
         "title": "Amy Winehouse - Rehab"
       },
       {
-        "id": 66,
+        "id": 65,
         "filename": "2007.jpg",
         "decade": "2000s",
         "source": "Hellfish6",
@@ -529,7 +521,7 @@
         "title": "Wars in Afghanistan and Iraq"
       },      
       {
-        "id": 67,
+        "id": 66,
         "filename": "2008p1.jpg",
         "decade": "2000s",
         "source": "Dylan Martinez/Reuters",
@@ -537,7 +529,7 @@
         "title": "Usain Bolt - 100m"
       },
       {
-        "id": 68,
+        "id": 67,
         "filename": "2014.jpg",
         "decade": "2010s",
         "source": "Frazer Harrison/Getty Images",
@@ -545,7 +537,7 @@
         "title": "Lady Gaga and Tony Bennett - Cheek to Cheek"
       },
       {
-        "id": 69,
+        "id": 68,
         "filename": "2015p1.jpg",
         "decade": "2010s",
         "source": "Air Reserve Personnel Center",
@@ -553,7 +545,7 @@
         "title": "Privatization of spaceflight"
       },
       {
-        "id": 70,
+        "id": 69,
         "filename": "2015p2.jpg",
         "decade": "2010s",
         "source": "Chip Somodevilla/Getty",
@@ -561,7 +553,7 @@
         "title": "Black Lives Matter"
       },
       {
-        "id": 71,
+        "id": 70,
         "filename": "2016p1.jpg",
         "decade": "2010s",
         "source": "Summit Entertainment",
@@ -569,7 +561,7 @@
         "title": "La La Land"
       },
       {
-        "id": 72,
+        "id": 71,
         "filename": "2018.jpg",
         "decade": "2010s",
         "source": "UltimateWarrior13",
@@ -577,7 +569,7 @@
         "title": "Taylor Swift - Shake It Off"
       },
       {
-        "id": 73,
+        "id": 72,
         "filename": "2019.jpg",
         "decade": "2010s",
         "source": "Walt Disney Animation Studios",
