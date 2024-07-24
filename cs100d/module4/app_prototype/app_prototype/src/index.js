@@ -20,7 +20,7 @@ const obj = JSON.parse('{"images":[{"id":0,"filename":"1843.jpg","decade":"1840s
 /*
 from fetch_data import result_row
 
-(filename, decade, copyright, info, title) = result_row
+(filename, decade, source, info, title) = result_row
 img_path = fr"cs100d\module4\app_prototype\popdecades\{filename}"
 */
 
@@ -32,33 +32,39 @@ class Main extends React.Component {
     constructor() {
         super()
         //Initial data has no user or counts
-        this.state = {filename: null, decade: null, copyright: null, info: null, title: null}
         this.urlbase = 'http://localhost:4000'
+        this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
     }
 
     getRandFilename(){
-        function randomNumber(min, max) {
+        function getRandomInt(min, max) {
             return Math.random() * (max - min) + min;
         }
+
+        const rand = getRandomInt(11)
         
-        const rand = randomNumber(0, 11)
+        this.setState({...this.state, rand: rand})
 
-        filename = obj[rand].filename
+        const obj = obj[rand].parse()
+/*
+        (id, filename, decade, source, info, title) = obj[rand]
 
-        return rand
+        this.setState({id:id, filename:filename, decade:decade, source:source, info:info, title:title})
+*/
     }
     render() {
-        rand = getRandFilename()
+        const {filename, title} = this.state
         return (
             <div className='Main'>
 
                 <div className = 'img'>
-                    <img src = 'cs100d\module4\app_prototype\popdecades\{obj[rand].filename}'></img>
+                    <img src = '.\popdecades\{filename}'></img>
+                    
                 </div>
 
                 <div className = 'desc'>
-                    <p>data[rand].title</p>
-                    <button type="button">Next Photo</button>
+                    <p>{title}</p>
+                    <button type="button" /*onClick={this.getRandFilename.bind(this)}*/>Next Photo</button>
                 </div>
 
                 
