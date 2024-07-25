@@ -67,6 +67,12 @@ class Main extends React.Component {
 */
     }
     render() {
+        /*unsuccessful change attempt
+        const {filename, title} = this.state
+        //var str = JSON.stringify(contact);
+        var id = filename
+        console.log(id)
+        */
         const {filename, title} = this.state
         var str = JSON.stringify(contact);
         var id = str[1]
