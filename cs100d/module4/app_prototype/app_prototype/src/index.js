@@ -15,7 +15,6 @@ import './index.css';
 
 //hey!!!! the quotes and comments and stuff stop working after about 2500 characters (about 12 ids)
 var glossary = {"glossary": [{"id": 0,"filename": "spinning_capybara.gif","decade": "2020s","source": "Nivora Animation","info": "The capybara is spinning","title": "Spinning Capybara"},{"id": 1,"filename": "bunny_eating_lettuce.gif","decade": "2020s","source": "zoomzeu","info": "The bunny is eating lettuce","title": "Lettuce Bunny"},{"id": 2,"filename": "man_with_giant_backpack.gif","decade": "2010s","source": "heather_8lim","info": "This man has a giant backpack","title": "Backpack Man"},{"id": 3,"filename": "spider_aliens.jpg","decade": "2020s","source": "Gboard Stickers","info": "This spider is getting abducted by aliens","title": "Spider Abduction"}]}
-//var obj = JSON.parse(glossary)
 //i saw this cool thing, but, like, that didn't help!!!
 /*
 try {
@@ -42,10 +41,11 @@ from fetch_data import result_row
 (filename, decade, source, info, title) = result_row
 img_path = fr"cs100d\module4\app_prototype\popdecades\{filename}"
 */
-
+/*
 fetch('./data/db.json')
     .then((response) => response.json())
     .then((json) => console.log(json));
+*/
 
 class Main extends React.Component {
     constructor() {
@@ -80,7 +80,7 @@ class Main extends React.Component {
 */
     }
     fillTable () {
-        console.log(glossary[0])
+        //console.log(glossary[0])
     }
     render() {
         /*unsuccessful change attempt
@@ -93,8 +93,9 @@ class Main extends React.Component {
         //var str = JSON.stringify(contact);
         //var id = str[1]
         //console.log(id)
-        console.log(obj[0])
-        console.log(obj)
+        console.log(glossary[0])
+        console.log(glossary)
+        console.log(JSON.stringify(glossary))
         return (
             <div className='Main'>
 
