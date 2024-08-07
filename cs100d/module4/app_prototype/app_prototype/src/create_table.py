@@ -62,3 +62,4 @@ for x in range(0, len(lines), 5):
     
 print('done')
 conn.close()
+
