@@ -33,19 +33,8 @@ class Main extends React.Component {
     }
 
     render() {
-        /*unsuccessful change attempt
-        const {filename, title} = this.state
-        //var str = JSON.stringify(contact);
-        var id = filename
-        console.log(id)
-        */
-        const {filename, title} = this.state
-        //var str = JSON.stringify(contact);
-        //var id = str[1]
-        //console.log(id)
-        console.log(glossary[0])
-        console.log(glossary)
-        console.log(JSON.stringify(glossary))
+        const {filename} = this.state
+        console.log(filename)
         return (
             <div className='Main'>
 
@@ -56,7 +45,7 @@ class Main extends React.Component {
 
                 <div className = 'desc'>
                     <p>{filename}</p>
-                    <button type="button" /*onClick={this.onImageChange.bind(this)}*/>Next Photo</button>
+                    <button type="button" onClick={this.onImageChange.bind(this)}>Next Photo</button>
                 </div>
 
                 
