@@ -1,10 +1,14 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
-import pymysql
+import mariadb
+import sys
+from read_data import lines
+import random
 
 app = Flask(__name__)
 CORS(app)
+
 
 # Test API
 @app.route('/')
@@ -13,46 +17,43 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def login():
-    server = os.environ['DATAHOST']
-    user = os.environ['DATAUSER']
-    pwd = os.environ['DATAPWD']
-    db = os.environ['DATADATABASE']
+    # Connect to MariaDB Platform
+    try:
+        conn = mariadb.connect(
+            user="root",
+            password="2101",
+            #host="http://127.0.0.1:5000",
+            #port=3306,
+            database="images"
 
-    conn = pymysql.connect(host=server, user=user, password=pwd, database=db)
-    conn.autocommit(True)
-    crsr = conn.cursor()
+        )
+    except mariadb.Error as e:
+        print(f"Error connecting to MariaDB Platform: {e}")
+        sys.exit(1)
+
+    mycursor = conn.cursor()
+
 
     json = request.get_json()
-    user = json['user']
+    filename = json['filename']
 
-    # First, check if this user already exists
-    sql = 'select id from user where login=%s'
-    crsr.execute(sql, (user))
-    print('returned ' + str(crsr.rowcount) + ' rows')
-    if crsr.rowcount == 0:
-        print('adding ' + user)
-        crsr.execute('insert into user (login) values (%s)', user)
-        print('adding ' + str(crsr.rowcount) + ' user')
-        print('re-executing ' + sql)
-        crsr.execute(sql, (user))
-    res = crsr.fetchone()
-    userid = res[0]
-    # Now, add the login information
-    # Note, CURRENT_TIMESTAMP is built into MySQL to get the current time
-    sql = 'insert into login (userid, `date`) values (%s, CURRENT_TIMESTAMP)'
-    crsr.execute(sql, (userid))
+    rand = int(random.random() * 104) + 1
 
-    conn.commit()
+    getRow = f"select * from img_table where id = {rand};"
+    print(getRow)
+    mycursor.execute(getRow)
 
-    # Finally, get the user's login count and the total login count
-    sql = 'select count(*) as logins from login where userid=%s'
-    crsr.execute(sql, (userid))
-    res = crsr.fetchone()
-    usercount = res[0]
-    sql = 'select count(*) as logins from login'
-    crsr.execute(sql)
-    res = crsr.fetchone()
-    totalcount = res[0]
+    myresult = mycursor.fetchall()
+
+    print(myresult)
+
+    for n in myresult:
+        (id, filename, decade, source, info, title) = n
+
+    print('filename: '+filename)
+
+    json = request.get_json()
+    filename = json['filename']
 
     return jsonify({'filename':filename })
 
