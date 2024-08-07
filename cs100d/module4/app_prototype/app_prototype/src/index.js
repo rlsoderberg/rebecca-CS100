@@ -45,7 +45,7 @@ class Main extends React.Component {
 
                 <div className = 'desc'>
                     <p>{filename}</p>
-                    <button type="button" onClick={this.onImageChange.bind(this)}>Next Photo</button>
+                    <button type="button" onClick={this.login.bind(this)}>Next Photo</button>
                 </div>
 
                 
