@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import axios from 'axios';
 
 class Main extends React.Component {
     constructor() {
         super()
         //Initial data has no user or counts
         this.urlbase = 'http://localhost:4000'
-        this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
+        //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
+        this.state = {filename: null, decade: null, title: null}
     }
 
     onImageChange(e) {
@@ -15,11 +17,17 @@ class Main extends React.Component {
         this.setState({...this.state, filename: e.target.value}) 
     }   
     
+    create_table() {
+        axios.get(this.urlbase + '/create_table').then((resp) => {
+            alert(resp.data)
+        })
+    }
+
     login() {
-            const {user} = this.state
+            const {filename, decade, title} = this.state
             var url = '/login'
             // Store the user's name in a JSON object
-            const body = {'user': user}
+            const body = {'filename': filename}
             // We're sending JSON data to our server
             const headers = { "Content-Type": "application/json" }
             // Configuration information for the server
@@ -30,10 +38,19 @@ class Main extends React.Component {
                 headers: headers,
                 data: body
             }
+            // Make the request
+        axios(config).then((resp) => {
+            //When this completes, the response from the server has the count data
+            this.setState({...this.state, 
+                filename: resp.data['filename'], // How many logins for this user?
+            })
+        }).catch(error => {
+            console.log(error)
+        })
     }
 
     render() {
-        const {filename} = this.state
+        const {filename, decade, title} = this.state
         console.log(filename)
         return (
             <div className='Main'>
@@ -44,8 +61,11 @@ class Main extends React.Component {
                 </div>
 
                 <div className = 'desc'>
-                    <p>{filename}</p>
+                    <p>filename: {filename}</p>
+                    <p>decade: {decade}</p>
+                    <p>title: {title}</p>
                     <button type="button" onClick={this.login.bind(this)}>Next Photo</button>
+                    <button onClick={this.create_table.bind(this)}>Create Table</button>
                 </div>
 
                 
