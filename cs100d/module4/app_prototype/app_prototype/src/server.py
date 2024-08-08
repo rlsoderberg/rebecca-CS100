@@ -31,6 +31,7 @@ def create_table():
         print(f"Error connecting to MariaDB Platform: {e}")
         sys.exit(1)
 
+    conn.autocommit(True)
     mycursor = conn.cursor()
     
     mycursor.execute("Show databases;")
@@ -113,8 +114,8 @@ def login():
 
     print('filename: '+filename)
 
-    json = request.get_json()
-    filename = json['filename']
+    # json = request.get_json()
+    # filename = json['filename']
 
     return jsonify({'filename': filename, 'title':title, 'decade':decade })
 

@@ -7,12 +7,12 @@ class Main extends React.Component {
     constructor() {
         super()
         //Initial data has no user or counts
-        this.urlbase = 'http://localhost:4000'
+        this.urlbase = 'http://localhost:5000'
         //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
         this.state = {filename: null, decade: null, title: null}
     }
 
-    onImageChange(e) {
+    onLoginChange(e) {
         //Keep track of the login value
         this.setState({...this.state, filename: e.target.value}) 
     }   
@@ -43,6 +43,8 @@ class Main extends React.Component {
             //When this completes, the response from the server has the count data
             this.setState({...this.state, 
                 filename: resp.data['filename'], // How many logins for this user?
+                decade: resp.data['decade'],
+                title: resp.data['title']
             })
         }).catch(error => {
             console.log(error)
@@ -54,10 +56,8 @@ class Main extends React.Component {
         console.log(filename)
         return (
             <div className='Main'>
-
                 <div className = 'img'>
-                    <img src = '.\popdecades\{filename}'></img>
-                    
+                    <img src = '.\popdecades\{filename}'></img>  
                 </div>
 
                 <div className = 'desc'>
