@@ -55,12 +55,12 @@ class Main extends React.Component {
         const {filename, decade, title} = this.state
         console.log(filename)
         const address = (filename) => {
-            return '../public/popdecades/' + filename;
+            return './popdecades/' + filename;
           }
         return (
             <div className='Main'>
                 <div className = 'img'>
-                    <img src = '../public/popdecades/1855.jpg'></img>
+                    <img src = {require("./popdecades/1855.jpg")} width="500" height="300"></img>
                 </div>
 
                 <div className = 'desc'>
