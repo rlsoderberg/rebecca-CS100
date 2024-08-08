@@ -112,15 +112,12 @@ def login():
     for n in myresult:
         (id, filename, decade, source, info, title) = n
 
-    address = "./popdecades/%" + filename
-
     print('filename: '+filename)
-    print('image address: ' + ImageAddress)
 
     # json = request.get_json()
     # filename = json['filename']
 
-    return jsonify({'filename': filename, 'title':title, 'decade':decade, 'address':address})
+    return jsonify({'filename': filename, 'title':title, 'decade':decade})
 
 if __name__ == '__main__':
     app.run()

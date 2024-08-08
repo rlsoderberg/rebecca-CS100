@@ -8,8 +8,8 @@ class Main extends React.Component {
         super()
         //Initial data has no user or counts
         this.urlbase = 'http://localhost:5000'
-        //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:'' address:''}
-        this.state = {filename: null, decade: null, title: null, address:null}
+        //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
+        this.state = {filename: null, decade: null, title: null}
     }
 
     onLoginChange(e) {
@@ -44,8 +44,7 @@ class Main extends React.Component {
             this.setState({...this.state, 
                 filename: resp.data['filename'], // How many logins for this user?
                 decade: resp.data['decade'],
-                title: resp.data['title'],
-                address: resp.data['address']
+                title: resp.data['title']
             })
         }).catch(error => {
             console.log(error)
@@ -53,18 +52,22 @@ class Main extends React.Component {
     }
 
     render() {
-        const {filename, decade, title, address} = this.state
+        const {filename, decade, title} = this.state
         console.log(filename)
+        const address = (filename) => {
+            return './popdecades/' + filename;
+          }
         return (
             <div className='Main'>
                 <div className = 'img'>
-                    <img src = address></img>  
+                    <img src = {address(filename)}></img>
                 </div>
 
                 <div className = 'desc'>
                     <p>filename: {filename}</p>
                     <p>decade: {decade}</p>
                     <p>title: {title}</p>
+                    <p>address: {address(filename)}</p>
                     <button type="button" onClick={this.login.bind(this)}>Next Photo</button>
                     <button onClick={this.create_table.bind(this)}>Create Table</button>
                 </div>
