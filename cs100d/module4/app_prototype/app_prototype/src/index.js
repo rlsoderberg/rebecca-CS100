@@ -60,7 +60,7 @@ class Main extends React.Component {
         return (
             <div className='Main'>
                 <div className = 'img'>
-                    <img src = {address(filename)}></img>
+                    <img src = '../public/popdecades/1855.jpg'></img>
                 </div>
 
                 <div className = 'desc'>
