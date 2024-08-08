@@ -55,7 +55,7 @@ class Main extends React.Component {
         const {filename, decade, title} = this.state
         console.log(filename)
         const address = (filename) => {
-            return './popdecades/' + filename;
+            return '../public/popdecades/' + filename;
           }
         return (
             <div className='Main'>
