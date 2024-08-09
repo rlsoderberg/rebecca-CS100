@@ -9,7 +9,7 @@ class Main extends React.Component {
         //Initial data has no user or counts
         this.urlbase = 'http://localhost:5000'
         //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
-        this.state = {filename: 'dg_logo.png', decade: '1860s', title: 'Guess which decade the photo is from (1840s to 2010s)'}
+        this.state = {filename: 'dglogo.jpg', decade: '1860s', title: 'Guess which decade the photo is from (1840s to 2010s)'}
     }
 
     onLoginChange(e) {
@@ -55,12 +55,12 @@ class Main extends React.Component {
         const {filename, decade, title} = this.state
         console.log(filename)
         const address = (filename) => {
-            return './popdecades/' + filename;
+            return './photos/' + filename;
           }
         return (
             <div className='Main'>
                 <div className = 'img'>
-                    <img src = {address(filename)} width="500" height="300"></img>
+                    <img src = {address(filename)} width="500" height="300" alt="decadeGuessr Photo"></img>
                 </div>
 
                 <div className = 'desc'>
