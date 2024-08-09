@@ -9,7 +9,7 @@ class Main extends React.Component {
         //Initial data has no user or counts
         this.urlbase = 'http://localhost:5000'
         //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
-        this.state = {filename: null, decade: null, title: null}
+        this.state = {filename: '1862.jpg', decade: '1860s', title: 'Civil War - President Lincoln At Antietam Wood'}
     }
 
     onLoginChange(e) {
@@ -60,7 +60,7 @@ class Main extends React.Component {
         return (
             <div className='Main'>
                 <div className = 'img'>
-                    <img src = {require("./popdecades/1855.jpg")} width="500" height="300"></img>
+                    <img src = {address(filename)} width="500" height="300"></img>
                 </div>
 
                 <div className = 'desc'>
