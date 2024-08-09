@@ -9,7 +9,7 @@ class Main extends React.Component {
         //Initial data has no user or counts
         this.urlbase = 'http://localhost:5000'
         //this.state = {rand:0, id: 0, filename:'', decade:'', source:'', info:'', title:''}
-        this.state = {filename: '1862.jpg', decade: '1860s', title: 'Civil War - President Lincoln At Antietam Wood'}
+        this.state = {filename: 'dg_logo.png', decade: '1860s', title: 'Guess which decade the photo is from (1840s to 2010s)'}
     }
 
     onLoginChange(e) {
@@ -65,11 +65,9 @@ class Main extends React.Component {
 
                 <div className = 'desc'>
                     <p>filename: {filename}</p>
-                    <p>decade: {decade}</p>
                     <p>title: {title}</p>
                     <p>address: {address(filename)}</p>
-                    <button type="button" onClick={this.login.bind(this)}>Next Photo</button>
-                    <button onClick={this.create_table.bind(this)}>Create Table</button>
+                    <button type="button" onClick={this.login.bind(this)}>New Photo</button>
                 </div>
 
                 
